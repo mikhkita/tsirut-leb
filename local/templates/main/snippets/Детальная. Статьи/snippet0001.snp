@@ -1,0 +1,10 @@
+<a href="#" class="b-article-item">
+	<div class="b-article-top">
+		<div class="b-article-img">
+			<img src="/bitrix/templates/main/html/i/article-1.jpg">
+		</div>
+		<div class="blackout"></div>
+		<h3>Название статьи</h3>
+	</div>
+	<p>Текст статьи</p>
+</a>

@@ -1,0 +1,12 @@
+<div class="b-seo b-block">
+<div class="b-seo-two-blocks">
+	<div class="seo-block first">
+		<h2>Заголовок первого блока</h2>
+		<p>Текст первого блока</p>
+	</div>
+        <div class="seo-block second">
+		<h2>Заголовок второго блока</h2>
+		<p>Текст второго блока</p>
+	</div>
+</div>
+</div>

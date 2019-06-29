@@ -1,0 +1,723 @@
+@charset "utf-8";
+
+body {
+	min-width: 750px;
+}
+
+.b-block{
+	width: calc(100% - 48px);
+}
+
+.b-search-tours .desktop{
+	display: none;
+}
+.b-search-tours .tablet{
+	display: inline-block;
+}
+.b-search-tours{
+	padding: 13px 25px 14px 25px;
+}
+.b-search-tours:hover .icon-next{
+	-webkit-transform: none;
+	   -moz-transform: none;
+    	-ms-transform: none;
+    	 -o-transform: none;
+    		transform: none;
+}
+
+.b-statistics-item span {
+    font-size: 32px;
+    line-height: 36px;
+    padding-top: 20px;
+}
+.b-statistics-item img {
+    height: 62px;
+}
+.b-statistics-item p {
+    font-size: 20px;
+    line-height: 24px;
+}
+.b-statistics {
+    margin-bottom: 65px;
+}
+.b-3-woman{
+	max-width: 800px;
+	left: -160px;
+}
+.b-3-content-top {
+    position: relative;
+    z-index: 1;
+    padding-top: 122px;
+    padding-bottom: 210px;
+}
+.b-3-back {
+	top: -250px;
+    height: 900px;
+    background-size: 1400px;
+}
+.b-3-text .div-p {
+    font-size: 40px;
+    line-height: 52px;
+}
+.b-3-text .div-p b {
+    font-size: 46px;
+    line-height: 56px;
+}
+.b-3 {
+    margin-bottom: 80px;
+}
+.b-4 h2 {
+    font-size: 56px;
+    line-height: 56px;
+    margin-bottom: 60px;
+}
+.b-mailing-cont {
+    width: calc(100% - 304px);
+}
+.b-mailing-form .b-btn-submit {
+    width: auto;
+    min-width: 260px;
+}
+.b-mailing-form input[type=text] {
+    width: calc(100% - 306px);
+}
+.b-footer-item.column-1,
+.b-footer-item.column-2{
+	margin-right: 100px;
+}
+.b-footer-politics,
+.b-copyright{
+	margin-right: 50px;
+}
+.b-feedback.b-feedback-shadow .b-5-manager{
+	right: 16px;
+}
+.b-4-item:nth-child(3n) .div-p{
+     padding: 0; 
+}
+.b-tourvisor div.TVHotelStar {
+    margin-right: 12px;
+}
+.b-tourvisor-with-filter div.TVMainFilterButton{
+	box-sizing: border-box;
+	max-height: 100px;
+}
+/*.b-tourvisor-header div.TVMainFilterButton{
+	box-sizing: border-box;
+	max-height: 100px;
+}
+.b-tourvisor-header div.TVWideForm.TVTheme2 .TVCountry,
+.b-tourvisor-header div.TVWideForm.TVTheme2 .TVDates{
+    width: 25%;
+}
+.b-tourvisor-header div.TVWideForm.TVTheme2 .TVNights{
+	width: 14%;
+}
+.b-tourvisor-header div.TVWideForm.TVTheme2 .TVTourists{
+	width: 16%;
+}
+.b-tourvisor-header div.TVWideForm.TVTheme2 .TVSearchButton{
+    width: calc(20% - 8px);
+}*/
+.b-tourvisor-calendar-cont .TVCalDiagramItem {
+    width: 2.2%;
+    margin: 0 0.5%;
+}
+.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVLocationButton,
+.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVCountry{
+	width: 20%;
+}
+.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVDates{
+    width: 18%;
+}
+.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVNights{
+	width: 14%;
+}
+.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVTourists{
+	width: 14%;
+}
+.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVSearchButton{
+    width: calc(14% - 8px);
+    margin-top: 10px;
+}
+
+.b-tourvisor-with-filter div.TVResultTheme2 {
+    width: calc(100% - 330px);
+    margin-left: 24px;
+}
+.TVSRBodyContainer .b-subscribe-form input {
+    margin-bottom: 24px;
+    width: calc(50% - 8px);
+}
+.TVSRBodyContainer .b-subscribe-form input:nth-child(2){
+	margin-right: 0;
+}
+.TVSRBodyContainer .b-subscribe-form .b-checkbox {
+    margin-top: 24px;
+}
+.b-search-pay img {
+    right: -77px;
+}
+.b-search-pay-content {
+    max-width: 387px;
+}
+
+div.TVModalContainer{width: calc(100% - 16px) !important;}
+		div.TVOrderWindow{width: 100% !important;}
+				div.TVOrderTourParams{right: auto;bottom: -50px;left: 0px;}
+				div.TVOrderShareBlock{right: 83px;bottom: -60px;}
+			div.TVOrderHotelBlock{padding-top: 71px;}
+				div.TVOrderHotelName{max-width: calc(100% - 44px);width: 100%;}
+					div.TVOrderTourDetail{display: inline-block;width: 69%;}
+						div.TVOrderTourDetailColumn1{width: 40%;}
+						div.TVOrderTourDetailColumn2{width: 50%;}
+		div.TVClosePopup{right: 20px;top: 19px;color: #FFF;}
+					div.TVDescrHotelUpButton{margin-left: 241px;}
+div.TVCatAboutHotelBlock{width: 65%;box-sizing: border-box;}
+div.TVCatAboutHotelRightSidebar{
+	width: 35%;
+	box-sizing: border-box;
+}
+div.TVCatAboutHotelBlock .TVSimpleSlidePic{
+	height: 300px;
+}
+div.TVCatHotelPicturesBlock ul{
+	width: calc(100% + 11px);
+}
+	div.TVCatHotelPicturesBlock li{width: 56px;height: 48px;}
+div.TVCatNavMap{
+	display: none;
+}
+div.TVOrderHeader .TVOrderIncludePrice{
+	width: calc(50% - 12px);
+	padding: 0px;
+	margin-right: 24px;
+}
+div.TVOrderHeader .TVOrderIncludeAvia{
+	width: calc(50% - 12px);
+}
+div.TVOnlyChecked{
+	display: none !important;
+}
+div.TVFOPayBlock {
+    margin-left: 30px;
+}
+
+div.TVFOFlyTitleBlock {
+    display: inline-block;
+    width: 50%;
+    margin-top: 16px;
+    box-sizing: border-box;
+}
+div.TVFOFlyTitleBlock.TVFORight {
+    margin-left: 0px;
+    padding-left: 7px;
+}
+div.TVFOFlyBlock {
+    width: calc(50% - 8px);
+}
+div.TVFOFlyBlock.TVFORight{
+	margin-left: 14px;
+}
+div.TVFlySelected.TVFlyItem {
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+}
+div.TVFORight .TVFlyItem{
+	margin-left: 0;
+}
+div.TVFlyDescBlock {
+    margin-left: 26px;
+}
+div.TVFlyDetailBlock {
+    display: block;
+    margin-bottom: 0;
+    width: 100%;
+}
+div.TVFlyAirBlock {
+    text-align: center;
+    margin-bottom: 12px;
+}
+div.TVOFPasportNum>input {
+    width: 102px;
+}
+div.TVFORow1 {
+    width: 33%;
+    box-sizing: border-box;
+    padding-right: 40px;
+    padding-left: 10px;
+    margin-right: 0;
+    margin-left: 0;
+}
+div.TVFORow2 {
+    width: 33%;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+div.TVFORow3 {
+    width: 33%;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 1210px){
+
+	.b-menu li a{
+		padding: 6px 10px 7px 10px;
+	}
+	.b-3-text {
+	    width: 436px;
+	}
+	.b-3-content-bottom .div-p {
+	    font-size: 44px;
+	    line-height: 58px;
+	}
+	.b-3-content-bottom {
+	    padding: 57px 93px 63px 93px;
+	}
+	.b-3-back{
+
+	}
+	.b-operators-item .b-img {
+	    width: calc(100% - 32px);
+	}
+	.visa-master{
+		display: none;
+	}
+	.b-footer-item.column-1, .b-footer-item.column-2 {
+	    margin-right: 60px;
+	}
+	.b-feedback-text {
+	    padding-left: 104px;
+	}
+	.b-5-manager,
+	.b-feedback .b-5-manager{
+		right: 0;
+	}
+	.b-feedback.b-feedback-shadow .b-feedback-text{
+	    padding-left: 32px;
+	}
+	.b-tourvisor div.TVHotelStar {
+	    margin-right: 6px;
+	}
+	
+}
+
+@media screen and (max-width: 1090px){
+
+	.b-menu-logo{
+		display: none;
+	}
+	.b-menu.transform ul{
+	    -webkit-transform: none; 
+	    -moz-transform: none;
+	    -ms-transform: none;
+	    -o-transform: none;
+	    transform: none;
+	}
+	.b-menu ul{
+	}
+		.b-menu li,
+		.b-menu.transform li{
+			margin-right: 12px;
+		}
+	.b-country-list{
+
+	}
+		.b-country-item{
+			width: calc(100%/3 - 16px);
+			height: 383px;
+		}
+		.b-country-list.square .b-country-item{
+			height: 302px;
+		}
+		.b-country-item.wide{
+
+		}
+		.b-country-slider{
+			width: calc(100%/3*2 - 9px);
+		}
+	.b-mailing-cont {
+	    padding: 34px 46px 52px 46px;
+	}
+	.b-footer-contacts {
+	    width: 260px;
+	}
+	.b-categories .b-country-list{
+
+	}
+		.b-categories .b-country-item{
+			width: calc(100%/3 - 24px);
+		}
+	.b-feedback-text{
+	    padding-left: 0;
+	}
+
+	.adv-main-left {
+	    vertical-align: top;
+	}
+
+	.b-tourvisor-with-filter div.TVMainFilter{
+		white-space: normal;
+	}
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVLocationButton,
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVCountry{
+		width: 50%;
+		border-bottom: 1px solid #ddd;
+	}
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVCountry:after{
+		display: none;
+	}
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVDates{
+	    width: 25%;
+	}
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVNights{
+		width: 25%;
+	}
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVTourists{
+		width: 25%;
+	}
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVSearchButton{
+	    width: calc(25% - 8px);
+	}
+	.b-search-pay img {
+	    display: none;
+	}
+	.b-search-pay-content {
+	    max-width: 100%;
+	}
+	div.TVTheme2 .TVSRNavButton, .TVTheme2 a.TVSRNavButton, .TVTheme2 a.TVSRNavButton:link {
+	    padding: 5px 12px;
+	}
+	.TVTem2Buttons .TVSRNavButton, .TVTheme2 a.TVSRNavButton, .TVTheme2 a.TVSRNavButton:link {
+	    margin: 15px 10px 2px 0;
+	}
+
+}
+
+@media screen and (max-width: 1024px){
+	
+	.b-menu{
+		display: none;
+	}
+	.b-menu-mobile {
+	    display: block;
+	}
+	.b-head{
+		padding-top: 40px;
+	}
+	.b-3-back {
+	    height: 780px;
+	    background-size: 1100px;
+	}
+	.b-3-woman {
+	    max-width: 630px;
+	    left: -160px;
+	}
+	.b-3-content-top {
+	    padding-top: 102px;
+	    padding-bottom: 110px;
+	}
+	.b-3-text {
+	    width: 406px;
+	}
+	.b-3-content-bottom {
+	    padding: 46px 60px 53px 60px;
+	}
+	.b-statistics-item{
+		text-align: center;
+	}
+		.b-statistics-item-top {
+		    margin-bottom: 14px;
+		}
+		.b-statistics-item span {
+		    margin-top: -5px;
+		    padding-top: 0;
+		    left: 0;
+		}
+		.b-statistics-item img {
+			left: 0;
+		    display: block;
+		    margin: 0 auto;
+		}
+		.b-statistics-item p {
+		    padding: 0 8px;
+		    text-align: center;
+		}
+	.b-article-list{
+		margin-bottom: 20px;
+	}
+		.b-article-item{
+			width: calc(100%/3 - 19px);
+			margin-right: 24px;
+			margin-bottom: 24px;
+		}
+		.b-article-item:nth-child(4n){
+			margin-right: 24px;
+		}
+		.b-article-item:nth-child(3n){
+			margin-right: 0;
+		}
+	.b-card{
+		width: calc(100%/4 - 20px);
+	}
+	.b-feedback-text,
+	.b-feedback.b-feedback-shadow .b-feedback-text{
+	    max-width: 510px;
+	    padding-top: 42px;
+	}
+		.b-feedback-text h2,
+		.b-feedback.b-feedback-shadow .b-feedback-text h2{
+		    font-size: 42px;
+		    line-height: 50px;
+		}
+		.b-feedback .b-5-manager,
+		.b-feedback.b-feedback-shadow .b-5-manager{
+		    width: 365px;
+		    height: 635px;
+		}
+	.b-country-adv-img{
+		height: 200px;
+	}
+	.b-footer-item.column-1,
+	.b-footer-item.column-2 {
+	    margin-right: 30px;
+	}
+	.b-copyright{
+		display: block;
+	}
+	.b-5-text {
+	    padding-left: 0;
+	    max-width: 446px;
+	}
+	.b-mailing-form input[type=text] {
+	    width: 100%;
+	    margin-bottom: 24px;
+	}
+	.b-mailing-form .b-btn-submit{
+		width: 100%;
+	}
+	.b-mailing-form .b-checkbox{
+		margin-top: 24px;
+	}
+	div.TVTheme2 .TVOptionStars {
+	    padding-top: 11px;
+	}
+	.b-tourvisor div.TVHotelStar {
+	    width: 20px;
+	    height: 20px;
+	    margin-right: 8px;
+	}
+	.b-tourvisor div.TVTheme2 .TVHotelStar:before {
+	    font-size: 20px;
+	}
+	.b-tourvisor div.TVTheme2 .TVHotelStar.TVImageActive:before {
+	    font-size: 20px;
+	}
+	.b-tourvisor-calendar-cont .TVCalDiagramDate {
+	    margin-top: 14px;
+	    font-size: 14px;
+	}
+	.b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton,
+	.b-tourvisor-with-filter div.TVTheme2 a.TVSRNavButton,
+	.b-tourvisor-with-filter div.TVTheme2 a.TVSRNavButton:link{
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 920px){
+
+	.b-footer-item.column-3{
+		display: none;
+	}
+	.b-footer-item.column-1{
+	    margin-right: 60px;
+	}
+	.b-5-manager{
+	    width: 365px;
+	    height: 635px;
+	}
+	.b-5-text {
+	    padding-top: 63px;
+	    padding-bottom: 100px;
+	}
+	.b-reviews{
+
+	}
+		.b-review-list{
+
+		}
+			.b-review-item{
+				width: calc(50% - 20px);
+			}
+
+			.b-review-item:nth-child(3n){
+				margin-right: 24px;
+			}
+			.b-review-item:nth-child(2n){
+				margin-right: 0;
+			}
+				.b-review-item p {
+				    margin-bottom: 12px;
+				}
+	.b-categories-item p {
+	    font-size: 18px;
+	    line-height: 18px;
+	}
+	
+	/*.b-tourvisor-header div.TVMainFilter{
+		white-space: normal;
+	}
+	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVCountry,
+	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVDates{
+	    width: 50%;
+	    border-bottom: 1px solid #ddd;
+	}
+	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVDates:after{
+		display: none;
+	}
+	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVNights,
+	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVTourists{
+		 width: 33%;
+	}
+	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVSearchButton{
+	    width: 33%;
+	    margin-top: 10px;
+	}*/
+
+	div.TVWideForm.TVTheme2 .TVStars {
+	    width: 18%;
+	    margin-right: 1%;
+	}
+	div.TVTheme2 .TVOptionStars {
+	    padding-top: 12px;
+	}
+	.b-tourvisor div.TVHotelStar {
+	    width: 18px;
+	    height: 18px;
+	    margin-right: 5px;
+	}
+	.b-tourvisor div.TVTheme2 .TVHotelStar:before {
+	    font-size: 18px;
+	}
+	.b-tourvisor div.TVTheme2 .TVHotelStar.TVImageActive:before {
+	    font-size: 18px;
+	}
+	div.TVFORow1 {
+	    width: 50%;
+	}
+	div.TVFORow2 {
+	    width: 50%;
+	}
+	div.TVFORow3 {
+	    width: 50%;
+	}
+	.TVSRBodyContainer .b-search-subscribe.b-mailing-cont,
+	.TVSRBodyContainer .b-subscribe-cont,
+	.b-search-pay-wrap{
+	    padding: 24px;
+	}
+	.b-tourvisor-with-filter .TVTem2Image {
+	    height: 105px;
+	    width: 150px;
+	}
+	.b-tourvisor-with-filter .TVTem2Image img {
+	    height: 105px;
+	}
+	.b-tourvisor-with-filter div.TVTem2Info {
+	    margin-left: 168px;
+	}
+}
+
+@media screen and (max-width: 850px){
+
+	.b-country-list{
+
+	}
+		.b-country-item{
+			width: calc(50% - 12px);
+		}
+		.b-country-item.wide{
+
+		}
+		.b-country-slider{
+			float: none;
+			width: 100%;
+			margin-right: 0;
+		}
+	.b-4-item h3 {
+	    font-size: 28px;
+	    line-height: 36px;
+	    margin-bottom: 14px;
+	}
+	.b-4-item .div-p {
+	    font-size: 18px;
+	    line-height: 28px;
+	}
+	.b-mailing-cont h2 {
+	    font-size: 38px;
+	    line-height: 48px;
+	}
+	.b-3-text {
+	    width: 336px;
+	}
+	.b-3-text .div-p {
+	    font-size: 32px;
+	    line-height: 46px;
+	}
+	.b-3-text .div-p b {
+	    font-size: 36px;
+	    line-height: 46px;
+	}
+	.b-5-text {
+	    max-width: 390px;
+	    padding-bottom: 80px;
+	}
+	.b-5-text h2 {
+	    font-size: 42px;
+	    line-height: 50px;
+	}
+	.b-5-text > .div-p {
+	    font-size: 18px;
+	    line-height: 28px;
+	    margin-bottom: 40px;
+	}
+	.b-5-text .b-btn .btn-regular {
+	    font-size: 16px;
+	}
+	.b-5-manager {
+	    width: 335px;
+	    height: 550px;
+	}
+	.b-5-name {
+	    right: 18px;
+	    padding: 20px 20px 18px 20px;
+	}
+	.b-feedback-back {
+	    height: 604px;
+	    background-position: 58% 50%;
+	    background-size: 1420px;
+	}
+	.b-feedback .b-5-manager,
+	.b-feedback.b-feedback-shadow .b-5-manager {
+	    width: 295px;
+	    height: 512px;
+	}
+	.b-5-manager, .b-feedback .b-5-manager {
+	    right: -16px;
+	}
+	.b-5-name{
+		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+	}
+	.b-5-name .div-p {
+	    font-size: 20px;
+	    line-height: 28px;
+	}
+	.b-5-name small {
+	    font-size: 14px;
+	    line-height: 14px;
+	}
+
+}

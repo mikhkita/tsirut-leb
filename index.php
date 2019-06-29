@@ -1,0 +1,500 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("description", "Аквамарин");
+$APPLICATION->SetPageProperty("title", "Аквамарин");
+$APPLICATION->SetTitle("Аквамарин");
+?><div class="b-statistics">
+	<div class="b-block clearfix">
+		<div class="b-statistics-list b-statistics-slider mobile-slider">
+			<div class="b-statistics-item statistics-1">
+				<div class="b-statistics-item-top">
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-country.png" class="anim fadeLeft delay100" data-cont=".b-statistics"> <span class="anim fadeRight delay400" data-cont=".b-statistics">стран</span>
+				</div>
+				<p class="anim fadeDown delay700" data-cont=".b-statistics">
+					 в которых мы бывали сами
+				</p>
+			</div>
+			<div class="b-statistics-item statistics-2">
+				<div class="b-statistics-item-top">
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-hotel.png" class="anim fadeLeft delay100"> <span class="anim fadeRight delay400">отелей</span>
+				</div>
+				<p class="anim fadeDown delay700">
+					 мы посетили и проверили лично
+				</p>
+			</div>
+			<div class="b-statistics-item statistics-3">
+				<div class="b-statistics-item-top">
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-tourist.png" class="anim fadeLeft delay100"> <span class="anim fadeRight delay400">туристов</span>
+				</div>
+				<p class="anim fadeDown delay700">
+					 в год доверяют нам свой отдых
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="b b-popular">
+	<div class="b-block">
+		<h2 class="b-title">Популярные направления</h2>
+		<div class="b-country-list clearfix">
+			 <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"tour-slider",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array("ID","NAME","PREVIEW_TEXT","PREVIEW_PICTURE",""),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array("BUTTON_TEXT",""),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?><?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list",
+	"country-list",
+	Array(
+		"ADD_SECTIONS_CHAIN" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"COUNT_ELEMENTS" => "Y",
+		"FILTER_NAME" => "sectionsFilter",
+		"IBLOCK_ID" => "1",
+		"IBLOCK_TYPE" => "content",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => array("PICTURE",""),
+		"SECTION_ID" => "1",
+		"SECTION_URL" => "",
+		"SECTION_USER_FIELDS" => array("UF_COUNTRY_NAME","UF_VISA","UF_PRICE_FROM","UF_CATEGORIES","UF_T_AIR_1","UF_T_AIR_2","UF_T_AIR_3","UF_T_AIR_4","UF_T_AIR_5","UF_T_AIR_6","UF_T_AIR_7","UF_T_AIR_8","UF_T_AIR_9","UF_T_AIR_10","UF_T_AIR_11","UF_T_AIR_12","UF_T_WATER_1","UF_T_WATER_2","UF_T_WATER_3","UF_T_WATER_4","UF_T_WATER_5","UF_T_WATER_6","UF_T_WATER_7","UF_T_WATER_8","UF_T_WATER_9","UF_T_WATER_10","UF_T_WATER_11","UF_T_WATER_12",""),
+		"SHOW_PARENT_NAME" => "Y",
+		"TOP_DEPTH" => "2",
+		"VIEW_MODE" => "LINE"
+	)
+);?>
+		</div>
+		<div class="center">
+ <a href="#" class="b-btn b-btn-blue one-line">
+			<p class="btn-bold">
+				 Все направления
+			</p>
+ </a>
+		</div>
+	</div>
+</div>
+<div class="b b-3">
+	<div class="b-3-back">
+	</div>
+	<div class="b-block">
+		<div class="b-3-content">
+			<div class="b-3-content-top clearfix">
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/cloud.svg" class="b-3-cloud"> <img src="<?=SITE_TEMPLATE_PATH?>/html/i/b-3-woman.png" class="b-3-woman">
+				<div class="b-3-text">
+					<div class="div-p">
+						 <?=includeArea("b-3-top");?>
+					</div>
+				</div>
+			</div>
+			<div class="b-3-content-bottom">
+				<div class="div-p">
+					 <?=includeArea("b-3-bottom");?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="b b-4">
+	<div class="b-block">
+		<h2>Что это значит?</h2>
+		<div class="b-4-list b-4-slider mobile-slider clearfix">
+			<div class="b-4-item">
+				<div class="b-4-icon">
+					<div id="coin-parallax" class="coin-parallax">
+						<div data-depth="0.6" class="coin-1">
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/coin-1.svg">
+						</div>
+						<div data-depth="-0.4" class="coin-2">
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/coin-2.svg">
+						</div>
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/svg-icon-1.svg" class="main-img">
+					</div>
+				</div>
+				<h3><?=includeArea("b-4-1-head");?></h3>
+				<div class="div-p">
+					 <?=includeArea("b-4-1-text");?>
+				</div>
+			</div>
+			<div class="b-4-item">
+				<div class="b-4-icon">
+					 <object type="image/svg+xml" data="<?=SITE_TEMPLATE_PATH?>/html/i/svg-icon-2.svg" width="162" height="143"></object>
+				</div>
+				<h3><?=includeArea("b-4-2-head");?></h3>
+				<div class="div-p">
+					 <?=includeArea("b-4-2-text");?>
+				</div>
+			</div>
+			<div class="b-4-item">
+				<div class="b-4-icon">
+ <img src="<?=SITE_TEMPLATE_PATH?>/html/i/svg-icon-3.svg">
+				</div>
+				<h3><?=includeArea("b-4-3-head");?></h3>
+				<div class="div-p">
+					 <?=includeArea("b-4-3-text");?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="b b-5">
+	<div class="b-block">
+		<div class="b-5-text">
+			<h2><?=includeArea("b-5-head");?></h2>
+			<div class="div-p">
+				 <?=includeArea("b-5-text");?>
+			</div>
+ <a href="#" class="b-btn b-btn-orange">
+			<p class="btn-bold">
+				 Подберите мне тур
+			</p>
+			<p class="btn-regular">
+				 Хочу довериться профессионалам
+			</p>
+ </a>
+		</div>
+		<div class="b-5-window">
+		</div>
+		<div class="b-5-manager">
+			<div class="b-5-name">
+				<div class="div-p">
+					 <?=includeArea("b-5-name");?>
+				</div>
+ <small><?=includeArea("b-5-post");?></small>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="b b-tourvisor">
+	<div class="b-head-gradient">
+	</div>
+	<div class="b-block gradient-after">
+		<h2 class="b-title white">Или подберите тур самостоятельно</h2>
+		<!-- <div class="tv-search-form tv-moduleid-189840">
+		</div> -->
+		<div class="tv-search-form tv-moduleid-190546"></div>
+		<div class="center">
+ <a href="#" class="b-btn b-btn-orange one-line TVSearchButton_custom">
+			<p class="btn-bold">
+				 Найти туры
+			</p>
+ </a>
+		</div>
+	</div>
+</div>
+<div class="b b-reviews">
+	<div class="b-block">
+		<h2 class="b-title">Отзывы туристов, которые доверились нам</h2>
+		 <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"reviews",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_TEXT",2=>"PREVIEW_PICTURE",3=>"",),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "3",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(0=>"DATE",1=>"TOUR",2=>"",),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
+	</div>
+</div>
+<div class="b b-mailing">
+	<div class="b-block">
+		<div class="b-mailing-cont">
+			<div class="b-head-gradient">
+			</div>
+			<div class="gradient-after">
+				<h2><?=includeArea("mail-head");?></h2>
+				<div class="mailing-text"><?=includeArea("mail-text");?></div>
+				<form class="b-mailing-form" method="post" action="/subscribe.php">
+ 					<input type="text" name="email" placeholder="Ваш e-mail" required="">
+ 					<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
+ 					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+ 					<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
+						<p class="btn-bold">
+							 Подписаться
+						</p>
+ 					</a>
+					<div class="b-checkbox">
+ 						<input id="checkbox-politics-1" type="checkbox" name="politics" checked="" required=""> <label for="checkbox-politics-1">
+						<div class="b-checked icon-checked">
+						</div>
+						<p>
+							 Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a>
+						</p>
+ </label>
+					</div>
+				</form>
+			</div>
+		</div>
+		 <!-- VK Widget -->
+		<div class="b-widget-vk">
+			<div id="vk_groups">
+			</div>
+		</div>
+		 <script type="text/javascript">
+			var myWidth = 0;
+			if( typeof( window.innerWidth ) == 'number' ) {
+	            myWidth = window.innerWidth;
+	        } else if( document.documentElement && ( document.documentElement.clientWidth || 
+	        document.documentElement.clientHeight ) ) {
+	            myWidth = document.documentElement.clientWidth;
+	        } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+	            myWidth = document.body.clientWidth;
+	        }
+
+	        if(myWidth > 767){
+	        	VK.Widgets.Group("vk_groups", {mode: 0, width: "288", height: "384", no_cover: 1}, 56008470);
+	        }else{
+	        	VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "200", no_cover: 1}, 56008470);
+	        }
+		</script>
+	</div>
+</div>
+<div class="b b-articles">
+	<div class="b-block">
+		<h2 class="b-title">Последние статьи</h2>
+		<div class="b-article-list b-article-slider mobile-slider detail-wide">
+ <a href="#" class="b-article-item">
+			<div class="b-article-top">
+				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-1.jpg')">
+				</div>
+				<div class="blackout">
+				</div>
+				<h3>Отдых на Сейшелах - хорошие отели для отдыха</h3>
+			</div>
+			<p>
+				 Сейшельские острова – сказочные живописные уголки Индийского океана, идеальные для романти-ческого отдыха вдвоем. ...
+			</p>
+ </a><a href="#" class="b-article-item">
+			<div class="b-article-top">
+				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-2.jpg')">
+				</div>
+				<div class="blackout">
+				</div>
+				<h3>Худшие отели Турции или как испортить себе отдых</h3>
+			</div>
+			<p>
+				 Выбирать отель нужно правильно. Заветные цифры 4* или 5* на вывеске отеля не означают, что отдых пройдет хорошо и с приятными впечатлениями. Выбирать ...
+			</p>
+ </a><a href="#" class="b-article-item">
+			<div class="b-article-top">
+				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-3.jpg')">
+				</div>
+				<div class="blackout">
+				</div>
+				<h3>Города и курорты Чехии</h3>
+			</div>
+			<p>
+				 После приобретения тура в Чехию из Белгорода, следует заблаговременно определить какие именно достоприме-чательности, города и курорты …
+			</p>
+ </a><a href="#" class="b-article-item">
+			<div class="b-article-top">
+				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-4.jpg')">
+				</div>
+				<div class="blackout">
+				</div>
+				<h3>Какой курорт ОАЭ выбрать для отдыха</h3>
+			</div>
+			<p>
+				 Выбирая отдых в ОАЭ - это прекрасная возможность познакомиться с историей динамично развивающегося государства, а также получить массу удовольствий и …
+			</p>
+ </a>
+		</div>
+		<div class="center">
+ <a href="#" class="b-btn b-btn-blue one-line">
+			<p class="btn-bold">
+				 Все статьи
+			</p>
+ </a>
+		</div>
+	</div>
+</div>
+<div class="b b-tour-operators">
+	<div class="b-head-gradient">
+	</div>
+	<div class="b-block gradient-after">
+		<h2 class="b-title white">Туры от официальных туроператоров</h2>
+		 <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"operators",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_PICTURE",2=>"",),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "4",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "100",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(0=>"",1=>"",),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
+	</div>
+</div>
+<div class="b-block">
+	<div class="b-seo-separator-wide">
+	</div>
+</div>
+<div class="b-seo b-block">
+	<div class="b-seo-two-blocks">
+		<div class="seo-block first">
+			<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>**Заголовок первого блока**</h2>
+			<p>
+				 Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации новых предложений. Равным образом укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.
+			</p>
+		</div>
+		<div class="seo-block second">
+			<h2 class="with-icon"><span class="seo-icon seo-icon-gift"></span>**Заголовок второго блока**</h2>
+			<p>
+				 Равным образом рамки и место обучения кадров требуют от нас анализа дальнейших направлений развития. Разнообразный и богатый опыт новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.
+			</p>
+		</div>
+	</div>
+</div>
+<div class="b-block">
+	<div class="b-seo-separator">
+	</div>
+</div>
+ <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
