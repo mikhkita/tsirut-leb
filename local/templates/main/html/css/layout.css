@@ -254,10 +254,10 @@ b{
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-    background-image: -webkit-linear-gradient(-48deg, #0080FF 0%, #FF912A 100%);
-    background-image: -o-linear-gradient(-48deg, #0080FF 0%, #FF912A 100%);
-    background-image: linear-gradient(42deg, #0080FF 0%, #FF912A 100%);
-    opacity: 0.8;
+    background-image: -webkit-linear-gradient(32deg, #0080FF 0%, #FF912A 100%);
+    background-image: -o-linear-gradient(32deg, #0080FF 0%, #FF912A 100%);
+    background-image: linear-gradient(122deg, #0080FF 0%, #FF912A 100%);
+    opacity: 0.85;
 }
 .gradient-after{
 	position: relative;
@@ -1389,8 +1389,12 @@ b{
 					.b-review-tour{
 						line-height: 16px;
 					}
-				.b-review-item p{
-					margin-bottom: 18px;
+				.b-review-cont p{
+				    margin-bottom: 16px;
+				}
+				.b-review-list .b-review-cont p{
+					max-height: 122px;
+				    overflow: hidden;
 				}
 
 .read-more{
@@ -1894,7 +1898,7 @@ b{
 .b-tourvisor-header{
 	width: 100%;
 	min-height: 124px;
-	margin-top: -150px;
+	margin-top: -190px;
 	margin-bottom: 20px;
 }
 	.tourvisor-preloader{
@@ -1917,7 +1921,7 @@ b{
 	}
 
 .b-head-inner{
-	padding-bottom: 180px;
+	padding-bottom: 220px;
 }
 	.b-head-inner .b-head-white{
 		bottom: -10px;
@@ -3011,19 +3015,13 @@ div.b-popup{
 
 @media screen and (min-width: 768px){
 
-	.b-radio-list input[type="radio"] + span + label:hover:before,
-	.b-radio-list input[type="radio"] + label:hover:before{
-	    border: 2px solid #FF912A;
-	}
 	.b-radio-list input[type="radio"] + span + label:hover:after,
 	.b-radio-list input[type="radio"] + label:hover:after{
-	    background-color: #FF912A;
-   		background: linear-gradient(180deg, #FFBD73 0%, #ED7408 100%);
-   		opacity: 0.3;
+   		background: #C1CEDF;
 	}
 	.b-radio-list input[type="radio"]:checked + span + label:hover:after,
 	.b-radio-list input[type="radio"]:checked + label:hover:after{
-   		opacity: 1;
+		background: linear-gradient(180deg, #FFBD73 0%, #ED7408 100%);
 	}
 
 }
@@ -3040,6 +3038,16 @@ div.b-popup{
 }
 
 /*=======Турвизор=======*/
+
+div.tv-search-form,
+div.tv_drop_panel,
+div.TVSearchingForm,
+div.TVSearchResults{
+	font-family: 'Gilroy-Regular';
+}
+div.TVLocationPanel .TVLabel{
+	padding: 5px 5px 5px 0;
+}
 
 div.TVWideForm.TVTheme2 {
     width: 100%;
@@ -3093,7 +3101,7 @@ div.TVMainFilterLable:before {
 }
 div.TVMainFilterButton{
 	position: relative;
-	padding: 31px 18px 17px;
+	padding: 31px 18px 16px;
 	border-right: 0;
 	font-family: 'Gilroy-Bold';
     font-size: 20px;
@@ -3276,6 +3284,7 @@ div.TVListBox{
 	line-height: 19px;
 }
 div.TVOptionCheckBox {
+	font-family: 'Gilroy-Regular';
     margin-bottom: 10px;
 }
 div.TVOptionCheckBox:before, div.TVOptionListItem:before {
@@ -3296,12 +3305,12 @@ div.TVChecked.TVOptionCheckBox:before, div.TVChecked.TVOptionListItem:before {
     color: #ED7408;
 }
 div.TVOptionCheckBox:hover:before{
-	border: 2px solid #ED7408;
-    color: rgba(237,116,8,0.3);
+    color: rgba(193, 206, 223, 0.5);
 }
-div.TVChecked.TVOptionCheckBox:hover:before, div.TVChecked.TVOptionListItem:hover:before{
-	border: 2px solid #ED7408;
+div.TVChecked.TVOptionCheckBox:hover:before,
+div.TVChecked.TVOptionListItem:hover:before{
     color: #ED7408;
+    border: 2px solid #ED7408;
 }
 div.TVTheme2Button {
     background-color: #FFF;
@@ -3325,7 +3334,7 @@ div.TVSearchCmbPanel .TVOptionListItem:before{
 	margin-right: 8px;
 }
 div.TVSearchCmbPanel .TVOptionListItem{
-	margin-bottom: 3px;
+	margin-bottom: 9px;
 }
 div.TVSearchCmbPanel .TVDetailPanel .TVTheme2Button{
 	margin-top: 0;
@@ -3502,6 +3511,10 @@ div.TVSliderDuble .TVLabel.TVSlideLabel{
 	border-radius: 4px;
 	font-family: 'Gilroy-Medium';
 }
+div.TVLabel,
+div.TVPopCountries .TVLabel{
+	font-family: 'Gilroy-Medium';
+}
 div.TVSliderDRange{
 	background-image: none;
 	background-color: #C1CEDF;
@@ -3667,6 +3680,10 @@ div.TVHotelTypeItem.TVChecked {
 		line-height: 40px;
 		font-family: 'Gilroy-Bold';
 		margin-bottom: 16px;
+	}
+	.TVSRBodyContainer .b-search-subscribe-1 h2,
+	.TVSRBodyContainer .b-search-pay h2{
+		color: #FFF;
 	}
 	.TVSRBodyContainer .b-search-subscribe .mailing-text{
 		font-size: 20px;
@@ -5359,9 +5376,9 @@ div.TVModalContainer{
 		border-radius: 100px;
 	}
 		div.TVProgressLine{
-			background: -webkit-linear-gradient(0deg, #17EAD9, #6078EA);
-			background: -o-linear-gradient(0deg, #17EAD9, #6078EA);
-			background: linear-gradient(90deg, #17EAD9, #6078EA);
+			background: -webkit-linear-gradient(0deg, #0080FF 0%, #FF912A 100%);
+			background: -o-linear-gradient(0deg, #0080FF 0%, #FF912A 100%);
+			background: linear-gradient(90deg, #0080FF 0%, #FF912A 100%);
 			background-size: 200% 200%;
 			-webkit-animation: Gradient 5s ease infinite;
 			-moz-animation: Gradient 5s ease infinite;
@@ -5641,6 +5658,13 @@ div.tv_drop_panel .tv_dtp_calendar .tv_selected_date:hover{
 	background-color: rgba(255,145,42,0.25);
 }
 
+div.tv_drop_panel.TVDataPicker .tv_dtp_calendar *,
+div.tv_drop_panel.TVDataPicker .tv_dtp_table thead td{
+	font-family: 'Gilroy-Regular';
+}
+.tv_drop_panel.TVDataPicker .tv_dtp_table td{
+	font-family: 'Gilroy-Bold';
+}
 div.tv_drop_panel.TVDataPicker .tv_dtp_calendar .tv_dtp_header{
 	margin-bottom: 8px;
 }
@@ -5745,10 +5769,12 @@ div.tv_dtp_right_button{
 div.TVTem2PriceBlock {
     margin-top: 21px;
 }
+div.TVTem2TourBlock .TVRSActiveButton{
+	border: 2px solid #ED7408;
+    color: #ED7408;
+}
 div.TVTem2TourBlock .TVRSActiveButton:after {
-    height: 2px;
-    background-color: #E7ECF1;
-    left: -14px;
+    display: none;
 }
 div.TVResultTheme2.TVResultCenter{
 	display: block;
@@ -5790,3 +5816,15 @@ div.TVResultTheme2.TVResultCenter{
 	color: #000;
 }
 
+div.tv_drop_panel.TVLocationPanel:after,
+div.tv_drop_panel.TVCountryCombo:after,
+div.tv_drop_panel.TVDataPicker:after,
+div.tv_drop_panel.TVChooseDrop:after,
+div.tv_drop_panel.TVSRSortResult:after{
+	right: auto;
+	left: 24px;
+}
+
+div.tv_drop_panel.TVSRSortResult{
+	margin-top: 8px;
+}

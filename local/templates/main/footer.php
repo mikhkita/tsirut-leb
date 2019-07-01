@@ -124,8 +124,8 @@
 								<p class="btn-bold">Подписаться</p>
 							</a>
 							<div class="b-checkbox">
-								<input id="checkbox-politics-1" type="checkbox" name="politics" checked required>
-								<label for="checkbox-politics-1">
+								<input id="checkbox-politics-2" type="checkbox" name="politics" checked required>
+								<label for="checkbox-politics-2">
 									<div class="b-checked icon-checked"></div>
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
@@ -365,6 +365,14 @@
 		<div class="b-popup" id="b-popup-filter-mobile">
 			<div class="TVSideFilterForm TVTheme2">
 				<div class="defaultTVFilterForm"></div>
+			</div>
+		</div>
+
+		<div class="b-popup" id="b-popup-review">
+			<div class="center">
+				<a href="#" class="b-btn b-btn-blue one-line" onclick="$.fancybox.close(); return false;">
+					<p class="btn-bold">Закрыть</p>
+				</a>
 			</div>
 		</div>
 

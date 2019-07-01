@@ -351,7 +351,7 @@ $(document).ready(function(){
                     }, 800);
                 }
                 arrActiveCards[nextCard] = nextOperator;
-            }, 1000);
+            }, 2000);
         }
     }
 
@@ -466,6 +466,11 @@ $(document).ready(function(){
         disable_search_threshold: 10000
     });
 
+    $('.read-more').on('click', function(){
+        $("#b-popup-review").find(".b-review-cont").remove();
+        $(this).parent().children(".b-review-cont").clone().prependTo("#b-popup-review");
+    });
+
     // =========Турвизор=========
 
     if($(".b-tourvisor-header").length){
@@ -531,6 +536,7 @@ $(document).ready(function(){
                 if(isMobile){
                     //Поставить кнопку для мобильного фильтра
                     $(".b-tourvisor-with-filter .TVMainFilter").after($(".b-btn-filter-mobile"));
+                    $(".b-btn-filter-mobile").removeClass("hide");
                     $("#b-popup-filter-mobile .defaultTVFilterForm").append($(".b-tourvisor-with-filter .TVFilterForm"));
                     //Перенести блок в конец
                     $(".b-tourvisor-with-filter .TVResultTheme2").after($(".b-tourvisor-with-filter .defaultTVFilterForm")); 
@@ -808,21 +814,28 @@ $(document).ready(function(){
     //     $(".list").append("<li class='item'>Тест</li>");
     // })
     
-
+    var queueClick = 0;
     //переключение по месяцам
     $("body").on("click", ".b-tourvisor-calendar-cont .TVCalendarPrev, .b-tourvisor-calendar-cont .TVCalendarNext", function(){
         $("body").addClass("TVHidePopup");
+        queueClick++;
         var waitPopup = setInterval(function(){
             if($(".TVModalContainer .TVCalendarWindow").length){
                 $(".TVClosePopup").click();
-                clearInterval(waitPopup);
                 setTimeout(function() {
-                    $("body").removeClass("TVHidePopup");
+                    queueClick--;
+                    if(queueClick == 0){
+                        $("body").removeClass("TVHidePopup");
+                    }
                 }, 400);
-                
+                clearInterval(waitPopup);
             }
         }, 10);
     });
+
+    // $("body").on("click", ".TVTem2PriceBlock", function(){
+    //     $("body").removeClass("TVHidePopup");
+    // });
 
     $("body").on("click", ".TVCalDiagramItem", function(){
         if($(this).find(".TVCalDiagramNone").length == 0){

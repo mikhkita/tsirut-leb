@@ -3,6 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Поиск туров");
 ?>
 <div class="b-block">
+	<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile hide">Открыть фильтр</a>
 	<div class="b b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter">
 		<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 		<div class="tv-search-form tv-moduleid-190548"></div>
@@ -265,7 +266,7 @@ $APPLICATION->SetTitle("Поиск туров");
 </div>
 <div class="b-seo b-block">
 	<div class="seo-block center">
-		<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>**Заголовок блока**</h2>
+		<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>Заголовок блока</h2>
 		<p>
 			Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! укрепление и развитие структуры требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. 
 		</p>

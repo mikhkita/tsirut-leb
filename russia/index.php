@@ -191,7 +191,7 @@ $APPLICATION->SetTitle("Отдых в России");
 <div class="b-seo b-block">
 	<div class="b-seo-two-blocks">
 		<div class="seo-block first">
-			<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>**Заголовок первого блока**</h2>
+			<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>Заголовок первого блока</h2>
 			<p>
 			</p>
 			<p>
@@ -199,7 +199,7 @@ $APPLICATION->SetTitle("Отдых в России");
 			</p>
 		</div>
 		<div class="seo-block second">
-			<h2 class="with-icon"><span class="seo-icon seo-icon-gift"></span>**Заголовок второго блока**</h2>
+			<h2 class="with-icon"><span class="seo-icon seo-icon-gift"></span>Заголовок второго блока</h2>
 			<p>
 			</p>
 			<p>

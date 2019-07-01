@@ -8,25 +8,28 @@ $APPLICATION->SetTitle("Аквамарин");
 		<div class="b-statistics-list b-statistics-slider mobile-slider">
 			<div class="b-statistics-item statistics-1">
 				<div class="b-statistics-item-top">
- <img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-country.png" class="anim fadeLeft delay100" data-cont=".b-statistics"> <span class="anim fadeRight delay400" data-cont=".b-statistics">стран</span>
+ 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-country.png" class="anim fadeLeft delay100" data-cont=".b-statistics">
+ 					<span class="anim fadeRight delay200" data-cont=".b-statistics">стран</span>
 				</div>
-				<p class="anim fadeDown delay700" data-cont=".b-statistics">
+				<p class="anim fadeDown delay300" data-cont=".b-statistics">
 					 в которых мы бывали сами
 				</p>
 			</div>
 			<div class="b-statistics-item statistics-2">
 				<div class="b-statistics-item-top">
- <img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-hotel.png" class="anim fadeLeft delay100"> <span class="anim fadeRight delay400">отелей</span>
+ 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-hotel.png" class="anim fadeLeft delay400">
+ 					<span class="anim fadeRight delay500">отелей</span>
 				</div>
-				<p class="anim fadeDown delay700">
+				<p class="anim fadeDown delay600">
 					 мы посетили и проверили лично
 				</p>
 			</div>
 			<div class="b-statistics-item statistics-3">
 				<div class="b-statistics-item-top">
- <img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-tourist.png" class="anim fadeLeft delay100"> <span class="anim fadeRight delay400">туристов</span>
+ 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-tourist.png" class="anim fadeLeft delay700">
+ 					<span class="anim fadeRight delay800">туристов</span>
 				</div>
-				<p class="anim fadeDown delay700">
+				<p class="anim fadeDown delay900">
 					 в год доверяют нам свой отдых
 				</p>
 			</div>
@@ -118,7 +121,7 @@ $APPLICATION->SetTitle("Аквамарин");
 );?>
 		</div>
 		<div class="center">
- <a href="#" class="b-btn b-btn-blue one-line">
+ <a href="/search/" class="b-btn b-btn-blue one-line">
 			<p class="btn-bold">
 				 Все направления
 			</p>
@@ -152,7 +155,7 @@ $APPLICATION->SetTitle("Аквамарин");
 		<h2>Что это значит?</h2>
 		<div class="b-4-list b-4-slider mobile-slider clearfix">
 			<div class="b-4-item">
-				<div class="b-4-icon">
+				<div class="b-4-icon anim fadeDown delay100" data-cont=".b-4">
 					<div id="coin-parallax" class="coin-parallax">
 						<div data-depth="0.6" class="coin-1">
  <img src="<?=SITE_TEMPLATE_PATH?>/html/i/coin-1.svg">
@@ -163,26 +166,26 @@ $APPLICATION->SetTitle("Аквамарин");
  <img src="<?=SITE_TEMPLATE_PATH?>/html/i/svg-icon-1.svg" class="main-img">
 					</div>
 				</div>
-				<h3><?=includeArea("b-4-1-head");?></h3>
-				<div class="div-p">
+				<h3 class="anim fadeDown delay200" data-cont=".b-4"><?=includeArea("b-4-1-head");?></h3>
+				<div class="div-p anim fadeDown delay300" data-cont=".b-4">
 					 <?=includeArea("b-4-1-text");?>
 				</div>
 			</div>
 			<div class="b-4-item">
-				<div class="b-4-icon">
+				<div class="b-4-icon anim fadeDown delay400" data-cont=".b-4">
 					 <object type="image/svg+xml" data="<?=SITE_TEMPLATE_PATH?>/html/i/svg-icon-2.svg" width="162" height="143"></object>
 				</div>
-				<h3><?=includeArea("b-4-2-head");?></h3>
-				<div class="div-p">
+				<h3 class="anim fadeDown delay500" data-cont=".b-4"><?=includeArea("b-4-2-head");?></h3>
+				<div class="div-p anim fadeDown delay600" data-cont=".b-4">
 					 <?=includeArea("b-4-2-text");?>
 				</div>
 			</div>
 			<div class="b-4-item">
-				<div class="b-4-icon">
+				<div class="b-4-icon anim fadeDown delay700" data-cont=".b-4">
  <img src="<?=SITE_TEMPLATE_PATH?>/html/i/svg-icon-3.svg">
 				</div>
-				<h3><?=includeArea("b-4-3-head");?></h3>
-				<div class="div-p">
+				<h3 class="anim fadeDown delay800" data-cont=".b-4"><?=includeArea("b-4-3-head");?></h3>
+				<div class="div-p anim fadeDown delay900" data-cont=".b-4">
 					 <?=includeArea("b-4-3-text");?>
 				</div>
 			</div>
@@ -355,7 +358,8 @@ $APPLICATION->SetTitle("Аквамарин");
 		<div class="b-article-list b-article-slider mobile-slider detail-wide">
  <a href="#" class="b-article-item">
 			<div class="b-article-top">
-				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-1.jpg')">
+				<div class="b-article-img">
+					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-1.jpg">
 				</div>
 				<div class="blackout">
 				</div>
@@ -366,7 +370,8 @@ $APPLICATION->SetTitle("Аквамарин");
 			</p>
  </a><a href="#" class="b-article-item">
 			<div class="b-article-top">
-				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-2.jpg')">
+				<div class="b-article-img">
+					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-2.jpg">
 				</div>
 				<div class="blackout">
 				</div>
@@ -377,7 +382,8 @@ $APPLICATION->SetTitle("Аквамарин");
 			</p>
  </a><a href="#" class="b-article-item">
 			<div class="b-article-top">
-				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-3.jpg')">
+				<div class="b-article-img">
+					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-3.jpg">
 				</div>
 				<div class="blackout">
 				</div>
@@ -388,7 +394,8 @@ $APPLICATION->SetTitle("Аквамарин");
 			</p>
  </a><a href="#" class="b-article-item">
 			<div class="b-article-top">
-				<div class="b-article-img" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/article-4.jpg')">
+				<div class="b-article-img">
+					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-4.jpg">
 				</div>
 				<div class="blackout">
 				</div>
@@ -473,20 +480,16 @@ $APPLICATION->SetTitle("Аквамарин");
 );?>
 	</div>
 </div>
-<div class="b-block">
-	<div class="b-seo-separator-wide">
-	</div>
-</div>
 <div class="b-seo b-block">
 	<div class="b-seo-two-blocks">
 		<div class="seo-block first">
-			<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>**Заголовок первого блока**</h2>
+			<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>Заголовок блока</h2>
 			<p>
 				 Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации новых предложений. Равным образом укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.
 			</p>
 		</div>
 		<div class="seo-block second">
-			<h2 class="with-icon"><span class="seo-icon seo-icon-gift"></span>**Заголовок второго блока**</h2>
+			<h2 class="with-icon"><span class="seo-icon seo-icon-gift"></span>Заголовок блока</h2>
 			<p>
 				 Равным образом рамки и место обучения кадров требуют от нас анализа дальнейших направлений развития. Разнообразный и богатый опыт новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.
 			</p>
@@ -497,4 +500,10 @@ $APPLICATION->SetTitle("Аквамарин");
 	<div class="b-seo-separator">
 	</div>
 </div>
- <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<div class="b-seo b-block">
+	<div class="seo-block center">
+		<h2>Заголовок блока</h2>
+		<p>Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации новых предложений. Равным образом укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.</p>
+	</div>
+</div>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

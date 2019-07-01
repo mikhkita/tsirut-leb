@@ -34,8 +34,8 @@ $this->setFrameMode(true);
 				</div>
 			</div>
 			<p><?=$arItem["PREVIEW_TEXT"]?></p>
-			<a href="#" class="read-more dashed">Читать полностью</a>
 		</div>
+		<a href="#b-popup-review" class="fancy read-more dashed">Читать полностью</a>
 	</div>
 <?endforeach;?>
 </div>

@@ -393,6 +393,10 @@ div.TVFORow3 {
 	.TVTem2Buttons .TVSRNavButton, .TVTheme2 a.TVSRNavButton, .TVTheme2 a.TVSRNavButton:link {
 	    margin: 15px 10px 2px 0;
 	}
+	div.tv_drop_panel.TVCountryCombo:after{
+		left: auto;
+		right: 24px;
+	}
 
 }
 
