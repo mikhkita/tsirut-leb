@@ -163,7 +163,7 @@ if($isDetail){
 						<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
 						<?if($isMain):?>
 							<div class="center">
-								<a href="#" class="b-btn b-btn-orange">
+								<a href="#b-popup-quiz" class="fancy b-btn b-btn-orange">
 									<p class="btn-bold">Рассчитать стоимость</p>
 									<p class="btn-regular">вашего лучшего тура</p>
 								</a>

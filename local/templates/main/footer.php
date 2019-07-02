@@ -100,8 +100,8 @@
 								<p class="btn-bold">Подписаться</p>
 							</a>
 							<div class="b-checkbox">
-								<input id="checkbox-politics-1" type="checkbox" name="politics" checked required>
-								<label for="checkbox-politics-1">
+								<input id="TVcheckbox-politics-1" type="checkbox" name="politics" checked required>
+								<label for="TVcheckbox-politics-1">
 									<div class="b-checked icon-checked"></div>
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
@@ -124,8 +124,8 @@
 								<p class="btn-bold">Подписаться</p>
 							</a>
 							<div class="b-checkbox">
-								<input id="checkbox-politics-2" type="checkbox" name="politics" checked required>
-								<label for="checkbox-politics-2">
+								<input id="TVcheckbox-politics-2" type="checkbox" name="politics" checked required>
+								<label for="TVcheckbox-politics-2">
 									<div class="b-checked icon-checked"></div>
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
@@ -154,18 +154,22 @@
 
 		<a href="#b-filter-city" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-city-popup" id="b-filter-city">
-			<h3>Город вылета</h3>
-			<ul class="b-choose-list b-popup-city-list">
-				
-			</ul>
+			<div class="b-popup-content">
+				<h3>Город вылета</h3>
+				<ul class="b-choose-list b-popup-city-list">
+					
+				</ul>
+			</div>
 		</div>
 
 		<a href="#b-filter-country" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-country-popup" id="b-filter-country">
-			<h3>Выбор страны</h3>
-			<ul class="b-choose-list b-popup-country-list">
-				
-			</ul>
+			<div class="b-popup-content">
+				<h3>Выбор страны</h3>
+				<ul class="b-choose-list b-popup-country-list">
+					
+				</ul>
+			</div>
 		</div>
 
 		<!-- <a href="#b-filter-regions" class="fancy"></a>
@@ -196,218 +200,422 @@
 
 		<a href="#b-filter-nights" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-nights-popup" id="b-filter-nights">
-			<h3>Количество ночей</h3>
-			<div class="b-from-to">
-				<div class="b-from">10</div>
-				<div class="b-separator">-</div>
-				<div class="b-to">23</div>
-			</div>
-			<table cellpadding="0" cellspacing="0" class="b-nights-table">
-				<tr>
-					<td><span>#</span>1<span>#</span></td>
-					<td><span>#</span>2<span>#</span></td>
-					<td><span>#</span>3<span>#</span></td>
-					<td><span>#</span>4<span>#</span></td>
-					<td><span>#</span>5<span>#</span></td>
-					<td><span>#</span>6<span>#</span></td>
-					<td><span>#</span>7<span>#</span></td>
-				</tr>
-				<tr>
-					<td><span>#</span>8<span>#</span></td>
-					<td><span>#</span>9<span>#</span></td>
-					<td><span>#</span>10<span>#</span></td>
-					<td><span>#</span>11<span>#</span></td>
-					<td><span>#</span>12<span>#</span></td>
-					<td><span>#</span>13<span>#</span></td>
-					<td><span>#</span>14<span>#</span></td>
-				</tr>
-				<tr>
-					<td><span>#</span>15<span>#</span></td>
-					<td><span>#</span>16<span>#</span></td>
-					<td><span>#</span>17<span>#</span></td>
-					<td><span>#</span>18<span>#</span></td>
-					<td><span>#</span>19<span>#</span></td>
-					<td><span>#</span>20<span>#</span></td>
-					<td><span>#</span>21<span>#</span></td>
-				</tr>
-				<tr>
-					<td><span>#</span>22<span>#</span></td>
-					<td><span>#</span>23<span>#</span></td>
-					<td><span>#</span>24<span>#</span></td>
-					<td><span>#</span>25<span>#</span></td>
-					<td><span>#</span>26<span>#</span></td>
-					<td><span>#</span>27<span>#</span></td>
-					<td><span>#</span>28<span>#</span></td>
-				</tr>
-			</table>
-			<div class="center">
-				<a href="#" class="b-btn b-btn-orange one-line">
-					<p class="btn-bold">Применить</p>
-				</a>
+			<div class="b-popup-content">
+				<h3>Количество ночей</h3>
+				<div class="b-from-to">
+					<div class="b-from">10</div>
+					<div class="b-separator">-</div>
+					<div class="b-to">23</div>
+				</div>
+				<table cellpadding="0" cellspacing="0" class="b-nights-table">
+					<tr>
+						<td><span>#</span>1<span>#</span></td>
+						<td><span>#</span>2<span>#</span></td>
+						<td><span>#</span>3<span>#</span></td>
+						<td><span>#</span>4<span>#</span></td>
+						<td><span>#</span>5<span>#</span></td>
+						<td><span>#</span>6<span>#</span></td>
+						<td><span>#</span>7<span>#</span></td>
+					</tr>
+					<tr>
+						<td><span>#</span>8<span>#</span></td>
+						<td><span>#</span>9<span>#</span></td>
+						<td><span>#</span>10<span>#</span></td>
+						<td><span>#</span>11<span>#</span></td>
+						<td><span>#</span>12<span>#</span></td>
+						<td><span>#</span>13<span>#</span></td>
+						<td><span>#</span>14<span>#</span></td>
+					</tr>
+					<tr>
+						<td><span>#</span>15<span>#</span></td>
+						<td><span>#</span>16<span>#</span></td>
+						<td><span>#</span>17<span>#</span></td>
+						<td><span>#</span>18<span>#</span></td>
+						<td><span>#</span>19<span>#</span></td>
+						<td><span>#</span>20<span>#</span></td>
+						<td><span>#</span>21<span>#</span></td>
+					</tr>
+					<tr>
+						<td><span>#</span>22<span>#</span></td>
+						<td><span>#</span>23<span>#</span></td>
+						<td><span>#</span>24<span>#</span></td>
+						<td><span>#</span>25<span>#</span></td>
+						<td><span>#</span>26<span>#</span></td>
+						<td><span>#</span>27<span>#</span></td>
+						<td><span>#</span>28<span>#</span></td>
+					</tr>
+				</table>
+				<div class="center">
+					<a href="#" class="b-btn b-btn-orange one-line">
+						<p class="btn-bold">Применить</p>
+					</a>
+				</div>
 			</div>
 		</div>
 
 		<a href="#b-filter-tourists" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-tourists-popup" id="b-filter-tourists">
-			<h3>Количество человек</h3>
-
-			<div class="b-select-age" style="display: none;">
-				<div class="b-select" id="child-1">
-					<select name="child-1">
-						<option value="< 2 лет">< 2 лет</option>
-						<option value="2 года" selected>2 года</option>
-						<option value="3 года">3 года</option>
-						<option value="4 года">4 года</option>
-						<option value="5 лет">5 лет</option>
-						<option value="6 лет">6 лет</option>
-						<option value="7 лет">7 лет</option>
-						<option value="8 лет">8 лет</option>
-						<option value="9 лет">9 лет</option>
-						<option value="10 лет">10 лет</option>
-						<option value="11 лет">11 лет</option>
-						<option value="12 лет">12 лет</option>
-						<option value="13 лет">13 лет</option>
-						<option value="14 лет">14 лет</option>
-						<option value="15 лет">15 лет</option>
-						<option value="16 лет">16 лет</option>
-					</select>
-				</div>
-				<div class="b-select" id="child-2">
-					<select name="child-2">
-						<option value="< 2 лет">< 2 лет</option>
-						<option value="2 года" selected>2 года</option>
-						<option value="3 года">3 года</option>
-						<option value="4 года">4 года</option>
-						<option value="5 лет">5 лет</option>
-						<option value="6 лет">6 лет</option>
-						<option value="7 лет">7 лет</option>
-						<option value="8 лет">8 лет</option>
-						<option value="9 лет">9 лет</option>
-						<option value="10 лет">10 лет</option>
-						<option value="11 лет">11 лет</option>
-						<option value="12 лет">12 лет</option>
-						<option value="13 лет">13 лет</option>
-						<option value="14 лет">14 лет</option>
-						<option value="15 лет">15 лет</option>
-						<option value="16 лет">16 лет</option>
-					</select>
-				</div>
-				<div class="b-select" id="child-3">
-					<select name="child-3">
-						<option value="< 2 лет">< 2 лет</option>
-						<option value="2 года" selected>2 года</option>
-						<option value="3 года">3 года</option>
-						<option value="4 года">4 года</option>
-						<option value="5 лет">5 лет</option>
-						<option value="6 лет">6 лет</option>
-						<option value="7 лет">7 лет</option>
-						<option value="8 лет">8 лет</option>
-						<option value="9 лет">9 лет</option>
-						<option value="10 лет">10 лет</option>
-						<option value="11 лет">11 лет</option>
-						<option value="12 лет">12 лет</option>
-						<option value="13 лет">13 лет</option>
-						<option value="14 лет">14 лет</option>
-						<option value="15 лет">15 лет</option>
-						<option value="16 лет">16 лет</option>
-					</select>
+			<div class="b-popup-content">
+				<h3>Количество человек</h3>
+				<div class="b-select-age" style="display: none;">
+					<div class="b-select" id="child-1">
+						<select name="child-1">
+							<option value="< 2 лет">< 2 лет</option>
+							<option value="2 года" selected>2 года</option>
+							<option value="3 года">3 года</option>
+							<option value="4 года">4 года</option>
+							<option value="5 лет">5 лет</option>
+							<option value="6 лет">6 лет</option>
+							<option value="7 лет">7 лет</option>
+							<option value="8 лет">8 лет</option>
+							<option value="9 лет">9 лет</option>
+							<option value="10 лет">10 лет</option>
+							<option value="11 лет">11 лет</option>
+							<option value="12 лет">12 лет</option>
+							<option value="13 лет">13 лет</option>
+							<option value="14 лет">14 лет</option>
+							<option value="15 лет">15 лет</option>
+							<option value="16 лет">16 лет</option>
+						</select>
+					</div>
+					<div class="b-select" id="child-2">
+						<select name="child-2">
+							<option value="< 2 лет">< 2 лет</option>
+							<option value="2 года" selected>2 года</option>
+							<option value="3 года">3 года</option>
+							<option value="4 года">4 года</option>
+							<option value="5 лет">5 лет</option>
+							<option value="6 лет">6 лет</option>
+							<option value="7 лет">7 лет</option>
+							<option value="8 лет">8 лет</option>
+							<option value="9 лет">9 лет</option>
+							<option value="10 лет">10 лет</option>
+							<option value="11 лет">11 лет</option>
+							<option value="12 лет">12 лет</option>
+							<option value="13 лет">13 лет</option>
+							<option value="14 лет">14 лет</option>
+							<option value="15 лет">15 лет</option>
+							<option value="16 лет">16 лет</option>
+						</select>
+					</div>
+					<div class="b-select" id="child-3">
+						<select name="child-3">
+							<option value="< 2 лет">< 2 лет</option>
+							<option value="2 года" selected>2 года</option>
+							<option value="3 года">3 года</option>
+							<option value="4 года">4 года</option>
+							<option value="5 лет">5 лет</option>
+							<option value="6 лет">6 лет</option>
+							<option value="7 лет">7 лет</option>
+							<option value="8 лет">8 лет</option>
+							<option value="9 лет">9 лет</option>
+							<option value="10 лет">10 лет</option>
+							<option value="11 лет">11 лет</option>
+							<option value="12 лет">12 лет</option>
+							<option value="13 лет">13 лет</option>
+							<option value="14 лет">14 лет</option>
+							<option value="15 лет">15 лет</option>
+							<option value="16 лет">16 лет</option>
+						</select>
+					</div>
 				</div>
 			</div>
-			
 		</div>
 
 		<a href="#b-filter-dates" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-dates-popup" id="b-filter-dates">
-			<h3>Даты вылета</h3>
-			<div class="b-from-to">
-				<div class="b-from">20 января</div>
-				<div class="b-separator">-</div>
-				<div class="b-to">31 января</div>
+			<div class="b-popup-content">
+				<h3>Даты вылета</h3>
+				<div class="b-from-to">
+					<div class="b-from">20 января</div>
+					<div class="b-separator">-</div>
+					<div class="b-to">31 января</div>
+				</div>
+				<div class="b-for-datepicker">
+					
+				</div>
+				<div class="center">
+					<a href="#" class="b-btn b-btn-orange one-line">
+						<p class="btn-bold">Применить</p>
+					</a>
+				</div>
+				<!-- <div class="b-btn-cont"><a href="#" class="b-btn b-blue-btn b-submit-btn">Применить</a></div> -->
 			</div>
-			<div class="b-for-datepicker">
-				
-			</div>
-			<div class="center">
-				<a href="#" class="b-btn b-btn-orange one-line">
-					<p class="btn-bold">Применить</p>
-				</a>
-			</div>
-			<!-- <div class="b-btn-cont"><a href="#" class="b-btn b-blue-btn b-submit-btn">Применить</a></div> -->
 		</div>
 
 		<a href="#b-filter-rating" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-rating-popup" id="b-filter-rating">
-			<h3>Рейтинг отеля</h3>
-			<ul class="b-choose-list b-popup-rating-list">
-				
-			</ul>
+			<div class="b-popup-content">
+				<h3>Рейтинг отеля</h3>
+				<ul class="b-choose-list b-popup-rating-list">
+					
+				</ul>
+			</div>
 		</div>
 
 		<a href="#b-filter-meal" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-meal-popup" id="b-filter-meal">
-			<h3>Тип питания</h3>
-			<ul class="b-choose-list b-popup-meal-list">
-				
-			</ul>
+			<div class="b-popup-content">
+				<h3>Тип питания</h3>
+				<ul class="b-choose-list b-popup-meal-list">
+					
+				</ul>
+			</div>
 		</div>
 
 		<a href="#b-filter-resort" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-resort-popup" id="b-filter-resort">
-			<h3>Курорт/отель</h3>
-			
+			<div class="b-popup-content">
+				<h3>Курорт/отель</h3>
+
+			</div>
 		</div>
 
 		<div class="b-popup" id="b-popup-call">
-			<h3>Заказ обратного звонка</h3>
-			
+			<div class="b-popup-content">
+				<h3>Заказ обратного звонка</h3>
+
+			</div>
 		</div>
 
 		<div class="b-popup" id="b-popup-filter-mobile">
-			<div class="TVSideFilterForm TVTheme2">
-				<div class="defaultTVFilterForm"></div>
+				<div class="b-popup-content">
+				<div class="TVSideFilterForm TVTheme2">
+					<div class="defaultTVFilterForm"></div>
+				</div>
 			</div>
 		</div>
 
 		<div class="b-popup" id="b-popup-review">
-			<div class="center">
-				<a href="#" class="b-btn b-btn-blue one-line" onclick="$.fancybox.close(); return false;">
-					<p class="btn-bold">Закрыть</p>
-				</a>
+			<div class="b-popup-content">
+				<div class="center">
+					<a href="#" class="b-btn b-btn-blue one-line" onclick="$.fancybox.close(); return false;">
+						<p class="btn-bold">Закрыть</p>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="b-popup b-popup-quiz" id="b-popup-quiz">
+			<div class="b-popup-head">
+				<div class="b-popup-head-gradient"></div>
+				<div class="b-popup-head-white"></div>
+			</div>
+			<div class="b-popup-content">
+				<form action="quiz.php" method="POST">
+					<h2 class="b-title white">Рассчитайте стоимость<br> вашего путешествия</h2>
+					<div class="b-quiz b-quiz-screen-1">
+						<h3>В какой стране вы хотите отдохнуть?</h3>
+						<ul class="b-quiz-list b-quiz-months clearfix">
+							<li>
+								<input id="country-1" type="radio" name="country" value="Турция">
+								<label for="country-1">Турция</label>
+							</li>
+							<li>
+								<input id="country-2" type="radio" name="country" value="Таиланд">
+								<label for="country-2">Таиланд</label>
+							</li>
+							<li>
+								<input id="country-3" type="radio" name="country" value="Вьетнам">
+								<label for="country-3">Вьетнам</label>
+							</li>
+							<li>
+								<input id="country-4" type="radio" name="country" value="Индия">
+								<label for="country-4">Индия</label>
+							</li>
+							<li>
+								<input id="country-5" type="radio" name="country" value="Китай">
+								<label for="country-5">Китай</label>
+							</li>
+							<li>
+								<input id="country-6" type="radio" name="country" value="ОАЭ">
+								<label for="country-6">ОАЭ</label>
+							</li>
+							<li>
+								<input id="country-7" type="radio" name="country" value="Кипр">
+								<label for="country-7">Кипр</label>
+							</li>
+							<li>
+								<input id="country-8" type="radio" name="country" value="Греция">
+								<label for="country-8">Греция</label>
+							</li>
+							<li>
+								<input id="country-9" type="radio" name="country" value="other">
+								<label for="country-9">Другая страна</label>
+							</li>
+						</ul>
+						<div class="center b-input b-quiz-other-country">
+							<input type="text" name="country-name" placeholder="Введите название страны">
+						</div>
+						<div class="center">
+							 <a href="#" class="b-btn b-btn-orange one-line b-btn-next" data-next=".b-quiz-screen-2">
+								<p class="btn-bold">Дальше</p>
+							 </a>
+							<p class="steps">Осталось всего 4 шага</p>
+						</div>
+					</div>
+					<div class="b-quiz b-quiz-screen-2">
+						<h3>Когда вы планируете свой отпуск?</h3>
+						<ul class="b-quiz-list b-quiz-months clearfix">
+							<?
+							$months = array(
+								"1"=>"Январь",
+								"2"=>"Февраль",
+								"3"=>"Март",
+								"4"=>"Апрель",
+								"5"=>"Май",
+								"6"=>"Июнь",
+								"7"=>"Июль",
+								"8"=>"Август",
+								"9"=>"Сентябрь",
+								"10"=>"Октябрь",
+								"11"=>"Ноябрь",
+								"12"=>"Декабрь"
+							);
+							$curMonth = date('n');
+							?>
+							<?for ($i = 0; $i < 6; $i++):?>
+							<?
+								$validMonth = ($curMonth + $i > 12) ? $curMonth + $i - 12 : $curMonth + $i;
+								$m = $months[$validMonth];
+								if($i == 5){
+									$m = "Позднее";
+								}
+							?>
+								<li>
+									<input id="month-<?=$i?>" type="radio" name="month" value="<?=$m?>">
+									<label for="month-<?=$i?>"><?=$m?></label>
+								</li>
+							<?endfor;?>
+						</ul>
+						<div class="center">
+							 <a href="#" class="b-btn b-btn-orange one-line b-btn-next" data-next=".b-quiz-screen-3">
+								<p class="btn-bold">Дальше</p>
+							 </a>
+							<p class="steps">Осталось всего 3 шага</p>
+						</div>
+					</div>
+					<div class="b-quiz b-quiz-screen-3">
+						<h3>Сколько отдыхающих взрослых?</h3>
+						<ul class="b-quiz-list b-quiz-counts clearfix">
+							<li>
+								<input id="adults-1" type="radio" name="adults" value="1" checked>
+								<label for="adults-1">1</label>
+							</li>
+							<li>
+								<input id="adults-2" type="radio" name="adults" value="2">
+								<label for="adults-2">2</label>
+							</li>
+							<li>
+								<input id="adults-3" type="radio" name="adults" value="3">
+								<label for="adults-3">3</label>
+							</li>
+							<li>
+								<input id="adults-4" type="radio" name="adults" value="4">
+								<label for="adults-4">4</label>
+							</li>
+							<li>
+								<input id="adults-5" type="radio" name="adults" value="5">
+								<label for="adults-5">5</label>
+							</li>
+						</ul>
+						<h3>Сколько детей?</h3>
+						<ul class="b-quiz-list b-quiz-counts clearfix">
+							<li>
+								<input id="children-0" type="radio" name="children" value="0" checked>
+								<label for="children-0">0</label>
+							</li>
+							<li>
+								<input id="children-1" type="radio" name="children" value="1">
+								<label for="children-1">1</label>
+							</li>
+							<li>
+								<input id="children-2" type="radio" name="children" value="2">
+								<label for="children-2">2</label>
+							</li>
+							<li>
+								<input id="children-3" type="radio" name="children" value="3">
+								<label for="children-3">3</label>
+							</li>
+							<li>
+								<input id="children-4" type="radio" name="children" value="4">
+								<label for="children-4">4</label>
+							</li>
+						</ul>
+						<div class="center">
+							 <a href="#" class="b-btn b-btn-orange one-line b-btn-next" data-next=".b-quiz-screen-4">
+								<p class="btn-bold">Дальше</p>
+							 </a>
+							<p class="steps">Осталось всего 2 шага</p>
+						</div>
+					</div>
+					<div class="b-quiz b-quiz-screen-4">
+						<h3>Сколько ночей хотели бы отдохнуть?</h3>
+						<ul class="b-quiz-list b-quiz-months clearfix">
+							<li>
+								<input id="night-1" type="radio" name="night" value="5–7 ночей">
+								<label for="night-1">5–7 ночей</label>
+							</li>
+							<li>
+								<input id="night-2" type="radio" name="night" value="8–10 ночей">
+								<label for="night-2">8–10 ночей</label>
+							</li>
+							<li>
+								<input id="night-3" type="radio" name="night" value="11–13 ночей">
+								<label for="night-3">11–13 ночей</label>
+							</li>
+							<li>
+								<input id="night-4" type="radio" name="night" value="14–16 ночей">
+								<label for="night-4">14–16 ночей</label>
+							</li>
+							<li>
+								<input id="night-5" type="radio" name="night" value="Более 16 ночей">
+								<label for="night-5">Более 16 ночей</label>
+							</li>
+							<li>
+								<input id="night-6" type="radio" name="night" value="Не важно">
+								<label for="night-6">Не важно</label>
+							</li>
+						</ul>
+						<div class="center">
+							 <a href="#" class="b-btn b-btn-orange one-line b-btn-next" data-next=".b-quiz-screen-5">
+								<p class="btn-bold">Дальше</p>
+							 </a>
+							<p class="steps">Осталось всего 1 шага</p>
+						</div>
+					</div>
+					<div class="b-quiz b-quiz-screen-5">
+						<h3>Остался всего один шаг!</h3>
+						<p>Оставьте заявку нашему менеджеру, он рассчитает стоимость тура и перезвонит вам в ближайшее время</p>
+						<div class="center">
+							<input type="text" name="name" placeholder="Вашe имя" required>
+							<input type="text" name="phone" placeholder="Ваш телефон" required>
+							<input type="text" name="email" placeholder="Ваш e-mail" required>
+							<input type="text" name="MAIL" required placeholder="Ваш e-mail">
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
-		<div class="b-popup" id="b-popup-1">
-			<h3>Оставьте заявку</h3>
-			<h4>и наши специалисты<br>свяжутся с Вами в ближайшее время</h4>
-			<form action="kitsend.php" data-goal="CALLBACK" method="POST" id="b-form-1">
-				<div class="b-popup-form">
-					<label for="name">Введите Ваше имя</label>
-					<input type="text" id="name" name="name" required/>
-					<label for="tel">Введите Ваш номер телефона</label>
-					<input type="text" id="tel" name="phone" required/>
-					<label for="tel">Введите Ваш E-mail</label>
-					<input type="text" id="tel" name="email" required/>
-					<input type="hidden" name="subject" value="Заказ"/>
-					<input type="submit" style="display:none;">
-					<a href="#" class="b-btn b-blue-btn ajax">Заказать</a>
-					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
-				</div>
-			</form>
-		</div>
 		<div class="b-thanks b-popup" id="b-popup-success">
-			<h3>Спасибо!</h3>
-			<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
-			<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
-				<p class="btn-bold">Закрыть</p>
-			</a>
+			<div class="b-popup-content">
+				<h3>Спасибо!</h3>
+				<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
+				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
+					<p class="btn-bold">Закрыть</p>
+				</a>
+			</div>
 		</div>
 		<div class="b-thanks b-popup" id="b-popup-error">
-			<h3>Ошибка отправки!</h3>
-			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
-			<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
-				<p class="btn-bold">Закрыть</p>
-			</a>
+			<div class="b-popup-content">
+				<h3>Ошибка отправки!</h3>
+				<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
+				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
+					<p class="btn-bold">Закрыть</p>
+				</a>
+			</div>
 		</div>
 	</div>
 

@@ -468,8 +468,33 @@ $(document).ready(function(){
 
     $('.read-more').on('click', function(){
         $("#b-popup-review").find(".b-review-cont").remove();
-        $(this).parent().children(".b-review-cont").clone().prependTo("#b-popup-review");
+        $(this).parent().children(".b-review-cont").clone().prependTo("#b-popup-review .b-popup-content");
     });
+
+    $(".b-quiz").hide();
+    $(".b-quiz-screen-1").show();
+    $(".b-btn-next").on('click', function(){
+        var $next = $($(this).attr("data-next"));
+        $(this).parents(".b-quiz").hide();
+        $next.show();
+    });
+
+    $(".b-quiz-other-country").hide();
+    $("input[name='country']").on('change', function(){
+        if($(this).val() == "other"){
+            $(".b-quiz-other-country").show();
+        }else{
+            $(".b-quiz-other-country").hide();
+        }
+    });
+
+    // $("input[name='country-name']").on('change', function(){
+    //     if(!$(this).val()){
+    //         $(".b-quiz-other-country").show();
+    //     }else{
+    //         $(".b-quiz-other-country").hide();
+    //     }
+    // });
 
     // =========Турвизор=========
 
@@ -822,20 +847,21 @@ $(document).ready(function(){
         var waitPopup = setInterval(function(){
             if($(".TVModalContainer .TVCalendarWindow").length){
                 $(".TVClosePopup").click();
-                setTimeout(function() {
-                    queueClick--;
-                    if(queueClick == 0){
-                        $("body").removeClass("TVHidePopup");
-                    }
-                }, 400);
                 clearInterval(waitPopup);
             }
         }, 10);
+        setTimeout(function() {
+            queueClick--;
+            clearInterval(waitPopup);
+            if(queueClick == 0){
+                $("body").removeClass("TVHidePopup");
+            }
+        }, 1000);
     });
 
-    // $("body").on("click", ".TVTem2PriceBlock", function(){
-    //     $("body").removeClass("TVHidePopup");
-    // });
+    $("body").on("click", ".TVTem2Buttons *", function(){
+        $("body").removeClass("TVHidePopup");
+    });
 
     $("body").on("click", ".TVCalDiagramItem", function(){
         if($(this).find(".TVCalDiagramNone").length == 0){
