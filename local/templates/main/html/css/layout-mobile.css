@@ -476,9 +476,61 @@ h2.b-title{
 		display: none;
 	}
 
-div.b-popup {
-    padding: 28px 32px;
+.b-popup .fancybox-close-small {
+    right: 16px;
+    top: 16px;
 }
+.b-popup-content {
+    padding: 24px 32px 32px 32px;
+}
+.b-popup h2.b-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 24px;
+}
+.b-quiz h3 {
+    margin-bottom: 24px;
+}
+.b-popup-head{
+	height: 255px;
+}
+.b-input-country-other {
+    margin: 6px 0 12px 0;
+}
+.b-popup-quiz .b-btn-next {
+    margin-top: 10px;
+}
+.b-quiz-list{
+
+}
+	.b-quiz-list label{
+		margin-right: 16px;
+		margin-bottom: 16px;
+	}
+	.b-quiz-months{
+
+	}
+		.b-quiz-months label{
+			width: calc(50% - 8px);
+		}
+		.b-quiz-months li:nth-child(3n) label{
+			margin-right: 16px;
+		}
+		.b-quiz-months li:nth-child(2n) label{
+			margin-right: 0;
+		}
+	.b-quiz-counts{
+
+	}
+		.b-quiz-counts label{
+			width: calc(100%/5 - 13px);
+		}
+		.b-quiz-counts li:nth-child(5n) label{
+			margin-right: 0;
+		}
+	.b-quiz-adults{
+		margin-bottom: 16px;
+	}
 
 .b-categories {
     margin-bottom: 50px;
@@ -601,6 +653,49 @@ div.b-popup {
 .b-tourvisor-header {
     margin-top: -70px;
 }
+.b-quiz-send .b-btn .btn-regular{
+	font-size: 16px;
+	line-height: 16px;
+	margin-top: 4px;
+}
+.b-contacts-top {
+    padding: 20px 24px;
+    margin: 0 auto 40px auto;
+}
+	.b-contacts-left{
+		float: none;
+		padding-right: 0;
+		width: 100%;
+	}
+		.b-contacts-item{
+			display: inline-block;
+			vertical-align: top;
+			width: 49%;
+			padding-right: 24px;
+			margin-bottom: 24px;
+		}
+			.b-contacts-item h3 {
+			    margin-bottom: 10px;
+			}
+		.b-contacts-item.address,
+		.b-contacts-item.work,
+		.b-contacts-item.requisites{
+			max-width: none;
+		}
+		.b-contacts-item.requisites{
+			width: 100%;
+		}
+	.b-contacts-right{
+		float: none;
+		width: 100%;
+		height: 450px;
+		margin-top: 32px;
+	}
+
+.b-contacts-slider img {
+    width: 500px;
+    height: 312px;
+}
 
 /*===========*/
 
@@ -613,9 +708,8 @@ div.b-popup {
 
 /*===========*/
 
-.fancybox-slide div.b-popup{
-	max-width: calc(100% - 48px);
-	width: 720px;
+.fancybox-slide .b-popup{
+	width: calc(100% - 48px);
 }
 .b-choose-list li{
 	width: 50%;
@@ -1252,6 +1346,19 @@ div.TVCalDirectOnly {
 		margin-right: 16px;
 	}
 
+	.b-contacts-item {
+	    width: 100%;
+	    padding-right: 0;
+	}
+	.b-contacts-slider img {
+	    width: 300px;
+	    height: 188px;
+	    margin: 0 8px;
+	}
+	.b-contacts-top {
+	    margin: 0 auto 20px auto;
+	}
+
 	/*====*/
 
 	.b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton,
@@ -1508,6 +1615,60 @@ div.TVCalDirectOnly {
 	.b-resorts-item a {
 	    font-size: 18px;
 	    line-height: 26px;
+	}
+
+	.fancybox-slide .b-popup{
+		width: calc(100% - 32px);
+	}
+	.b-popup-content {
+	    padding: 24px 16px;
+	}
+	.b-popup-head {
+	    height: 225px;
+	}
+	.b-popup-head-white {
+	    height: 160px;
+	}
+	.b-quiz-months{
+
+	}
+		.b-quiz-months label{
+			width: 100%;
+		}
+		.b-quiz-months li:nth-child(3n) label{
+			margin-right: 0;
+		}
+		.b-quiz-months li:nth-child(2n) label{
+			margin-right: 0;
+		}
+	.b-popup-quiz input[type="text"]{
+		width: 100%;
+	}
+	.b-quiz h4{
+		text-align: left;
+		font-size: 16px;
+    	line-height: 24px;
+    	margin: 0 auto 20px auto;
+	}
+	.b-quiz-send .b-btn {
+	    margin: 10px 0 16px 0;
+	}
+	.b-popup h2.b-title{
+		text-align: left;
+		padding-right: 34px;
+		font-size: 28px;
+    	line-height: 36px;
+		margin-bottom: 16px;
+	}
+	.b-quiz h3{
+    	text-align: left;
+    	margin-bottom: 16px;
+	}
+	.b-quiz-adults {
+	    margin-bottom: 6px;
+	}
+	.b-quiz-error .visible-label {
+	    top: -12px;
 	}
 
 	/*===============*/
@@ -1807,6 +1968,23 @@ div.TVCalDirectOnly {
 		margin-bottom: 16px;
 	}
 
+	.b-quiz-counts{
+
+	}
+		.b-quiz-counts label{
+			width: calc(100%/3 - 11px);
+		}
+		.b-quiz-counts li:nth-child(3n) label{
+			margin-right: 0;
+		}
+		.b-quiz-counts li:nth-child(5n) label{
+			margin-right: 16px;
+		}
+	.b-popup .fancybox-close-small {
+	    right: 6px;
+	    top: 6px;
+	}
+
 	div.TVDTCalendar .TVCalendarPrice {
 	    width: 100px;
 	}
@@ -1848,6 +2026,9 @@ div.TVCalDirectOnly {
 	.b-head-inner .b-head-white {
 	    bottom: -2px;
 	    height: 200px;
+	}
+	.b-contacts-right {
+	    height: 370px;
 	}
 	/*=====*/
 
@@ -2017,8 +2198,9 @@ div.TVCalDirectOnly {
 	    bottom: 33px;
 	    right: 20px;
 	}
-	div.b-popup {
-	    padding: 24px;
+	.b-contacts-slider img {
+	    width: 260px;
+	    height: 162px;
 	}
 
 	/*======*/

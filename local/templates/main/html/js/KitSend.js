@@ -56,7 +56,20 @@ $(document).ready(function(){
 				email: 'email',
 				phone: 'customPhone'
 			},
-			errorElement : "span"
+			errorElement : "span",
+			messages:{
+	            "country": "Выберите вариант",
+	            "month": "Выберите вариант",
+	            "adults": "Выберите вариант",
+	            "children": "Выберите вариант",
+	            "night": "Выберите вариант",
+	        },
+			errorPlacement: function(error, element) {
+	            if ( element.is(":radio") ){
+	                error.addClass("visible-label");
+	                error.appendTo('.b-quiz-error');
+	            }
+	        }
 		});
 		if( $(this).find("input[name=phone]").length ){
 			$(this).find("input[name=phone]").each(function(){

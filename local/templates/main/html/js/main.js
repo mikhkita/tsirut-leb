@@ -357,7 +357,7 @@ $(document).ready(function(){
 
     // ====================
 
-    $('.b-country-slider').slick({
+    $(".b-country-slider").slick({
         dots: true,
         arrows: false,
         infinite: true,
@@ -371,7 +371,7 @@ $(document).ready(function(){
     var nowShow = 0,
         activeCategory = "";
 
-    if($('.b-categories .b-country-list').length){
+    if($(".b-categories .b-country-list").length){
         var grid = $('.b-categories .b-country-list').isotope({
             itemSelector: '.b-country-item',
             layoutMode: 'fitRows'
@@ -466,7 +466,7 @@ $(document).ready(function(){
         disable_search_threshold: 10000
     });
 
-    $('.read-more').on('click', function(){
+    $(".read-more").on('click', function(){
         $("#b-popup-review").find(".b-review-cont").remove();
         $(this).parent().children(".b-review-cont").clone().prependTo("#b-popup-review .b-popup-content");
     });
@@ -474,27 +474,43 @@ $(document).ready(function(){
     $(".b-quiz").hide();
     $(".b-quiz-screen-1").show();
     $(".b-btn-next").on('click', function(){
-        var $next = $($(this).attr("data-next"));
-        $(this).parents(".b-quiz").hide();
-        $next.show();
+        $("#b-quiz-form").valid();
+        if ($(this).parents(".b-quiz").find("input.error").length == 0) {
+            var $next = $($(this).attr("data-next"));
+            $(this).parents(".b-quiz").hide();
+            $next.show();
+        }
     });
-
     $(".b-quiz-other-country").hide();
     $("input[name='country']").on('change', function(){
         if($(this).val() == "other"){
             $(".b-quiz-other-country").show();
+            $(".b-quiz-other-country input").prop("required", true);
         }else{
             $(".b-quiz-other-country").hide();
+            $(".b-quiz-other-country input").removeClass("error").prop("required", false);
+        }
+    });
+    $("#b-quiz-form").on('submit', function(){
+        if ($(this).find("input.error").length == 0) {
+            $(".b-quiz").hide();
+            $(".b-quiz-screen-1").show();
         }
     });
 
-    // $("input[name='country-name']").on('change', function(){
-    //     if(!$(this).val()){
-    //         $(".b-quiz-other-country").show();
-    //     }else{
-    //         $(".b-quiz-other-country").hide();
-    //     }
-    // });
+    $(".b-contacts-slider").slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        speed: 600,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
 
     // =========Турвизор=========
 
@@ -1226,6 +1242,13 @@ $(document).ready(function(){
 	// });
 
 });
+
+function yandexMapInit (ymaps) {
+    var myMap = new ymaps.Map("b-contacts-map", {
+        center: [50.633, 36.571682],
+        zoom: 16
+    });
+}
 
 function chooseCity(col, row, item){
     $(".TVLocationPanel .TVTableListBox .TVCol").eq(col).find(".TVTableBoxItem").eq(row).find(".TVListBoxItem").eq(item).click();

@@ -402,13 +402,14 @@
 				<div class="b-popup-head-white"></div>
 			</div>
 			<div class="b-popup-content">
-				<form action="quiz.php" method="POST">
+				<form id="b-quiz-form" action="quiz.php" method="POST">
 					<h2 class="b-title white">Рассчитайте стоимость<br> вашего путешествия</h2>
 					<div class="b-quiz b-quiz-screen-1">
 						<h3>В какой стране вы хотите отдохнуть?</h3>
+						<div class="b-quiz-error"></div>
 						<ul class="b-quiz-list b-quiz-months clearfix">
 							<li>
-								<input id="country-1" type="radio" name="country" value="Турция">
+								<input id="country-1" type="radio" name="country" value="Турция" required>
 								<label for="country-1">Турция</label>
 							</li>
 							<li>
@@ -445,7 +446,7 @@
 							</li>
 						</ul>
 						<div class="center b-input b-quiz-other-country">
-							<input type="text" name="country-name" placeholder="Введите название страны">
+							<input class="b-input-country-other" type="text" name="country-other" placeholder="Введите название страны">
 						</div>
 						<div class="center">
 							 <a href="#" class="b-btn b-btn-orange one-line b-btn-next" data-next=".b-quiz-screen-2">
@@ -456,6 +457,7 @@
 					</div>
 					<div class="b-quiz b-quiz-screen-2">
 						<h3>Когда вы планируете свой отпуск?</h3>
+						<div class="b-quiz-error"></div>
 						<ul class="b-quiz-list b-quiz-months clearfix">
 							<?
 							$months = array(
@@ -483,7 +485,7 @@
 								}
 							?>
 								<li>
-									<input id="month-<?=$i?>" type="radio" name="month" value="<?=$m?>">
+									<input id="month-<?=$i?>" type="radio" name="month" value="<?=$m?>" <?if($i == 0) echo 'required'?>>
 									<label for="month-<?=$i?>"><?=$m?></label>
 								</li>
 							<?endfor;?>
@@ -497,9 +499,10 @@
 					</div>
 					<div class="b-quiz b-quiz-screen-3">
 						<h3>Сколько отдыхающих взрослых?</h3>
-						<ul class="b-quiz-list b-quiz-counts clearfix">
+						<div class="b-quiz-error"></div>
+						<ul class="b-quiz-list b-quiz-counts b-quiz-adults clearfix">
 							<li>
-								<input id="adults-1" type="radio" name="adults" value="1" checked>
+								<input id="adults-1" type="radio" name="adults" value="1" required checked>
 								<label for="adults-1">1</label>
 							</li>
 							<li>
@@ -522,7 +525,7 @@
 						<h3>Сколько детей?</h3>
 						<ul class="b-quiz-list b-quiz-counts clearfix">
 							<li>
-								<input id="children-0" type="radio" name="children" value="0" checked>
+								<input id="children-0" type="radio" name="children" value="0" required checked>
 								<label for="children-0">0</label>
 							</li>
 							<li>
@@ -551,9 +554,10 @@
 					</div>
 					<div class="b-quiz b-quiz-screen-4">
 						<h3>Сколько ночей хотели бы отдохнуть?</h3>
+						<div class="b-quiz-error"></div>
 						<ul class="b-quiz-list b-quiz-months clearfix">
 							<li>
-								<input id="night-1" type="radio" name="night" value="5–7 ночей">
+								<input id="night-1" type="radio" name="night" value="5–7 ночей" required>
 								<label for="night-1">5–7 ночей</label>
 							</li>
 							<li>
@@ -586,12 +590,24 @@
 					</div>
 					<div class="b-quiz b-quiz-screen-5">
 						<h3>Остался всего один шаг!</h3>
-						<p>Оставьте заявку нашему менеджеру, он рассчитает стоимость тура и перезвонит вам в ближайшее время</p>
-						<div class="center">
+						<h4>Оставьте заявку нашему менеджеру, он рассчитает стоимость тура и перезвонит вам в ближайшее время</h4>
+						<div class="center b-quiz-send">
 							<input type="text" name="name" placeholder="Вашe имя" required>
 							<input type="text" name="phone" placeholder="Ваш телефон" required>
 							<input type="text" name="email" placeholder="Ваш e-mail" required>
 							<input type="text" name="MAIL" required placeholder="Ваш e-mail">
+							<a href="#" class="b-btn b-btn-orange b-quiz-submit ajax">
+								<p class="btn-bold">Подберите мне тур</p>
+								<p class="btn-regular">Хочу довериться профессионалам</p>
+							</a>
+							<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+							<div class="b-checkbox">
+ 								<input id="personal-quiz" type="checkbox" name="personal" checked required> 
+ 								<label for="personal-quiz">
+									<div class="b-checked icon-checked"></div>
+									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+ 								</label>
+							</div>
 						</div>
 					</div>
 				</form>

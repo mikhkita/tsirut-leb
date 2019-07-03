@@ -18,6 +18,11 @@ $GLOBALS["depends"] = array(
 			SITE_TEMPLATE_PATH."/html/js/isotope.pkgd.min.js"
 		)
 	),
+	"contacts" => array(
+		"js" => array(
+			"https://api-maps.yandex.ru/2.1.41/?load=package.full&amp;lang=ru-RU&onload=yandexMapInit"
+		)
+	)
 );
 if($isDetail){
 	//получить страну (раздел)
