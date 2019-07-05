@@ -3,7 +3,14 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "Аквамарин");
 $APPLICATION->SetPageProperty("title", "Аквамарин");
 $APPLICATION->SetTitle("Аквамарин");
-?><div class="b-statistics">
+?>
+<div class="center">
+	<a href="#b-popup-quiz" class="fancy b-btn b-btn-orange b-btn-quiz">
+		<p class="btn-bold">Рассчитать стоимость</p>
+		<p class="btn-regular">вашего лучшего тура</p>
+	</a>
+</div>
+<div class="b-statistics">
 	<div class="b-block clearfix">
 		<div class="b-statistics-list b-statistics-slider mobile-slider">
 			<div class="b-statistics-item statistics-1">
@@ -317,13 +324,14 @@ $APPLICATION->SetTitle("Аквамарин");
 						</p>
  					</a>
 					<div class="b-checkbox">
- 						<input id="checkbox-politics-1" type="checkbox" name="politics" checked="" required=""> <label for="checkbox-politics-1">
-						<div class="b-checked icon-checked">
-						</div>
-						<p>
-							 Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a>
-						</p>
- </label>
+ 						<input id="checkbox-politics-1" type="checkbox" name="politics" checked="" required=""> 
+ 						<label for="checkbox-politics-1">
+							<div class="b-checked icon-checked">
+							</div>
+							<p>
+								 Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a>
+							</p>
+ 						</label>
 					</div>
 				</form>
 			</div>
@@ -355,64 +363,70 @@ $APPLICATION->SetTitle("Аквамарин");
 <div class="b b-articles">
 	<div class="b-block">
 		<h2 class="b-title">Последние статьи</h2>
-		<div class="b-article-list b-article-slider mobile-slider detail-wide">
- <a href="#" class="b-article-item">
-			<div class="b-article-top">
-				<div class="b-article-img">
-					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-1.jpg">
-				</div>
-				<div class="blackout">
-				</div>
-				<h3>Отдых на Сейшелах - хорошие отели для отдыха</h3>
-			</div>
-			<p>
-				 Сейшельские острова – сказочные живописные уголки Индийского океана, идеальные для романти-ческого отдыха вдвоем. ...
-			</p>
- </a><a href="#" class="b-article-item">
-			<div class="b-article-top">
-				<div class="b-article-img">
-					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-2.jpg">
-				</div>
-				<div class="blackout">
-				</div>
-				<h3>Худшие отели Турции или как испортить себе отдых</h3>
-			</div>
-			<p>
-				 Выбирать отель нужно правильно. Заветные цифры 4* или 5* на вывеске отеля не означают, что отдых пройдет хорошо и с приятными впечатлениями. Выбирать ...
-			</p>
- </a><a href="#" class="b-article-item">
-			<div class="b-article-top">
-				<div class="b-article-img">
-					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-3.jpg">
-				</div>
-				<div class="blackout">
-				</div>
-				<h3>Города и курорты Чехии</h3>
-			</div>
-			<p>
-				 После приобретения тура в Чехию из Белгорода, следует заблаговременно определить какие именно достоприме-чательности, города и курорты …
-			</p>
- </a><a href="#" class="b-article-item">
-			<div class="b-article-top">
-				<div class="b-article-img">
-					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/article-4.jpg">
-				</div>
-				<div class="blackout">
-				</div>
-				<h3>Какой курорт ОАЭ выбрать для отдыха</h3>
-			</div>
-			<p>
-				 Выбирая отдых в ОАЭ - это прекрасная возможность познакомиться с историей динамично развивающегося государства, а также получить массу удовольствий и …
-			</p>
- </a>
-		</div>
-		<div class="center">
- <a href="#" class="b-btn b-btn-blue one-line">
-			<p class="btn-bold">
-				 Все статьи
-			</p>
- </a>
-		</div>
+<?$APPLICATION->IncludeComponent("bitrix:news.list", "articles", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+		"AJAX_MODE" => "N",	// Включить режим AJAX
+		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
+		"DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
+		"DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
+		"DISPLAY_DATE" => "Y",	// Выводить дату элемента
+		"DISPLAY_NAME" => "Y",	// Выводить название элемента
+		"DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
+		"DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
+		"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+		"FIELD_CODE" => array(	// Поля
+			0 => "ID",
+			1 => "NAME",
+			2 => "PREVIEW_TEXT",
+			3 => "PREVIEW_PICTURE",
+			4 => "",
+		),
+		"FILTER_NAME" => "",	// Фильтр
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
+		"IBLOCK_ID" => "6",	// Код информационного блока
+		"IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
+		"INCLUDE_SUBSECTIONS" => "N",	// Показывать элементы подразделов раздела
+		"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
+		"NEWS_COUNT" => "4",	// Количество новостей на странице
+		"PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
+		"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+		"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+		"PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+		"PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
+		"PAGER_TITLE" => "Новости",	// Название категорий
+		"PARENT_SECTION" => "",	// ID раздела
+		"PARENT_SECTION_CODE" => "",	// Код раздела
+		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
+		"PROPERTY_CODE" => array(	// Свойства
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "Y",	// Устанавливать заголовок окна браузера
+		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
+		"SET_META_DESCRIPTION" => "N",	// Устанавливать описание страницы
+		"SET_META_KEYWORDS" => "N",	// Устанавливать ключевые слова страницы
+		"SET_STATUS_404" => "N",	// Устанавливать статус 404
+		"SET_TITLE" => "N",	// Устанавливать заголовок страницы
+		"SHOW_404" => "N",	// Показ специальной страницы
+		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+		"STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
+	),
+	false
+);?>
 	</div>
 </div>
 <div class="b b-tour-operators">

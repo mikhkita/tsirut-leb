@@ -89,6 +89,16 @@ body {
 .b-copyright{
 	margin-right: 50px;
 }
+.b-search-subscribe .b-mailing-form input[type=text] {
+    width: calc(50% - 15px);
+    margin-bottom: 24px;
+}
+.b-search-subscribe .b-mailing-form input[type=text]:nth-child(2n) {
+    margin-right: 0;
+}
+.b-search-subscribe .b-subscribe-form .b-btn-submit {
+    width: 400px;
+}
 .b-feedback.b-feedback-shadow .b-5-manager{
 	right: 16px;
 }
@@ -338,6 +348,16 @@ div.TVFORow3 {
 		.b-country-slider{
 			width: calc(100%/3*2 - 9px);
 		}
+
+	.b-hot-item{
+		width: calc(100%/3 - 16px);
+	}
+	.b-hot-list .b-hot-item:nth-child(4n){
+		margin-right: 24px;
+	}
+	.b-hot-list .b-hot-item:nth-child(3n){
+		margin-right: 0;
+	}
 	.b-mailing-cont {
 	    padding: 34px 46px 52px 46px;
 	}
@@ -356,6 +376,53 @@ div.TVFORow3 {
 
 	.adv-main-left {
 	    vertical-align: top;
+	}
+
+	.b-articles-detail .b-content-back {
+	    padding: 20px 24px;
+	}
+	.b-articles-detail-left .b-country-adv-item {
+	    width: calc(50% - 26px);
+	}
+	.b-advice img {
+	    width: 180px;
+	    height: 180px;
+	}
+	.b-advice-text {
+	    padding-left: 16px;
+	}
+	.b-advice-text p {
+	    font-size: 16px;
+	    line-height: 24px;
+	    padding-left: 32px;
+	}
+	.b-advice-text p:before {
+	    width: 24px;
+	    height: 16px;
+	    top: -10px;
+	    background-size: 24px;
+	}
+	.b-articles-detail-left {
+	    width: calc(100% - 250px);
+	    padding-right: 24px;
+	}
+	.b-articles-detail-right {
+	    width: 250px;
+	}
+	.b-articles-detail-left .adv-main-left{
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.b-articles-detail-left .adv-main-right{
+		display: block;
+		width: 100%;
+		padding-left: 0;
+	}
+	.b-articles-detail-left > h2,
+	.b-articles-detail-left .adv-main-right h3 {
+	    font-size: 28px;
+	    line-height: 36px;
 	}
 
 	.b-tourvisor-with-filter div.TVMainFilter{
@@ -682,6 +749,15 @@ div.TVFORow3 {
 			width: 100%;
 			margin-right: 0;
 		}
+	.b-hot-item{
+		width: calc(100%/2 - 12px);
+	}
+	.b-hot-list .b-hot-item:nth-child(3n){
+		margin-right: 24px;
+	}
+	.b-hot-list .b-hot-item:nth-child(2n){
+		margin-right: 0;
+	}
 	.b-4-item h3 {
 	    font-size: 28px;
 	    line-height: 36px;

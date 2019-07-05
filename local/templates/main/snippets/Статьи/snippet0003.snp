@@ -1,0 +1,6 @@
+<div class="b-advice clearfix">
+	<img src="/bitrix/templates/main/html/i/article-1.jpg">
+	<div class="b-advice-text">
+		<p>Текст</p>
+	</div>
+</div>

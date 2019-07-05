@@ -12,6 +12,13 @@ $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]
 $subPage = $urlArr[2];
 $GLOBALS["version"] = 4;
 
+$GLOBALS["hotDir"] = "hot-tours";
+if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
+	$page = $GLOBALS["page"] = $GLOBALS["hotDir"];
+
+if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[4]) )
+	$page = $GLOBALS["page"] = "hot-detail";
+
 $GLOBALS["depends"] = array(
 	"search" => array(
 		"js" => array(
@@ -47,6 +54,27 @@ if($isDetail){
 		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
 	}
 }
+
+$hotCodes = $GLOBALS["hotCodes"] =  array(
+	"moscow" => array(
+		"ID" => CITY_MOSCOW,
+		"NAME" => "из Москвы",
+		"TOURVISOR_ID" => 1,
+		"CODE" => "tomsk",
+	),
+	"belgorod" => array(
+		"ID" => CITY_BELGOROD,
+		"NAME" => "из Белгорода",
+		"TOURVISOR_ID" => 32,
+		"CODE" => "belgorod",
+	),
+	"voronezh" => array(
+		"ID" => CITY_VORONEZH,
+		"NAME" => "из Воронежа",
+		"TOURVISOR_ID" => 26,
+		"CODE" => "voronezh",
+	),
+);
 ?>
 
 <!DOCTYPE html>
@@ -165,14 +193,8 @@ if($isDetail){
 							echo $APPLICATION->ShowTitle();
 						}
 						?></h1>
-						<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
-						<?if($isMain):?>
-							<div class="center">
-								<a href="#b-popup-quiz" class="fancy b-btn b-btn-orange">
-									<p class="btn-bold">Рассчитать стоимость</p>
-									<p class="btn-regular">вашего лучшего тура</p>
-								</a>
-							</div>
+						<?if($APPLICATION->GetProperty("header-text") != "-"):?>
+							<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
 						<?endif;?>
 					</div>
 				<?else:?>
@@ -209,4 +231,4 @@ if($isDetail){
 			<div class="b-head-white"></div>
 		</div>
 
-		<div class="b b-content">
+		<div class="b b-content <?if($isMain) echo 'b-content-main'?>">

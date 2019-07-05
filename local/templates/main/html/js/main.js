@@ -468,7 +468,7 @@ $(document).ready(function(){
 
     $(".read-more").on('click', function(){
         $("#b-popup-review").find(".b-review-cont").remove();
-        $(this).parent().children(".b-review-cont").clone().prependTo("#b-popup-review .b-popup-content");
+        $(this).parents(".b-review-item").children(".b-review-cont").clone().prependTo("#b-popup-review .b-popup-content");
     });
 
     $(".b-quiz").hide();

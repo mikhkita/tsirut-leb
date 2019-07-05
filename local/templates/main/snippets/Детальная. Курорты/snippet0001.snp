@@ -1,7 +1,7 @@
 <div class="b-resorts-item">
 	<div class="b-resorts-top">
 		<div class="b-resorts-img">
-			<img src="/bitrix/templates/main/html/i/detail-3.jpg">
+			<img src="/local/templates/main/html/i/detail-3.jpg">
 		</div>
 		<div class="blackout"></div>
 		<h3>Кемер</h3>

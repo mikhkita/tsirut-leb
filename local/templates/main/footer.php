@@ -585,7 +585,7 @@
 							 <a href="#" class="b-btn b-btn-orange one-line b-btn-next" data-next=".b-quiz-screen-5">
 								<p class="btn-bold">Дальше</p>
 							 </a>
-							<p class="steps">Осталось всего 1 шага</p>
+							<p class="steps">Остался всего 1 шаг</p>
 						</div>
 					</div>
 					<div class="b-quiz b-quiz-screen-5">

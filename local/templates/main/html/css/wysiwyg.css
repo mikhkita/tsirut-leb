@@ -398,9 +398,13 @@
     		height: 30px;
 			background-image: url('../i/seo-icon-gift.svg');
 		}
+	.b-block-separator{
+		width: 100%;
+	}
 	.b-seo-separator{
 		margin: 54px auto 44px auto;
-		width: 300px;
+		width: 100%;
+		max-width: 300px;
 		height: 2px;
 		background-color: #EFF2F6;
 	}
@@ -410,3 +414,65 @@
 		height: 2px;
 		background-color: #EFF2F6;
 	}
+
+/*=======Статьи (детальная)========*/
+
+		.b-h3-text h3{
+			color: #282828;
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 14px;
+		}
+		.b-h3-text.long h3{
+			font-size: 24px;
+			line-height: 32px;
+			margin-bottom: 20px;
+		}
+		.b-h3-text{
+			margin-bottom: 32px;
+		}
+		.b-advice{
+			display: table;
+			margin-bottom: 32px;
+		}
+			.b-advice img{
+				display: table-cell;
+				vertical-align: middle;
+				width: 302px;
+				height: 302px;
+				border-radius: 10px;
+			}
+			.b-advice-text{
+				padding-left: 24px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+				.b-advice-text p{
+					position: relative;
+					font-size: 20px;
+					line-height: 30px;
+					max-width: 540px;
+					padding-left: 40px;
+				}
+				.b-advice-text p:before{
+					content: " ";
+					width: 30px;
+					height: 20px;
+					position: absolute;
+					top: -12px;
+					left: 0;
+					background: url(../i/icon-q.svg);
+					background-position: 50% 50%;
+			    	background-size: 30px;
+			    	background-repeat: no-repeat;
+				}
+		.center-text{
+			font-size: 20px;
+			line-height: 30px;
+			text-align: center;
+			max-width: 584px;
+			margin: 0 auto;
+		}
+
+
+/*===========================*/

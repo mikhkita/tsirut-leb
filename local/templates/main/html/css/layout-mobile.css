@@ -156,6 +156,15 @@ h2.b-title{
 		width: calc(50% - 24px);
 		margin: 12px;
 	}
+.b-hot-item{
+	width: calc(100%/2 - 12px);
+}
+.b-hot-list .b-hot-item:nth-child(3n){
+	margin-right: 24px;
+}
+.b-hot-list .b-hot-item:nth-child(2n){
+	margin-right: 0;
+}
 .b-country-cont{
 
 }
@@ -349,10 +358,12 @@ h2.b-title{
 			margin-right: 0;
 			margin-bottom: 0;
 		}
-			.b-review-cont{
+			.b-review-list .b-review-cont,
+			.read-more-cont{
 				max-width: 410px;
 				margin: 0 auto;
 			}
+
 	.b-review-slider .slick-dots{
 		bottom: -55px;
 	}
@@ -413,7 +424,7 @@ h2.b-title{
 		margin-bottom: 35px;
 	}
 .b-seo {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 	.b-seo-two-blocks .first {
 	    margin-right: 0;
@@ -427,7 +438,10 @@ h2.b-title{
 	    margin-bottom: 16px;
 	}
 	.b-seo-separator {
-	    margin: 32px 0 24px 0;
+	    margin: 32px auto 24px auto;
+	}
+	.b-seo-separator-wide {
+	    margin-bottom: 32px;
 	}
 	.b-seo .center{
 		text-align: left;
@@ -658,8 +672,12 @@ h2.b-title{
 	line-height: 16px;
 	margin-top: 4px;
 }
-.b-contacts-top {
-    padding: 20px 24px;
+.b-content {
+    margin-top: -90px;
+}
+.b-content-back {
+	width: calc(100% - 32px);
+    padding: 16px;
     margin: 0 auto 40px auto;
 }
 	.b-contacts-left{
@@ -695,6 +713,79 @@ h2.b-title{
 .b-contacts-slider img {
     width: 500px;
     height: 312px;
+}
+
+.b-articles-detail-left{
+	padding-right: 0;
+}
+.b-articles-detail-left,
+.b-articles-detail-right{
+	float: none;
+	width: 100%;
+}
+	.b-articles-detail-left > h2{
+		font-size: 24px;
+		line-height: 32px;
+		margin-bottom: 16px;
+	}
+	.b-articles-detail-left > h3,
+	.b-articles-detail-left .b-h3-text h3{
+		font-size: 18px;
+		line-height: 26px;
+		margin-bottom: 10px;
+	}
+	.b-articles-detail-left .b-h3-text.long h3{
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.b-articles-detail-right > h3{
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 16px;
+	}
+	.b-advice img {
+	    width: 180px;
+	    height: 180px;
+	}
+	.b-advice-text {
+	    padding-left: 16px;
+	}
+	.b-advice-text p {
+	    font-size: 16px;
+	    line-height: 24px;
+	    padding-left: 32px;
+	}
+	.b-advice-text p:before {
+	    width: 24px;
+	    height: 16px;
+	    top: -10px;
+	    background-size: 24px;
+	}
+	.b-articles-detail-left .adv-main-left{
+		vertical-align: top;
+	}
+	.b-country-adv-item h3 {
+	    font-size: 20px;
+	    line-height: 26px;
+	}
+	.b-articles-detail-right .b-article-list{
+		margin-bottom: 40px;
+	}
+		.b-articles-detail-right .b-article-list .b-article-item{
+		    width: calc(50% - 26px);
+		    margin: 0 24px 0 0;
+		}
+
+.b-search-subscribe .b-subscribe-cont {
+    padding: 34px 24px 38px 24px;
+}
+.b-search-subscribe .b-mailing-form input[type=text] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 16px;
+}
+.b-search-subscribe .b-subscribe-form .b-btn-submit {
+    width: 100%;
 }
 
 /*===========*/
@@ -1355,8 +1446,53 @@ div.TVCalDirectOnly {
 	    height: 188px;
 	    margin: 0 8px;
 	}
-	.b-contacts-top {
+	.b-content-back {
 	    margin: 0 auto 20px auto;
+	}
+	.b-articles-detail-left .adv-main-left,
+	.b-articles-detail-left .adv-main-right{
+		width: 100%;
+	}
+
+	.b-hot-item{
+		width: calc(100%/2 - 8px);
+		margin-right: 16px;
+		margin-bottom: 32px;
+	}
+	.b-hot-item .content{
+		padding: 16px;
+	}
+	.hot-info {
+	    position: absolute;
+	    bottom: 14px;
+	    left: 16px;
+	    width: calc(100% - 32px);
+	}
+	.hot-title {
+	    font-size: 18px;
+	    line-height: 24px;
+	}
+		.hot-title b {
+		    font-size: 24px;
+		    line-height: 24px;
+		}
+	.hot-price {
+	    padding-top: 12px;
+	}
+	.b-hot-list .b-hot-item:nth-child(3n){
+		margin-right: 16px;
+	}
+	.b-hot-list .b-hot-item:nth-child(2n){
+		margin-right: 0;
+	}
+
+	.b-search-subscribe .b-subscribe-cont h2 {
+	    font-size: 28px;
+	    line-height: 36px;
+	    margin-bottom: 16px;
+	}
+	.b-search-subscribe .b-subscribe-cont {
+	    padding: 24px 16px 32px 16px;
 	}
 
 	/*====*/
@@ -1669,6 +1805,23 @@ div.TVCalDirectOnly {
 	}
 	.b-quiz-error .visible-label {
 	    top: -12px;
+	}
+	.b-advice img{
+		display: none;
+	}
+	.b-advice-text {
+	    padding-left: 0;
+	}
+	.b-popup .b-review-top h3 {
+	    font-size: 24px;
+	    line-height: 30px;
+	}
+	.b-articles-detail-right .b-article-list .b-article-item {
+	    width: 100%;
+	    margin: 0 0 24px 0;
+	}
+	.b-articles-detail-right .b-article-top{
+		margin-bottom: 14px;
 	}
 
 	/*===============*/
@@ -2030,6 +2183,27 @@ div.TVCalDirectOnly {
 	.b-contacts-right {
 	    height: 370px;
 	}
+	.b-articles-detail-left .center-text {
+	    font-size: 16px;
+	    line-height: 24px;
+	}
+	.adv-main-right h3{
+		font-size: 24px;
+    	line-height: 30px;
+    	margin-bottom: 16px;
+	}
+
+	.b-hot-item{
+		width: 100%;
+		margin-right: 0;
+	}
+	.b-hot-list .b-hot-item:nth-child(3n){
+		margin-right: 0;
+	}
+	.b-hot-list .b-hot-item:nth-child(2n){
+		margin-right: 0;
+	}
+
 	/*=====*/
 
 	div.TVTem2PriceContainer table tr:first-child{

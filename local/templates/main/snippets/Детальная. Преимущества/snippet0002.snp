@@ -1,6 +1,6 @@
 <div class="b-country-adv-item">
 	<div class="b-country-adv-img">
-		<img src="/bitrix/templates/main/html/i/detail-3.jpg">
+		<img src="/local/templates/main/html/i/detail-3.jpg">
 	</div>
 	<h3>Заголовок</h3>
 	<p>Текст</p>

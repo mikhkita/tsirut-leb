@@ -489,7 +489,7 @@ b{
 	background-size: cover;
     background-position: 50% 50%;
 	padding-top: 76px;
-	padding-bottom: 125px;
+	padding-bottom: 185px;
 }
 .b-head .b-block{
 	z-index: 5;
@@ -927,7 +927,9 @@ b{
 			.b-country-item .blackout,
 			.b-country-item .blackout-full,
 			.b-country-item-slider .blackout,
-			.b-country-item-slider .blackout-full{
+			.b-country-item-slider .blackout-full,
+			.b-hot-item .blackout,
+			.b-hot-item .blackout-full{
 				position: absolute;
 				left: 0;
 				bottom: 0;
@@ -945,19 +947,22 @@ b{
 				transition: opacity 200ms ease-out, visibility 200ms ease-out;
 			}
 			.b-country-item .blackout-full,
-			.b-country-item-slider .blackout-full{
+			.b-country-item-slider .blackout-full,
+			.b-hot-item .blackout-full{
 				z-index: 2;
 				height: 100%;
 				opacity: 0;
 				visibility: hidden;
 			}
 			.b-country-item:hover .blackout,
-			.b-country-item-slider:hover .blackout{
+			.b-country-item-slider:hover .blackout,
+			.b-hot-item:hover .blackout{
 				opacity: 0;
 				visibility: hidden;
 			}
 			.b-country-item:hover .blackout-full,
-			.b-country-item-slider:hover .blackout-full{
+			.b-country-item-slider:hover .blackout-full,
+			.b-hot-item:hover .blackout-full{
 				opacity: 0.8;
 				visibility: visible;
 			}
@@ -967,7 +972,8 @@ b{
 				visibility: visible;
 			}
 			.b-country-item .content,
-			.b-country-item-slider .content{
+			.b-country-item-slider .content,
+			.b-hot-item .content{
 				position: relative;
 				z-index: 5;
 				height: 100%;
@@ -1692,9 +1698,13 @@ b{
     		height: 30px;
 			background-image: url('../i/seo-icon-gift.svg');
 		}
+	.b-block-separator{
+		width: 100%;
+	}
 	.b-seo-separator{
 		margin: 54px auto 44px auto;
-		width: 300px;
+		width: 100%;
+		max-width: 300px;
 		height: 2px;
 		background-color: #EFF2F6;
 	}
@@ -1926,13 +1936,20 @@ b{
 /*=======Поиск туров=======*/
 
 .b-content{
+	margin-top: -185px;
 	z-index: 5;
 }
+
+.b-content-main{
+
+}
+	.b-content-main .b-btn-quiz{
+		margin-bottom: 134px;
+	}
 
 .b-tourvisor-header{
 	width: 100%;
 	min-height: 124px;
-	margin-top: -190px;
 	margin-bottom: 20px;
 }
 	.tourvisor-preloader{
@@ -2176,15 +2193,11 @@ ul.b-breadcrumbs {
 }
 
 .b-tourvisor-calendar{
-	position: relative;
-	z-index: 5;
-	padding-bottom: 150px;
-	margin-bottom: 68px;
+	padding-top: 60px;
+    margin-bottom: 68px;
 }
 	.b-tourvisor-calendar .content{
 		width: 100%;
-		position: absolute;
-		top: -140px;
 	}
 .b-tourvisor-hidden{
 	display: none !important;
@@ -2629,10 +2642,10 @@ ul.b-breadcrumbs {
 	.b-content-back{
 		position: relative;
 		width: 1420px;
-		margin: 0 auto 70px auto;
+		margin: 0 auto 110px auto;
 		background-color: rgba(255,255,255,0.7);
 		border-radius: 8px;
-		padding: 45px 70px;
+		padding: 45px 70px 0 70px;
 	}
 		.b-contacts-left{
 			float: left;
@@ -2687,6 +2700,292 @@ ul.b-breadcrumbs {
 				height: 500px;
 				margin: 0 15px;
 			}
+
+/*=======Статьи (детальная)========*/
+
+.b-articles-detail{
+
+}
+	.b-articles-detail-left{
+		float: left;
+		width: calc(100% - 302px);
+		padding-right: 24px;
+	}
+		.b-articles-detail-left > h2{
+			max-width: 736px;
+			color: #282828;
+			font-size: 32px;
+			line-height: 40px;
+			margin-bottom: 32px;
+		}
+		.b-articles-detail-left > h3,
+		.b-articles-detail-left .b-h3-text h3{
+			color: #282828;
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 14px;
+		}
+		.b-articles-detail-left .b-h3-text.long h3{
+			font-size: 24px;
+			line-height: 32px;
+			margin-bottom: 20px;
+		}
+		.b-h3-text{
+			margin-bottom: 32px;
+		}
+		.b-advice{
+			display: table;
+			margin-bottom: 32px;
+		}
+			.b-advice img{
+				display: table-cell;
+				vertical-align: middle;
+				width: 302px;
+				height: 302px;
+				border-radius: 10px;
+			}
+			.b-advice-text{
+				padding-left: 24px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+				.b-advice-text p{
+					position: relative;
+					font-size: 20px;
+					line-height: 30px;
+					max-width: 540px;
+					padding-left: 40px;
+				}
+				.b-advice-text p:before{
+					content: " ";
+					width: 30px;
+					height: 20px;
+					position: absolute;
+					top: -12px;
+					left: 0;
+					background: url(../i/icon-q.svg);
+					background-position: 50% 50%;
+			    	background-size: 30px;
+			    	background-repeat: no-repeat;
+				}
+		.b-articles-detail-left .center-text{
+			font-size: 20px;
+			line-height: 30px;
+			text-align: center;
+			max-width: 584px;
+			margin: 0 auto;
+		}
+		.b-articles-detail-left .adv-main-left{
+			width: 40%;
+		}
+		.b-articles-detail-left .adv-main-right{
+			width: 60%;
+		}
+		.b-articles-detail-left .b-country-adv-img {
+			height: 190px;
+		}
+
+	.b-articles-detail-right{
+		float: right;
+		width: 302px;
+	}
+		.b-articles-detail-right > h3{
+			color: #282828;
+			font-size: 24px;
+			line-height: 38px;
+			margin-bottom: 24px;
+		}
+		.b-articles-detail-right .b-article-list{
+
+		}
+			.b-articles-detail-right .b-article-list .b-article-item{
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 32px;
+			}
+			.b-articles-detail-right .b-article-list .b-article-item:last-child{
+				margin-bottom: 0;
+			}
+
+	.b-articles-detail .b-mailing{
+		margin-bottom: 0;
+	}
+
+/*=======Горящие туры=======*/
+
+.b-hot-list{
+
+}
+	.b-hot-item{
+		width: calc(25% - 18px);
+		float: left;
+		margin-right: 24px;
+		margin-bottom: 50px;
+	}
+	.b-hot-list .b-hot-item:nth-child(4n){
+		margin-right: 0;
+	}
+		.hot-top{
+			position: relative;
+			height: 302px;
+			color: #FFF;
+			border-radius: 5px;
+			overflow: hidden;
+		    background-position: 50% 50%;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+			.hot-discount{
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				width: 60px;
+				height: 60px;
+				text-align: center;
+				background: url(../i/discount.svg);
+				background-position: 50% 50%;
+		    	background-size: 60px;
+		    	background-repeat: no-repeat;
+		    	padding-top: 22px;
+		    	font-family: "Gilroy-Bold";
+    			font-size: 16px;
+    			line-height: 16px;
+			}
+			.hot-info{
+				position: absolute;
+			    bottom: 20px;
+			    left: 22px;
+			    width: calc(100% - 44px);
+			}
+				.hot-date{
+					font-size: 16px;
+					line-height: 16px;
+					margin-bottom: 10px;
+				}
+				.hot-title{
+					font-size: 20px;
+					line-height: 28px;
+				}
+					.hot-title b{
+						font-family: "Gilroy-Bold";
+		    			font-size: 28px;
+		    			line-height: 28px;
+					}
+		.hot-price{
+			color: #282828;
+			padding-top: 16px;
+		}
+			.old-price{
+				position: relative;
+				display: inline-block;
+		    	font-size: 20px;
+		    	line-height: 20px;
+		    	margin-bottom: 8px;
+			}
+				.old-price:before{
+					content: " ";
+					position: absolute;
+					top: 9px;
+					left: 0;
+					width: 100%;
+					height: 1px;
+					background-color: #282828;
+				}
+			.total-price{
+				font-family: "Gilroy-Bold";
+		    	font-size: 28px;
+		    	line-height: 28px;
+			}
+
+.b-search-subscribe{
+	margin-bottom: 60px;
+}
+	.b-search-subscribe .b-subscribe-cont{
+		box-sizing: border-box;
+		background-position: 100% 100%;
+	    background-image: url(../i/search-back.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		box-shadow: inset 0 0 300px 0 rgba(31,61,135,0.07);
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		border-radius: 10px;
+		overflow: hidden;
+		width: 100%;
+		padding: 32px 50px 36px 50px;
+	}
+		.b-search-subscribe .b-subscribe-cont h2{
+			font-size: 32px;
+			line-height: 40px;
+			margin-bottom: 16px;
+			color: #282828;
+		}
+		.b-search-subscribe .b-subscribe-form input{
+			margin-right: 24px;
+			width: calc(100%/3 - 20px);
+		    border: 2px solid #BCC1C7;
+		    color: #434343;
+		}
+		.b-search-subscribe .b-subscribe-form .mailing-text{
+			margin-bottom: 24px;
+		}
+		.b-search-subscribe .b-subscribe-form .b-btn-submit{
+			display: inline-block;
+			vertical-align: top;
+			min-width: 280px;
+			width: calc(100%/3 - 20px);
+			padding: 22px 22px 24px 22px;
+		}
+		.b-search-subscribe .b-subscribe-form .b-checkbox{
+			margin-top: 16px;
+		}
+		.b-search-subscribe .b-subscribe-form input::-webkit-input-placeholder {
+			color: #BCC1C7;
+		}
+		.b-search-subscribe .b-subscribe-form input:-moz-placeholder {
+			color: #BCC1C7;
+		}
+		.b-search-subscribe .b-subscribe-form .b-checkbox{
+			color: #434343;
+		}
+			.b-search-subscribe .b-subscribe-form .b-checkbox .b-checked {
+			    border: 2px solid #BCC1C7;
+			}
+			.b-search-subscribe .b-subscribe-form .b-checkbox .icon-checked:before{
+			    color: #434343;
+			}
+			.b-search-subscribe .b-subscribe-form .b-checkbox a{
+				color: #434343;
+			}
+
+.b-city-tabs{
+	text-align: center;
+	margin-bottom: 100px;
+}
+	.b-city-tab{
+		display: inline-block;
+		font-family: "Gilroy-Bold";
+		font-size: 20px;
+		line-height: 20px;
+		color: #FFF;
+		padding: 18px 0;
+    	min-width: 194px;
+    	text-align: center;
+		border-radius: 5px;
+		border: 3px solid #FFF;
+		margin-right: 50px;
+	}
+	.b-city-tab:hover{
+		background-color: rgba(255,255,255,0.15);
+	}
+	.b-city-tab.active{
+		color: #434343;
+		background-color: #FFF;
+	}
+	.b-city-tab:last-child{
+		margin-right: 0;
+	}
 
 /*===========================*/
 
@@ -3211,6 +3510,9 @@ input{
 				font-size: 18px;
 			}
 
+.b-popup .b-review-top h3 {
+    margin-bottom: 8px;
+}
 .b-city-popup{
 	
 }
@@ -3297,11 +3599,11 @@ input{
 
 @media screen and (max-width: 1420px){
 
-	.b-contacts-top{
+	.b-content-back{
 		width: calc(100% - 48px);
 		padding: 32px 40px;
 	}
-		.b-contacts-top .b-block{
+		.b-content-back .b-block{
 			width: 100%;
 		}
 
@@ -3989,54 +4291,10 @@ div.TVHotelTypeItem.TVChecked {
 		font-family: 'Gilroy-Regular';
 	}
 
-.TVSRBodyContainer .b-subscribe-cont{
-	box-sizing: border-box;
-	background-position: 100% 100%;
-    background-image: url(../i/search-back.svg);
-	background-size: contain;
-	background-repeat: no-repeat;
-	box-shadow: inset 0 0 300px 0 rgba(31,61,135,0.07);
-	display: inline-block;
-	vertical-align: top;
-	position: relative;
-	border-radius: 10px;
-	overflow: hidden;
-	width: 100%;
-	padding: 32px 50px 36px 50px;
+.TVSRBodyContainer .b-subscribe-form input{
+	margin-right: 12px;
+	width: calc(100%/3 - 16px);
 }
-	.TVSRBodyContainer .b-subscribe-form input{
-		margin-right: 12px;
-		width: 266px;
-	    border: 2px solid #BCC1C7;
-	    color: #434343;
-	}
-	.TVSRBodyContainer .b-subscribe-form .b-btn-submit{
-		display: inline-block;
-		vertical-align: top;
-		min-width: 280px;
-		width: 280px;
-	}
-	.TVSRBodyContainer .b-subscribe-form .b-checkbox{
-		margin-top: 16px;
-	}
-	.TVSRBodyContainer .b-subscribe-form input::-webkit-input-placeholder {
-		color: #BCC1C7;
-	}
-	.TVSRBodyContainer .b-subscribe-form input:-moz-placeholder {
-		color: #BCC1C7;
-	}
-	.TVSRBodyContainer .b-subscribe-form .b-checkbox{
-		color: #434343;
-	}
-		.TVSRBodyContainer .b-subscribe-form .b-checkbox .b-checked {
-		    border: 2px solid #BCC1C7;
-		}
-		.TVSRBodyContainer .b-subscribe-form .b-checkbox .icon-checked:before{
-		    color: #434343;
-		}
-		.TVSRBodyContainer .b-subscribe-form .b-checkbox a{
-			color: #434343;
-		}
 
 .b-search-pay{
 	position: relative;
@@ -4348,13 +4606,16 @@ div.TVTem2TourContainer{
 	font-family: 'Gilroy-Bold';
 	text-align: center;
 }
-.b-tourvisor-calendar-cont .b-btn{
-	position: absolute;
-	bottom: -8px;
-	right: 0;
-	min-width: 220px;
-    padding: 14px 38px 15px 38px;
+.b-tourvisor-calendar-cont{
+	min-height: 90px;
 }
+	.b-tourvisor-calendar-cont .b-btn{
+		position: absolute;
+		bottom: -8px;
+		right: 0;
+		min-width: 220px;
+	    padding: 14px 38px 15px 38px;
+	}
 .calendar-preloader{
 	position: absolute;
 	top: 100px;

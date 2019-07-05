@@ -5,7 +5,7 @@ $arTemplate = array (
   'SORT' => '',
   'TYPE' => '',
   'EDITOR_STYLES' => array(
-  	'/bitrix/templates/main/html/css/wysiwyg.css'
+  	'/local/templates/main/html/css/wysiwyg.css'
   )
 );
 ?>
