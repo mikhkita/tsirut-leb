@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 	//id="<?=$this->GetEditAreaId($arItem['ID']);?>
 	?>
 	<?
-	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>150, 'height'=>50), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 80);
+	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>150*2, 'height'=>50*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?>
 	<div class="b-operators-item">
 		<div class="b-img" style="background-image: url('<?=$img['src']?>')"></div>

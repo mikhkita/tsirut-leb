@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-IncludeTemplateLangFile($_SERVER["DOCUMENT_ROOT"]."/bitrix/templates/".SITE_TEMPLATE_ID."/header.php");
+IncludeTemplateLangFile($_SERVER["DOCUMENT_ROOT"]."/local/templates/".SITE_TEMPLATE_ID."/header.php");
 
 CJSCore::Init(array("fx"));
 CModule::IncludeModule("iblock");
@@ -37,11 +37,12 @@ if($isDetail){
 		array(),
 		array('IBLOCK_ID'=>1, '=CODE'=>$_REQUEST["SECTION_CODE"]),
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_HEADER_POPULAR','UF_HEADER_TIME','UF_HEADER_TV')
+		array('IBLOCK_ID','ID','NAME','CODE','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_HEADER_POPULAR','UF_HEADER_TIME','UF_HEADER_TV')
 	);
 	if($arSection = $rsSections->Fetch()){
 		$GLOBALS["arCountry"] = array(
 			'name' => $arSection['UF_COUNTRY_NAME'],
+			'picture' => $arSection['DETAIL_PICTURE'],
 			'title' => $arSection['NAME'],
 			'titleText' => $arSection['UF_HEADER_TEXT'],
 			'visa' => $arSection['UF_HEADER_VISA'],
@@ -49,6 +50,7 @@ if($isDetail){
 			'bestTime' => $arSection['UF_HEADER_TIME'],
 			'titleTV' => $arSection['UF_HEADER_TV']
 		);
+		$headImg = CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 );
 	}
 	if($GLOBALS["arCountry"]["title"]){
 		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
@@ -158,7 +160,15 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 			</div>
 		</div>
 
-		<div class="b b-head <?if($isDetail) echo 'b-head-detail';?> <?if(!$isMain) echo 'b-head-inner'?>" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/html/i/head.jpg')">
+		<?if($isDetail && isset($headImg['src'])){
+			$headImgSrc = $headImg['src'];
+		}else{
+			$headImgSrc = SITE_TEMPLATE_PATH.'/html/i/head.jpg';
+		}?>
+		<div 
+			class="b b-head <?if($isDetail) echo 'b-head-detail';?> <?if(!$isMain) echo 'b-head-inner'?>" 
+			style="background-image: url('<?=$headImgSrc?>')"
+		>
 			<div class="b-block">
 				<div class="b-head-top clearfix">
 					<a href="/" class="b-logo"></a>
@@ -186,13 +196,14 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 								"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
 							), false);?>
 						<?endif;?>
-						<h1><?
+						<?
 						if(!empty($APPLICATION->GetProperty("header-title"))){
-							echo $APPLICATION->ShowProperty("header-title");
-						}else{
-							echo $APPLICATION->ShowTitle();
+							$title = $APPLICATION->GetProperty("header-title");
+							echo $APPLICATION->SetTitle($title);
 						}
-						?></h1>
+						?>
+						<h1><?$APPLICATION->ShowTitle()?></h1>
+
 						<?if($APPLICATION->GetProperty("header-text") != "-"):?>
 							<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
 						<?endif;?>

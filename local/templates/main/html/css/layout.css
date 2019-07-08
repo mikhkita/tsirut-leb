@@ -489,7 +489,7 @@ b{
 	background-size: cover;
     background-position: 50% 50%;
 	padding-top: 76px;
-	padding-bottom: 185px;
+	padding-bottom: 235px;
 }
 .b-head .b-block{
 	z-index: 5;
@@ -1936,7 +1936,7 @@ b{
 /*=======Поиск туров=======*/
 
 .b-content{
-	margin-top: -185px;
+	margin-top: -235px;
 	z-index: 5;
 }
 
@@ -1972,7 +1972,7 @@ b{
 	}
 
 .b-head-inner{
-	padding-bottom: 220px;
+	padding-bottom: 270px;
 }
 	.b-head-inner .b-head-white{
 		bottom: -10px;
@@ -2193,7 +2193,7 @@ ul.b-breadcrumbs {
 }
 
 .b-tourvisor-calendar{
-	padding-top: 60px;
+	padding-top: 110px;
     margin-bottom: 68px;
 }
 	.b-tourvisor-calendar .content{

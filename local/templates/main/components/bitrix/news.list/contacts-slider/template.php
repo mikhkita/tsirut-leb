@@ -19,7 +19,7 @@ $this->setFrameMode(true);
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
 	<?
-	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>800, 'height'=>500), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 80);
+	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>800*2, 'height'=>500*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?>
 	<img src="<?=$img['src']?>" alt="<?=$arItem['NAME']?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 <?endforeach;?>

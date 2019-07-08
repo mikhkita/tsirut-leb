@@ -1,6 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Горящие туры");
+$APPLICATION->SetPageProperty("title", $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["TITLE"]);
+$APPLICATION->SetPageProperty("description", $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["DESCRIPTION"]);
+$APPLICATION->SetTitle("Горящие туры ".$GLOBALS["hotCodes"][$_REQUEST["CITY"]]["NAME"]);
 ?>
 <?
 if( !isset($_REQUEST["CITY"]) ){
@@ -8,7 +10,7 @@ if( !isset($_REQUEST["CITY"]) ){
 }
 ?>
 <div class="b-block">
-	<?//$APPLICATION->AddChainItem("Горящие туры ".$hotCodes[$_REQUEST["CITY"]]["NAME"], "/".$GLOBALS["hotDir"]."/".$_REQUEST['CITY']."/");?>
+	<?$APPLICATION->AddChainItem($hotCodes[$_REQUEST["CITY"]]["NAME"], "/".$GLOBALS["hotDir"]."/".$_REQUEST['CITY']."/");?>
 	<div class="b-city-tabs">
 		<? foreach ($hotCodes as $key => $city): ?>
 			<a href="/<?=$GLOBALS["hotDir"]?>/<?=$key?>/<?if($page == "hot-detail"):?><?=$_REQUEST['ELEMENT_CODE']?>/<?endif;?>" class="b-city-tab<?if($key == $_REQUEST["CITY"]):?> active<?endif;?>"><?=$city["NAME"]?></a>

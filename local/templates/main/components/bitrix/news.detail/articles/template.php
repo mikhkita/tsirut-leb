@@ -26,7 +26,7 @@ $this->setFrameMode(true);
 					global $articlesFilter;
 					$articlesFilter = array("IBLOCK_ID"=>6, "ACTIVE"=>"Y", "!ID"=>$arResult["ID"]);
 					?>
-					<?$APPLICATION->IncludeComponent("bitrix:news.list", "articles-last", Array(
+					<?$APPLICATION->IncludeComponent("bitrix:news.list", "articles", Array(
 						"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
 							"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
 							"AJAX_MODE" => "N",	// Включить режим AJAX
@@ -87,6 +87,7 @@ $this->setFrameMode(true);
 							"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
 							"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
 							"STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
+							"LAST_ARTICLES" => "Y"
 						),
 						false
 					);?>

@@ -29,7 +29,7 @@ $month = date('n');
 	$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 	?>
 	<?
-	$img = CFile::ResizeImageGet($arSection["PICTURE"]["ID"], array('width'=>302, 'height'=>383), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 80);
+	$img = CFile::ResizeImageGet($arSection["PICTURE"]["ID"], array('width'=>302*2, 'height'=>383*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?>
 	<a href="<?=$arSection['SECTION_PAGE_URL'];?>" id="<? echo $this->GetEditAreaId($arSection['ID']);?>" class="b-country-item" style="background-image: url('<?=$img['src'];?>')">
 		<div class="blackout"></div>

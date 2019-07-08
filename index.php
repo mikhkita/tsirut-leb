@@ -1,10 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Аквамарин");
-$APPLICATION->SetPageProperty("title", "Аквамарин");
-$APPLICATION->SetTitle("Аквамарин");
 ?>
-<div class="center">
+<div class="center b-block">
 	<a href="#b-popup-quiz" class="fancy b-btn b-btn-orange b-btn-quiz">
 		<p class="btn-bold">Рассчитать стоимость</p>
 		<p class="btn-regular">вашего лучшего тура</p>

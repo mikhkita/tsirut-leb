@@ -23,7 +23,7 @@ $this->setFrameMode(true);
 	if(!empty($arItem["PROPERTIES"]["BUTTON_TEXT"]["VALUE"])){
 		$hasButton = true;
 	}
-	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>628, 'height'=>383), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 80);
+	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>628*2, 'height'=>383*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?>
 	<a  href="/" 
 		id="<?=$this->GetEditAreaId($arItem['ID']);?>" 

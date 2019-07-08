@@ -12,12 +12,12 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="b-article-list b-article-slider mobile-slider detail-wide">
+<div class="b-article-list <?if(!isset($arParams['LAST_ARTICLES'])) echo 'b-article-slider mobile-slider detail-wide'?>">
 <?foreach($arResult["ITEMS"] as $arItem):?><?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?><?
-	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>302, 'height'=>180), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 80);
+	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>302*2, 'height'=>180*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?><a id="<?=$this->GetEditAreaId($arItem['ID']);?>" href="<?=$arItem['DETAIL_PAGE_URL']?>" class="b-article-item">
 		<div class="b-article-top">
 			<div class="b-article-img">

@@ -13,12 +13,13 @@
 $this->setFrameMode(true);
 ?>
 <div class="b-hot-list clearfix">
+<?$i = 1; $formShow = false?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
-	<? $renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 604, "height" => 604), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 ); ?>
+	<? $renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 302*2, "height" => 302*2), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 ); ?>
 	<? $tours = json_decode($arItem["~PREVIEW_TEXT"], true); ?>
 	<a href="#" class="b-hot-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<div class="hot-top" style="background-image: url('<?=$renderImage["src"]?>')">
@@ -46,30 +47,59 @@ $this->setFrameMode(true);
 			<p class="total-price">от <?=number_format( $tours[0]["MP"], 0, ',', ' ' )?> руб.</p>
 		</div>
 	</a>
-	
+	<?if($i == 8):?>
+		<?$formShow = true?>
+		<div class="b-search-subscribe">
+			<div class="b-subscribe-cont">
+				<div class="b-subscribe-form">
+					<h2><?=includeArea("hot-form-head")?></h2>
+					<div class="mailing-text"><?=includeArea("hot-form-text")?></div>
+					<form class="b-mailing-form" method="post" action="/searchTour.php" novalidate="novalidate">
+						<input type="text" name="name" placeholder="Ваше имя" required="">
+						<input type="text" name="phone" placeholder="Ваш телефон" required="">
+						<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
+						<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+						<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
+							<p class="btn-bold"><?=includeArea("hot-form-button")?></p>
+						</a>
+						<div class="b-checkbox">
+							<input id="checkbox-search-2" type="checkbox" name="politics" checked="" required="">
+							<label for="checkbox-search-2">
+								<div class="b-checked icon-checked"></div>
+								<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	<?endif;?>
+	<?$i++;?>
 <?endforeach;?>
 </div>
-<div class="b-search-subscribe">
-	<div class="b-subscribe-cont">
-		<div class="b-subscribe-form">
-			<h2><?=includeArea("hot-form-head")?></h2>
-			<div class="mailing-text"><?=includeArea("hot-form-text")?></div>
-			<form class="b-mailing-form" method="post" action="/searchTour.php" novalidate="novalidate">
-				<input type="text" name="name" placeholder="Ваше имя" required="">
-				<input type="text" name="phone" placeholder="Ваш телефон" required="">
-				<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
-				<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
-				<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
-					<p class="btn-bold"><?=includeArea("hot-form-button")?></p>
-				</a>
-				<div class="b-checkbox">
-					<input id="checkbox-search-2" type="checkbox" name="politics" checked="" required="">
-					<label for="checkbox-search-2">
-						<div class="b-checked icon-checked"></div>
-						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
-					</label>
-				</div>
-			</form>
+<?if(!$formShow):?>
+	<div class="b-search-subscribe">
+		<div class="b-subscribe-cont">
+			<div class="b-subscribe-form">
+				<h2><?=includeArea("hot-form-head")?></h2>
+				<div class="mailing-text"><?=includeArea("hot-form-text")?></div>
+				<form class="b-mailing-form" method="post" action="/searchTour.php" novalidate="novalidate">
+					<input type="text" name="name" placeholder="Ваше имя" required="">
+					<input type="text" name="phone" placeholder="Ваш телефон" required="">
+					<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
+					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+					<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
+						<p class="btn-bold"><?=includeArea("hot-form-button")?></p>
+					</a>
+					<div class="b-checkbox">
+						<input id="checkbox-search-2" type="checkbox" name="politics" checked="" required="">
+						<label for="checkbox-search-2">
+							<div class="b-checked icon-checked"></div>
+							<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
+						</label>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
+<?endif;?>
