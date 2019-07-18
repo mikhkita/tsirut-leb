@@ -257,67 +257,8 @@
 		<div class="b-popup b-filter-popup b-tourists-popup" id="b-filter-tourists">
 			<div class="b-popup-content">
 				<h3>Количество человек</h3>
-				<div class="b-select-age" style="display: none;">
-					<div class="b-select" id="child-1">
-						<select name="child-1">
-							<option value="< 2 лет">< 2 лет</option>
-							<option value="2 года" selected>2 года</option>
-							<option value="3 года">3 года</option>
-							<option value="4 года">4 года</option>
-							<option value="5 лет">5 лет</option>
-							<option value="6 лет">6 лет</option>
-							<option value="7 лет">7 лет</option>
-							<option value="8 лет">8 лет</option>
-							<option value="9 лет">9 лет</option>
-							<option value="10 лет">10 лет</option>
-							<option value="11 лет">11 лет</option>
-							<option value="12 лет">12 лет</option>
-							<option value="13 лет">13 лет</option>
-							<option value="14 лет">14 лет</option>
-							<option value="15 лет">15 лет</option>
-							<option value="16 лет">16 лет</option>
-						</select>
-					</div>
-					<div class="b-select" id="child-2">
-						<select name="child-2">
-							<option value="< 2 лет">< 2 лет</option>
-							<option value="2 года" selected>2 года</option>
-							<option value="3 года">3 года</option>
-							<option value="4 года">4 года</option>
-							<option value="5 лет">5 лет</option>
-							<option value="6 лет">6 лет</option>
-							<option value="7 лет">7 лет</option>
-							<option value="8 лет">8 лет</option>
-							<option value="9 лет">9 лет</option>
-							<option value="10 лет">10 лет</option>
-							<option value="11 лет">11 лет</option>
-							<option value="12 лет">12 лет</option>
-							<option value="13 лет">13 лет</option>
-							<option value="14 лет">14 лет</option>
-							<option value="15 лет">15 лет</option>
-							<option value="16 лет">16 лет</option>
-						</select>
-					</div>
-					<div class="b-select" id="child-3">
-						<select name="child-3">
-							<option value="< 2 лет">< 2 лет</option>
-							<option value="2 года" selected>2 года</option>
-							<option value="3 года">3 года</option>
-							<option value="4 года">4 года</option>
-							<option value="5 лет">5 лет</option>
-							<option value="6 лет">6 лет</option>
-							<option value="7 лет">7 лет</option>
-							<option value="8 лет">8 лет</option>
-							<option value="9 лет">9 лет</option>
-							<option value="10 лет">10 лет</option>
-							<option value="11 лет">11 лет</option>
-							<option value="12 лет">12 лет</option>
-							<option value="13 лет">13 лет</option>
-							<option value="14 лет">14 лет</option>
-							<option value="15 лет">15 лет</option>
-							<option value="16 лет">16 лет</option>
-						</select>
-					</div>
+				<div class="b-tourists-popup-content">
+					
 				</div>
 			</div>
 		</div>
@@ -367,6 +308,14 @@
 		<div class="b-popup b-filter-popup b-resort-popup" id="b-filter-resort">
 			<div class="b-popup-content">
 				<h3>Курорт/отель</h3>
+
+			</div>
+		</div>
+
+		<a href="#b-filter-hotel-type" class="fancy"></a>
+		<div class="b-popup b-filter-popup b-hotel-type-popup" id="b-filter-hotel-type">
+			<div class="b-popup-content">
+				<h3>Тип отеля</h3>
 
 			</div>
 		</div>

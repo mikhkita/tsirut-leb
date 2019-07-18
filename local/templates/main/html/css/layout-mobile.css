@@ -817,7 +817,7 @@ h2.b-title{
 	padding-right: 8px;
 }
 
-.tv_drop_panel{
+.tv_drop_panel:not(.TVSRSortResult){
 	display: none !important;
 }
 .b-tourvisor div.TVMainFilter{
@@ -853,7 +853,7 @@ h2.b-title{
 	margin-right: 24px;
 	margin-bottom: 16px;
 }
-.b-tourvisor div.TVWideForm.TVTheme2 .TVRegionHotel{
+.b-tourvisor div.TVWideForm.TVTheme2 .TVResortHotel{
 	width: calc(50% - 12px);
 	margin-bottom: 16px;
 	margin-right: 0;
@@ -876,7 +876,7 @@ div.TVDataPicker{
 	div.tv_dtp_header{
 
 	}
-		div.TVNavButton{width: 10%;text-align: center;}
+		/*div.TVNavButton{width: 10%;text-align: center;}*/
 			div.tv_dtp_left_button{float: none;width: 26px;display: inline-block;vertical-align: top;}
 			div.tv_dtp_right_button{float: none;display: inline-block;vertical-align: top;width: 16px;}
 				div.tv_dtp_left_button:before,
@@ -1180,6 +1180,14 @@ div.TVCalendarDepartureHeader {
 }
 div.TVCalDirectOnly {
     top: 3px;
+}
+
+/*======*/
+
+.b-popup-content .TVListHotels {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px 0 10px 20px;
 }
 
 @media screen and (max-width: 665px){
@@ -1557,6 +1565,33 @@ div.TVCalDirectOnly {
 	.TVSRBodyContainer .b-mailing-form .b-btn-submit {
 	    width: 100%;
 	}
+
+	.b-popup-content .TVDetailsPanel {
+		height: auto;
+	    display: block;
+	}
+	.b-popup-content .TVDetailsPanel .TVTreeResorts {
+	    width: 100%;
+	    height: 252px;
+	    overflow: hidden;
+	    padding: 20px 10px 20px 20px;
+	    border-right: 0; 
+	}
+	.b-popup-content .TVDetailsPanel .TVTreeResorts .TVTreeResortsBody {
+	    margin-top: 12px;
+	}
+
+	.b-popup-content .TVDetailsPanel .TVDetailsHotelContainer {
+	    width: 100%;
+	    display: block;
+	}
+	.b-popup-content .TVListHotels {
+	    padding: 20px 0 10px 0;
+	}
+	.b-popup-content .TVDetailsPanel .TVListHotels {
+	    height: 400px;
+	}
+
 }
 
 @media screen and (max-width: 665px) and (min-width: 431px){
@@ -1867,7 +1902,7 @@ div.TVCalDirectOnly {
 		background-color: #D8D8D8;
 	}
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVStars,
-	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVRegionHotel,
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVResortHotel,
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVMeal,
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVRating{
 	    width: 100%;
@@ -1907,7 +1942,7 @@ div.TVCalDirectOnly {
 		background-color: #D8D8D8;
 	}
 	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVStars,
-	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVRegionHotel,
+	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVResortHotel,
 	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVMeal,
 	.b-tourvisor-header div.TVWideForm.TVTheme2 .TVRating{
 	    width: 100%;
@@ -1948,7 +1983,7 @@ div.TVCalDirectOnly {
 		background-color: #D8D8D8;
 	}
 	.b-tourvisor div.TVWideForm.TVTheme2 .TVStars,
-	.b-tourvisor div.TVWideForm.TVTheme2 .TVRegionHotel,
+	.b-tourvisor div.TVWideForm.TVTheme2 .TVResortHotel,
 	.b-tourvisor div.TVWideForm.TVTheme2 .TVMeal,
 	.b-tourvisor div.TVWideForm.TVTheme2 .TVRating{
 	    width: 100%;
@@ -2313,6 +2348,27 @@ div.TVCalDirectOnly {
 	}
 	div.TVOrderHotelName {
 	    max-width: calc(100% - 38px);
+	}
+
+	.b-popup-content .TVListHotels .TVTabs {
+	    position: absolute;
+	    top: -21px;
+	    min-height: 0;
+	}
+	.b-popup-content .TVListHotels.TVTabShifted .TVTabedListHeader {
+	    padding-top: 20px;
+	    width: 100%;
+	    position: relative;
+	}
+	.b-popup-content div.TVListHotels.TVTabShifted .TVInputTab input{
+		width: 100%;
+		position: static;
+	}
+	.b-popup-content div.TVListHotels .TVTabs .TVTabsNames {
+	    top: 0;
+	}
+	.b-popup-content .TVTabName .TVNameContent {
+	    padding: 5px 10px;
 	}
 
 }

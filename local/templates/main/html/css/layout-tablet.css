@@ -465,6 +465,14 @@ div.TVFORow3 {
 		right: 24px;
 	}
 
+	.b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage {
+	    height: 125px;
+	    width: 180px;
+	}
+	div.TVTourContainer .TVTourBlock .TVInfo {
+	    margin-left: 200px;
+	}
+
 }
 
 @media screen and (max-width: 1024px){
@@ -625,6 +633,9 @@ div.TVFORow3 {
 	.b-tourvisor-with-filter div.TVTheme2 a.TVSRNavButton,
 	.b-tourvisor-with-filter div.TVTheme2 a.TVSRNavButton:link{
 		display: none;
+	}
+	div.tv_drop_panel.TVDatePickerPanel:after{
+		left: 20%;
 	}
 
 }
