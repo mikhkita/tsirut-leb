@@ -863,6 +863,7 @@ $(document).ready(function(){
         var waitPopup = setInterval(function(){
             if($(".TVModalContainer .TVCalendarWindow").length){
                 $(".TVClosePopup").click();
+                $(".TVOverLay, .TVModalContainer").remove();
                 clearInterval(waitPopup);
             }
         }, 10);

@@ -74,7 +74,7 @@ div.b-popup .fancybox-close-small:before,
 div.TVTheme2 .TVHotelStar:before,
 div.TVOptionCheckBox:before, div.TVOptionListItem:before,
 div.TVCalendarAir:before, div.TVCalendarWater:before,
-div.TVCalDirectOnly .TVChecked:after, div.TVCheckBox.TVChecked:before,
+div.TVCheckBox:before,
 div.TVTem2PriceArrow:before,
 div.TVTourBlock .TVPriceArrow:before,
 .b-tourvisor-with-filter .TVHotelTypeItem:before,
@@ -2899,7 +2899,7 @@ ul.b-breadcrumbs {
 			}
 
 .b-search-subscribe{
-	margin-bottom: 60px;
+	
 }
 	.b-search-subscribe .b-subscribe-cont{
 		box-sizing: border-box;
@@ -4262,7 +4262,7 @@ div.TVHotelTypeItem.TVChecked {
 .TVSRBodyContainer .b-search-subscribe-2,
 .TVSRBodyContainer .b-search-pay{
 	padding: 24px 0;
-	border-top: 5px solid #EFF2F6;
+	border-bottom: 5px solid #EFF2F6;
 
 }
 .TVSRBodyContainer .b-search-subscribe.b-mailing-cont{
@@ -4440,7 +4440,7 @@ div.TVCalDirectOnly .TVCheckBox:after {
     content: "Только прямые рейсы";
     cursor: pointer;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 18px;
     text-transform: none;
     font-family: 'Gilroy-Medium';
 }
@@ -4479,12 +4479,7 @@ div.TVCalDirectOnly .TVCheckBoxImg{
 	height: 16px;
 }
 div.TVCalDirectOnly .TVChecked:after {
-    position: absolute;
-    content: "\e905";
-    color: #434343;
-    font-size: 9px;
-    top: 3px;
-    left: 1px;
+
 }
 
 /*=================*/
@@ -6543,6 +6538,7 @@ div.tv_drop_panel .tv_content {
     margin: 14px 24px 14px 24px;
 }
 
+div.TVCheckBox:before,
 div.TVTreeResorts .TVCheckBox:before,
 div.TVTabedListBody .TVCheckBox:before{
     font-size: 10px;
@@ -6551,6 +6547,7 @@ div.TVTabedListBody .TVCheckBox:before{
     width: 12px;
     border: 2px solid #ddd;
 }
+div.TVCheckBox.TVChecked:before,
 div.TVTreeResorts .TVCheckBox.TVChecked:before,
 div.TVTabedListBody .TVCheckBox.TVChecked:before {
 	content: "\e905";

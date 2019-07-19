@@ -1189,6 +1189,9 @@ div.TVCalDirectOnly {
     height: 100%;
     padding: 20px 0 10px 20px;
 }
+.TVTheme2 .TVNavButton.TVPriceTitle{
+	display: none;
+}
 
 @media screen and (max-width: 665px){
 
@@ -1591,6 +1594,43 @@ div.TVCalDirectOnly {
 	.b-popup-content .TVDetailsPanel .TVListHotels {
 	    height: 400px;
 	}
+	div.TVTourContainer .TVTourBlock .TVNavButton,
+	div.TVTourContainer .TVTourBlock .TVNavButton.TVRSActiveButton {
+	    padding: 6px 12px;
+	    margin: 19px 6px 2px 0;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceBlock {
+	    margin-top: 21px;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceValue,
+	div.TVCurrencyRUB .TVCurrencyVal:after,
+	div.TVCurrencyVal:after{
+	    font-size: 24px;
+	    line-height: 28px;
+	}
+	div.TVTourBlock .TVPriceSuffix {
+	    margin-right: 6px;
+	}
+	div.TVTourBlock .TVPriceArrow:before {
+	    top: 7px;
+	}
+	.b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage {
+	    height: 125px;
+	    width: 180px;
+	}
+	div.TVTourContainer .TVTourBlock .TVInfo {
+	    margin-left: 200px;
+	}
+	.b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage {
+	    height: 105px;
+	    width: 140px;
+	}
+	.b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage img {
+	    height: 105px;
+	}
+	div.TVTourContainer .TVTourBlock .TVInfo {
+	    margin-left: 156px;
+	}
 
 }
 
@@ -1903,8 +1943,7 @@ div.TVCalDirectOnly {
 	}
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVStars,
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVResortHotel,
-	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVMeal,
-	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVRating{
+	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVMeal{
 	    width: 100%;
 	    margin-right: 0;
 	    margin-bottom: 16px;
@@ -2105,6 +2144,16 @@ div.TVCalDirectOnly {
 	div.blpricesort td, div.blpricesort th {
 	    padding: 10px;
 	}
+	div.blpricesort .TVSRPicturesBlock{
+		display: none;
+	}
+	div.TVSRDiscriptionBlock {
+	    margin-left: 0;
+	}
+	div.TVSRAboutHotelBlock {
+	    margin: 15px 0;
+	    padding: 0;
+	}
 
 	div.TVOrderTourParams{
 		display: none;
@@ -2119,6 +2168,10 @@ div.TVCalDirectOnly {
 	div.TVOrderRequestForm .TVBigInput {
 	    width: 100%;
 	    margin-right: 0;
+	}
+
+	.TVTheme2 .TVNavButton.TVReviewTitle{
+		display: none;
 	}
 
 }
@@ -2371,6 +2424,58 @@ div.TVCalDirectOnly {
 	    padding: 5px 10px;
 	}
 
+	div.TVTourBlock .TVInfo .TVHotelName {
+	    font-size: 16px;
+	    line-height: 24px;
+	}
+	.TVTourBlock .TVPriceValue,
+	div.TVCurrencyRUB .TVCurrencyVal:after,
+	div.TVCurrencyVal:after {
+	    font-size: 20px;
+	    line-height: 24px;
+	}
+	div.TVTourBlock .TVPriceArrow:before {
+		font-size: 15px;
+	    top: 10px;
+	}
+	.b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage {
+	    height: 78px;
+	    width: 110px;
+	}
+	.b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage img {
+	    height: 78px;
+	}
+	div.TVTourContainer .TVTourBlock .TVInfo {
+	    margin-left: 126px;
+	}
+	div.TVTourContainer .TVTourBlock .TVButtons {
+	    height: 52px;
+	}
+	div.TVTourContainer .TVTourBlock .TVNavButton,
+	div.TVTourContainer .TVTourBlock .TVNavButton.TVRSActiveButton {
+	    padding: 4px 6px;
+	    margin: 17px 6px 2px 0;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceBlock{
+	    margin-top: 23px;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceValue,
+	div.TVCurrencyRUB .TVCurrencyVal:after,
+	div.TVCurrencyVal:after{
+	    font-size: 20px;
+	    line-height: 24px;
+	}
+	div.TVCurrencyRUB .TVCurrencyVal:after,
+	div.TVCurrencyVal:after{
+		font-size: 16px;
+	}
+	div.TVPriceSuffix {
+	    margin-right: 6px;
+	}
+	div.TVTourBlock .TVPriceArrow{
+		display: none;
+	}
+
 }
 
 @media screen and (max-width: 374px){
@@ -2480,6 +2585,18 @@ div.TVCalDirectOnly {
 	}
 	.b-tourvisor-with-filter div.TVTem2Info{
 		margin-left: 0;
+	}
+
+	div.TVTourContainer .TVTourBlock .TVButtons {
+	    height: 86px;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceBlock {
+	    margin-top: 10px;
+	    display: block;
+    	float: none;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceValue {
+	    margin-left: 0;
 	}
 
 }

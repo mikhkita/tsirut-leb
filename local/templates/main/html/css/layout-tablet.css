@@ -472,6 +472,44 @@ div.TVFORow3 {
 	div.TVTourContainer .TVTourBlock .TVInfo {
 	    margin-left: 200px;
 	}
+	.b-tourvisor-with-filter .TVFilterForm,
+	.b-tourvisor-with-filter .TVSideFilterForm.TVTheme2 .TVOptionForm{
+		padding: 16px 16px 40px 16px;
+	}
+	.defaultTVFilterForm {
+	    width: 280px;
+	}
+	.b-tourvisor-with-filter div.TVResultTheme2 {
+	    width: calc(100% - 296px);
+	    margin-left: 16px;
+	}
+	div.TVTourContainer {
+	    padding-bottom: 16px;
+	    padding-top: 16px;
+	}
+	.TVTheme2 .TVNavButton.TVPriceTitle{
+		display: none;
+	}
+	div.TVTourContainer .TVTourBlock .TVNavButton,
+	div.TVTourContainer .TVTourBlock .TVNavButton.TVRSActiveButton {
+	    padding: 6px 12px;
+	    margin: 19px 6px 2px 0;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceBlock {
+	    margin-top: 21px;
+	}
+	div.TVTourContainer .TVTourBlock .TVPriceValue,
+	div.TVCurrencyRUB .TVCurrencyVal:after,
+	div.TVCurrencyVal:after{
+	    font-size: 24px;
+	    line-height: 28px;
+	}
+	div.TVTourBlock .TVPriceSuffix {
+	    margin-right: 6px;
+	}
+	div.TVTourBlock .TVPriceArrow:before {
+	    top: 7px;
+	}
 
 }
 
@@ -570,6 +608,7 @@ div.TVFORow3 {
 	    padding-left: 0;
 	    max-width: 446px;
 	}
+	.b-search-subscribe .b-mailing-form input[type=text],
 	.b-mailing-form input[type=text] {
 	    width: 100%;
 	    margin-bottom: 24px;
@@ -609,6 +648,9 @@ div.TVFORow3 {
 	.b-contacts-slider img {
 	    width: 500px;
 	    height: 312px;
+	}
+	.b-search-subscribe .b-subscribe-form .b-btn-submit {
+	    width: 100%;
 	}
 
 	div.TVTheme2 .TVOptionStars {
@@ -840,6 +882,10 @@ div.TVFORow3 {
 	.b-5-name small {
 	    font-size: 14px;
 	    line-height: 14px;
+	}
+
+	.TVTheme2 .TVNavButton.TVReviewTitle{
+		display: none;
 	}
 
 }

@@ -66,23 +66,23 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 						<ul class="b-radio-list">
 							<li>
 								<input id="rating-all" type="radio" name="rating" value="all" checked>
-								<label for="rating-all" data-TV="Любой рейтинг">Любой рейтинг</label>
+								<label for="rating-all" data-TV="Любой">Любой рейтинг</label>
 							</li>
 							<li>
 								<input id="rating-4_5" type="radio" name="rating" value="4.5">
-								<label for="rating-4_5" data-TV="> 4.5"><b>4.5+</b>&nbsp;Превосходно</label>
+								<label for="rating-4_5" data-TV="4,5 и более"><b>4.5+</b>&nbsp;Превосходно</label>
 							</li>
 							<li>
 								<input id="rating-4_0" type="radio" name="rating" value="4.0">
-								<label for="rating-4_0" data-TV="> 4.0"><b>4.0+</b>&nbsp;Очень хорошо</label>
+								<label for="rating-4_0" data-TV="4,0 и более"><b>4.0+</b>&nbsp;Очень хорошо</label>
 							</li>
 							<li>
 								<input id="rating-3_5" type="radio" name="rating" value="3.5">
-								<label for="rating-3_5" data-TV="> 3.5"><b>3.5+</b>&nbsp;Хорошо</label>
+								<label for="rating-3_5" data-TV="3,5 и более"><b>3.5+</b>&nbsp;Хорошо</label>
 							</li>
 							<li>
 								<input id="rating-3_0" type="radio" name="rating" value="3.0">
-								<label for="rating-3_0" data-TV="> 3.0"><b>3.0+</b>&nbsp;Удовлетворительно</label>
+								<label for="rating-3_0" data-TV="3,0 и более"><b>3.0+</b>&nbsp;Удовлетворительно</label>
 							</li>
 						</ul>
 					</div>
