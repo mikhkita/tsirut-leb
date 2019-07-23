@@ -2899,7 +2899,7 @@ ul.b-breadcrumbs {
 			}
 
 .b-search-subscribe{
-	
+
 }
 	.b-search-subscribe .b-subscribe-cont{
 		box-sizing: border-box;
@@ -6541,6 +6541,7 @@ div.tv_drop_panel .tv_content {
 div.TVCheckBox:before,
 div.TVTreeResorts .TVCheckBox:before,
 div.TVTabedListBody .TVCheckBox:before{
+	display: inline-block;
     font-size: 10px;
     line-height: 10px;
     height: 12px;
@@ -6549,7 +6550,8 @@ div.TVTabedListBody .TVCheckBox:before{
 }
 div.TVCheckBox.TVChecked:before,
 div.TVTreeResorts .TVCheckBox.TVChecked:before,
-div.TVTabedListBody .TVCheckBox.TVChecked:before {
+div.TVTabedListBody .TVCheckBox.TVChecked:before,
+div.TVTLHalfSelected .TVCheckBox:before{
 	content: "\e905";
 }
 div.TVCheckBox.TVChecked:before{

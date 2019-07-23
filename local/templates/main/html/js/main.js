@@ -1370,6 +1370,7 @@ function renderResort(){
     }
 }
 function bindResort() {
+    $(".b-resort-popup .b-popup-content .TVSubmitButton").unbind("click");
     $(".b-resort-popup .b-popup-content .TVSubmitButton").bind("click", function(){
         $.fancybox.close();
         return false;
@@ -1383,6 +1384,7 @@ function renderHotelType(){
     }
 }
 function bindHotelType() {
+    $(".b-hotel-type-popup .b-popup-content .TVSubmitButton").unbind("click");
     $(".b-hotel-type-popup .b-popup-content .TVSubmitButton").bind("click", function(){
         $.fancybox.close();
         return false;
