@@ -8,7 +8,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 			<div class="content">
 				<h2>Календарь туров</h2>
 				<div class="b-tourvisor-calendar-cont">
-
 					<div class="calendar-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 					<a href="#" class="b-btn b-btn-orange one-line hidden">
 						<p class="btn-bold">Показать туры</p>
@@ -26,8 +25,11 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 	<div class="b-block">
 		<h2 class="b-title regular"><b><?=$GLOBALS["arCountry"]["titleTV"];?></b></h2>
 		<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile hide">Открыть фильтр</a>
-		<div class="b b-tourvisor-with-filter" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
-			<div class="tv-search-form tv-moduleid-190001"></div>
+		<div class="b b-tourvisor">
+			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
+			<div class="b b-tourvisor-with-filter" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
+				<div class="tv-search-form tv-moduleid-190001"></div>
+			</div>
 		</div>
 		<div class="b-tourvisor-list">
 			<div class="b-filter-cont hidden">

@@ -137,6 +137,7 @@ $(document).ready(function(){
                       ]
                 });
             }
+            $(".stick").trigger("sticky_kit:detach");
             
         }else{
             step = 16;
@@ -168,6 +169,7 @@ $(document).ready(function(){
                     nextRow = 0;
                 }
             });
+            $(".stick").stick_in_parent({offset_top: 88});
         }
 
     }
@@ -512,6 +514,70 @@ $(document).ready(function(){
         autoplaySpeed: 3000,
     });
 
+    var targetScroll;
+    $(".b-hot-nav-item").on("click", function(){
+        var block = $(".b-hot-group:visible").eq($(this).index()),
+            off = 80,
+            duration = 500;
+        targetScroll = $(this).index();
+        console.log(targetScroll);
+        $(".b-hot-border").addClass("no-transition");
+        $("body, html").animate(
+            { scrollTop : block.offset().top-off },
+            duration, 
+            false, 
+            function () { 
+                targetScroll = null; 
+                $(".b-hot-border").removeClass("no-transition");
+            }
+        );
+        return false;
+    });
+
+    customHandlers["onScroll"] = function (scroll){
+        var scroll = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        if( $(".b-hot-groups").length ){
+            scrollHot(scroll);
+        }
+    }
+
+    function scrollHot(scroll){
+        $(".b-hot-nav-list .b-hot-nav-item").removeClass("active");
+
+        for (var i = $(".b-hot-group:visible").length - 1; i >= 0; i--) {
+            $this = $(".b-hot-group:visible").eq(i);
+
+            if( scroll + myHeight/3 > $this.offset().top - 80 ){
+                $(".b-hot-nav-list .b-hot-nav-item").eq(i).addClass("active");
+                if(targetScroll){
+                    var $target = $(".b-hot-nav-list .b-hot-nav-item").eq(targetScroll);
+                    moveBorder($target);
+                }else{
+                    moveBorder($(".b-hot-nav-list .b-hot-nav-item.active"));
+                }
+                return true;
+            }
+        }
+
+        $(".b-hot-nav-list .b-hot-nav-item").eq(0).addClass("active");
+    }
+
+    $(".b-hot-nav-list .b-hot-nav-item").hover(function(){
+        moveBorder($(this));
+    }, function(){
+        checkBorder();
+    });
+
+    function checkBorder(){
+        if( $(".b-hot-nav-list .b-hot-nav-item.active").length ){
+            moveBorder($(".b-hot-nav-list .b-hot-nav-item.active"));
+        }
+    }
+
+    function moveBorder($el){
+        $(".b-hot-border").css({"top" : $el.position().top - 5});
+    }
+
     // =========Турвизор=========
 
     if($(".b-tourvisor-header").length){
@@ -536,6 +602,10 @@ $(document).ready(function(){
         //ждать пока турвизор загрузится
         var waitTourvisorF = setInterval(function(){
             if( $(".b-tourvisor-with-filter .TVSearchButton").length ){
+                setInterval(function(){
+                    $(".b-tourvisor-with-filter").addClass("show-tv");
+                    $(".tourvisor-preloader").hide();
+                }, 500);
                 var country = $(".b-tourvisor-with-filter").attr("data-country");
                 if(country){
                     $(".TVCountry").click();
@@ -895,6 +965,53 @@ $(document).ready(function(){
         $(".TVSearchButton").click();
         return false;
     });
+
+    // ======Попап на детальной горящих туров=====
+
+    if( $(".b-hot-hotel-view").length ){
+        $(".b-hot-hotel-view").click(function(){
+            var price = $(this).parents("li").find(".b-hot-new-price").text();
+            var href = $(this).attr("data-href");
+            window.location.hash = "#!/type=hotellist";
+            setTimeout(function(){
+                window.location.hash = href;
+                $(".tv-container-fluid").html('<div class="cssload-container"><div class="cssload-shaft1"></div><div class="cssload-shaft2"></div><div class="cssload-shaft3"></div><div class="cssload-shaft4"></div><div class="cssload-shaft5"></div><div class="cssload-shaft6"></div><div class="cssload-shaft7"></div><div class="cssload-shaft8"></div><div class="cssload-shaft9"></div><div class="cssload-shaft10"></div></div>');
+                var hotelInterval = setInterval(function(){
+                    if( $(".TVCountryButton span:contains(Отзывы)").length ){
+                        var detail = $(".TVCountryH1").text().replace("*", "* ");
+
+                        $(".TVCountryButton span:contains(Отзывы)").parent(".TVCountryButton").remove();
+                        $(".TVCountryDescriptionContainer").parent(".tv-col-xs-12").addClass("TVCountryDescriptionContainer-cont").after('<div class="b-hot-detail-button"><a href="#" class="b-btn b-link-btn">Подробнее об отеле</a></div>');
+                        $(".b-hot-detail-button a").click(function(){
+                            if( $(".TVCountryDescriptionContainer-cont").hasClass("show") ){
+                                $(".TVCountryDescriptionContainer-cont").removeClass("show");
+                                $(this).text("Подробнее об отеле");
+                            }else{
+                                $(".TVCountryDescriptionContainer-cont").addClass("show");
+                                $(this).text("Свернуть текст");
+                            }
+
+                            return false;
+                        });
+                        $(".TVMinPriceBlock").html($(".TVMinPriceBlock .TVMinPriceLink").html());
+                        $(".TVMinPriceBlock, .TVMinPriceBlock *").click(function(){
+                            return false;
+                        });
+                        $(".TVBreadcrumbsContainer").remove();
+                        $(".b-hot-detail-button").after( $(".b-hot-form").clone().removeClass("already-validate") );
+                        $(".tv-container-fluid .b-hot-form input[name='detail']").val(detail);
+                        // customHandlers["validateAjax"]();
+                        // bindFancy(".tv-container-fluid .b-hot-form .fancy");
+
+                        $(".TVCountry .TVMinPriceBlock .TVMinPriceValue").html("<span>"+price+"</span>");
+
+                        clearInterval(hotelInterval);
+                    }
+                },10);
+            },10);
+            return false;
+        });
+    }
 
     function bindSearchForm(){
         // Клик по полю с выбором города

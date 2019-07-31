@@ -345,6 +345,12 @@
 			</div>
 		</div>
 
+		<div class="b-popup b-hotel-popup" id="b-hotel-popup">
+			<div class="b-popup-content">
+				<div class="tv-country tv-moduleid-982074"></div>
+			</div>
+		</div>
+
 		<div class="b-popup b-popup-quiz" id="b-popup-quiz">
 			<div class="b-popup-head">
 				<div class="b-popup-head-gradient"></div>
@@ -598,6 +604,7 @@
 	<script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/chosen.jquery.min.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/slideout.min.js"></script>
+	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/jquery.sticky-kit.min.js"></script>
 	<? if( isset( $GLOBALS["depends"][$GLOBALS["page"]] ) ): ?>
 		<? foreach ($GLOBALS["depends"][$GLOBALS["page"]]["js"] as $scriptName): ?>
 			<script type="text/javascript" src="<?=$scriptName?>"></script>

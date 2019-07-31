@@ -4,9 +4,11 @@ $APPLICATION->SetTitle("Отдых в России");
 ?>
 
 <div class="b-block">
-	<div class="b b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter" data-country="Россия">
+	<div class="b b-tourvisor">
 		<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
-		<div class="tv-search-form tv-moduleid-190548"></div>
+		<div class="b b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter" data-country="Россия">
+			<div class="tv-search-form tv-moduleid-190548"></div>
+		</div>
 	</div>
 	<div class="b-filter-cont hidden">
 		<div class="b-filter">

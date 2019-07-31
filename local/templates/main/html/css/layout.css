@@ -282,6 +282,169 @@ b{
 	min-width: 300px;
 	padding: 20px 52px 21px 52px;
 	text-align: center;
+	
+	/*background-image: -moz-linear-gradient(-90deg, #FFBD73 0%, #ED7408 100%);
+	background-image: -webkit-linear-gradient(-90deg, #FFBD73 0%, #ED7408 100%);
+	background-image: -ms-linear-gradient(-90deg, #FFBD73 0%, #ED7408 100%);*/
+	/*box-shadow: 0 10px 25px 0 rgba(191,90,0,0.40), inset 0 -27px 0px -23px rgba(191,90,0,0.40), inset 0 15px 0px -12px rgba(246, 231, 217, 0.4);*/
+	/*-webkit-transition: box-shadow 150ms ease-out, transform 100ms ease-out;
+	   -moz-transition: box-shadow 150ms ease-out, transform 100ms ease-out;
+	    -ms-transition: box-shadow 150ms ease-out, transform 100ms ease-out;
+	   	 -o-transition: box-shadow 150ms ease-out, transform 100ms ease-out;
+			transition: box-shadow 150ms ease-out, transform 100ms ease-out;*/
+}
+.b-btn.one-line{
+	padding: 20px 52px 26px 52px;
+}
+	.b-btn .btn-bold{
+		position: relative;
+		z-index: 5;
+		font-family: 'Gilroy-Heavy';
+		font-size: 22px;
+		line-height: 22px;
+		text-transform: uppercase;
+		text-shadow: 0 1px 3px rgba(0,0,0,0.20);
+		letter-spacing: 1px;
+		-webkit-transition: transform 100ms ease-out;
+		   -moz-transition: transform 100ms ease-out;
+		    -ms-transition: transform 100ms ease-out;
+		   	 -o-transition: transform 100ms ease-out;
+				transition: transform 100ms ease-out;
+	}
+	.b-btn .btn-regular{
+		position: relative;
+		z-index: 5;
+		font-family: 'Gilroy-Regular';
+		font-size: 20px;
+		line-height: 20px;
+		margin-top: 7px;
+		letter-spacing: 0.6px;
+		-webkit-transition: transform 100ms ease-out;
+		   -moz-transition: transform 100ms ease-out;
+		    -ms-transition: transform 100ms ease-out;
+		   	 -o-transition: transform 100ms ease-out;
+				transition: transform 100ms ease-out;
+	}
+	.b-btn:before,
+	.b-btn:after{
+		overflow: hidden;
+		position: absolute;
+		content: "s";
+		font-size: 0px;
+		width: 100%;
+		height: 100%;
+		left: 0px;
+		bottom: 0px;
+		border-radius: 100px;
+		overflow: hidden;
+		-webkit-transition: box-shadow 100ms ease-out, transform 100ms ease-out;
+		   -moz-transition: box-shadow 100ms ease-out, transform 100ms ease-out;
+		    -ms-transition: box-shadow 100ms ease-out, transform 100ms ease-out;
+		   	 -o-transition: box-shadow 100ms ease-out, transform 100ms ease-out;
+				transition: box-shadow 100ms ease-out, transform 100ms ease-out;
+	}
+	.b-btn:active .btn-bold,
+	.b-btn:active .btn-regular{
+		-webkit-transform: translateY(3px);
+		   -moz-transform: translateY(3px);
+	    	-ms-transform: translateY(3px);
+	    	 -o-transform: translateY(3px); 
+	    		transform: translateY(3px);
+	}
+	/*=====*/
+	.b-btn-orange:before{
+		z-index: 1;
+		background: #BF5A00;
+		box-shadow: 0 10px 25px 0 rgba(191,90,0,0.40);
+	}
+	.b-btn-orange:after{
+		bottom: 3px;
+    	z-index: 2;
+		background-image: linear-gradient(-180deg, #FFBD73 0%, #ED7408 100%);
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,0.50);
+	}
+
+	.b-btn-orange:hover:before{
+
+	}
+	.b-btn-orange:hover:after{
+		background-image: linear-gradient(-180deg, #FFBD73 0%, #ED7408 100%);
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,0.50), inset 0 -20px 50px 0 #F16D32;
+	}
+
+	.b-btn-orange:active:before{
+
+	}
+	.b-btn-orange:active:after{
+		-webkit-transform: translateY(3px);
+		   -moz-transform: translateY(3px);
+	    	-ms-transform: translateY(3px);
+	    	 -o-transform: translateY(3px); 
+	    		transform: translateY(3px);
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,0.50), inset 0 -20px 50px 0 #F16D32;
+	}
+	/*=====*/
+	.b-btn-blue:before{
+		z-index: 1;
+		background: #004EB0;
+		box-shadow: 0 10px 25px 0 rgba(0,32,73,0.20);
+	}
+	.b-btn-blue:after{
+		bottom: 3px;
+    	z-index: 2;
+    	background-image: linear-gradient(-180deg, #68A9FB 0%, #095AC0 100%);
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,0.50);
+		
+	}
+
+	.b-btn-blue:hover:before{
+		background: #124483;
+		box-shadow: 0 10px 25px 0 rgba(0,32,73,0.20);
+	}
+	.b-btn-blue:hover:after{
+		background-image: linear-gradient(-180deg, #68A9FB 0%, #095AC0 100%);
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,0.50), inset 0 -10px 50px 0 rgba(0,13,209,0.50);
+	}
+
+	.b-btn-blue:active:before{
+
+	}
+	.b-btn-blue:active:after{
+		-webkit-transform: translateY(3px);
+		   -moz-transform: translateY(3px);
+	    	-ms-transform: translateY(3px);
+	    	 -o-transform: translateY(3px); 
+	    		transform: translateY(3px);
+		box-shadow: inset 0 2px 3px 0 rgba(255,255,255,0.50), inset 0 -10px 50px 0 rgba(0,13,209,0.50);
+	}
+
+.b-btn-tr{
+	position: relative;
+	display: inline-block;
+	background-color: transparent;
+	color: #FFF;
+	border-radius: 100px;
+	padding: 11px 29px 14px 29px;
+	text-align: center;
+	font-family: 'Gilroy-Medium';
+	font-size: 16px;
+	line-height: 20px;
+	border: 2px solid #FFF;
+}
+	.b-btn-tr:hover{
+		background-color: #FFF;
+		color: #434343;
+	}
+
+/*
+.b-btn{
+	position: relative;
+	color: #FFF;
+	border-radius: 100px;
+	display: inline-block;
+	min-width: 300px;
+	padding: 20px 52px 21px 52px;
+	text-align: center;
 	background-image: -moz-linear-gradient(-90deg, #FFBD73 0%, #ED7408 100%);
 	background-image: -webkit-linear-gradient(-90deg, #FFBD73 0%, #ED7408 100%);
 	background-image: -ms-linear-gradient(-90deg, #FFBD73 0%, #ED7408 100%);
@@ -442,7 +605,7 @@ b{
 	.b-btn-tr:hover{
 		background-color: #FFF;
 		color: #434343;
-	}
+	}*/
 
 /*====Кнопки турвизора====*/
 
@@ -505,7 +668,7 @@ b{
 			width: 125px;
 			height: 86px;
 			background-position: 50% 50%;
-		    background-image: url(../i/logo.png);
+		    background-image: url(../i/logo.svg);
 		    background-repeat: no-repeat;
 		    background-size: 125px;
 		    margin-right: 26px;
@@ -609,7 +772,7 @@ b{
 		width: 125px;
 		height: 86px;
 		background-position: 50% 50%;
-	    background-image: url(../i/logo.png);
+	    background-image: url(../i/logo.svg);
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	    opacity: 0;
@@ -1364,7 +1527,7 @@ b{
 				line-height: 16px;
 			}
 
-.b-tourvisor{
+.b-tourvisor-main{
 	padding: 68px 0 74px 0;
 	margin-bottom: 62px;
 	background-image: url(../i/head.jpg);
@@ -1372,7 +1535,7 @@ b{
     background-repeat: no-repeat;
     background-size: cover;
 }
-	.b-tourvisor h2.b-title{
+	.b-tourvisor-main h2.b-title{
 		margin-bottom: 38px;
 	}
 
@@ -1733,7 +1896,7 @@ b{
 			    width: 163px;
 			    height: 112px;
 			    background-position: 50% 50%;
-			    background-image: url(../i/logo.png);
+			    background-image: url(../i/logo.svg);
 			    background-repeat: no-repeat;
 			    background-size: 163px;
 			}
@@ -1936,6 +2099,28 @@ b{
 
 /*=======Поиск туров=======*/
 
+
+.b-tourvisor{
+	width: 100%;
+	min-height: 124px;
+	margin-bottom: 20px;
+}
+	.tourvisor-preloader{
+		position: absolute;
+		top: 20px;
+		left: calc(50% - 77px);
+	}
+	.calendar-preloader{
+		position: absolute;
+		top: 100px;
+		left: calc(50% - 77px);
+	}
+	.tourvisor-preloader img,
+	.calendar-preloader img{
+		width: 154px;
+		height: 50px;
+	}
+
 .b-content{
 	margin-top: -235px;
 	z-index: 5;
@@ -1949,19 +2134,8 @@ b{
 	}
 
 .b-tourvisor-header{
-	width: 100%;
-	min-height: 124px;
-	margin-bottom: 20px;
+	
 }
-	.tourvisor-preloader{
-		position: absolute;
-		top: 20px;
-		left: calc(50% - 77px);
-	}
-	.tourvisor-preloader img{
-		width: 154px;
-		height: 50px;
-	}
 
 .b-title-absolute h2.b-title{
 	position: absolute;
@@ -2898,8 +3072,263 @@ ul.b-breadcrumbs {
 		    	line-height: 28px;
 			}
 
-.b-search-subscribe{
+/*====Горящие туры (детальная)====*/
 
+.b-hot-nav-list{
+	position: relative;
+	width: 302px;
+	border-radius: 10px;
+	border: 5px solid #EFF2F6;
+	margin-right: 24px;
+}
+	.b-hot-nav-list .b-hot-nav-item{
+		cursor: pointer;
+		padding: 13px 32px;
+		-webkit-transition: background-color 200ms ease-out;
+		-moz-transition: background-color 200ms ease-out;
+		-ms-transition: background-color 200ms ease-out;
+		-o-transition: background-color 200ms ease-out;
+		transition: background-color 200ms ease-out;
+	}
+	.b-hot-border{
+		position: absolute;
+	    top: -5px;
+	    left: -5px;
+		border: 5px solid #ED7408;
+	    border-radius: 10px;
+	    width: calc(100% + 10px);
+	    height: 92px;
+	    background-color: transparent;
+    	pointer-events: none;
+    	-webkit-transition: top 200ms ease-out;
+		-moz-transition: top 200ms ease-out;
+		-ms-transition: top 200ms ease-out;
+		-o-transition: top 200ms ease-out;
+		transition: top 200ms ease-out;
+	}
+	.b-hot-border:before{
+		content: " ";
+		display: block;
+	    position: absolute;
+	    top: calc(50% - 10px);
+	    right: -24px;
+	    border: 10px solid transparent;
+	    border-left: 10px solid #ED7408;
+	}
+	.b-hot-border.no-transition{
+		-webkit-transition: none;
+		-moz-transition: none;
+		-ms-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+	.b-hot-nav-list .b-hot-nav-item:hover{
+		background-color: #EFF2F6;
+	}
+		.b-hot-nav-date{
+			color: #9C9C9C;
+		}
+			.b-hot-nav-date b{
+				font-size: 20px;
+				line-height: 28px;
+				color: #282828;
+			}
+		.b-hot-nav-price{
+
+		}
+			.b-hot-new-price{
+				font-family: "Gilroy-Bold";
+				font-size: 20px;
+				line-height: 28px;
+				color: #ED7408;
+			}
+
+.b-hot-groups {
+    width: calc(100% - 326px);
+}
+.b-hot-groups .b-search-subscribe{
+	margin-top: 32px;
+	margin-bottom: 0;
+}
+	.b-hot-tog{
+
+	}
+		.b-hot-tog h2{
+			font-size: 36px;
+			line-height: 40px;
+			margin-bottom: 16px;
+		}
+	.b-hot-group-dates{
+		margin-bottom: 8px;
+	}
+		.b-hot-group-dates span:first-child{
+			margin-right: 32px;
+		}
+
+	.b-hot-group{
+		margin-bottom: 60px;
+	}
+	.b-hot-group-list{
+		
+	}
+		.b-hot-group-list li{
+			position: relative;
+			display: table;
+			width: 100%;
+			padding: 16px 0 21px 0;
+		}
+		.b-hot-group-list li:after{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			content: " ";
+			width: 100%;
+			height: 5px;
+			border-radius: 5px;
+			background-color: #EFF2F6;
+		}
+			.b-hot-group-list .b-col{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.b-hot-group-img{
+				width: 130px;
+			    height: 87px;
+			    border-radius: 5px;
+			    overflow: hidden;
+			}
+				.b-hot-group-img img{
+					width: 100%;
+					display: block;
+				}
+			.b-hot-group-name{
+				padding-left: 24px;
+				width: calc(100% - 480px);
+				padding-right: 16px;
+			}
+				.b-hot-group-name h3{
+					color: #282828;
+					margin-bottom: 3px;
+				}
+				.b-hot-stars{
+					margin-bottom: 5px;
+					height: 16px;
+					font-size: 0px;
+				}
+					.b-hot-star{
+						display: inline-block;
+						width: 16px;
+						height: 16px;
+						margin-right: 4px;
+						background-repeat: no-repeat;
+						background-image: url('../i/star-fill.svg');
+						background-size: 16px;
+						background-position: 0px;
+					}
+				.b-hot-group-type{
+
+				}
+					.b-hot-group-type span{
+						font-size: 14px;
+						display: block;
+						line-height: 20px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						height: 20px;
+						white-space: nowrap;
+					}
+						.b-hot-group-type b{
+							font-family: "Gilroy-Bold";
+							font-weight: normal;
+						}
+			.b-hot-group-price{
+				width: 162px;
+				padding-right: 28px; 
+			}
+				.b-hot-group-list .b-hot-new-price{
+					color: #282828;
+				}
+				.b-hot-group-list .b-hot-day-price{
+					font-size: 14px;
+					color: #B5C3D6;
+				}
+			.b-hot-group-button{
+				text-align: center;
+				width: 190px;
+			}
+				.b-btn-hot-hotel{
+					min-width: 190px;
+					font-family: "Gilroy-Bold";
+					font-size: 16px;
+					line-height: 16px;
+					color: #ED7408;
+					border: 2px solid #ED7408;
+					text-align: center;
+					padding: 16px 0;
+				}
+.b-popup.b-hotel-popup {
+    max-width: 960px;
+}
+
+.b-hotel-popup .TVStarContainer .TVStar {
+    margin-right: 4px;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.b-hotel-popup .TVScreenSm:not(.TVScreenMd) .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryButtons .TVCountryButton{
+	border: 2px solid #E7ECF1;
+    border-radius: 6px;
+    padding: 8px 22px;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 24px;
+    color: #434343;
+    font-family: 'Gilroy-Medium';
+    margin: 0 16px 0 0;
+}
+.b-hotel-popup .TVScreenSm .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryH1 {
+	font-size: 24px;
+	line-height: 30px;
+	font-family: 'Gilroy-Bold';
+	color: #282828;
+}
+.b-hotel-popup .TVCountry .TVCountrySubTitle,
+.b-hotel-popup .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryText{
+	font-family: 'Gilroy-Regular';
+}
+.b-hotel-popup .TVCountryDetail .TVCountrySubTitle {
+    margin-bottom: 4px;
+}
+.b-hotel-popup .TVCountry .TVCountryText {
+    font-size: 16px;
+    line-height: 24px;
+}
+.b-hotel-popup .TVHotelTypes .TVHotelType{
+	font-family: 'Gilroy-Regular';
+}
+
+.b-hotel-popup .TVMinPriceSuffix, .b-hotel-popup .TVMinPriceArrow{
+	display: none;
+}
+
+.b-hotel-popup .TVMinPriceValue{
+	font-size: 24px;
+	line-height: 30px;
+	font-family: 'Gilroy-Bold';
+}
+
+.b-hotel-popup .TVCountry .TVMinPriceBlock .TVMinPriceValue{
+	margin-top: 
+}
+
+/*==============*/
+
+.b-search-subscribe{
+	margin-bottom: 60px;
+}
+.b-tourvisor-with-filter .b-search-subscribe{
+	margin-bottom: 0;
 }
 	.b-search-subscribe .b-subscribe-cont{
 		box-sizing: border-box;
@@ -3295,6 +3724,50 @@ input{
     background-color: rgba(0, 0, 0, 0.25);
 }
 
+.slideout-menu{
+
+}
+	.slideout-menu h2{
+		font-family: 'Gilroy-Bold';
+	    font-size: 24px;
+	    line-height: 36px;
+	    padding: 24px 24px 26px 24px;
+	    margin-bottom: 0;
+	}
+
+	.slideout-menu ul{
+		background-color: #f8f8f8;
+		padding: 8px 0;
+	}
+		.slideout-menu ul li{
+			padding: 0 24px;
+		}
+			.slideout-menu ul li.active a,
+			.slideout-menu ul li a.active{
+				color: #ED7408;
+			}
+			.slideout-menu ul li a{
+				display: block;
+				color: #434343;
+				font-family: 'Gilroy-Medium';
+				font-size: 16px;
+				padding: 16px 0;
+				border-bottom: 1px solid #eaeaea;
+			}
+			.slideout-menu ul li:last-child a{
+				border-bottom: 0;
+			}
+	.slideout-button{
+		padding: 16px 24px;
+	}
+		.slideout-button .b-btn{
+			min-width: 252px;
+		}
+			.slideout-button .b-btn .btn-bold{
+				font-size: 18px;
+    			line-height: 20px;
+			}
+
 /*=====Попапы=====*/
 
 .fancybox-container {
@@ -3465,6 +3938,9 @@ input{
 					border-radius: 5px;
 					cursor: pointer;
 				}
+				.b-quiz-list label:hover{
+					border: 2px solid #ED7408;
+				}
 				.b-quiz-list input:checked + label{
 					border: 2px solid #ED7408;
 					color: #ED7408;
@@ -3624,9 +4100,6 @@ input{
 
 @media (-webkit-min-device-pixel-ratio: 1.5) {
 	
-	.b-logo{
-	    background-image: url(../i/logo@2x.png);
-	}
 	.visa-master{
 		background-image: url(../i/visa-master@2x.jpg);
 	}
@@ -3672,7 +4145,7 @@ div.TVMainFilterLable{
 	font-family: 'Gilroy-Medium';
 	font-size: 14px;
 	line-height: 18px;
-	color: #A4A4A4;
+	color: #b8bfc7;
 	top: 14px;
 }
 div.TVCountry .TVMainFilterLable:after {
@@ -3701,6 +4174,7 @@ div.TVMainFilterButton{
 	border-right: 0;
 	font-family: 'Gilroy-Bold';
     font-size: 20px;
+    overflow: visible;
 }
 div.TVMainFilterButton:after{
 	content: " ";
@@ -3711,25 +4185,37 @@ div.TVMainFilterButton:after{
 	height: 39px;
 	background-color: #D8D8D8;
 }
+div.TVMainFilterButton:hover:before{
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: -1px;
+	height: 100%;
+	width: 1px;
+	background-color: #f1f1f1;
+}
+div.TVMainFilterButton:hover:after{
+	display: none;
+}
 .TVMainFilterButton.TVTourists:after{
 	display: none;
 }
 /*div.TVMainFilterButton:hover{
 	background-color: #fff;
 }*/
-.b-tourvisor div.TVSearchButton{
+.b-tourvisor-main div.TVSearchButton{
 	display: none;
 }
-.b-tourvisor div.TVWideForm.TVTheme2 .TVCountry {
+.b-tourvisor-main div.TVWideForm.TVTheme2 .TVCountry {
     width: calc(25% - 36px);
 }
-.b-tourvisor div.TVWideForm.TVTheme2 .TVDates {
+.b-tourvisor-main div.TVWideForm.TVTheme2 .TVDates {
     width: calc(25% - 36px);
 }
-.b-tourvisor div.TVWideForm.TVTheme2 .TVNights {
+.b-tourvisor-main div.TVWideForm.TVTheme2 .TVNights {
     width: calc(25% - 36px);
 }
-.b-tourvisor div.TVWideForm.TVTheme2 .TVTourists {
+.b-tourvisor-main div.TVWideForm.TVTheme2 .TVTourists {
     width: calc(25% - 36px);
 }
 
@@ -3940,6 +4426,19 @@ div.TVDetailPanel .TVOptionCheckBox {
     margin-bottom: 9px;
 }
 
+.b-tourvisor-with-filter{
+	/*display: none;*/
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+}
+.b-tourvisor-with-filter.show-tv{
+	opacity: 1;
+	visibility: visible;
+	position: static;
+	top: auto;
+}
 .b-tourvisor-with-filter div.TVFilterForm{
 	display: none;
 }
@@ -3963,8 +4462,9 @@ div.TVDetailPanel .TVOptionCheckBox {
 }
 .b-tourvisor-with-filter div.TVWideForm.TVTheme2 .TVSearchButton,
 .b-tourvisor-with-filter .TVSideFilterForm.TVTheme2 .TVSearchButton{
-    width: 207px;
+    width: 199px;
     margin-top: 7px;
+    margin-left: 8px;
 }
 div.TVSearchButton{
 	text-transform: none;
@@ -4440,7 +4940,7 @@ div.TVCalDirectOnly .TVCheckBox:after {
     content: "Только прямые рейсы";
     cursor: pointer;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 16px;
     text-transform: none;
     font-family: 'Gilroy-Medium';
 }
@@ -4619,15 +5119,6 @@ div.TVTem2TourContainer{
 		min-width: 220px;
 	    padding: 14px 38px 15px 38px;
 	}
-.calendar-preloader{
-	position: absolute;
-	top: 100px;
-	left: calc(50% - 77px);
-}
-.calendar-preloader img{
-	width: 154px;
-	height: 50px;
-}
 
 .b-tourvisor-calendar-cont .b-btn.hidden{
 	display: none;

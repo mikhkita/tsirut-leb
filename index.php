@@ -224,20 +224,17 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		</div>
 	</div>
 </div>
-<div class="b b-tourvisor">
-	<div class="b-head-gradient">
-	</div>
+<div class="b b-tourvisor-main">
+	<div class="b-head-gradient"></div>
 	<div class="b-block gradient-after">
 		<h2 class="b-title white">Или подберите тур самостоятельно</h2>
 		<!-- <div class="tv-search-form tv-moduleid-189840">
 		</div> -->
 		<div class="tv-search-form tv-moduleid-190546"></div>
 		<div class="center">
- <a href="#" class="b-btn b-btn-orange one-line TVSearchButton_custom">
-			<p class="btn-bold">
-				 Найти туры
-			</p>
- </a>
+			 <a href="#" class="b-btn b-btn-orange one-line TVSearchButton_custom">
+				<p class="btn-bold">Найти туры</p>
+			 </a>
 		</div>
 	</div>
 </div>

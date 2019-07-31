@@ -105,7 +105,7 @@ body {
 .b-4-item:nth-child(3n) .div-p{
      padding: 0; 
 }
-.b-tourvisor div.TVHotelStar {
+.b-tourvisor-main div.TVHotelStar {
     margin-right: 12px;
 }
 .b-tourvisor-with-filter div.TVMainFilterButton{
@@ -147,7 +147,7 @@ body {
 	width: 14%;
 }
 .b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVSearchButton{
-    width: calc(14% - 8px);
+    width: calc(14% - 16px);
     margin-top: 10px;
 }
 
@@ -308,7 +308,7 @@ div.TVFORow3 {
 	.b-feedback.b-feedback-shadow .b-feedback-text{
 	    padding-left: 32px;
 	}
-	.b-tourvisor div.TVHotelStar {
+	.b-tourvisor-main div.TVHotelStar {
 	    margin-right: 6px;
 	}
 	
@@ -446,7 +446,7 @@ div.TVFORow3 {
 		width: 25%;
 	}
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVSearchButton{
-	    width: calc(25% - 8px);
+	    width: calc(25% - 16px);
 	}
 	.b-search-pay img {
 	    display: none;
@@ -518,7 +518,7 @@ div.TVFORow3 {
 	.b-menu{
 		display: none;
 	}
-	.b-menu-mobile {
+	.b-menu-mobile-cont{
 	    display: block;
 	}
 	.b-head{
@@ -656,15 +656,15 @@ div.TVFORow3 {
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 11px;
 	}
-	.b-tourvisor div.TVHotelStar {
+	.b-tourvisor-main div.TVHotelStar {
 	    width: 20px;
 	    height: 20px;
 	    margin-right: 8px;
 	}
-	.b-tourvisor div.TVTheme2 .TVHotelStar:before {
+	.b-tourvisor-main div.TVTheme2 .TVHotelStar:before {
 	    font-size: 20px;
 	}
-	.b-tourvisor div.TVTheme2 .TVHotelStar.TVImageActive:before {
+	.b-tourvisor-main div.TVTheme2 .TVHotelStar.TVImageActive:before {
 	    font-size: 20px;
 	}
 	.b-tourvisor-calendar-cont .TVCalDiagramDate {
@@ -749,15 +749,15 @@ div.TVFORow3 {
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 12px;
 	}
-	.b-tourvisor div.TVHotelStar {
+	.b-tourvisor-main div.TVHotelStar {
 	    width: 18px;
 	    height: 18px;
 	    margin-right: 5px;
 	}
-	.b-tourvisor div.TVTheme2 .TVHotelStar:before {
+	.b-tourvisor-main div.TVTheme2 .TVHotelStar:before {
 	    font-size: 18px;
 	}
-	.b-tourvisor div.TVTheme2 .TVHotelStar.TVImageActive:before {
+	.b-tourvisor-main div.TVTheme2 .TVHotelStar.TVImageActive:before {
 	    font-size: 18px;
 	}
 	div.TVFORow1 {
