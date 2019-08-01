@@ -347,7 +347,10 @@
 
 		<div class="b-popup b-hotel-popup" id="b-hotel-popup">
 			<div class="b-popup-content">
-				<div class="tv-country tv-moduleid-982074"></div>
+				<div class="b">
+					<!-- <div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div> -->
+					<div class="tv-country tv-moduleid-982074"></div>
+				</div>
 			</div>
 		</div>
 

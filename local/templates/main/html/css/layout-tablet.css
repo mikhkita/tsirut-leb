@@ -89,6 +89,12 @@ body {
 .b-copyright{
 	margin-right: 50px;
 }
+.b-hot-group .b-mailing-cont{
+	width: 100%;
+}
+.b-hot-group .b-search-subscribe .b-mailing-form input[type=text] {
+	width: calc(100% - 306px);
+}
 .b-search-subscribe .b-mailing-form input[type=text] {
     width: calc(50% - 15px);
     margin-bottom: 24px;
@@ -111,6 +117,9 @@ body {
 .b-tourvisor-with-filter div.TVMainFilterButton{
 	box-sizing: border-box;
 	max-height: 100px;
+}
+.b-hot-block{
+	margin-top: 0;
 }
 /*.b-tourvisor-header div.TVMainFilterButton{
 	box-sizing: border-box;
@@ -310,6 +319,25 @@ div.TVFORow3 {
 	}
 	.b-tourvisor-main div.TVHotelStar {
 	    margin-right: 6px;
+	}
+
+	.b-hot-group-price{
+		width: 146px;
+    	padding-right: 12px;
+	}
+	.b-hot-group-button{
+		width: 145px;
+	}
+	.b-btn-hot-hotel{
+	    min-width: 145px;
+	    padding: 12px 0;
+	}
+	.b-hot-group-img {
+	    width: 110px;
+	    height: 74px;
+	}
+	.b-hot-group-name{
+		padding-left: 16px;
 	}
 	
 }
@@ -613,6 +641,9 @@ div.TVFORow3 {
 	    width: 100%;
 	    margin-bottom: 24px;
 	}
+	.b-hot-group .b-mailing-form .b-btn-submit{
+		width: auto;
+	}
 	.b-mailing-form .b-btn-submit{
 		width: 100%;
 	}
@@ -651,6 +682,15 @@ div.TVFORow3 {
 	}
 	.b-search-subscribe .b-subscribe-form .b-btn-submit {
 	    width: 100%;
+	}
+	.b-hot-nav{
+		display: none;
+	}
+	.b-hot-groups {
+	    width: 100%;
+	}
+	.b-popup.b-hotel-popup {
+	    width: calc(100% - 48px);
 	}
 
 	div.TVTheme2 .TVOptionStars {

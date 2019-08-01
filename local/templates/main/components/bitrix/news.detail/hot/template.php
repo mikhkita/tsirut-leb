@@ -143,9 +143,3 @@ $departureId = $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["TOURVISOR_ID"];
 		</div>
 	</div>
 </div>
-<div class="b-block b-slim b-text not-padding-bottom tcenter">
-	<? if($arResult["PROPERTIES"]["PODBOR"]["VALUE"]): ?>
-		<h3>Не нашли подходящую дату? Вы можете оставить заявку, и мы подберем для Вас горящие туры <?=$arResult["PROPERTIES"]["PODBOR"]["VALUE"]?> на другие даты.</h3>
-	<? endif; ?>
-	<div class="b-hot-btn-cont"><a href="#b-popup-hot-more" class="fancy b-btn b-blue-btn">Подобрать туры на другие даты</a></div>
-</div>

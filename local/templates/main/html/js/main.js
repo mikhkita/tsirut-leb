@@ -514,21 +514,20 @@ $(document).ready(function(){
         autoplaySpeed: 3000,
     });
 
-    var targetScroll;
+    var targetScroll = -1;
     $(".b-hot-nav-item").on("click", function(){
         var block = $(".b-hot-group:visible").eq($(this).index()),
             off = 80,
             duration = 500;
-        targetScroll = $(this).index();
-        console.log(targetScroll);
-        $(".b-hot-border").addClass("no-transition");
+        // targetScroll = $(this).index();
+        //$(".b-hot-border").addClass("no-transition");
         $("body, html").animate(
             { scrollTop : block.offset().top-off },
             duration, 
             false, 
             function () { 
-                targetScroll = null; 
-                $(".b-hot-border").removeClass("no-transition");
+                // targetScroll = -1; 
+                // $(".b-hot-border").removeClass("no-transition");
             }
         );
         return false;
@@ -549,12 +548,13 @@ $(document).ready(function(){
 
             if( scroll + myHeight/3 > $this.offset().top - 80 ){
                 $(".b-hot-nav-list .b-hot-nav-item").eq(i).addClass("active");
-                if(targetScroll){
-                    var $target = $(".b-hot-nav-list .b-hot-nav-item").eq(targetScroll);
-                    moveBorder($target);
-                }else{
-                    moveBorder($(".b-hot-nav-list .b-hot-nav-item.active"));
-                }
+                // if(targetScroll >= 0){
+                //     var $target = $(".b-hot-nav-list .b-hot-nav-item").eq(targetScroll);
+                //     moveBorder($target);
+                // }else{
+                //     moveBorder($(".b-hot-nav-list .b-hot-nav-item.active"));
+                // }
+                moveBorder($(".b-hot-nav-list .b-hot-nav-item.active"));
                 return true;
             }
         }
@@ -562,11 +562,11 @@ $(document).ready(function(){
         $(".b-hot-nav-list .b-hot-nav-item").eq(0).addClass("active");
     }
 
-    $(".b-hot-nav-list .b-hot-nav-item").hover(function(){
-        moveBorder($(this));
-    }, function(){
-        checkBorder();
-    });
+    // $(".b-hot-nav-list .b-hot-nav-item").hover(function(){
+    //     moveBorder($(this));
+    // }, function(){
+    //     checkBorder();
+    // });
 
     function checkBorder(){
         if( $(".b-hot-nav-list .b-hot-nav-item.active").length ){
@@ -970,36 +970,38 @@ $(document).ready(function(){
 
     if( $(".b-hot-hotel-view").length ){
         $(".b-hot-hotel-view").click(function(){
+            $(".b-hotel-popup .tv-country").hide();
             var price = $(this).parents("li").find(".b-hot-new-price").text();
             var href = $(this).attr("data-href");
             window.location.hash = "#!/type=hotellist";
             setTimeout(function(){
                 window.location.hash = href;
-                $(".tv-container-fluid").html('<div class="cssload-container"><div class="cssload-shaft1"></div><div class="cssload-shaft2"></div><div class="cssload-shaft3"></div><div class="cssload-shaft4"></div><div class="cssload-shaft5"></div><div class="cssload-shaft6"></div><div class="cssload-shaft7"></div><div class="cssload-shaft8"></div><div class="cssload-shaft9"></div><div class="cssload-shaft10"></div></div>');
+                //$(".tv-container-fluid").html('<div class="cssload-container"><div class="cssload-shaft1"></div><div class="cssload-shaft2"></div><div class="cssload-shaft3"></div><div class="cssload-shaft4"></div><div class="cssload-shaft5"></div><div class="cssload-shaft6"></div><div class="cssload-shaft7"></div><div class="cssload-shaft8"></div><div class="cssload-shaft9"></div><div class="cssload-shaft10"></div></div>');
                 var hotelInterval = setInterval(function(){
                     if( $(".TVCountryButton span:contains(Отзывы)").length ){
-                        var detail = $(".TVCountryH1").text().replace("*", "* ");
+                        $(".b-hotel-popup .tv-country").show();
+                        // var detail = $(".TVCountryH1").text().replace("*", "* ");
 
                         $(".TVCountryButton span:contains(Отзывы)").parent(".TVCountryButton").remove();
-                        $(".TVCountryDescriptionContainer").parent(".tv-col-xs-12").addClass("TVCountryDescriptionContainer-cont").after('<div class="b-hot-detail-button"><a href="#" class="b-btn b-link-btn">Подробнее об отеле</a></div>');
-                        $(".b-hot-detail-button a").click(function(){
-                            if( $(".TVCountryDescriptionContainer-cont").hasClass("show") ){
-                                $(".TVCountryDescriptionContainer-cont").removeClass("show");
-                                $(this).text("Подробнее об отеле");
-                            }else{
-                                $(".TVCountryDescriptionContainer-cont").addClass("show");
-                                $(this).text("Свернуть текст");
-                            }
+                        // $(".TVCountryDescriptionContainer").parent(".tv-col-xs-12").addClass("TVCountryDescriptionContainer-cont").after('<div class="b-hot-detail-button"><a href="#" class="b-btn b-link-btn">Подробнее об отеле</a></div>');
+                        // $(".b-hot-detail-button a").click(function(){
+                        //     if( $(".TVCountryDescriptionContainer-cont").hasClass("show") ){
+                        //         $(".TVCountryDescriptionContainer-cont").removeClass("show");
+                        //         $(this).text("Подробнее об отеле");
+                        //     }else{
+                        //         $(".TVCountryDescriptionContainer-cont").addClass("show");
+                        //         $(this).text("Свернуть текст");
+                        //     }
 
-                            return false;
-                        });
-                        $(".TVMinPriceBlock").html($(".TVMinPriceBlock .TVMinPriceLink").html());
-                        $(".TVMinPriceBlock, .TVMinPriceBlock *").click(function(){
-                            return false;
-                        });
+                        //     return false;
+                        // });
+                        // $(".TVMinPriceBlock").html($(".TVMinPriceBlock .TVMinPriceLink").html());
+                        // $(".TVMinPriceBlock, .TVMinPriceBlock *").click(function(){
+                        //     return false;
+                        // });
                         $(".TVBreadcrumbsContainer").remove();
-                        $(".b-hot-detail-button").after( $(".b-hot-form").clone().removeClass("already-validate") );
-                        $(".tv-container-fluid .b-hot-form input[name='detail']").val(detail);
+                        // $(".b-hot-detail-button").after( $(".b-hot-form").clone().removeClass("already-validate") );
+                        // $(".tv-container-fluid .b-hot-form input[name='detail']").val(detail);
                         // customHandlers["validateAjax"]();
                         // bindFancy(".tv-container-fluid .b-hot-form .fancy");
 
@@ -1012,6 +1014,8 @@ $(document).ready(function(){
             return false;
         });
     }
+
+    // ============
 
     function bindSearchForm(){
         // Клик по полю с выбором города

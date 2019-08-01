@@ -3074,6 +3074,13 @@ ul.b-breadcrumbs {
 
 /*====Горящие туры (детальная)====*/
 
+.b-city-tabs.b-hot-city-tabs {
+    margin-bottom: 70px;
+}
+.b-hot-block{
+	margin-top: 14px;
+}
+
 .b-hot-nav-list{
 	position: relative;
 	width: 302px;
@@ -3194,12 +3201,12 @@ ul.b-breadcrumbs {
 			.b-hot-group-img{
 				width: 130px;
 			    height: 87px;
-			    border-radius: 5px;
-			    overflow: hidden;
 			}
 				.b-hot-group-img img{
 					width: 100%;
 					display: block;
+					border-radius: 5px;
+			    	overflow: hidden;
 				}
 			.b-hot-group-name{
 				padding-left: 24px;
@@ -3319,7 +3326,30 @@ ul.b-breadcrumbs {
 }
 
 .b-hotel-popup .TVCountry .TVMinPriceBlock .TVMinPriceValue{
-	margin-top: 
+	margin-top: 7px;
+}
+.b-hotel-popup .TVScreenSm:not(.TVScreenMd) .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryButtons .TVCountryButton.TVCountryButtonActive{
+	border: 2px solid #FF912A;
+}
+.b-hotel-popup .TVCountry .TVCountryButton.TVCountryButtonActive:link span{
+	color: #FF912A;
+}
+.b-hotel-popup .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryH2{
+	border-bottom: 0;
+	font-size: 16px;
+	font-family: 'Gilroy-Bold';
+	color: #282828;
+	padding-bottom: 3px;
+}
+
+.b-hotel-popup .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryText{
+	color: #434343;
+}
+.b-hotel-popup .TVCountryDescriptionItem{
+	margin-bottom: 18px;
+}
+.b-hotel-popup div > .TVCountryDescriptionItem:last-child{
+    margin-bottom: 0;
 }
 
 /*==============*/

@@ -627,6 +627,10 @@ input {
     padding-top: 80px;
 }
 
+.b-hot-block{
+	margin-top: 0;
+}
+
 .b-tourvisor-header {
     margin-top: -70px;
 }
@@ -758,6 +762,36 @@ input {
     min-width: 174px;
     margin-right: 24px;
 }
+
+.b-hot-nav{
+	display: none;
+}
+.b-hot-groups{
+	width: 100%;
+}
+.b-hot-group-price{
+	width: 146px;
+	padding-right: 12px;
+}
+.b-hot-group-button{
+	width: 128px;
+}
+.b-btn-hot-hotel{
+    min-width: 145px;
+    padding: 12px 0;
+}
+.b-hot-group-img {
+    width: 110px;
+    height: 74px;
+}
+.b-hot-group-name{
+	padding-left: 16px;
+}
+
+.b-hotel-popup .TVCountry{
+	min-width: 0 !important;
+}
+
 
 /*===========*/
 
@@ -1163,6 +1197,11 @@ div.TVCalDirectOnly {
 	display: none;
 }
 
+.b-hotel-popup .TVScreenSm .TVCountry .TVCountryDescriptionContainer{
+	-webkit-column-count: 1;
+    column-count: 1;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -1488,7 +1527,43 @@ div.TVCalDirectOnly {
     	line-height: 28px;
 		margin-bottom: 6px;
 	}
+	
+	.b-hot-group-list .b-hot-group-img{
+		display: none;
+	}
+	.b-hot-group-list .b-hot-group-name {
+	    padding-left: 0;
+	}
 
+	.b-hot-group {
+	    margin-bottom: 40px;
+	}
+	.b-hot-tog h2 {
+	    font-size: 28px;
+	    line-height: 36px;
+	}
+	.b-hot-groups .b-search-subscribe {
+	    margin-top: 24px;
+	}
+
+	.b-hotel-popup .TVScreenSm .TVCountry .TVMinPriceBlock {
+	    display: block;
+	    float: none;
+	    text-align: left;
+	}
+	.b-hotel-popup .TVScreenSm .TVCountry .TVMinPriceValue{
+		margin-left: 0;
+		margin-top: 15px;
+	}
+
+	.b-city-tab {
+	    font-size: 16px;
+	    line-height: 24px;
+	    padding: 10px 0;
+	    border: 2px solid #FFF;
+	    min-width: 140px;
+    	margin-right: 12px;
+	}
 
 	/*====*/
 
@@ -1883,6 +1958,36 @@ div.TVCalDirectOnly {
 		margin-bottom: 14px;
 	}
 
+	.b-hot-group-list li{
+		display: block;
+	}
+
+	.b-hot-group-list .b-col {
+	    display: block;
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+	.b-hot-group-list .b-hot-group-name{
+		width: 100%;
+	}
+	.b-hot-group-list .b-hot-group-img {
+	    display: none;
+	}
+	.b-hot-group-button {
+	    position: absolute;
+	    bottom: 24px;
+	    right: 0;
+	}
+	.b-btn-hot-hotel{
+		width: 100%;
+	    min-width: 0;
+    	padding: 12px 0;
+	}
+
+	.b-city-tab {
+	    margin-bottom: 16px;
+	}
+
 	/*===============*/
 
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVLocationButton,
@@ -2145,6 +2250,11 @@ div.TVCalDirectOnly {
 		display: none;
 	}
 
+	.b-hotel-popup .TVScreenSm:not(.TVScreenMd) .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryButtons .TVCountryButton {
+	    padding: 6px 10px;
+	    margin: 0px 6px 0 0;
+	}
+
 }
 
 @media screen and (max-width: 430px){
@@ -2211,6 +2321,10 @@ div.TVCalDirectOnly {
 	    top: 6px;
 	}
 
+	.b-hot-group-dates span{
+		display: block;
+	}
+
 	div.TVDTCalendar .TVCalendarPrice {
 	    width: 100px;
 	}
@@ -2275,6 +2389,12 @@ div.TVCalDirectOnly {
 	}
 	.b-hot-list .b-hot-item:nth-child(2n){
 		margin-right: 0;
+	}
+
+	.b-btn-hot-hotel{
+		width: 100%;
+	    min-width: 0;
+    	padding: 12px 0;
 	}
 
 	/*=====*/
