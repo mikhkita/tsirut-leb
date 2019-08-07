@@ -230,7 +230,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		<h2 class="b-title white">Или подберите тур самостоятельно</h2>
 		<!-- <div class="tv-search-form tv-moduleid-189840">
 		</div> -->
-		<div class="tv-search-form tv-moduleid-190546"></div>
+		<div class="tv-search-form tv-moduleid-191367"></div>
 		<div class="center">
 			 <a href="#" class="b-btn b-btn-orange one-line TVSearchButton_custom">
 				<p class="btn-bold">Найти туры</p>
@@ -491,13 +491,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 <div class="b-seo b-block">
 	<div class="b-seo-two-blocks">
 		<div class="seo-block first">
-			<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>Заголовок блока</h2>
+			<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span><span class="title">Заголовок блока</span></h2>
 			<p>
 				 Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации новых предложений. Равным образом укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.
 			</p>
 		</div>
 		<div class="seo-block second">
-			<h2 class="with-icon"><span class="seo-icon seo-icon-gift"></span>Заголовок блока</h2>
+			<h2>Заголовок блока</h2>
 			<p>
 				 Равным образом рамки и место обучения кадров требуют от нас анализа дальнейших направлений развития. Разнообразный и богатый опыт новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.
 			</p>
@@ -510,7 +510,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 </div>
 <div class="b-seo b-block">
 	<div class="seo-block center">
-		<h2>Заголовок блока</h2>
+		<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span><span class="title">Заголовок блока</span></h2>
 		<p>Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации новых предложений. Равным образом укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.</p>
 	</div>
 </div>

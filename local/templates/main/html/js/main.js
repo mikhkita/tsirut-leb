@@ -597,15 +597,16 @@ $(document).ready(function(){
             }
         }, 30);
     }
-
     if($(".b-tourvisor-with-filter").length){
         //ждать пока турвизор загрузится
         var waitTourvisorF = setInterval(function(){
             if( $(".b-tourvisor-with-filter .TVSearchButton").length ){
-                setInterval(function(){
+                console.log($(".b-tourvisor-with-filter").offset().top);
+                setTimeout(function(){
                     $(".b-tourvisor-with-filter").addClass("show-tv");
                     $(".tourvisor-preloader").hide();
-                }, 500);
+                    console.log($(".b-tourvisor-with-filter").offset().top);
+                }, 3500);
                 var country = $(".b-tourvisor-with-filter").attr("data-country");
                 if(country){
                     $(".TVCountry").click();
@@ -946,7 +947,7 @@ $(document).ready(function(){
         }, 1000);
     });
 
-    $("body").on("click", ".TVTem2ForthCol, .TVTem2ForthCol *", function(){
+    $("body").on("mousedown", ".b-tourvisor-detail .TVTem2ForthCol", function(){
         $("body").removeClass("TVHidePopup");
     });
 
@@ -1369,9 +1370,25 @@ $(document).ready(function(){
 
 function yandexMapInit (ymaps) {
     var myMap = new ymaps.Map("b-contacts-map", {
-        center: [50.633, 36.571682],
+        center: [50.633, 36.5712],
         zoom: 16
     });
+    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+        // hintContent: 'Собственный значок метки',
+        // balloonContent: 'Это красивая метка'
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: '/local/templates/main/html/i/map-mark.svg',
+        // Размеры метки.
+        iconImageSize: [60, 68],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-30, -68]
+    });
+    myMap.geoObjects.add(myPlacemark)
 }
 
 function chooseCity(item){

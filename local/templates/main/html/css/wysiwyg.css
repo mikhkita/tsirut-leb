@@ -358,6 +358,10 @@
 		max-width: 712px;
 		margin: 0 auto;
 	}
+	.seo-block.center h2.with-icon{
+		margin-left: auto;
+		margin-right: auto;
+	}
 		.b-seo-two-blocks .seo-block{
 			display: inline-block;
 			vertical-align: top;
@@ -375,29 +379,38 @@
 			line-height: 34px;
 			margin-bottom: 22px;
 		}
-		.b-seo h2.with-icon{
+		.b-seo h2.with-icon,
+		.b-nav-seo h3.with-icon{
 			position: relative;
-			padding-left: 50px;
+			display: table;
 		}
-		.seo-icon{
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: block;
-			width: 35px;
-			height: 35px;
-			background-position: 50% 50%;
-		    background-repeat: no-repeat;
-		    background-size: cover;
-		}
-		.seo-icon-coin{
-			background-image: url('../i/seo-icon-coin.svg');
-		}
-		.seo-icon-gift{
-			width: 32px;
-    		height: 30px;
-			background-image: url('../i/seo-icon-gift.svg');
-		}
+			.seo-icon{
+				display: table-cell;
+				vertical-align: middle;
+				padding-right: 16px;
+			}
+			.seo-icon:before{
+				content: " ";
+				display: block;
+				width: 35px;
+				height: 35px;
+				background-position: 50% 50%;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			}
+			.seo-icon-coin:before{
+				background-image: url('../i/seo-icon-coin.svg');
+			}
+			.seo-icon-gift:before{
+				width: 32px;
+	    		height: 30px;
+				background-image: url('../i/seo-icon-gift.svg');
+			}
+			.b-seo h2.with-icon .title,
+			.b-nav-seo h3.with-icon .title{
+				display: table-cell;
+				vertical-align: middle;
+			}
 	.b-block-separator{
 		width: 100%;
 	}

@@ -14,7 +14,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 					</a>
 				</div>
 				<div class="b-tourvisor-hidden">
-					<div class="tv-calendar tv-moduleid-980631"></div>
+					<div class="tv-calendar tv-moduleid-982239"></div>
 				</div>
 			</div>
 		</div>
@@ -27,7 +27,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile hide">Открыть фильтр</a>
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
-			<div class="b b-tourvisor-with-filter" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
+			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
 				<div class="tv-search-form tv-moduleid-190001"></div>
 			</div>
 		</div>
@@ -162,7 +162,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 					</div>
 					<div class="b-tourvisor-nav-item b-nav-seo">
 						<h3 class="with-icon">
-							<span class="seo-icon seo-icon-gift"></span>Заголовок второго блока с иконкой</span>
+							<span class="seo-icon seo-icon-gift"></span><span class="title">Заголовок второго блока с иконкой</span></span>
 						</h3>
 						<p>Равным образом рамки и место обучения кадров требуют от нас анализа дальнейших направлений развития. Разнообразный и богатый опыт новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.<br><br>Значимость этих проблем настолько очевидна, что укрепление и развитие структуры требуют определения и уточнения форм развития.</p>
 					</div>
