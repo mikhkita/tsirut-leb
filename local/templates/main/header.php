@@ -19,6 +19,8 @@ if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[4]) )
 	$page = $GLOBALS["page"] = "hot-detail";
 
+$GLOBALS["pagesList"] = array("search","hot-tours","russia","search","contacts","articles");
+
 $GLOBALS["depends"] = array(
 	"search" => array(
 		"js" => array(
@@ -37,7 +39,7 @@ if($isDetail){
 		array(),
 		array('IBLOCK_ID'=>1, '=CODE'=>$_REQUEST["SECTION_CODE"]),
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_HEADER_POPULAR','UF_HEADER_TIME','UF_HEADER_TV')
+		array('IBLOCK_ID','ID','NAME','CODE','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV')
 	);
 	if($arSection = $rsSections->Fetch()){
 		$GLOBALS["arCountry"] = array(
@@ -46,9 +48,11 @@ if($isDetail){
 			'title' => $arSection['NAME'],
 			'titleText' => $arSection['UF_HEADER_TEXT'],
 			'visa' => $arSection['UF_HEADER_VISA'],
-			'popular' => $arSection['UF_HEADER_POPULAR'],
+			'popular' => $arSection['UF_POPULAR_RESORT'],
 			'bestTime' => $arSection['UF_HEADER_TIME'],
-			'titleTV' => $arSection['UF_HEADER_TV']
+			'titleTV' => $arSection['UF_HEADER_TV'],
+			'countryIDTV' => $arSection['UF_COUNTRY_ID_TV'],
+			'resortIDTV' => $arSection['UF_RESORT_ID_TV'],
 		);
 		$headImg = CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 );
 	}
@@ -228,7 +232,12 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						<div class="b-adv-item">
 							<p><b>Популярные курорты:</b></p>
 							<div>
-								<?=$GLOBALS["arCountry"]["popular"];?>
+								<?$arCountryCount = count($GLOBALS["arCountry"]["popular"]); $arCountrycounter = 0;?>
+								<?foreach ($GLOBALS["arCountry"]["popular"] as $value):?>
+									<?$country = explode("|", $value);?>
+									<a href="#"><?=$country[0]?></a><?if($arCountrycounter < $arCountryCount - 1) echo ",";?>
+									<?$arCountrycounter++;?>
+								<?endforeach;?>
 							</div>
 						</div>
 						<div class="b-adv-item">
@@ -243,3 +252,8 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		</div>
 
 		<div class="b b-content <?if($isMain) echo 'b-content-main'?>">
+			<?if(!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]):?>
+				<div class="b-content-back b-contacts-top">
+					<div class="b-block">
+						<div class="b-text">
+			<?endif;?>

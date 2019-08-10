@@ -66,6 +66,7 @@ $this->setFrameMode(true);
 								<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 							</label>
 						</div>
+						<input type="submit" value="Подписаться" style="display:none;">
 					</form>
 				</div>
 				<div class="b-5-manager">
@@ -115,6 +116,7 @@ $this->setFrameMode(true);
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
 							</div>
+							<input type="submit" value="Подписаться" style="display:none;">
 						</form>
 					</div>
 				</div>

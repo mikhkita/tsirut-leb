@@ -327,6 +327,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 							</p>
  						</label>
 					</div>
+					<input type="submit" value="Подписаться" style="display:none;">
 				</form>
 			</div>
 		</div>

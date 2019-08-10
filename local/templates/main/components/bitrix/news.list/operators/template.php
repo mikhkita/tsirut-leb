@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="b-card flip-card b-card-template">
+<div class="b-card flip-card anim-opacity b-card-template">
 	<div class="flip-card-inner">
 		<div class="flip-card-front"></div>
 		<div class="flip-card-back"></div>
