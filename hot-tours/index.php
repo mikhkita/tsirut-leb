@@ -184,6 +184,7 @@ if( !isset($_REQUEST["CITY"]) ){
 							</p>
 						</label>
 					</div>
+					<input type="submit" value="Подписаться" style="display:none;">
 				</form>
 			</div>
 		</div>

@@ -235,6 +235,10 @@ $(document).ready(function(){
 				complete: function(){
 					$this.find(".ajax").removeAttr("onclick");
 					$this.find("input[type=text],textarea").val("");
+					if($this.hasClass("b-quiz-form")){
+						$(".b-quiz").hide();
+        				$(".b-quiz-screen-1").show();
+					}
 				}
 			});
   		}else{

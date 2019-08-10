@@ -1,5 +1,5 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Экскурсионные туры");
-?><div class="b-block"><h2 class="b-title" style="padding: 100px 0;">Раздел в разработке</h2></div>
+?><h2 class="b-title">Раздел в разработке</h2>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

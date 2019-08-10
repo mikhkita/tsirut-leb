@@ -1,5 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Клубная карта");
-?><h2 class="b-title">Раздел в разработке</h2>
+$APPLICATION->SetTitle("Тестовый раздел");
+?>
+
+Text here....
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -333,6 +333,7 @@ input {
 	margin-bottom: 60px;
 }
 	.b-mailing-cont {
+		width: 100%;
 	    padding: 34px 24px 38px 24px;
 	}
 		.b-mailing-cont h2 {
@@ -353,6 +354,7 @@ input {
 			}
 		.b-widget-vk {
 		    float: none;
+		    width: 100%;
 		    height: 200px;
 		    margin-top: 24px;
 		}
@@ -400,6 +402,7 @@ input {
 	    margin-bottom: 16px;
 	}
 	.b-seo-separator {
+		max-width: none;
 	    margin: 32px auto 24px auto;
 	}
 	.b-seo-separator-wide {
@@ -407,6 +410,11 @@ input {
 	}
 	.b-seo .center{
 		text-align: left;
+	}
+	.seo-block.center h2.with-icon,
+	.seo-block.center h2{
+	    margin-left: 0;
+	    margin-right: 0;
 	}
 .b-footer-item.column-1 {
     margin-right: 0;

@@ -1708,8 +1708,8 @@ b{
 		border-radius: 10px;
 		overflow: hidden;
 		width: 100%;
-		max-width: 976px;
-		padding: 44px 56px 62px 56px;
+		width: calc(100% - 320px);
+		padding: 46px 56px 62px 56px;
 		background-image: url(../i/head.jpg);
 	    background-position: 50% 50%;
 	    background-repeat: no-repeat;
@@ -1747,6 +1747,7 @@ b{
 			}
 	.b-widget-vk{
 		float: right;
+		width: 302px;
 		height: 384px;
 	}
 
@@ -1858,47 +1859,89 @@ b{
 				    background-size: contain;
 				}
 
-.flip-card {
-	-webkit-perspective: 1000px;
-	perspective: 1000px;
-}
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  -webkit-transition: transform 0.8s;
-   -moz-transition: transform 0.8s;
-    -ms-transition: transform 0.8s;
-   	 -o-transition: transform 0.8s;
-		transition: transform 0.8s;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.flip-card.flipped .flip-card-inner {
-  -webkit-transform: rotateY(180deg);
-   -moz-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-   	 -o-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.flip-card-front {
+.flip-card{
 
 }
-.flip-card-back {
-  -webkit-transform: rotateY(180deg);
-   -moz-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-   	 -o-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-}
+	/*=====3d анимация=====*/
+	.flip-card.anim-3d {
+		-webkit-perspective: 1000px;
+		perspective: 1000px;
+	}
+		.flip-card.anim-3d .flip-card-inner {
+		  position: relative;
+		  width: 100%;
+		  height: 100%;
+		  text-align: center;
+		  -webkit-transition: transform 0.8s;
+		   -moz-transition: transform 0.8s;
+		    -ms-transition: transform 0.8s;
+		   	 -o-transition: transform 0.8s;
+				transition: transform 0.8s;
+		  -webkit-transform-style: preserve-3d;
+		  transform-style: preserve-3d;
+		}
+		.flip-card.anim-3d.flipped .flip-card-inner {
+		  -webkit-transform: rotateY(180deg);
+		   -moz-transform: rotateY(180deg);
+		    -ms-transform: rotateY(180deg);
+		   	 -o-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+		}
+			.flip-card.anim-3d .flip-card-front,
+			.flip-card.anim-3d .flip-card-back {
+			  position: absolute;
+			  width: 100%;
+			  height: 100%;
+			  -webkit-backface-visibility: hidden;
+			  backface-visibility: hidden;
+			}
+			.flip-card.anim-3d .flip-card-front {
+
+			}
+			.flip-card.anim-3d .flip-card-back {
+			  -webkit-transform: rotateY(180deg);
+			   -moz-transform: rotateY(180deg);
+			    -ms-transform: rotateY(180deg);
+			   	 -o-transform: rotateY(180deg);
+					transform: rotateY(180deg);
+			}
+	/*=====Простая анимация=====*/
+	.flip-card.anim-opacity {
+		
+	}
+		.flip-card.anim-opacity .flip-card-inner {
+		  position: relative;
+		  width: 100%;
+		  height: 100%;
+		  text-align: center;
+		}
+		.flip-card.anim-opacity.flipped .flip-card-inner {
+
+		}
+			.flip-card.anim-opacity .flip-card-front,
+			.flip-card.anim-opacity .flip-card-back{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				-webkit-transition: opacity 0.8s;
+				   -moz-transition: opacity 0.8s;
+				    -ms-transition: opacity 0.8s;
+				   	 -o-transition: opacity 0.8s;
+						transition: opacity 0.8s;
+
+			}
+			.flip-card.anim-opacity.flipped .flip-card-front{
+				opacity: 1;
+			}
+			.flip-card.anim-opacity.flipped .flip-card-back {
+				opacity: 0;
+			}
+			.flip-card.anim-opacity .flip-card-front{
+				opacity: 0;
+			}
+			.flip-card.anim-opacity .flip-card-back {
+				opacity: 1;
+			}
 
 .b-seo{
 	width: 100%;
@@ -2921,6 +2964,7 @@ ul.b-breadcrumbs {
 		background-color: rgba(255,255,255,0.7);
 		border-radius: 8px;
 		padding: 45px 70px 0 70px;
+		min-height: 300px;
 	}
 		.b-contacts-left{
 			float: left;
@@ -6156,14 +6200,7 @@ div.TVModalContainer{
 				padding: 8px 24px;
 			}
 				div.TVCatNavButton:hover:after{
-					width: calc(100% - 48px);
-					position: absolute;
-					content: "s";
-					font-size: 0px;
-					height: 1px;
-					left: 24px;
-					bottom: 8px;
-					background: #FFF;
+
 				}
 				div.TVCatNavButton:before{
 					display: none;
@@ -6171,9 +6208,20 @@ div.TVModalContainer{
 				div.TVCatNavButton.TVCatNavActive:after{
 					display: none;
 				}
-			div.TVCatNavButton.TVCatNavActive{
+			div.TVCatNavButton{
+				border: 2px solid transparent;
+				border-radius: 6px;
+			    padding: 8px 22px;
+			    text-transform: none;
+			    font-size: 16px;
+			    line-height: 24px;
+			    color: #FFF;
+			    font-family: 'Gilroy-Medium';
+			    background: transparent;
+			}
+			div.TVCatNavButton.TVCatNavActive {
+				border: 2px solid #E7ECF1;
 				background: transparent;
-				border: 1px solid #FFF;
 			}
 			div.TVCatNavButton.TVCatNavCB{
 				display: none;
@@ -6212,12 +6260,12 @@ div.TVModalContainer{
 		list-style: disc;
 	}
 		div.TVCatHotelRatingBox{
-			background-image: -webkit-linear-gradient(125deg, #FF7676 0%, #F54EA2 100%);
-		    background-image: -o-linear-gradient(125deg, #FF7676 0%, #F54EA2 100%);
-		    background-image: linear-gradient(-35deg, #FF7676 0%, #F54EA2 100%);
+			background-image: -webkit-linear-gradient(125deg, #FF9128 0%, #ffc187 100%);
+		    background-image: -o-linear-gradient(125deg, #FF9128 0%, #ffc187 100%);
+		    background-image: linear-gradient(-35deg, #FF9128 0%, #ffc187 100%);
 		}
 			div.TVCatHotelRatingBox:after{
-				border-left: 10px solid #fc6c81;
+				border-left: 10px solid #ff9d42;
 			}
 	div.TVClosePopup{
 		width: 40px;
@@ -6356,7 +6404,7 @@ div.TVModalContainer{
 				font-size: 14px;
 			}
 			div.TVCatHotelPicturesBlock li.active{
-				border: 2px solid #fc6c81;
+				border: 2px solid #FF912A;
 			}
 			div.TVCatHotelTypeBlock{
 				padding: 0px;
@@ -7407,3 +7455,27 @@ div.TVTheme2 .TVSRBottomCenter a.TVNavButton:link{
 	color: #282828;
 	font-family: 'Gilroy-Regular';
 }
+
+div.TVDetailsPanel .TVTreeResorts{
+	background: #FFF;
+}
+div.TVDetailsPanel .TVTreeResorts .TVTreeListNav{
+	background-color: #FFF;
+}
+div.TVTableCountries .TVTableCountriesHeader {
+    background: #FFF;
+}
+div.TVTouristAction {
+    background-color: #EFF2F6;
+}
+div.TVTouristElement.TVTouristRemember {
+    border-color: #ddd;
+    background: #EFF2F6;
+}
+div.TVCalendarControl .TVCalendarControlBody .TVCalendarControlTable table .TVFlyAvailable{
+	background-color: #EFF2F6;
+}
+div.TVOrderHotelBlock{
+	text-shadow: none;
+}
+

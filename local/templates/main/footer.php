@@ -1,3 +1,8 @@
+			<?if(!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]):?>
+						</div> <!-- b-content-back b-contacts-top -->
+					</div> <!-- b-block -->
+				</div> <!-- b-text -->
+			<?endif;?>
 		</div> <!-- b-content -->
 
 		<div class="b b-footer">
@@ -106,6 +111,7 @@
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
 							</div>
+							<input type="submit" value="Подписаться" style="display:none;">
 						</form>
 					</div>
 				</div>
@@ -130,6 +136,7 @@
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
 							</div>
+							<input type="submit" value="Подписаться" style="display:none;">
 						</form>
 					</div>
 				</div>
@@ -424,7 +431,7 @@
 				<div class="b-popup-head-white"></div>
 			</div>
 			<div class="b-popup-content">
-				<form id="b-quiz-form" action="quiz.php" method="POST">
+				<form id="b-quiz-form" class="b-quiz-form" action="quiz.php" method="POST">
 					<h2 class="b-title white">Рассчитайте стоимость<br> вашего путешествия</h2>
 					<div class="b-quiz b-quiz-screen-1">
 						<h3>В какой стране вы хотите отдохнуть?</h3>
@@ -630,6 +637,7 @@
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
  								</label>
 							</div>
+							<input type="submit" value="Подписаться" style="display:none;">
 						</div>
 					</div>
 				</form>
