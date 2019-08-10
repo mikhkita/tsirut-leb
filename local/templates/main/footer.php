@@ -95,7 +95,7 @@
 						<form class="b-mailing-form" method="post" action="/subscribe.php">
 							<input type="text" name="email" placeholder="Ваш e-mail" required>
 							<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
-							<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+							<a href="#b-subscribe-success" class="b-thanks-link fancy" style="display:none;"></a>
 							<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
 								<p class="btn-bold">Подписаться</p>
 							</a>
@@ -320,10 +320,74 @@
 			</div>
 		</div>
 
-		<div class="b-popup" id="b-popup-call">
+		<div class="b-popup b-aqua-popup b-popup-back-2" id="b-popup-call">
 			<div class="b-popup-content">
-				<h3>Заказ обратного звонка</h3>
+				<h2 class="small-mb">Заказать обратный звонок</h2>
+				<h4>Оставьте заявку и наш менеджер перезвонит Вам в ближайшее время</h4>
+				<form action="/subscribe.php" method="POST">
+					<input type="text" name="name" placeholder="Вашe имя" required>
+					<input type="text" name="phone" placeholder="Ваш телефон" required>
+					<input type="text" name="MAIL" required placeholder="Ваш e-mail">
+					<a href="#" class="b-btn b-btn-orange ajax b-btn-full">
+						<p class="btn-bold">Оставить заявку</p>
+						<p class="btn-regular">на обратный звонок</p>
+					</a>
+					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+					<div class="b-checkbox">
+						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
+						<label for="agree-1">
+						<div class="b-checked icon-checked"></div>
+						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
 
+		<div class="b-popup b-aqua-popup b-popup-back-2" id="b-popup-tour-selection">
+			<div class="b-popup-content">
+				<h2 class="small-mb">Заявка на подбор тура</h2>
+				<h4>Оставьте заявку нашему менеджеру  и он подберет для вас лучший тур по цене туроператора</h4>
+				<form action="/subscribe.php" method="POST">
+					<input type="text" name="name" placeholder="Вашe имя" required>
+					<input type="text" name="phone" placeholder="Ваш телефон" required>
+					<input type="text" name="MAIL" required placeholder="Ваш e-mail">
+					<a href="#" class="b-btn b-btn-orange ajax b-btn-full">
+						<p class="btn-bold">Оставить заявку</p>
+						<p class="btn-regular">на подбор тура</p>
+					</a>
+					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+					<div class="b-checkbox">
+						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
+						<label for="agree-1">
+						<div class="b-checked icon-checked"></div>
+						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="b-popup b-aqua-popup b-popup-back-2" id="b-popup-review-form">
+			<div class="b-popup-content">
+				<h2 class="small-mb">Оставить отзыв</h2>
+				<form action="subscribe.php" method="POST">
+					<input type="text" name="name" placeholder="Вашe имя" required>
+					<input type="text" name="phone" placeholder="Место отдыха" required>
+					<textarea name="comment" rows="6" placeholder="Ваш отзыв"></textarea>
+					<a href="#" class="b-btn b-btn-orange ajax b-btn-full">
+						<p class="btn-bold">Оставить отзыв</p>
+						<p class="btn-regular">о вашем путешествии</p>
+					</a>
+					<a href="#b-review-success" class="b-thanks-link fancy" style="display:none;"></a>
+					<div class="b-checkbox">
+						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
+						<label for="agree-1">
+						<div class="b-checked icon-checked"></div>
+						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+						</label>
+					</div>
+				</form>
 			</div>
 		</div>
 
@@ -573,19 +637,41 @@
 		</div>
 
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
-		<div class="b-thanks b-popup" id="b-popup-success">
+
+		<div class="b-thanks b-aqua-popup b-popup b-popup-back-1" id="b-popup-success">
 			<div class="b-popup-content">
-				<h3>Спасибо!</h3>
-				<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
+				<h2>Спасибо!</h2>
+				<h4>Ваша заявка успешно отправлена. <br/>Наш менеджер свяжется с Вами в ближайшее время</h4>
 				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
 					<p class="btn-bold">Закрыть</p>
 				</a>
 			</div>
 		</div>
-		<div class="b-thanks b-popup" id="b-popup-error">
+
+		<div class="b-thanks b-aqua-popup b-popup b-popup-back-1" id="b-subscribe-success" >
+			<div class="b-popup-content">
+				<h2>Подписка успешно оформлена</h2>
+				<h4>Теперь Вы будете в курсе о новых акциях, клёвых отелях, горящих турах и лучших предложениях недели.</h4>
+				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
+					<p class="btn-bold">Закрыть</p>
+				</a>
+			</div>
+		</div>
+
+		<div class="b-thanks b-aqua-popup b-popup b-popup-back-1" id="b-review-success" >
+			<div class="b-popup-content">
+				<h2>Спасибо за отзыв!</h2>
+				<h4>Ваш отзыв успешно отправлен.  Мы опубликуем его на сайте сразу после проверки менеджером</h4>
+				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
+					<p class="btn-bold">Закрыть</p>
+				</a>
+			</div>
+		</div>
+
+		<div class="b-thanks b-aqua-popup b-popup b-popup-back-1" id="b-popup-error">
 			<div class="b-popup-content">
 				<h3>Ошибка отправки!</h3>
-				<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
+				<h4>Пожалуйста, попробуйте отправить Вашу заявку позже или позвоните нам по телефону: <a href="tel:+74722400200"><b>+7 (4722) 400-200</b></a></h4>
 				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
 					<p class="btn-bold">Закрыть</p>
 				</a>

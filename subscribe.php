@@ -9,6 +9,9 @@ $filterTags = array(
 	"prodawez392@gmail.com",
 );
 
+echo "1";
+die();
+
 $spam = false;
 foreach ($_POST as $i => $value)
 	foreach ($filterTags as $j => $tag)

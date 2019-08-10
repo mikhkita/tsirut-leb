@@ -203,14 +203,14 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 			<div class="div-p">
 				 <?=includeArea("b-5-text");?>
 			</div>
- <a href="#" class="b-btn b-btn-orange">
-			<p class="btn-bold">
-				 Подберите мне тур
-			</p>
-			<p class="btn-regular">
-				 Хочу довериться профессионалам
-			</p>
- </a>
+			 <a href="#b-popup-tour-selection" class="b-btn b-btn-orange fancy">
+				<p class="btn-bold">
+					Подберите мне тур
+				</p>
+				<p class="btn-regular">
+					 Хочу довериться профессионалам
+				</p>
+			 </a>
 		</div>
 		<div class="b-5-window">
 		</div>
@@ -311,11 +311,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 				<form class="b-mailing-form" method="post" action="/subscribe.php">
  					<input type="text" name="email" placeholder="Ваш e-mail" required="">
  					<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
- 					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+ 					<a href="#b-subscribe-success" class="b-thanks-link fancy" style="display:none;"></a>
  					<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
-						<p class="btn-bold">
-							 Подписаться
-						</p>
+						<p class="btn-bold">Подписаться</p>
  					</a>
 					<div class="b-checkbox">
  						<input id="checkbox-politics-1" type="checkbox" name="politics" checked="" required=""> 
