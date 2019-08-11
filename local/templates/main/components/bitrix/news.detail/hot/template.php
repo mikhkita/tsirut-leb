@@ -120,6 +120,7 @@ $departureId = $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["TOURVISOR_ID"];
 												<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 											</label>
 										</div>
+										<input type="submit" value="Подписаться" style="display:none;">
 									</form>
 								</div>
 							</div>

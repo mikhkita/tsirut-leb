@@ -14,7 +14,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 					</a>
 				</div>
 				<div class="b-tourvisor-hidden">
-					<!-- <div class="tv-calendar tv-moduleid-982239"></div> -->
+					<div class="tv-calendar tv-moduleid-982526"></div>
 				</div>
 			</div>
 		</div>
@@ -28,7 +28,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
-				<div class="tv-search-form tv-moduleid-190001"></div>
+				<div class="tv-search-form tv-moduleid-191769" tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" tv-resorts="<?=$GLOBALS["arCountry"]["resortIDTV"]?>"></div>
 			</div>
 		</div>
 		<div class="b-tourvisor-list">

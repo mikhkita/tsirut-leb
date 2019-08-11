@@ -107,6 +107,7 @@ $APPLICATION->SetTitle("Горящие туры ".$GLOBALS["hotCodes"][$_REQUEST
 					</p>
  </label>
 				</div>
+				<input type="submit" value="Подписаться" style="display:none;">
 			</form>
 		</div>
 		<div class="b-5-manager">

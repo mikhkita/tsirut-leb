@@ -276,7 +276,7 @@ input {
 			bottom: -55px;
 		}
 .b-5-text {
-    padding-top: 87px;
+    padding-top: 91px;
     padding-left: 0;
     max-width: 400px;
     padding-bottom: 83px;
@@ -333,6 +333,7 @@ input {
 	margin-bottom: 60px;
 }
 	.b-mailing-cont {
+		width: 100%;
 	    padding: 34px 24px 38px 24px;
 	}
 		.b-mailing-cont h2 {
@@ -353,6 +354,7 @@ input {
 			}
 		.b-widget-vk {
 		    float: none;
+		    width: 100%;
 		    height: 200px;
 		    margin-top: 24px;
 		}
@@ -400,6 +402,7 @@ input {
 	    margin-bottom: 16px;
 	}
 	.b-seo-separator {
+		max-width: none;
 	    margin: 32px auto 24px auto;
 	}
 	.b-seo-separator-wide {
@@ -407,6 +410,11 @@ input {
 	}
 	.b-seo .center{
 		text-align: left;
+	}
+	.seo-block.center h2.with-icon,
+	.seo-block.center h2{
+	    margin-left: 0;
+	    margin-right: 0;
 	}
 .b-footer-item.column-1 {
     margin-right: 0;
@@ -456,13 +464,34 @@ input {
     right: 16px;
     top: 16px;
 }
-.b-popup-content {
+.b-popup-content,
+.b-aqua-popup .b-popup-content {
     padding: 24px 32px 32px 32px;
 }
 .b-popup h2.b-title {
     font-size: 32px;
     line-height: 40px;
     margin-bottom: 24px;
+}
+.b-aqua-popup h2{
+	font-size: 32px;
+	line-height: 30px;
+	margin-bottom: 32px;
+}
+.b-aqua-popup h2.small-mb{
+	margin-bottom: 20px;
+}
+.b-aqua-popup h4{
+    font-size: 16px;
+    margin-bottom: 14px;
+    line-height: 22px;
+}
+.b-aqua-popup h4 br{
+	display: none;
+}
+.b-aqua-popup input{
+	font-size: 16px;
+	padding: 13px 32px 14px 32px;
 }
 .b-quiz h3 {
     margin-bottom: 24px;
@@ -1890,7 +1919,8 @@ div.TVCalDirectOnly {
 	.fancybox-slide .b-popup{
 		width: calc(100% - 32px);
 	}
-	.b-popup-content {
+	.b-popup-content,
+	.b-aqua-popup .b-popup-content{
 	    padding: 24px 16px;
 	}
 	.b-popup-head {

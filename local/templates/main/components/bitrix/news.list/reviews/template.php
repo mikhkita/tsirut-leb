@@ -42,7 +42,7 @@ $this->setFrameMode(true);
 <?endforeach;?>
 </div>
 <div class="center">
-	<a href="#" class="b-btn b-btn-blue one-line">
+	<a href="#b-popup-review-form" class="b-btn b-btn-blue one-line fancy">
 		<p class="btn-bold">Оставить отзыв</p>
 	</a>
 </div>

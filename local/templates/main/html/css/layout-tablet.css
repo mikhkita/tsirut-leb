@@ -72,7 +72,7 @@ body {
     margin-bottom: 60px;
 }
 .b-mailing-cont {
-    width: calc(100% - 304px);
+    width: calc(100% - 318px);
 }
 .b-mailing-form .b-btn-submit {
     width: auto;
@@ -732,7 +732,7 @@ div.TVFORow3 {
 	}
 	.b-5-manager{
 	    width: 365px;
-	    height: 635px;
+	    height: 621px;
 	}
 	.b-5-text {
 	    padding-top: 63px;

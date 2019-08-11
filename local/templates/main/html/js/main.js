@@ -171,6 +171,15 @@ $(document).ready(function(){
             });
             $(".stick").stick_in_parent({offset_top: 88});
         }
+        if(isMobile || isIE()){//Изменить анимацию на карточках
+            if($(".b-card-template").hasClass("anim-3d")){
+                $(".b-card-template, .flip-card").removeClass("anim-3d").addClass("anim-opacity");
+            }
+        }else{
+            if($(".b-card-template").hasClass("anim-opacity")){
+                $(".b-card-template, .flip-card").removeClass("anim-opacity").addClass("anim-3d");
+            }
+        }
 
     }
     $(window).resize(resize);
@@ -201,6 +210,25 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
+
+    function isIE() {
+        var rv = -1;
+        if (navigator.appName == 'Microsoft Internet Explorer')
+        {
+            var ua = navigator.userAgent;
+            var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                rv = parseFloat( RegExp.$1 );
+        }
+        else if (navigator.appName == 'Netscape')
+        {
+            var ua = navigator.userAgent;
+            var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                rv = parseFloat( RegExp.$1 );
+        }
+        return rv == -1 ? false: true;
+    }
 
     var slideoutRight = new Slideout({
         'panel': document.getElementById('panel-page'),
@@ -338,19 +366,35 @@ $(document).ready(function(){
                 if($nextCard.hasClass("flipped")){
                     //заменить front
                     var $cont = $nextCard.find(".flip-card-front");
-                    $cont.find(".b-operators-item").remove();
-                    $nextOperator.clone().appendTo($cont);
-                    setTimeout(function() {
+                    if(isMobile){
                         $nextCard.removeClass("flipped");
-                    }, 800);
+                        setTimeout(function() {
+                            $cont.find(".b-operators-item").remove();
+                            $nextOperator.clone().appendTo($cont);
+                        }, 800);
+                    }else{
+                        $cont.find(".b-operators-item").remove();
+                        $nextOperator.clone().appendTo($cont);
+                        setTimeout(function() {
+                            $nextCard.removeClass("flipped");
+                        }, 800);
+                    }
                 }else{
                     //заменить back
                     var $cont = $nextCard.find(".flip-card-back");
-                    $cont.find(".b-operators-item").remove();
-                    $nextOperator.clone().appendTo($cont);
-                    setTimeout(function() {
+                    if(isMobile){
                         $nextCard.addClass("flipped");
-                    }, 800);
+                        setTimeout(function() {
+                            $cont.find(".b-operators-item").remove();
+                            $nextOperator.clone().appendTo($cont);
+                        }, 800);
+                    }else{
+                        $cont.find(".b-operators-item").remove();
+                        $nextOperator.clone().appendTo($cont);
+                        setTimeout(function() {
+                            $nextCard.addClass("flipped");
+                        }, 800);
+                    }
                 }
                 arrActiveCards[nextCard] = nextOperator;
             }, 2000);
@@ -493,12 +537,6 @@ $(document).ready(function(){
             $(".b-quiz-other-country input").removeClass("error").prop("required", false);
         }
     });
-    $("#b-quiz-form").on('submit', function(){
-        if ($(this).find("input.error").length == 0) {
-            $(".b-quiz").hide();
-            $(".b-quiz-screen-1").show();
-        }
-    });
 
     $(".b-contacts-slider").slick({
         dots: false,
@@ -607,16 +645,18 @@ $(document).ready(function(){
                     $(".tourvisor-preloader").hide();
                     console.log($(".b-tourvisor-with-filter").offset().top);
                 }, 100);
-                var country = $(".b-tourvisor-with-filter").attr("data-country");
-                if(country){
-                    $(".TVCountry").click();
-                    //найти текущую страну
-                    $(".TVCountriesTable .TVCountryRow .TVCountryName").each(function(){
-                        if($(this).text() == country){
-                            $(this).parents(".TVCountryItem").click();
-                        }
-                    });
-                }
+                
+                // var country = $(".b-tourvisor-with-filter").attr("data-country");
+                // if(country){
+                //     $(".TVCountry").click();
+                //     //найти текущую страну
+                //     $(".TVCountriesTable .TVCountryRow .TVCountryName").each(function(){
+                //         if($(this).text() == country){
+                //             $(this).parents(".TVCountryItem").click();
+                //         }
+                //     });
+                // }
+
                 //проставить дефолтные "Питание" и "Рейтинг"
                 var mealValue = $(".TVMeal .TVOptionSelector").text();
                 if(mealValue && mealValue != "Любое"){
