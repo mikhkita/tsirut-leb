@@ -4470,8 +4470,10 @@ div.TVDetailPanel .TVOptionCheckBox {
 	/*display: none;*/
 	opacity: 0;
 	visibility: hidden;
-	position: fixed;
-	top: 0;
+	position: absolute;
+	top: -10000px;
+	left: 0px;
+	height: 10px;
 }
 .b-tourvisor-with-filter.show-tv{
 	opacity: 1;
