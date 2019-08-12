@@ -57,9 +57,16 @@ function getRusMonth($i){
    $array = array("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря");
    return $array[$i-1];
 }
+
 function dateFormatted($date){
    $arr = explode("-", $date);
    return intval($arr[2])." ".getRusMonth($arr[1]);
+}
+
+function getCurrentDate(){
+	$date = date("d-m-Y");
+	$arr = explode("-", $date);
+	return intval($arr[0])." ".getRusMonth($arr[1])." ".intval($arr[2]);
 }
 
 // function getValidPhone($file){

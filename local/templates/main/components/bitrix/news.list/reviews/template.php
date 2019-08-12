@@ -19,7 +19,11 @@ $this->setFrameMode(true);
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
 	<?
-	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>100*2, 'height'=>100*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
+	if ($arItem["PREVIEW_PICTURE"]["ID"]) {
+		$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>100*2, 'height'=>100*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
+	} else {
+		$img['src'] = SITE_TEMPLATE_PATH."/html/i/icon-man.svg";
+	}
 	?>
 	<div class="b-review-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<div class="b-review-cont">
