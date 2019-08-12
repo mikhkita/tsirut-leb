@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Горящие туры ".$GLOBALS["hotCodes"][$_REQUEST
 ?>
 <?
 if( !isset($_REQUEST["CITY"]) ){
-	header("Location: http://aqua.redder.pro/".$GLOBALS["hotDir"]."/belgorod/");
+	header("Location: http://aq.redder.pro/".$GLOBALS["hotDir"]."/belgorod/");
 }
 ?>
 <div class="b-block">
