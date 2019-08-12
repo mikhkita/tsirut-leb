@@ -2539,11 +2539,12 @@ ul.b-breadcrumbs {
 	}
 
 .b-adv-list{
-
+	text-align: center;
 }
 	.b-adv-item{
-		float: left;
-		width: calc(100%/3 - 16px);
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100%/3 - 20px);
 		margin-right: 24px;
 		text-align: center;
 		color: #FFF;
@@ -6705,8 +6706,8 @@ div.TVModalContainer{
 		position: relative;
 	}
 	div.TVSRFixePanel{
-					position: absolute;
-				}
+		position: absolute;
+	}
 	div.TVNewProgressBar{
 		text-align: center;
 		width: 100%;
@@ -6722,9 +6723,9 @@ div.TVModalContainer{
 			-moz-animation: Gradient 5s ease infinite;
 			animation: Gradient 5s ease infinite;
 		}
-		div.TVActive.TVProgressLine{
+		div.TVNewProgressBar .TVProgressLine{
 			height: 100%;
-			line-height: 32px;
+			line-height: 32px ;
 			border-radius: 100px;
 		}
 		@-webkit-keyframes Gradient {

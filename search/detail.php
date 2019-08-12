@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 ?>
 
-<?if($GLOBALS["arCountry"]["name"]):?>
+<?if($GLOBALS["arCountry"]["name"] && !$GLOBALS["arCountry"]["isRussia"]):?>
 	<div class="b-tourvisor-calendar" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
 		<div class="b-block">
 			<div class="content">

@@ -19,7 +19,7 @@ if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[4]) )
 	$page = $GLOBALS["page"] = "hot-detail";
 
-$GLOBALS["pagesList"] = array("search","hot-tours","russia","search","contacts","articles");
+$GLOBALS["pagesList"] = array("search","hot-tours","russia","contacts","articles");
 
 $GLOBALS["depends"] = array(
 	"search" => array(
@@ -39,13 +39,14 @@ if($isDetail){
 		array(),
 		array('IBLOCK_ID'=>1, '=CODE'=>$_REQUEST["SECTION_CODE"]),
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV')
+		array('IBLOCK_ID','ID','NAME','CODE','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV')
 	);
 	if($arSection = $rsSections->Fetch()){
 		$GLOBALS["arCountry"] = array(
 			'id' => $arSection['ID'],
 			'name' => $arSection['UF_COUNTRY_NAME'],
 			'picture' => $arSection['DETAIL_PICTURE'],
+			'isRussia' => ((int)$arSection['IBLOCK_SECTION_ID'] == 2),
 			'title' => $arSection['NAME'],
 			'titleText' => $arSection['UF_HEADER_TEXT'],
 			'visa' => $arSection['UF_HEADER_VISA'],
@@ -225,11 +226,15 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						<h1><?$APPLICATION->ShowTitle()?></h1>
 						<p class="b-head-text"><?=$GLOBALS["arCountry"]["titleText"];?></p>
 					</div>
-					<div class="b-adv-list clearfix">
+					<div class="b-adv-list clearfix">	
+						<?if($GLOBALS["arCountry"]["visa"]):?>
 						<div class="b-adv-item">
 							<p><b>Виза в страну:</b></p>
 							<p><?=$GLOBALS["arCountry"]["visa"];?></p>
 						</div>
+						<?endif;?>
+					
+						<?if($GLOBALS["arCountry"]["popular"]):?>
 						<div class="b-adv-item">
 							<p><b>Популярные курорты:</b></p>
 							<div>
@@ -241,10 +246,13 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 								<?endforeach;?>
 							</div>
 						</div>
+						<?endif;?>
+						<?if($GLOBALS["arCountry"]["bestTime"]):?>
 						<div class="b-adv-item">
 							<p><b>Лучшее время для отдыха:</b></p>
 							<p><?=$GLOBALS["arCountry"]["bestTime"]?></p>
 						</div>
+						<?endif;?>
 					</div>
 				<?endif;?>
 			</div>

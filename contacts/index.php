@@ -22,7 +22,8 @@ $APPLICATION->SetTitle("Контакты");
 				</div>
 				<div class="b-contacts-item">
 					<h3>E-mail:</h3>
-					<div><?=includeArea("e-mail")?></div>
+					<a href="mailto:<?=includeArea("e-mail")?>"><?=includeArea("e-mail")?></a>
+					<div></div>
 				</div>
 				<div class="b-contacts-item requisites">
 					<h3>Реквизиты компании:</h3>
