@@ -2778,6 +2778,14 @@ ul.b-breadcrumbs {
 			.b-filter-item:last-child{
 				margin-bottom: 0;
 			}
+				.b-filter-item,
+				.b-tourvisor-nav-item{
+					font-family: 'Gilroy-Regular';
+					font-size: 16px;
+					line-height: 24px;
+				}
+				.b-filter-item h2,
+				.b-tourvisor-nav-item h2,
 				.b-filter-item h3,
 				.b-tourvisor-nav-item h3{
 					font-family: 'Gilroy-Bold';
@@ -5007,14 +5015,11 @@ div.TVHotelTypeItem.TVChecked {
 .b-tourvisor-with-filter div.TVTem2TourBlock {
     padding: 24px 0 0 0;
 }
-.b-tourvisor-with-filter .TVSRBodyContainer .blpricesort:first-child .TVTem2TourContainer{
-	border-top: 0;
+.b-tourvisor-with-filter .TVSRBodyContainer .blpricesort:first-child .TVTourContainer{
+	padding-top: 5px;
 }
 .b-tourvisor-with-filter .TVTem2TourContainer:hover .TVTem2TourBlock {
     background: transparent;
-}
-.b-tourvisor-with-filter .TVSRBodyContainer .blpricesort:first-child .TVTem2TourBlock{
-	padding-top: 0;
 }
 .b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage {
     position: relative;
@@ -7486,5 +7491,8 @@ div.TVCalendarControl .TVCalendarControlBody .TVCalendarControlTable table .TVFl
 }
 div.TVOrderHotelBlock{
 	text-shadow: none;
+}
+div.TVTourContainer{
+	background-color: transparent;
 }
 

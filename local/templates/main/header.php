@@ -47,6 +47,7 @@ if($isDetail){
 			'name' => $arSection['UF_COUNTRY_NAME'],
 			'picture' => $arSection['DETAIL_PICTURE'],
 			'isRussia' => ((int)$arSection['IBLOCK_SECTION_ID'] == 2),
+			'seoText' => $arSection['DESCRIPTION'],
 			'title' => $arSection['NAME'],
 			'titleText' => $arSection['UF_HEADER_TEXT'],
 			'visa' => $arSection['UF_HEADER_VISA'],
@@ -241,7 +242,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 								<?$arCountryCount = count($GLOBALS["arCountry"]["popular"]); $arCountrycounter = 0;?>
 								<?foreach ($GLOBALS["arCountry"]["popular"] as $value):?>
 									<?$country = explode("|", $value);?>
-									<a href="#"><?=$country[0]?></a><?if($arCountrycounter < $arCountryCount - 1) echo ",";?>
+									<a href="/search/?s_country=<?=$GLOBALS["arCountry"]["countryIDTV"]?>&s_region_to=<?=$country[1]?>" target="_blank"><?=$country[0]?></a><?if($arCountrycounter < $arCountryCount - 1) echo ",";?>
 									<?$arCountrycounter++;?>
 								<?endforeach;?>
 							</div>
