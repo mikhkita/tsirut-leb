@@ -147,14 +147,29 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 					</div>
 					<div class="b-tourvisor-nav-item clearfix">
 						<h3>Туры в другие страны</h3>
-						<ul>
-							<li><a href="#">Туры в Доминикану</a></li>
-							<li><a href="#">Туры в Таиланд</a></li>
-							<li><a href="#">Туры в Черногорию </a></li>
-							<li><a href="#">Туры в Индию</a></li>
-							<li><a href="#">Туры на Кипр</a></li>
-							<li><a href="#">Туры в Грузию</a></li>
-						</ul>
+						<?$APPLICATION->IncludeComponent(
+							"bitrix:catalog.section.list",
+							"country-list-detail",
+							Array(
+								"ADD_SECTIONS_CHAIN" => "N",
+								"CACHE_FILTER" => "N",
+								"CACHE_GROUPS" => "Y",
+								"CACHE_TIME" => "36000000",
+								"CACHE_TYPE" => "A",
+								"COUNT_ELEMENTS" => "Y",
+								"FILTER_NAME" => "sectionsFilter",
+								"IBLOCK_ID" => "1",
+								"IBLOCK_TYPE" => "content",
+								"SECTION_CODE" => "",
+								"SECTION_FIELDS" => array("PICTURE",""),
+								"SECTION_ID" => "1",
+								"SECTION_URL" => "",
+								"SECTION_USER_FIELDS" => array("UF_COUNTRY_NAME",""),
+								"SHOW_PARENT_NAME" => "Y",
+								"TOP_DEPTH" => "2",
+								"VIEW_MODE" => "LINE"
+							)
+						);?>
 					</div>
 					<div class="b-tourvisor-nav-item b-nav-seo">
 						<h3>Заголовок первого блока</h3>

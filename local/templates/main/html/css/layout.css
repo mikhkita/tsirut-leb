@@ -3417,6 +3417,10 @@ ul.b-breadcrumbs {
 					text-align: center;
 					padding: 16px 0;
 				}
+	.b-hot-group .b-mailing-cont{
+		width: 100%;
+	}
+
 .b-popup.b-hotel-popup {
     max-width: 960px;
 }
@@ -4713,6 +4717,8 @@ div.TVDetailPanel .TVOptionCheckBox {
 	visibility: visible;
 	position: static;
 	top: auto;
+	left: auto;
+	height: auto;
 }
 .b-tourvisor-with-filter div.TVFilterForm{
 	display: none;

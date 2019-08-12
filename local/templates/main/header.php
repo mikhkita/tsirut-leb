@@ -43,6 +43,7 @@ if($isDetail){
 	);
 	if($arSection = $rsSections->Fetch()){
 		$GLOBALS["arCountry"] = array(
+			'id' => $arSection['ID'],
 			'name' => $arSection['UF_COUNTRY_NAME'],
 			'picture' => $arSection['DETAIL_PICTURE'],
 			'title' => $arSection['NAME'],

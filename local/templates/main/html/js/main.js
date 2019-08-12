@@ -366,7 +366,7 @@ $(document).ready(function(){
                 if($nextCard.hasClass("flipped")){
                     //заменить front
                     var $cont = $nextCard.find(".flip-card-front");
-                    if(isMobile){
+                    if(isMobile || isIE()){
                         $nextCard.removeClass("flipped");
                         setTimeout(function() {
                             $cont.find(".b-operators-item").remove();
@@ -382,7 +382,7 @@ $(document).ready(function(){
                 }else{
                     //заменить back
                     var $cont = $nextCard.find(".flip-card-back");
-                    if(isMobile){
+                    if(isMobile || isIE()){
                         $nextCard.addClass("flipped");
                         setTimeout(function() {
                             $cont.find(".b-operators-item").remove();
