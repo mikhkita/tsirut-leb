@@ -4706,7 +4706,7 @@ div.TVDetailPanel .TVOptionCheckBox {
 	position: absolute;
 	top: -10000px;
 	left: 0px;
-	height: 10px;
+	/*height: 10px;*/
 }
 .b-tourvisor-with-filter.show-tv{
 	opacity: 1;

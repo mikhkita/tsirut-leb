@@ -644,8 +644,8 @@ $(document).ready(function(){
                     $(".b-tourvisor-with-filter").addClass("show-tv");
                     $(".tourvisor-preloader").hide();
                     console.log($(".b-tourvisor-with-filter").offset().top);
-                }, 100);
-                
+                }, 700);
+
                 // var country = $(".b-tourvisor-with-filter").attr("data-country");
                 // if(country){
                 //     $(".TVCountry").click();

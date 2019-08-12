@@ -1956,14 +1956,16 @@ div.TVCalDirectOnly {
 	.b-popup h2.b-title{
 		text-align: left;
 		padding-right: 34px;
-		font-size: 28px;
-    	line-height: 36px;
+		font-size: 24px;
+		line-height: 32px;
 		margin-bottom: 16px;
 	}
 	.b-quiz h3{
     	text-align: left;
     	margin-bottom: 16px;
-	}
+    	font-size: 20px;
+    	line-height: 28px;
+ }
 	.b-quiz-adults {
 	    margin-bottom: 6px;
 	}
@@ -2347,8 +2349,8 @@ div.TVCalDirectOnly {
 			margin-right: 16px;
 		}
 	.b-popup .fancybox-close-small {
-	    right: 6px;
-	    top: 6px;
+	    right: 18px;
+	    top: 18px;
 	}
 
 	.b-hot-group-dates span{
