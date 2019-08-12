@@ -378,10 +378,11 @@
 		<div class="b-popup b-aqua-popup b-popup-back-2" id="b-popup-review-form">
 			<div class="b-popup-content">
 				<h2 class="small-mb">Оставить отзыв</h2>
-				<form action="subscribe.php" method="POST">
+				<form action="/ajax/?action=ADDREVIEW" method="POST">
 					<input type="text" name="name" placeholder="Вашe имя" required>
-					<input type="text" name="phone" placeholder="Место отдыха" required>
+					<input type="text" name="tour" placeholder="Место отдыха" required>
 					<textarea name="comment" rows="6" placeholder="Ваш отзыв"></textarea>
+					<input type="text" name="MAIL">
 					<a href="#" class="b-btn b-btn-orange ajax b-btn-full">
 						<p class="btn-bold">Оставить отзыв</p>
 						<p class="btn-regular">о вашем путешествии</p>
