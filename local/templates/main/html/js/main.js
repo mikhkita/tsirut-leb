@@ -687,8 +687,8 @@ $(document).ready(function(){
 
                 if(isMobile){
                     //Поставить кнопку для мобильного фильтра
-                    $(".b-tourvisor-with-filter .TVMainFilter").after($(".b-btn-filter-mobile"));
-                    $(".b-btn-filter-mobile").removeClass("hide");
+                    $(".b-tourvisor-with-filter .TVMainFilter").after($(".filter-mobile-cont"));
+                    $(".filter-mobile-cont").removeClass("hide");
                     $("#b-popup-filter-mobile .defaultTVFilterForm").append($(".b-tourvisor-with-filter .TVFilterForm"));
                     //Перенести блок в конец
                     $(".b-tourvisor-with-filter .TVResultTheme2").after($(".b-tourvisor-with-filter .defaultTVFilterForm")); 
@@ -730,9 +730,15 @@ $(document).ready(function(){
                             }
                         }, 100);
                     }else{
+                        if(isMobile){
+                            $(".filter-mobile-cont").addClass("hide");
+                        }
                         $(".defaultTVFilterForm, .TVResultTheme2").addClass("hidden");
                         $(".TVSearchButton").click(function() {
                             $(".defaultTVFilterForm, .TVResultTheme2").removeClass("hidden");
+                            if(isMobile){
+                                $(".filter-mobile-cont").removeClass("hide");
+                            }
                         });
                     }
                 }

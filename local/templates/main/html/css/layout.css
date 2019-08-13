@@ -2748,7 +2748,7 @@ ul.b-breadcrumbs {
 				border-bottom: 1px solid transparent;
 			}
 
-.b-btn-filter-mobile{
+.filter-mobile-cont{
 	display: none;
 }
 .b-online-search{
@@ -7494,5 +7494,8 @@ div.TVOrderHotelBlock{
 }
 div.TVTourContainer{
 	background-color: transparent;
+}
+div.TVSearchResultPanel{
+	width: 100% !important;
 }
 

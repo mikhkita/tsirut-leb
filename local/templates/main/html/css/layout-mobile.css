@@ -42,6 +42,7 @@ input {
 .b-head{
 	background-position: 0% 50%;
 	padding-top: 20px;
+	min-height: 585px;
 }
 	.b-head-text {
 	    max-width: 435px;
@@ -618,14 +619,18 @@ input {
 		padding-top: 0;
 	}
 
-.b-btn-filter-mobile{
-	display: inline-block;
-	margin-top: 20px;
-	font-size: 18px;
-    line-height: 26px;
-	color: #ED7408;
-	border-bottom: 1px dashed #F5973B;
+.filter-mobile-cont{
+	display: block;
+	text-align: center;
 }
+	.b-btn-filter-mobile{
+		display: inline-block;
+		margin-top: 20px;
+		font-size: 18px;
+	    line-height: 26px;
+		color: #ED7408;
+		border-bottom: 1px dashed #F5973B;
+	}
 
 .adv-main-right h3 {
     font-size: 28px;

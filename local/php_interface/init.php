@@ -69,6 +69,17 @@ function getCurrentDate(){
 	return intval($arr[0])." ".getRusMonth($arr[1])." ".intval($arr[2]);
 }
 
+AddEventHandler("main", "OnEpilog", "Redirect404");
+function Redirect404() {
+    if (defined('ERROR_404') && ERROR_404=='Y' && !defined('ADMIN_SECTION')){
+	   GLOBAL $APPLICATION;
+	   $APPLICATION->RestartBuffer();
+	   include   $_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/header.php';
+	   require   ($_SERVER['DOCUMENT_ROOT'].'/404.php');
+	   include   $_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/footer.php';
+	}
+}
+
 // function getValidPhone($file){
 // 	global $APPLICATION;
 // 	$APPLICATION->IncludeComponent("bitrix:main.include","",Array(

@@ -21,7 +21,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 	</div>
 <?endif;?>
 
-<?$arFilter = array("IBLOCK_ID"=>1, "ACTIVE"=>"Y", "SECTION_CODE"=>$_REQUEST["SECTION_CODE"]);?>
+<?$GLOBALS["arFilterDetail"] = array("IBLOCK_ID"=>1, "ACTIVE"=>"Y", "SECTION_CODE"=>$_REQUEST["SECTION_CODE"]);?>
 <?$APPLICATION->IncludeComponent("bitrix:news.list", "detail", Array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
 		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
@@ -50,7 +50,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 			4 => "PREVIEW_PICTURE",
 			5 => "",
 		),
-		"FILTER_NAME" => "arFilter",	// Фильтр
+		"FILTER_NAME" => "arFilterDetail",	// Фильтр
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
 		"IBLOCK_ID" => "1",	// Код информационного блока
 		"IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
@@ -78,9 +78,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
 		"SET_META_DESCRIPTION" => "Y",	// Устанавливать описание страницы
 		"SET_META_KEYWORDS" => "Y",	// Устанавливать ключевые слова страницы
-		"SET_STATUS_404" => "N",	// Устанавливать статус 404
+		"SET_STATUS_404" => "Y",	// Устанавливать статус 404
 		"SET_TITLE" => "N",	// Устанавливать заголовок страницы
-		"SHOW_404" => "N",	// Показ специальной страницы
+		"SHOW_404" => "Y",	// Показ специальной страницы
 		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
 		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
 		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей

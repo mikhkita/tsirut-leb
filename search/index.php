@@ -3,7 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Поиск туров");
 ?>
 <div class="b-block">
-	<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile hide">Открыть фильтр</a>
+	<div class="filter-mobile-cont hide">
+		<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
+	</div>
 	<div class="b b-tourvisor">
 		<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 		<div class="b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter">
