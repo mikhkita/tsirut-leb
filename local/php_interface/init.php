@@ -80,6 +80,12 @@ function Redirect404() {
 	}
 }
 
+AddEventHandler("main", "OnEndBufferContent", "replacePlaceholders");
+function replacePlaceholders(&$content){
+	$year = date("Y", strtotime("+2 month"));
+	$content = str_replace("#YEAR#", $year, $content);
+}
+
 // function getValidPhone($file){
 // 	global $APPLICATION;
 // 	$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
