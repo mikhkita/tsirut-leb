@@ -6,6 +6,7 @@ $(document).ready(function(){
         isTablet = false,
         isMobile = false,
         isMobileSmall = false,
+        isRetina = retina(),
         rowCountry = 0,
         countCards = 0,
         countOperators = $(".b-operators-list .b-operators-item").length,
@@ -211,6 +212,18 @@ $(document).ready(function(){
     }
     $.fn.placeholder();
 
+    function retina(){
+        var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
+            (min--moz-device-pixel-ratio: 1.5),\
+            (-o-min-device-pixel-ratio: 3/2),\
+            (min-resolution: 1.5dppx)";
+        if (window.devicePixelRatio > 1)
+            return true;
+        if (window.matchMedia && window.matchMedia(mediaQuery).matches)
+            return true;
+        return false;
+    }
+
     function isIE() {
         var rv = -1;
         if (navigator.appName == 'Microsoft Internet Explorer')
@@ -228,6 +241,14 @@ $(document).ready(function(){
                 rv = parseFloat( RegExp.$1 );
         }
         return rv == -1 ? false: true;
+    }
+
+    if(isRetina || isMobile){
+        $("*[data-retina]").each(function(){
+            var $this = $(this),
+                src = $this.attr("data-retina");
+            $this.attr({"src" : src});
+        });
     }
 
     var slideoutRight = new Slideout({
@@ -416,7 +437,15 @@ $(document).ready(function(){
         slidesToScroll: 1,
         speed: 600,
         fade: true,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                fade: false,
+              }
+            },
+          ]
     });
 
     var nowShow = 0,
