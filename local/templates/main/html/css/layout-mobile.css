@@ -110,7 +110,7 @@ input {
 		margin: 0 12px;
 	}
 	.b-country-list.square .b-country-item{
-
+		height: 250px;
 	}
 	.b-country-item-slider{
 		margin: 0;
@@ -127,6 +127,9 @@ input {
 }
 .b-hot-list .b-hot-item:nth-child(2n){
 	margin-right: 0;
+}
+ul.b-breadcrumbs{
+	margin-top: 24px;
 }
 .b-country-cont{
 
@@ -680,7 +683,7 @@ input {
 
 }
 .b-content-back {
-	width: calc(100% - 32px);
+	width: 100%;
     padding: 16px;
     margin: 0 auto 40px auto;
 }
@@ -1179,7 +1182,9 @@ div.TVOrderTourParams {
 div.TVOrderHotelName {
     max-width: calc(100% - 250px);
 }
-
+.b-search-pay-wrap{
+	padding: 24px 24px;
+}
 .b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton.TVSRSearchMoreBtn,
 .b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton.TVSRUpdateSearchResultBtn {
     margin-top: 30px;
@@ -1373,7 +1378,7 @@ div.TVCalDirectOnly {
 		font-size: 16px;
 	}
 	.b-mailing-cont {
-	    padding: 24px 16px 32px 16px;
+	    padding: 24px 24px 32px 24px;
 	}
 	.b-mailing-cont h2 {
 	    font-size: 28px;
