@@ -14,7 +14,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 					</a>
 				</div>
 				<div class="b-tourvisor-hidden">
-					<div class="tv-calendar tv-moduleid-982526"></div>
+					<div class="tv-calendar tv-moduleid-982526" tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"></div>
 				</div>
 			</div>
 		</div>

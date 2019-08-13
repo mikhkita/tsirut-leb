@@ -363,6 +363,27 @@ div.TVFORow3 {
 	.b-country-list{
 
 	}
+		/*===Если есть слайдер==*/
+		.b-country-list .b-country-slider + .b-country-item{
+			margin-right: 0;
+		}
+		.b-country-list .b-country-slider ~ .b-country-item:nth-child(4n-1){
+			margin-right: 24px;
+		}
+		.b-country-list .b-country-slider ~ .b-country-item:nth-child(3n-1){
+			margin-right: 0;
+		}
+		.b-country-list .b-country-slider ~ .b-country-item{
+			margin-right: 24px;
+		}
+		/*===Если нет слайдера==*/
+		.b-country-item:nth-child(4n){
+			margin-right: 24px;
+		}
+		.b-country-item:nth-child(3n){
+			margin-right: 0;
+		}
+		/*======================*/
 		.b-country-item{
 			width: calc(100%/3 - 16px);
 			height: 383px;
@@ -831,6 +852,27 @@ div.TVFORow3 {
 	.b-country-list{
 
 	}
+		/*===Если есть слайдер==*/
+		.b-country-list .b-country-slider{
+			margin-right: 0;
+		}
+		.b-country-list .b-country-slider ~ .b-country-item:nth-child(3n-1){
+			margin-right: 24px;
+		}
+		.b-country-list .b-country-slider ~ .b-country-item:nth-child(2n-1){
+			margin-right: 0;
+		}
+		.b-country-list .b-country-slider ~ .b-country-item{
+			margin-right: 24px;
+		}
+		/*===Если нет слайдера==*/
+		.b-country-item:nth-child(3n){
+			margin-right: 24px;
+		}
+		.b-country-item:nth-child(2n){
+			margin-right: 0;
+		}
+		/*======================*/
 		.b-country-item{
 			width: calc(50% - 12px);
 		}

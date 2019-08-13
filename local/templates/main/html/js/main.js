@@ -151,24 +151,24 @@ $(document).ready(function(){
                     }
                 }
             });
-            if( myWidth > 1090 ){
-                rowCountry = 4;
-            }else if( myWidth > 850 ){
-                rowCountry = 3;
-            }else{
-                rowCountry = 2;
-            }
-            var nextRow = 0;
-            if($(".b-country-slider").length){
-                nextRow = 2;
-            }
-            $(".b-popular .b-country-list .b-country-item").each(function() {
-                nextRow++;
-                if(nextRow >= rowCountry){
-                    $(this).addClass("no-margin");
-                    nextRow = 0;
-                }
-            });
+            // if( myWidth > 1090 ){
+            //     rowCountry = 4;
+            // }else if( myWidth > 850 ){
+            //     rowCountry = 3;
+            // }else{
+            //     rowCountry = 2;
+            // }
+            // var nextRow = 0;
+            // if($(".b-country-slider").length){
+            //     nextRow = 2;
+            // }
+            // $(".b-popular .b-country-list .b-country-item").each(function() {
+            //     nextRow++;
+            //     if(nextRow >= rowCountry){
+            //         $(this).addClass("no-margin");
+            //         nextRow = 0;
+            //     }
+            // });
             $(".stick").stick_in_parent({offset_top: 88});
         }
         if(isMobile || isIE()){//Изменить анимацию на карточках
@@ -403,6 +403,11 @@ $(document).ready(function(){
 
     // ====================
 
+    $(".b-country-slider").on('init', function(event, slick){
+        if(slick.slideCount == 1){
+            $(".b-country-slider .slick-dots").addClass("hide");
+        }
+    });
     $(".b-country-slider").slick({
         dots: true,
         arrows: false,
@@ -921,8 +926,9 @@ $(document).ready(function(){
         });
     }
 
-    function countryFind() {
-        var country = $(".b-tourvisor-calendar").attr("data-country");
+     function countryFind() {
+        var country = $(".b-tourvisor-calendar").attr("data-country"),
+            found = false;
         $(".b-tourvisor-hidden .TVCalendarCountyList .TVCalendarRow").each(function() {
             if($(this).find(".TVCalendarCountryValue").text() == country){
                 $(this).click();
@@ -940,9 +946,10 @@ $(document).ready(function(){
                         
                     }
                 }, 10);
-                return false;
+                found = true;
             }
         });
+        return found;
     }
 
     if($(".b-tourvisor-hidden").length){
@@ -950,17 +957,21 @@ $(document).ready(function(){
         var waitTourvisorHidden = setInterval(function(){
             if( $(".b-tourvisor-hidden .TVCalendar").length ){
                 $(".calendar-preloader").hide();
-                //подгрузить все страны
-                if($(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").length){
-                    $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").click();
+                var firstSearch = false;
+                //ищем страну в текущем городе
+                if($(".tv-calendar").attr("tv-departure")){
+                    firstSearch = countryFind();
+                    // console.log(firstSearch);
+                }
+                //ищем страну в дефолтных городах
+                if(!firstSearch && $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").length){
+                    $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").click();//подгрузить все страны
                     var waitCountryLoad = setInterval(function(){
                         if($(".b-tourvisor-hidden .TVCalendar .TVCalShowAll.TVExpanded").length){
                             countryFind();
                             clearInterval(waitCountryLoad);
                         }
                     }, 10);
-                }else{
-                    countryFind();
                 }
                 clearInterval(waitTourvisorHidden);
             }

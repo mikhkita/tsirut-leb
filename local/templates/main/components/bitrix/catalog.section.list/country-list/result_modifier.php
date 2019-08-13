@@ -97,7 +97,7 @@ if (0 < $arResult['SECTIONS_COUNT'])
 	}
 }
 
-$cnt = 8; 
+$cnt = 6; 
 $i = 0;
 foreach ($arResult["SECTIONS"] as $key => $arSection) { 
     if ($i >= $cnt){ 

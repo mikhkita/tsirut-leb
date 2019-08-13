@@ -91,7 +91,7 @@ $APPLICATION->SetTitle("Поиск туров");
 		"SECTION_FIELDS" => array("PICTURE",""),
 		"SECTION_ID" => "1",
 		"SECTION_URL" => "",
-		"SECTION_USER_FIELDS" => array("UF_COUNTRY_NAME","UF_VISA","UF_PRICE_FROM","UF_CATEGORIES","UF_T_AIR_1","UF_T_AIR_2","UF_T_AIR_3","UF_T_AIR_4","UF_T_AIR_5","UF_T_AIR_6","UF_T_AIR_7","UF_T_AIR_8","UF_T_AIR_9","UF_T_AIR_10","UF_T_AIR_11","UF_T_AIR_12","UF_T_WATER_1","UF_T_WATER_2","UF_T_WATER_3","UF_T_WATER_4","UF_T_WATER_5","UF_T_WATER_6","UF_T_WATER_7","UF_T_WATER_8","UF_T_WATER_9","UF_T_WATER_10","UF_T_WATER_11","UF_T_WATER_12",""),
+		"SECTION_USER_FIELDS" => array("UF_COUNTRY_NAME","UF_VISA","UF_PRICE_FROM","UF_CATEGORIES","UF_T_AIR_1","UF_T_WATER_1",""),
 		"SHOW_PARENT_NAME" => "Y",
 		"TOP_DEPTH" => "2",
 		"VIEW_MODE" => "LINE"
@@ -210,7 +210,7 @@ $APPLICATION->SetTitle("Поиск туров");
 	<div class="b-block">
 		<h2 class="b-title">Календарь выгодных туров</h2>
 		<!-- <div class="tv-calendar tv-moduleid-980631"></div> -->
-		<div class="tv-calendar tv-moduleid-190548"></div>
+		<div class="tv-calendar tv-moduleid-982526"></div>
 	</div>
 </div>
 <div class="b b-mailing">

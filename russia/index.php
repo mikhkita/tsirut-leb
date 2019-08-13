@@ -5,6 +5,9 @@ $APPLICATION->SetTitle("Отдых в России");
 
 <div class="b-block">
 	<div class="b b-tourvisor">
+		<div class="filter-mobile-cont hide">
+			<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
+		</div>
 		<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 		<div class="b b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter" data-country="Россия">
 			<div class="tv-search-form tv-moduleid-191365"></div>
