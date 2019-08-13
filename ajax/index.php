@@ -47,10 +47,10 @@ switch ($action) {
 				if(CEvent::Send("NEW_REVIEW", "s1", array("LINK" => $link, "NAME" => $_POST["name"], "TOUR" => $_POST["tour"], "COMMENT" => $_POST["comment"]))){
 					echo "1";
 				} else {
-					echo "0";
+					echo "01";
 				}
 			} else {
-				echo "0";
+				echo "02";
 			}
 		}else{
 			echo "1";

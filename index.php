@@ -308,25 +308,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 			<div class="gradient-after">
 				<h2><?=includeArea("mail-head");?></h2>
 				<div class="mailing-text"><?=includeArea("mail-text");?></div>
-				<form class="b-mailing-form" method="post" action="/subscribe.php">
- 					<input type="text" name="email" placeholder="Ваш e-mail" required="">
- 					<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
- 					<a href="#b-subscribe-success" class="b-thanks-link fancy" style="display:none;"></a>
- 					<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
-						<p class="btn-bold">Подписаться</p>
- 					</a>
-					<div class="b-checkbox">
- 						<input id="checkbox-politics-1" type="checkbox" name="politics" checked="" required=""> 
- 						<label for="checkbox-politics-1">
-							<div class="b-checked icon-checked">
-							</div>
-							<p>
-								 Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a>
-							</p>
- 						</label>
-					</div>
-					<input type="submit" value="Подписаться" style="display:none;">
-				</form>
+				<?=includeArea("subscribe-form");?>
 			</div>
 		</div>
 		 <!-- VK Widget -->
