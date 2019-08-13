@@ -1041,7 +1041,23 @@ b{
 	.b-country-list{
 		margin-bottom: 44px;
 	}
-
+		@media screen and (min-width: 767px){
+			/*===Если есть слайдер==*/
+			.b-country-list .b-country-slider + .b-country-item + .b-country-item{
+				margin-right: 0;
+			}
+			.b-country-list .b-country-slider ~ .b-country-item:nth-child(4n-1){
+				margin-right: 0;
+			}
+			.b-country-list .b-country-slider ~ .b-country-item{
+				margin-right: 24px;
+			}
+			/*===Если нет слайдера==*/
+			.b-country-item:nth-child(4n){
+				margin-right: 0;
+			}
+			/*======================*/
+		}
 		.b-country-slider{
 			position: relative;
 			float: left;
@@ -1956,10 +1972,10 @@ b{
 		max-width: 712px;
 		margin: 0 auto;
 	}
-	.seo-block.center h2.with-icon{
+	/*.seo-block.center h2.with-icon{
 		margin-left: auto;
 		margin-right: auto;
-	}
+	}*/
 		.b-seo-two-blocks .seo-block{
 			display: inline-block;
 			vertical-align: top;
@@ -1977,7 +1993,7 @@ b{
 			line-height: 34px;
 			margin-bottom: 22px;
 		}
-		.b-seo h2.with-icon,
+		/*.b-seo h2.with-icon,
 		.b-nav-seo h3.with-icon{
 			position: relative;
 			display: table;
@@ -2008,7 +2024,7 @@ b{
 			.b-nav-seo h3.with-icon .title{
 				display: table-cell;
 				vertical-align: middle;
-			}
+			}*/
 	.b-block-separator{
 		width: 100%;
 	}
@@ -3318,8 +3334,12 @@ ul.b-breadcrumbs {
 			line-height: 40px;
 			margin-bottom: 16px;
 		}
+		.b-hot-tog .b-subtitle{
+			color: #282828;
+		}
 	.b-hot-group-dates{
 		margin-bottom: 8px;
+		color: #282828;
 	}
 		.b-hot-group-dates span:first-child{
 			margin-right: 32px;

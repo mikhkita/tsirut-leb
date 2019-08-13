@@ -1,11 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?
 $SNIPPETS = Array();
-$SNIPPETS['СЕО/snippet0001.snp'] = Array('title' => 'СЕО. 1 блок с иконкой');
-$SNIPPETS['СЕО/snippet0002.snp'] = Array('title' => 'СЕО. 2 блока с иконками');
 $SNIPPETS['СЕО/snippet0003.snp'] = Array('title' => 'СЕО. Широкий разделитель');
-$SNIPPETS['СЕО/snippet0004.snp'] = Array('title' => 'СЕО. 2 блока без иконок');
-$SNIPPETS['СЕО/snippet0005.snp'] = Array('title' => 'СЕО. 1 блок без иконок');
+$SNIPPETS['СЕО/snippet0004.snp'] = Array('title' => 'СЕО. Два блока');
+$SNIPPETS['СЕО/snippet0005.snp'] = Array('title' => 'СЕО. Один блок');
 $SNIPPETS['СЕО/snippet0006.snp'] = Array('title' => 'СЕО. Узкий разделитель');
 $SNIPPETS['Детальная. Преимущества/snippet0001.snp'] = Array('title' => 'Преимущества. Описание');
 $SNIPPETS['Детальная. Преимущества/snippet0002.snp'] = Array('title' => 'Преимущество');

@@ -151,24 +151,24 @@ $(document).ready(function(){
                     }
                 }
             });
-            if( myWidth > 1090 ){
-                rowCountry = 4;
-            }else if( myWidth > 850 ){
-                rowCountry = 3;
-            }else{
-                rowCountry = 2;
-            }
-            var nextRow = 0;
-            if($(".b-country-slider").length){
-                nextRow = 2;
-            }
-            $(".b-popular .b-country-list .b-country-item").each(function() {
-                nextRow++;
-                if(nextRow >= rowCountry){
-                    $(this).addClass("no-margin");
-                    nextRow = 0;
-                }
-            });
+            // if( myWidth > 1090 ){
+            //     rowCountry = 4;
+            // }else if( myWidth > 850 ){
+            //     rowCountry = 3;
+            // }else{
+            //     rowCountry = 2;
+            // }
+            // var nextRow = 0;
+            // if($(".b-country-slider").length){
+            //     nextRow = 2;
+            // }
+            // $(".b-popular .b-country-list .b-country-item").each(function() {
+            //     nextRow++;
+            //     if(nextRow >= rowCountry){
+            //         $(this).addClass("no-margin");
+            //         nextRow = 0;
+            //     }
+            // });
             $(".stick").stick_in_parent({offset_top: 88});
         }
         if(isMobile || isIE()){//Изменить анимацию на карточках
@@ -403,6 +403,11 @@ $(document).ready(function(){
 
     // ====================
 
+    $(".b-country-slider").on('init', function(event, slick){
+        if(slick.slideCount == 1){
+            $(".b-country-slider .slick-dots").addClass("hide");
+        }
+    });
     $(".b-country-slider").slick({
         dots: true,
         arrows: false,
