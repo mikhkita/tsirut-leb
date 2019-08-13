@@ -1604,6 +1604,10 @@ div.TVCalDirectOnly {
     	margin-right: 12px;
 	}
 
+	.b-search-subscribe .b-mailing-form input[type=text]{
+		background-color: #f9fafc;
+	}
+
 	/*====*/
 
 	.b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton,
