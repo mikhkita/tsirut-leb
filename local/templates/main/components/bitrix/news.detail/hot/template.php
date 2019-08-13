@@ -63,7 +63,7 @@ $departureId = $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["TOURVISOR_ID"];
 			<? $group = 1; ?>
 			<? foreach ($tours as $key => $tour): ?>
 				<div class="b-hot-group" data-desc="с <?=dateFormatted($tour["DT"])?> по <?=dateFormatted(date("Y-m-d", strtotime($tour["DT"])+$tour["NT"]*24*60*60))?> на <?=($tour["NT"]+1)?> дней/<?=$tour["NT"]?> ночей">
-					<h2 class="b-subtitle"><?=dateFormatted($tour["DT"])?> на <?=($tour["NT"]+1)?> дней/<?=$tour["NT"]?> ночей</h2>
+					<h2 class="b-subtitle"><?=dateFormatted($tour["DT"])?> на <?=($tour["NT"]+1)?>&nbsp;дней/<?=$tour["NT"]?>&nbsp;ночей</h2>
 					<div class="b-hot-group-dates">
 						<span>Вылет <b><?=dateFormatted($tour["DT"])?></b></span>
 						<span>Прилет <b><?=dateFormatted(date("Y-m-d", strtotime($tour["DT"])+$tour["NT"]*24*60*60))?></b></span>
