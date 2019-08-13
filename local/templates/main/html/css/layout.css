@@ -3077,6 +3077,27 @@ ul.b-breadcrumbs {
 			line-height: 32px;
 			margin-bottom: 20px;
 		}
+		.b-articles-detail-left ul li{
+			position: relative;
+			padding-left: 21px;
+			margin-bottom: 4px;
+		}
+		.b-articles-detail-left ul li:last-child{
+			margin-bottom: 0;
+		}
+			.b-articles-detail-left ul li:before {
+			    content: " ";
+			    position: absolute;
+			    top: 10px;
+			    left: 0;
+			    width: 6px;
+			    height: 6px;
+			    background-color: #C1CEDF;
+			    border-radius: 10px;
+			}
+				.b-articles-detail-left ul li a:hover{
+					text-decoration: underline;
+				}
 		.b-h3-text{
 			margin-bottom: 32px;
 		}
