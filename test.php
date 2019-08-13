@@ -10,9 +10,7 @@ $rsSections = CIBlockSection::GetList(array(), array('IBLOCK_ID' => 1), false, a
 $countries = array();
 while($arSection = $rsSections->Fetch()){
 	if( !empty($arSection["UF_COUNTRY_NAME"]) ){
-		$countries[ mb_strtolower($arSection["UF_COUNTRY_NAME"], "UTF-8") ] = array(
-			"ID" => $arSection["ID"]
-		);
+		$countries[ mb_strtolower($arSection["UF_COUNTRY_NAME"], "UTF-8") ] = $arSection["ID"];
 	}
 }
 
@@ -31,11 +29,21 @@ $departures = array(
 );
 foreach ($minPrices["data"]["minprice"] as $key => $value) {
 	$name = mb_strtolower($value["country"], "UTF-8");
+	// var_dump($value);
+	// die();
 
-	if( isset($countries[ $name ]) ){
-		$countries[ $name ]["PRICE"] = $value["price"];
-		$countries[ $name ]["DEPARTURE"] = $departures[ $value["departure"] ];
+	if( isset($countries[$name]) ){
+		$obSec = new CIBlockSection();
+		$boolResult = $obSec->Update($countries[$name], array(
+			"UF_PRICE_FROM" => $value["price"],
+			"UF_CITY_ID_TV" => $departures[ $value["departure"] ]
+		));
+		// var_dump($countries[$name]);
+		// var_dump($boolResult);
+		// die();
 	}
+
+	
 	// echo $value["departure"]." ".$value["country"]." ".$value["price"]."<br>";
 }
 
