@@ -12,7 +12,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		<div class="b-statistics-list b-statistics-slider mobile-slider">
 			<div class="b-statistics-item statistics-1">
 				<div class="b-statistics-item-top">
- 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-country.png" class="anim fadeLeft delay100" data-cont=".b-statistics">
+ 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-country.png" data-retina="<?=SITE_TEMPLATE_PATH?>/html/i/count-country@2x.png" class="anim fadeLeft delay100" data-cont=".b-statistics">
  					<span class="anim fadeRight delay200" data-cont=".b-statistics">стран</span>
 				</div>
 				<p class="anim fadeDown delay300" data-cont=".b-statistics">
@@ -21,7 +21,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 			</div>
 			<div class="b-statistics-item statistics-2">
 				<div class="b-statistics-item-top">
- 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-hotel.png" class="anim fadeLeft delay400">
+ 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-hotel.png" data-retina="<?=SITE_TEMPLATE_PATH?>/html/i/count-hotel@2x.png" class="anim fadeLeft delay400">
  					<span class="anim fadeRight delay500">отелей</span>
 				</div>
 				<p class="anim fadeDown delay600">
@@ -30,7 +30,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 			</div>
 			<div class="b-statistics-item statistics-3">
 				<div class="b-statistics-item-top">
- 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-tourist.png" class="anim fadeLeft delay700">
+ 					<img src="<?=SITE_TEMPLATE_PATH?>/html/i/count-tourist.png" data-retina="<?=SITE_TEMPLATE_PATH?>/html/i/count-tourist@2x.png" class="anim fadeLeft delay700">
  					<span class="anim fadeRight delay800">туристов</span>
 				</div>
 				<p class="anim fadeDown delay900">

@@ -40,7 +40,9 @@ $month = date('n');
 					<div class="info-left">
 						<p class="visa"><?=UserFieldValue($arSection["UF_VISA"])?></p>
 						<h3><?=$arSection["UF_COUNTRY_NAME"]?></h3>
-						<p class="price">Туры от <?=numberFormat($arSection["UF_PRICE_FROM"])?> руб.</p>
+						<?if($arSection["UF_PRICE_FROM"]):?>
+							<p class="price">Туры от <?=numberFormat($arSection["UF_PRICE_FROM"])?> руб.</p>
+						<?endif;?>
 					</div>
 					<div class="info-right">
 						<?if($arSection["UF_T_AIR_1"]):?>
