@@ -10,6 +10,8 @@ foreach ($minPrices["data"]["minprice"] as $key => $value) {
 	echo $value["departure"]." ".$value["country"]." ".$value["price"]."<br>";
 }
 
+
+
 // var_dump($minPrices["data"]["minprice"]);
 echo "</pre>";
 
