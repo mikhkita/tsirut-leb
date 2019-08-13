@@ -3077,6 +3077,9 @@ ul.b-breadcrumbs {
 			line-height: 32px;
 			margin-bottom: 20px;
 		}
+		.b-articles-detail-left ul{
+			padding: 20px 0;
+		}
 		.b-articles-detail-left ul li{
 			position: relative;
 			padding-left: 21px;
