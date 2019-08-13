@@ -3055,6 +3055,9 @@ ul.b-breadcrumbs {
 		width: calc(100% - 302px);
 		padding-right: 24px;
 	}
+		.b-articles-detail-left img{
+			max-width: 100%;
+		}
 		.b-articles-detail-left > h2{
 			max-width: 736px;
 			color: #282828;
