@@ -6711,7 +6711,7 @@ div.TVModalContainer{
 		position: relative;
 	}
 	div.TVSRFixePanel{
-		position: absolute;
+		position: static;
 	}
 	div.TVNewProgressBar{
 		text-align: center;

@@ -73,11 +73,11 @@ $month = date('n');
 							<p class="price">Туры от <?=numberFormat($arSection["UF_PRICE_FROM"])?> руб.</p>
 						</div>
 						<div class="info-right">
-							<?if($arSection["UF_T_AIR_".$month]):?>
-								<div class="air-t"><span class="icon icon-sun"></span><p><?=$arSection["UF_T_AIR_".$month]?></p></div>
+							<?if($arSection["UF_T_AIR_1"]):?>
+								<div class="air-t"><span class="icon icon-sun"></span><p><?=$arSection["UF_T_AIR_1"]?></p></div>
 							<?endif;?>
-							<?if($arSection["UF_T_WATER_".$month]):?>
-								<div class="water-t"><span class="icon icon-wave"></span><p><?=$arSection["UF_T_WATER_".$month]?></p></div>
+							<?if($arSection["UF_T_WATER_1"]):?>
+								<div class="water-t"><span class="icon icon-wave"></span><p><?=$arSection["UF_T_WATER_1"]?></p></div>
 							<?endif;?>
 						</div>
 					</div>

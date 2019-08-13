@@ -921,8 +921,9 @@ $(document).ready(function(){
         });
     }
 
-    function countryFind() {
-        var country = $(".b-tourvisor-calendar").attr("data-country");
+     function countryFind() {
+        var country = $(".b-tourvisor-calendar").attr("data-country"),
+            found = false;
         $(".b-tourvisor-hidden .TVCalendarCountyList .TVCalendarRow").each(function() {
             if($(this).find(".TVCalendarCountryValue").text() == country){
                 $(this).click();
@@ -940,9 +941,10 @@ $(document).ready(function(){
                         
                     }
                 }, 10);
-                return false;
+                found = true;
             }
         });
+        return found;
     }
 
     if($(".b-tourvisor-hidden").length){
@@ -950,17 +952,21 @@ $(document).ready(function(){
         var waitTourvisorHidden = setInterval(function(){
             if( $(".b-tourvisor-hidden .TVCalendar").length ){
                 $(".calendar-preloader").hide();
-                //подгрузить все страны
-                if($(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").length){
-                    $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").click();
+                var firstSearch = false;
+                //ищем страну в текущем городе
+                if($(".tv-calendar").attr("tv-departure")){
+                    firstSearch = countryFind();
+                    // console.log(firstSearch);
+                }
+                //ищем страну в дефолтных городах
+                if(!firstSearch && $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").length){
+                    $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").click();//подгрузить все страны
                     var waitCountryLoad = setInterval(function(){
                         if($(".b-tourvisor-hidden .TVCalendar .TVCalShowAll.TVExpanded").length){
                             countryFind();
                             clearInterval(waitCountryLoad);
                         }
                     }, 10);
-                }else{
-                    countryFind();
                 }
                 clearInterval(waitTourvisorHidden);
             }

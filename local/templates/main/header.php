@@ -246,7 +246,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 								<?$arCountryCount = count($GLOBALS["arCountry"]["popular"]); $arCountrycounter = 0;?>
 								<?foreach ($GLOBALS["arCountry"]["popular"] as $value):?>
 									<?$country = explode("|", $value);?>
-									<a href="/search/?s_country=<?=$GLOBALS["arCountry"]["countryIDTV"]?>&s_region_to=<?=$country[1]?>" target="_blank"><?=$country[0]?></a><?if($arCountrycounter < $arCountryCount - 1) echo ",";?>
+									<a href="/search/?s_country=<?=$GLOBALS["arCountry"]["countryIDTV"]?>&s_region_to=<?=$country[1]?>&s_flyfrom=<?=$GLOBALS["arCountry"]["cityIDTV"]?>" target="_blank"><?=$country[0]?></a><?if($arCountrycounter < $arCountryCount - 1) echo ",";?>
 									<?$arCountrycounter++;?>
 								<?endforeach;?>
 							</div>
