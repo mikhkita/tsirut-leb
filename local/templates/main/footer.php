@@ -650,7 +650,7 @@
 		<div class="b-thanks b-aqua-popup b-popup b-popup-back-1" id="b-popup-success">
 			<div class="b-popup-content">
 				<h2>Спасибо!</h2>
-				<h4>Ваша заявка успешно отправлена. <br/>Наш менеджер свяжется с Вами в ближайшее время</h4>
+				<h4>Ваша заявка успешно отправлена. <br/>Наш менеджер свяжется с Вами в ближайшее время</h4>
 				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
 					<p class="btn-bold">Закрыть</p>
 				</a>
