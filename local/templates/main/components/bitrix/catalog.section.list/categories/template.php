@@ -87,3 +87,8 @@ $month = date('n');
 		</a>
 	<?endforeach;?>
 </div>
+<div class="center">
+	<a href="#" class="show-more b-btn b-btn-blue one-line">
+		<p class="btn-bold">Показать ещё</p>
+	</a>
+</div>
