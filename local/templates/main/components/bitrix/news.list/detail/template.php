@@ -16,11 +16,13 @@ $this->setFrameMode(true);
 <div class="b-online-search">
 	<div class="b-block">
 		<h2 class="b-title regular"><b><?=$GLOBALS["arCountry"]["titleTV"];?></b></h2>
-		<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile hide">Открыть фильтр</a>
+		<div class="filter-mobile-cont hide">
+			<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
+		</div>
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
-				<div class="tv-search-form tv-moduleid-191769" tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" tv-resorts="<?=$GLOBALS["arCountry"]["resortIDTV"]?>"></div>
+				<div class="tv-search-form tv-moduleid-191769" tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" tv-resorts="<?=$GLOBALS["arCountry"]["resortIDTV"]?>" tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"></div>
 			</div>
 		</div>
 		<div class="b-tourvisor-list">

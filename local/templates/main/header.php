@@ -39,7 +39,7 @@ if($isDetail){
 		array(),
 		array('IBLOCK_ID'=>1, '=CODE'=>$_REQUEST["SECTION_CODE"]),
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV')
+		array('IBLOCK_ID','ID','NAME','CODE','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV')
 	);
 	if($arSection = $rsSections->Fetch()){
 		$GLOBALS["arCountry"] = array(
@@ -56,8 +56,12 @@ if($isDetail){
 			'titleTV' => $arSection['UF_HEADER_TV'],
 			'countryIDTV' => $arSection['UF_COUNTRY_ID_TV'],
 			'resortIDTV' => $arSection['UF_RESORT_ID_TV'],
+			'cityIDTV' => $arSection['UF_CITY_ID_TV'],
 		);
 		$headImg = CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 );
+	}else{
+		CHTTP::SetStatus('404 Not found');
+		defined('ERROR_404') or define('ERROR_404', 'Y');
 	}
 	if($GLOBALS["arCountry"]["title"]){
 		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
