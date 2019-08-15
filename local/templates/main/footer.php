@@ -350,8 +350,8 @@
 					</a>
 					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
 					<div class="b-checkbox">
-						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
-						<label for="agree-1">
+						<input id="agree-2" type="checkbox" name="agree-2" checked required> 
+						<label for="agree-2">
 						<div class="b-checked icon-checked"></div>
 						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
 						</label>
@@ -374,8 +374,8 @@
 					</a>
 					<a href="#b-review-success" class="b-thanks-link fancy" style="display:none;"></a>
 					<div class="b-checkbox">
-						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
-						<label for="agree-1">
+						<input id="agree-3" type="checkbox" name="agree-3" checked required> 
+						<label for="agree-3">
 						<div class="b-checked icon-checked"></div>
 						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
 						</label>
