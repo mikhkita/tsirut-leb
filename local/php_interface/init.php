@@ -4,11 +4,11 @@ CModule::AddAutoloadClasses(
    '', // не указываем имя модуля
    array(
       // ключ - имя класса, значение - путь относительно корня сайта к файлу с классом
-   	'Curl' => '/bitrix/php_interface/classes/curl.php',
-   	'Parser' => '/bitrix/php_interface/classes/parser.php',
-   	'Tourvisor' => '/bitrix/php_interface/classes/tourvisor.php',
-   	'TourList' => '/bitrix/php_interface/classes/tourlist.php',
-   	'Log' => '/bitrix/php_interface/classes/log.php',
+   	'Curl' => '/local/php_interface/classes/curl.php',
+   	'Parser' => '/local/php_interface/classes/parser.php',
+   	'Tourvisor' => '/local/php_interface/classes/tourvisor.php',
+   	'TourList' => '/local/php_interface/classes/tourlist.php',
+   	'Log' => '/local/php_interface/classes/log.php',
    )
 );
 

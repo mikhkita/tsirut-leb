@@ -792,6 +792,7 @@ ul.b-breadcrumbs{
     margin-bottom: 16px;
 }
 .b-search-subscribe .b-subscribe-form .b-btn-submit {
+	min-width: 0;
     width: 100%;
 }
 
@@ -1241,6 +1242,10 @@ div.TVCalDirectOnly {
     column-count: 1;
 }
 
+div.TVTabedListContainer {
+    padding: 0;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -1604,7 +1609,8 @@ div.TVCalDirectOnly {
     	margin-right: 12px;
 	}
 
-	.b-search-subscribe .b-mailing-form input[type=text]{
+	.b-hot-search-subscribe .b-mailing-form input[type=text],
+	.b-search-subscribe-2 .b-mailing-form input[type=text]{
 		background-color: #f9fafc;
 	}
 
@@ -2734,6 +2740,19 @@ div.TVCalDirectOnly {
 	}
 	div.TVTourContainer .TVTourBlock .TVPriceValue {
 	    margin-left: 0;
+	}
+	.b-tourvisor-with-filter .TVSRSearchMoreBtn,
+	.b-calendar .TVCalShowAll {
+	    width: 100% !important;
+	}
+	div.TVCalendarPrice .TVCalendarPriceValue:after{
+	    content: "";
+	}
+	div.TVDTCalendar .TVCalendarPrice {
+	    width: 70px;
+	}
+	div.TVCalendarBook {
+	    right: 5px;
 	}
 
 }

@@ -90,7 +90,7 @@
 	
 	<div style="display:none;">
 
-		<?if($GLOBALS["isDetail"]):?>
+		<?if($GLOBALS["isDetail"] || $GLOBALS["page"] == "search"):?>
 			<div class="b-search-subscribe-1" id="b-search-subscribe-1">
 				<div class="b-search-subscribe b-mailing-cont">
 					<div class="b-head-gradient"></div>
@@ -385,7 +385,7 @@
 		</div>
 
 		<div class="b-popup" id="b-popup-filter-mobile">
-				<div class="b-popup-content">
+			<div class="b-popup-content">
 				<div class="TVSideFilterForm TVTheme2">
 					<div class="defaultTVFilterForm"></div>
 				</div>
