@@ -22,7 +22,12 @@ $this->setFrameMode(true);
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
-				<div class="tv-search-form tv-moduleid-191769" tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" tv-resorts="<?=$GLOBALS["arCountry"]["resortIDTV"]?>" tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"></div>
+				<div class="tv-search-form tv-moduleid-191769" 
+					tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" 
+					tv-resorts="<?//=$GLOBALS["arCountry"]["resortIDTV"]?>" 
+					tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"
+					tv-flydates="<?if(isset($_GET['flydates_from']) && isset($_GET['flydates_to'])) echo $_GET['flydates_from'].','.$_GET['flydates_to']?>"
+				></div>
 			</div>
 		</div>
 		<div class="b-tourvisor-list">
@@ -84,46 +89,29 @@ $this->setFrameMode(true);
 					</div>
 				</div>
 				<div class="b-tourvisor-nav">
-					<div class="b-tourvisor-nav-item clearfix">
-						<h3>Туры по месяцам</h3>
-						<ul class="months">
-							<li><a href="#">Январь</a></li>
-							<li><a href="#">Февраль</a></li>
-							<li><a href="#">Март</a></li>
-							<li><a href="#">Апрель</a></li>
-							<li><a href="#">Май</a></li>
-							<li><a href="#">Июнь</a></li>
-							<li><a href="#">Июль</a></li>
-							<li><a href="#">Август</a></li>
-							<li><a href="#">Сентябрь</a></li>
-							<li><a href="#">Октябрь</a></li>
-							<li><a href="#">Ноябрь</a></li>
-							<li><a href="#">Декабрь</a></li>
-						</ul>
-					</div>
-					<div class="b-tourvisor-nav-item clearfix">
-						<h3>Туры по сезонам</h3>
-						<div class="b-seasons">
-							<div class="b-season">
-								<img src="<?=SITE_TEMPLATE_PATH?>/html/i/tours-summer.svg">
-								<a href="#">Лето</a>
-							</div>
-							<div class="b-season">
-								<img src="<?=SITE_TEMPLATE_PATH?>/html/i/tours-autumn.svg">
-								<a href="#">Осень</a>
-							</div>
+					<?if($GLOBALS["arCountry"]["monthList"]):?>
+						<div class="b-tourvisor-nav-item clearfix">
+							<h3>Туры по месяцам</h3>
+							<ul class="months">
+								<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+									<li><a href="?flydates_from=<?=$GLOBALS["monthsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["monthsTV"][$key]["end"]?>"><?=$value?></a></li>
+								<?endforeach;?>
+							</ul>
 						</div>
-						<div class="b-seasons">
-							<div class="b-season">
-								<img src="<?=SITE_TEMPLATE_PATH?>/html/i/tours-winter.svg">
-								<a href="#">Зима</a>
-							</div>
-							<div class="b-season">
-								<img src="<?=SITE_TEMPLATE_PATH?>/html/i/tours-spring.svg">
-								<a href="#">Весна</a>
-							</div>
+					<?endif;?>
+					<?if($GLOBALS["arCountry"]["seasonList"]):?>
+						<div class="b-tourvisor-nav-item clearfix">
+							<h3>Туры по сезонам</h3>
+							<ul class="b-seasons">
+								<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+									<li class="b-season">
+										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
+										<a href="?flydates_from=<?=$GLOBALS["seasonsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["seasonsTV"][$key]["end"]?>"><?=$value?></a>
+									</li>
+								<?endforeach;?>
+							</ul>
 						</div>
-					</div>
+					<?endif;?>
 					<div class="b-tourvisor-nav-item">
 						<h3>Наши преимущества</h3>
 						<div class="nav-adv">

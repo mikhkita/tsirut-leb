@@ -8,6 +8,14 @@ $arUrlRewrite=array (
     'PATH' => '/hot-tours/detail.php',
     'SORT' => 100,
   ),
+  5 => 
+  array (
+    'CONDITION' => '#^/search/(.+)/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'SECTION_CODE=$1&RESORT=$2&$3',
+    'ID' => '',
+    'PATH' => '/search/detailResort.php',
+    'SORT' => 100,
+  ),
   3 => 
   array (
     'CONDITION' => '#^/hot-tours/(.+)/(\\\\?(.*))?#',

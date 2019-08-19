@@ -86,6 +86,14 @@ function replacePlaceholders(&$content){
 	$content = str_replace("#YEAR#", $year, $content);
 }
 
+function writeLog($record, $filename){
+	if(file_exists($filename)){
+		file_put_contents($filename, PHP_EOL.date('d.m.Y-H:i:s').PHP_EOL.$record, FILE_APPEND);
+	}else{
+		file_put_contents($filename, date('d.m.Y-H:i:s').PHP_EOL.$record);
+	}
+}
+
 // function getValidPhone($file){
 // 	global $APPLICATION;
 // 	$APPLICATION->IncludeComponent("bitrix:main.include","",Array(

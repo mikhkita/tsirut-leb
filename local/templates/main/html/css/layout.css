@@ -2935,8 +2935,9 @@ ul.b-breadcrumbs {
 						}
 
 			.b-tourvisor-nav-item .b-seasons{
-				width: 50%;
-				float: left;
+				width: 100%;
+			    -webkit-column-count: 2;
+				column-count: 2;
 			}
 				.b-tourvisor-nav-item .b-seasons .b-season{
 					margin-bottom: 16px;
