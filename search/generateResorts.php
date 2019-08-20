@@ -6,54 +6,38 @@ $log = "";
 $rsParentSection = CIBlockSection::GetByID(1);
 if ($arParentSection = $rsParentSection->GetNext()){
 	//Получить все курорты
-	$rsSect = CIBlockSection::GetList(
+	$rsSectResort = CIBlockSection::GetList(
 		array(),
 		array('IBLOCK_ID' => $arParentSection['IBLOCK_ID']),
 		false,
 		array('IBLOCK_ID','ID','NAME','CODE','UF_RESORT_ID_TV')
 	);
 	$arResort = array();
-	while ($arSect = $rsSect->GetNext()){
-		if(!empty($arSect['UF_RESORT_ID_TV'])){
-			$arResort[] = $arSect['UF_RESORT_ID_TV'];
+	while ($arSectResort = $rsSectResort->GetNext()){
+		if(!empty($arSectResort['UF_RESORT_ID_TV'])){
+			$arResort[] = $arSectResort['UF_RESORT_ID_TV'];
 		}
 	}
 
-	$arFilter = array(
+	$arFilterCountry = array(
 	   'IBLOCK_ID' => $arParentSection['IBLOCK_ID'],
 	   '>LEFT_MARGIN' => $arParentSection['LEFT_MARGIN'],
 	   '<RIGHT_MARGIN' => $arParentSection['RIGHT_MARGIN'],
 	   '>DEPTH_LEVEL' => $arParentSection['DEPTH_LEVEL']
 	);
-	$rsSect = CIBlockSection::GetList(
+	$rsSectCountry = CIBlockSection::GetList(
 		array(),
-		$arFilter,
+		$arFilterCountry,
 		false,
 		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON')
 	);
-	while ($arSect = $rsSect->GetNext()){
-		if(!empty($arSect['UF_POPULAR_RESORT'])){
+	while ($arSectCountry = $rsSectCountry->GetNext()){
+		if(!empty($arSectCountry["UF_POPULAR_RESORT"])){
 			//перебрать все курорты из поля "популярные курорты"
-			foreach ($arSect['UF_POPULAR_RESORT'] as $value) {
+			foreach ($arSectCountry["UF_POPULAR_RESORT"] as $value) {
 				$country = explode("|", $value); // имя курорта | ID в турвизоре
 				if ($country[0] && $country[1]){
-					if(in_array($country[1], $arResort)){//если уже создан, то обновить
-						// $arFields = Array(
-						//     "ACTIVE" => "Y",
-						// 	"IBLOCK_SECTION_ID" => $arSect["ID"],
-						// 	"IBLOCK_ID" => 1,
-						// 	"NAME" => $country[0],
-						// 	"CODE" => $code,
-						// 	"SORT" => "",
-						// 	"PICTURE" => "",
-						// 	"DESCRIPTION" => "",
-						// 	"DESCRIPTION_TYPE" => ""
-						//  );
-
-						// if($ID > 0){
-						//   $res = $bs->Update($ID, $arFields);
-						// }
-					}else{//создать
+					if(!in_array($country[1], $arResort)){//если ещё не создан, то создать
 						$bs = new CIBlockSection;
 
 						$params = array(
@@ -67,14 +51,18 @@ if ($arParentSection = $rsParentSection->GetNext()){
 
 						$arFields = Array(
 							"ACTIVE" => "Y",
-							"IBLOCK_SECTION_ID" => $arSect["ID"],
+							"IBLOCK_SECTION_ID" => $arSectCountry["ID"],
 							"IBLOCK_ID" => 1,
 							"NAME" => $country[0],
 							"CODE" => $code,
-							"SORT" => "",
-							"PICTURE" => "",
+							"SORT" => 500,
 							"DESCRIPTION" => "",
-							"DESCRIPTION_TYPE" => ""
+							"DESCRIPTION_TYPE" => "",
+							"UF_COUNTRY_NAME" => $country[0],
+							"DETAIL_PICTURE" => CFile::MakeFileArray($arSectCountry["DETAIL_PICTURE"]),
+							"UF_COUNTRY_ID_TV" => $arSectCountry["UF_COUNTRY_ID_TV"],
+							"UF_RESORT_ID_TV" => $country[1],
+							"UF_CITY_ID_TV" => $arSectCountry["UF_CITY_ID_TV"]
 						);
 						$ID = $bs->Add($arFields);
 						$res = ($ID>0);
@@ -92,7 +80,6 @@ if ($arParentSection = $rsParentSection->GetNext()){
 				}
 			}
 		}
-	
 	}
 }
 

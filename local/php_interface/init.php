@@ -24,7 +24,24 @@ define(UF_CATEGORIES, 3);//Польз. поле "Категории"
 define(CITY_MOSCOW, 8);
 define(CITY_BELGOROD, 9);
 define(CITY_VORONEZH, 10);
-
+//Месяцы
+define(UF_MONTH_1, 10);
+define(UF_MONTH_2, 11);
+define(UF_MONTH_3, 12);
+define(UF_MONTH_4, 13);
+define(UF_MONTH_5, 14);
+define(UF_MONTH_6, 15);
+define(UF_MONTH_7, 16);
+define(UF_MONTH_8, 17);
+define(UF_MONTH_9, 18);
+define(UF_MONTH_10, 19);
+define(UF_MONTH_11, 20);
+define(UF_MONTH_12, 21);
+//Сезоны
+define(UF_SEASON_SUMMER, 22);
+define(UF_SEASON_AUTUNM, 23);
+define(UF_SEASON_WINTER, 24);
+define(UF_SEASON_SPRING, 25);
 // ===========
 
 function includeArea($file, $getString = false){

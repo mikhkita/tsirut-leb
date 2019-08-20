@@ -986,7 +986,8 @@ $(document).ready(function(){
         var waitTourvisorHidden = setInterval(function(){
             if( $(".b-tourvisor-hidden .TVCalendar").length ){
                 $(".calendar-preloader").hide();
-                var firstSearch = false;
+                var firstSearch = false,
+                    secondSearch = false;
                 //ищем страну в текущем городе
                 if($(".tv-calendar").attr("tv-departure")){
                     firstSearch = countryFind();
@@ -997,7 +998,10 @@ $(document).ready(function(){
                     $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").click();//подгрузить все страны
                     var waitCountryLoad = setInterval(function(){
                         if($(".b-tourvisor-hidden .TVCalendar .TVCalShowAll.TVExpanded").length){
-                            countryFind();
+                            secondSearch = countryFind();
+                            if(!secondSearch){//если даже тут страна не найдена, то скрываем календарь
+                                $(".b-tourvisor-calendar-cont").hide();
+                            }
                             clearInterval(waitCountryLoad);
                         }
                     }, 10);

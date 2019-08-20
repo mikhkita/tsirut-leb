@@ -141,24 +141,24 @@ if($isDetail){
 	$prevYear = (int)$curYear - 1;
 	$nextYear = (int)$curYear + 1;
 	$GLOBALS["monthsTV"] = array(
-		10 => array("start" => "01.01.".(($curMonth <= 1) ? $curYear : $nextYear), "end" => "31.01.".(($curMonth <= 1) ? $curYear : $nextYear)),
-		11 => array("start" => "01.02.".(($curMonth <= 2) ? $curYear : $nextYear), "end" => "29.02.".(($curMonth <= 2) ? $curYear : $nextYear)),
-		12 => array("start" => "01.03.".(($curMonth <= 3) ? $curYear : $nextYear), "end" => "31.03.".(($curMonth <= 3) ? $curYear : $nextYear)),
-		13 => array("start" => "01.04.".(($curMonth <= 4) ? $curYear : $nextYear), "end" => "30.04.".(($curMonth <= 4) ? $curYear : $nextYear)),
-		14 => array("start" => "01.05.".(($curMonth <= 5) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth <= 5) ? $curYear : $nextYear)),
-		15 => array("start" => "01.06.".(($curMonth <= 6) ? $curYear : $nextYear), "end" => "30.06.".(($curMonth <= 6) ? $curYear : $nextYear)),
-		16 => array("start" => "01.07.".(($curMonth <= 7) ? $curYear : $nextYear), "end" => "31.07.".(($curMonth <= 7) ? $curYear : $nextYear)),
-		17 => array("start" => "01.08.".(($curMonth <= 8) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth <= 8) ? $curYear : $nextYear)),
-		18 => array("start" => "01.09.".(($curMonth <= 9) ? $curYear : $nextYear), "end" => "30.09.".(($curMonth <= 9) ? $curYear : $nextYear)),
-		19 => array("start" => "01.10.".(($curMonth <= 10) ? $curYear : $nextYear), "end" => "31.10.".(($curMonth <= 10) ? $curYear : $nextYear)),
-		20 => array("start" => "01.11.".(($curMonth <= 11) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth <= 11) ? $curYear : $nextYear)),
-		21 => array("start" => "01.12.".(($curMonth <= 12) ? $curYear : $nextYear), "end" => "31.12.".(($curMonth <= 12) ? $curYear : $nextYear)),
+		UF_MONTH_1 => array("start" => "01.01.".(($curMonth <= 1) ? $curYear : $nextYear), "end" => "31.01.".(($curMonth <= 1) ? $curYear : $nextYear)),
+		UF_MONTH_2 => array("start" => "01.02.".(($curMonth <= 2) ? $curYear : $nextYear), "end" => "29.02.".(($curMonth <= 2) ? $curYear : $nextYear)),
+		UF_MONTH_3 => array("start" => "01.03.".(($curMonth <= 3) ? $curYear : $nextYear), "end" => "31.03.".(($curMonth <= 3) ? $curYear : $nextYear)),
+		UF_MONTH_4 => array("start" => "01.04.".(($curMonth <= 4) ? $curYear : $nextYear), "end" => "30.04.".(($curMonth <= 4) ? $curYear : $nextYear)),
+		UF_MONTH_5 => array("start" => "01.05.".(($curMonth <= 5) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth <= 5) ? $curYear : $nextYear)),
+		UF_MONTH_6 => array("start" => "01.06.".(($curMonth <= 6) ? $curYear : $nextYear), "end" => "30.06.".(($curMonth <= 6) ? $curYear : $nextYear)),
+		UF_MONTH_7 => array("start" => "01.07.".(($curMonth <= 7) ? $curYear : $nextYear), "end" => "31.07.".(($curMonth <= 7) ? $curYear : $nextYear)),
+		UF_MONTH_8 => array("start" => "01.08.".(($curMonth <= 8) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth <= 8) ? $curYear : $nextYear)),
+		UF_MONTH_9 => array("start" => "01.09.".(($curMonth <= 9) ? $curYear : $nextYear), "end" => "30.09.".(($curMonth <= 9) ? $curYear : $nextYear)),
+		UF_MONTH_10 => array("start" => "01.10.".(($curMonth <= 10) ? $curYear : $nextYear), "end" => "31.10.".(($curMonth <= 10) ? $curYear : $nextYear)),
+		UF_MONTH_11 => array("start" => "01.11.".(($curMonth <= 11) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth <= 11) ? $curYear : $nextYear)),
+		UF_MONTH_12 => array("start" => "01.12.".(($curMonth <= 12) ? $curYear : $nextYear), "end" => "31.12.".(($curMonth <= 12) ? $curYear : $nextYear)),
 	);
 	$GLOBALS["seasonsTV"] = array(
-		22 => array("start" => "01.06.".(($curMonth < 9) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth < 9) ? $curYear : $nextYear), "img" => "tours-summer.svg"),//лето
-		23 => array("start" => "01.09.".(($curMonth < 12) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth < 12) ? $curYear : $nextYear), "img" => "tours-autumn.svg"),//осень
-		24 => array("start" => "01.12.".(($curMonth < 3) ? $prevYear : $curYear), "end" => "29.02.".(($curMonth < 3) ? $curYear : $nextYear), "img" => "tours-winter.svg"),//зима
-		25 => array("start" => "01.03.".(($curMonth < 6) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth < 6) ? $curYear : $nextYear), "img" => "tours-spring.svg"),//весна
+		UF_SEASON_SUMMER => array("start" => "01.06.".(($curMonth < 9) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth < 9) ? $curYear : $nextYear), "img" => "tours-summer.svg"),//лето
+		UF_SEASON_AUTUNM => array("start" => "01.09.".(($curMonth < 12) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth < 12) ? $curYear : $nextYear), "img" => "tours-autumn.svg"),//осень
+		UF_SEASON_WINTER => array("start" => "01.12.".(($curMonth < 3) ? $prevYear : $curYear), "end" => "29.02.".(($curMonth < 3) ? $curYear : $nextYear), "img" => "tours-winter.svg"),//зима
+		UF_SEASON_SPRING => array("start" => "01.03.".(($curMonth < 6) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth < 6) ? $curYear : $nextYear), "img" => "tours-spring.svg"),//весна
 	);
 }
 
@@ -191,8 +191,8 @@ if($isDetailResort){
 		CHTTP::SetStatus('404 Not found');
 		defined('ERROR_404') or define('ERROR_404', 'Y');
 	}
-	if($GLOBALS["arCountry"]["title"]){
-		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
+	if($GLOBALS["arResort"]["title"]){
+		$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
 	}
 }
 
@@ -350,19 +350,13 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						<div class="b-adv-item">
 							<p><b>Популярные курорты:</b></p>
 							<div>
-								<?$arCountryCount = count($GLOBALS["arCountry"]["resortList"]); $arCountrycounter = 0;?>
-								<?foreach ($GLOBALS["arCountry"]["resortList"] as $value):?>
-									<a href="<?=$value['url']?>/"><?=$value["name"]?></a>
-									<?if($arCountrycounter < $arCountryCount - 1) echo ",";?>
-									<?$arCountrycounter++;?>
-								<?endforeach;?>
-
-								<!-- <?$arCountryCount = count($GLOBALS["arCountry"]["popular"]); $arCountrycounter = 0;?>
-								<?foreach ($GLOBALS["arCountry"]["popular"] as $value):?>
-									<?$country = explode("|", $value);?>
-									<a href="/search/?s_country=<?=$GLOBALS["arCountry"]["countryIDTV"]?>&s_region_to=<?=$country[1]?>&s_flyfrom=<?=$GLOBALS["arCountry"]["cityIDTV"]?>" target="_blank"><?=$country[0]?></a><?if($arCountrycounter < $arCountryCount - 1) echo ",";?>
-									<?$arCountrycounter++;?>
-								<?endforeach;?> -->
+							<?
+								$arResortList = array();
+								foreach ($GLOBALS["arCountry"]["resortList"] as $value){
+									$arResortList[] = "<a href='".$value['url']."/'>".$value["name"]."</a>";
+								}
+								echo implode(", ", $arResortList);
+							?>
 							</div>
 						</div>
 						<?endif;?>
