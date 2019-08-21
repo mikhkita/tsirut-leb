@@ -10,7 +10,7 @@ $APPLICATION->SetTitle("Отдых в России");
 		</div>
 		<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 		<div class="b b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter" data-country="Россия">
-			<div class="tv-search-form tv-moduleid-191365"></div>
+			<div class="tv-search-form tv-moduleid-192035"></div>
 		</div>
 	</div>
 	<div class="b-filter-cont hidden">

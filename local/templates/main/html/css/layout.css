@@ -2889,10 +2889,10 @@ ul.b-breadcrumbs {
 				}
 
 	.b-tourvisor-nav{
-		margin-top: 24px;
+		margin-top: 38px;
 	}
 		.b-tourvisor-nav-item{
-			margin-bottom: 24px;
+			margin-bottom: 38px;
 		}	
 			.b-tourvisor-nav-item a,
 			.b-tourvisor-nav-item p{
@@ -5035,8 +5035,11 @@ div.TVHotelTypeItem.TVChecked {
 }
 .b-tourvisor-with-filter div.TVSRBtnBlock{
 	padding: 35px 0 25px 0;
-	text-align: center;
+	text-align: right;
 	height: auto;
+}
+.b-tourvisor-with-filter div.TVTheme2 .TVNavButton.TVSRSearchMoreBtn{
+	display: inline-block;
 }
 .b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton.TVSRSearchMoreBtn{
 	margin: 25px auto;

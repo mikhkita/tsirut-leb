@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $tourvisor = new Tourvisor();
 
-$countries = $tourvisor->getCountries(982592);
+$countries = $tourvisor->getCountries(982990);
 
 echo "<pre>";
 foreach ($countries["items"] as $key => $value) {
@@ -14,7 +14,7 @@ echo "</pre>";
 
 die();
 
-// $minPrices = $tourvisor->getMinPrices(982592);
+// $minPrices = $tourvisor->getMinPrices(982990);
 // echo "<pre>";
 
 // $rsSections = CIBlockSection::GetList(array(), array('IBLOCK_ID' => 1), false, array("ID", "UF_COUNTRY_NAME"));
@@ -58,7 +58,7 @@ die();
 ?>
 
 
-<div class="tv-min-price tv-moduleid-982592"></div>
+<div class="tv-min-price tv-moduleid-982990"></div>
 <script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
 
 

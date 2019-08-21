@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
-				<div class="tv-search-form tv-moduleid-191769" 
+				<div class="tv-search-form tv-moduleid-192034" 
 					tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" 
 					tv-resorts="<?//=$GLOBALS["arCountry"]["resortIDTV"]?>" 
 					tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"

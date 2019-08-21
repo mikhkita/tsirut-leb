@@ -155,7 +155,7 @@ if( !isset($_REQUEST["CITY"]) ){
 <div class="b-calendar">
 	<div class="b-block">
 		<h2 class="b-title">Календарь выгодных туров</h2>
-		<div class="tv-calendar tv-moduleid-980631"></div>
+		<div class="tv-calendar tv-moduleid-982984"></div>
 	</div>
 </div>
 <div class="b b-mailing">
