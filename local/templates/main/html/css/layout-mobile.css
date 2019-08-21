@@ -437,6 +437,7 @@ ul.b-breadcrumbs{
     margin-right: 24px;
 }
 .b-redder {
+	display: none;
     margin-top: 0;
 }
 	.b-redder span{

@@ -77,10 +77,10 @@
 						<div class="b-copyright">© 2008-2019 Аквамарин. Все права защищены</div>
 						<a href="#" class="b-footer-politics">Политика обработки персональных данных</a>
 					</div>
-					<div class="visa-master"></div>
 					<div class="b-redder">
-						<span>Разработка стайта:</span>
-						<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a>
+						<!-- <span>Разработка стайта:</span>
+						<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a> -->
+						<div class="visa-master"></div>
 					</div>
 				</div>
 			</div>
