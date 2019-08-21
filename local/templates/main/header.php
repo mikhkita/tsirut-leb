@@ -97,6 +97,7 @@ if($isDetail){
 		}
 		$GLOBALS["arCountry"] = array(
 			'id' => $arSection['ID'],
+			'code' => $arSection['CODE'],
 			'name' => $arSection['UF_COUNTRY_NAME'],
 			'picture' => $arSection['DETAIL_PICTURE'],
 			'isRussia' => ((int)$arSection['IBLOCK_SECTION_ID'] == 2),
@@ -171,8 +172,43 @@ if($isDetailResort){
 		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON')
 	);
 	if($arSection = $rsSections->Fetch()){
+		//Получить месяцы у этой страны
+		$rsSectMonth = CIBlockSection::GetList(
+			array('sort' => 'asc'),
+			array(
+			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+			   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
+			   '!UF_MONTH' => false
+			),
+			false,
+			array('IBLOCK_ID','ID','NAME','CODE','UF_MONTH')
+		);
+		$monthList = array();
+		while ($arSectMonth = $rsSectMonth->GetNext()){
+			$monthList[] = $arSectMonth;
+		}
+		//Получить сезоны у этой страны
+		$rsSectSeason = CIBlockSection::GetList(
+			array('sort' => 'asc'),
+			array(
+			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+			   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
+			   '!UF_SEASON' => false
+			),
+			false,
+			array('IBLOCK_ID','ID','NAME','CODE','UF_SEASON')
+		);
+		$seasonList = array();
+		while ($arSectSeason = $rsSectSeason->GetNext()){
+			$seasonList[] = $arSectSeason;
+		}
 		$GLOBALS["arResort"] = array(
 			'id' => $arSection['ID'],
+			'code' => $arSection['CODE'],
 			'name' => $arSection['UF_COUNTRY_NAME'],
 			'picture' => $arSection['DETAIL_PICTURE'],
 			'isRussia' => ((int)$arSection['IBLOCK_SECTION_ID'] == 2),
@@ -185,7 +221,15 @@ if($isDetailResort){
 			'countryIDTV' => $arSection['UF_COUNTRY_ID_TV'],
 			'resortIDTV' => $arSection['UF_RESORT_ID_TV'],
 			'cityIDTV' => $arSection['UF_CITY_ID_TV'],
+			'monthList' => array(),
+			'seasonList' => array(),
 		);
+		foreach ($monthList as $value) {
+			$GLOBALS["arResort"]["monthList"][$value["UF_MONTH"]] = $value["NAME"];
+		}
+		foreach ($seasonList as $value) {
+			$GLOBALS["arResort"]["seasonList"][$value["UF_SEASON"]] = $value["NAME"];
+		}
 		$headImg = CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 );
 	}else{
 		CHTTP::SetStatus('404 Not found');
@@ -370,7 +414,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 				<?elseif($isDetailResort):?>
 					<div class="b-head-content">
 						<?
-						$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], $urlArr[2]);//добавить текущую страну в цепочку
+						$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/");//добавить текущую страну в цепочку
 						$APPLICATION->AddChainItem($GLOBALS["arResort"]["title"], $curPage);//добавить текущий курорт в цепочку
 						$APPLICATION->IncludeComponent("bitrix:breadcrumb", "header", Array(
 							"PATH" => "",

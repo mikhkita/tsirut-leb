@@ -101,8 +101,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по месяцам</h3>
 							<ul class="months">
-								<?foreach ($GLOBALS["arResort"]["monthList"] as $value):?>
-									<li><a href="?flydates_from=<?=$monthsTV[$value]['start']?>&flydates_to=<?=$monthsTV[$value]['end']?>"><?=UserFieldValue($value)?></a></li>
+								<?foreach ($GLOBALS["arResort"]["monthList"] as $key => $value):?>
+									<li><a href="?flydates_from=<?=$GLOBALS["monthsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["monthsTV"][$key]["end"]?>"><?=$value?></a></li>
 								<?endforeach;?>
 							</ul>
 						</div>
@@ -111,10 +111,10 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по сезонам</h3>
 							<ul class="b-seasons">
-								<?foreach ($GLOBALS["arResort"]["seasonList"] as $value):?>
+								<?foreach ($GLOBALS["arResort"]["seasonList"] as $key => $value):?>
 									<li class="b-season">
-										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$seasonsTV[$value]['img']?>">
-										<a href="?flydates_from=<?=$seasonsTV[$value]['start']?>&flydates_to=<?=$seasonsTV[$value]['end']?>"><?=UserFieldValue($value)?></a>
+										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
+										<a href="?flydates_from=<?=$GLOBALS["seasonsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["seasonsTV"][$key]["end"]?>"><?=$value?></a>
 									</li>
 								<?endforeach;?>
 							</ul>
