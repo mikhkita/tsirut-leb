@@ -47,9 +47,9 @@ $this->setFrameMode(true);
 			<p class="total-price">от <?=number_format( $tours[0]["MP"], 0, ',', ' ' )?> руб.</p>
 		</div>
 	</a>
-	<?if($i == 8):?>
+	<?if($i == 8 && 0):?>
 		<?$formShow = true?>
-		<div class="b-search-subscribe">
+		<div class="b-search-subscribe b-hot-search-subscribe">
 			<div class="b-subscribe-cont">
 				<div class="b-subscribe-form">
 					<h2><?=includeArea("hot-form-head")?></h2>
@@ -79,7 +79,7 @@ $this->setFrameMode(true);
 <?endforeach;?>
 </div>
 <?if(!$formShow):?>
-	<div class="b-search-subscribe">
+	<div class="b-search-subscribe b-hot-search-subscribe">
 		<div class="b-subscribe-cont">
 			<div class="b-subscribe-form">
 				<h2><?=includeArea("hot-form-head")?></h2>

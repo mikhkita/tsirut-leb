@@ -41,7 +41,7 @@ foreach ($result["DAY_PRICE"] as $key => $date) {
     echo $date["DT"]." на ".(intval($date["NT"])+1)." дней/".$date["NT"]." ночей <b>".$date["MP"]."</b> руб (".$date["DP"]." руб в день)<br>";
 }
 
-$arr = explode("-", file_get_contents($_SERVER["DOCUMENT_ROOT"]."/bitrix/php_interface/id.txt"));
+$arr = explode("-", file_get_contents($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/id.txt"));
 $prevID = intval($arr[0]);
 $count = intval($arr[1]);
 $countCur = 1;
@@ -54,7 +54,7 @@ if( !$writeDate && $prevID == $arItem["ID"] ){
 	$countCur = $count + 1;
 }
 
-file_put_contents($_SERVER["DOCUMENT_ROOT"]."/bitrix/php_interface/id.txt", $arItem["ID"]."-".$countCur);
+file_put_contents($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/id.txt", $arItem["ID"]."-".$countCur);
 
 if( $writeDate ){
 	if( count($result["MIN_PRICE"]) ){

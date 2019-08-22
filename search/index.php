@@ -9,7 +9,7 @@ $APPLICATION->SetTitle("Поиск туров");
 	<div class="b b-tourvisor">
 		<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 		<div class="b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter">
-			<div class="tv-search-form tv-moduleid-191365"></div>
+			<div class="tv-search-form tv-moduleid-192035"></div>
 		</div>
 	</div>
 	<div class="b-filter-cont hidden">
@@ -210,7 +210,7 @@ $APPLICATION->SetTitle("Поиск туров");
 	<div class="b-block">
 		<h2 class="b-title">Календарь выгодных туров</h2>
 		<!-- <div class="tv-calendar tv-moduleid-980631"></div> -->
-		<div class="tv-calendar tv-moduleid-982526"></div>
+		<div class="tv-calendar tv-moduleid-982983"></div>
 	</div>
 </div>
 <div class="b b-mailing">

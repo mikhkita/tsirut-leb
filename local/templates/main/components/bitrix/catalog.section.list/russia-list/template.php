@@ -39,7 +39,9 @@ $month = date('n');
 				<div class="b-country-info">
 					<div class="info-wide">
 						<h3><?=$arSection["UF_COUNTRY_NAME"]?></h3>
-						<p>Туры от <?=numberFormat($arSection["UF_PRICE_FROM"])?> руб.</p>
+						<?if($arSection["UF_PRICE_FROM"]):?>
+							<p>Туры от <?=numberFormat($arSection["UF_PRICE_FROM"])?> руб.</p>
+						<?endif;?>
 					</div>
 				</div>
 				<span class="b-btn-tr">Подобрать туры</span>
