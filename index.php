@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
 ?>
 <div class="center b-block">
 	<a href="#b-popup-quiz" class="fancy b-btn b-btn-orange b-btn-quiz">

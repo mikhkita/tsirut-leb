@@ -3,57 +3,84 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $tourvisor = new Tourvisor();
 
-$countries = $tourvisor->getCountries(982592);
+// die();
+
+$minPrices = $tourvisor->getMinPrices(982592);
+echo "<pre>";
+
+$rsSections = CIBlockSection::GetList(array(), array('IBLOCK_ID' => 1), false, array("ID", "UF_COUNTRY_NAME"));
+$countries = array();
+while($arSection = $rsSections->Fetch()){
+	if( !empty($arSection["UF_COUNTRY_NAME"]) ){
+		$countries[ mb_strtolower($arSection["UF_COUNTRY_NAME"], "UTF-8") ] = array(
+			"ID" => $arSection["ID"],
+		);
+	}
+}
+
+$countriesTV = $tourvisor->getCountries(982592);
 
 echo "<pre>";
-foreach ($countries["items"] as $key => $value) {
-	var_dump($value["weather"]);
+// var_dump($countriesTV);
+foreach ($countriesTV["items"] as $key => $value) {
+	$name = mb_strtolower($value["name"], "UTF-8");
+	$air = $value["weather"][0]["temp_air"];
+	$water = $value["weather"][0]["temp_water"];
+	
+	if( isset($countries[$name]) ){
+		if( $air != "" ){
+			$countries[$name]["AIR"] = $air;
+		}
+		if( $water != "" ){
+			$countries[$name]["WATER"] = $water;
+		}
+	}
 }
 echo "</pre>";
 
 
-die();
-
-// $minPrices = $tourvisor->getMinPrices(982592);
-// echo "<pre>";
-
-// $rsSections = CIBlockSection::GetList(array(), array('IBLOCK_ID' => 1), false, array("ID", "UF_COUNTRY_NAME"));
-// $countries = array();
-// while($arSection = $rsSections->Fetch()){
-// 	if( !empty($arSection["UF_COUNTRY_NAME"]) ){
-// 		$countries[ mb_strtolower($arSection["UF_COUNTRY_NAME"], "UTF-8") ] = $arSection["ID"];
-// 	}
-// }
-
-// // грузия
-// // бали
-// // нидерланды
-// // крым
-// // анапа
-// // геленджик
-// // санкт-петербург
+// грузия
+// бали
+// нидерланды
+// крым
+// анапа
+// геленджик
+// санкт-петербург
 
 
-// $departures = array(
-// 	"Белгорода" => 32,
-// 	"Москвы" => 1,
-// );
-// foreach ($minPrices["data"]["minprice"] as $key => $value) {
-// 	$name = mb_strtolower($value["country"], "UTF-8");
+$departures = array(
+	"Белгорода" => 32,
+	"Москвы" => 1,
+);
+foreach ($minPrices["data"]["minprice"] as $key => $value) {
+	$name = mb_strtolower($value["country"], "UTF-8");
 
-// 	if( isset($countries[$name]) ){
-// 		$obSec = new CIBlockSection();
-// 		$boolResult = $obSec->Update($countries[$name], array(
-// 			"UF_PRICE_FROM" => $value["price"],
-// 			"UF_CITY_ID_TV" => $departures[ $value["departure"] ]
-// 		));
-// 	}
-// }
+	if( isset($countries[$name]) ){
+		$countries[$name]["PRICE"] = $value["price"];
+		$countries[$name]["DEPARTURE"] = $departures[ $value["departure"] ];
+	}
+}
+
+foreach ($countries as $key => $country) {
+	$obSec = new CIBlockSection();
+	var_dump(array(
+		"UF_PRICE_FROM" => $country["PRICE"],
+		"UF_CITY_ID_TV" => $country["DEPARTURE"],
+		"UF_T_WATER_1" => $country["WATER"],
+		"UF_T_AIR_1" => $country["AIR"],
+	));
+	$boolResult = $obSec->Update($country["ID"], array(
+		"UF_PRICE_FROM" => $country["PRICE"],
+		"UF_CITY_ID_TV" => $country["DEPARTURE"],
+		"UF_T_WATER_1" => $country["WATER"],
+		"UF_T_AIR_1" => $country["AIR"],
+	));
+}
 
 // var_dump($countries);
 
-// // var_dump($minPrices["data"]["minprice"]);
-// echo "</pre>";
+// var_dump($minPrices["data"]["minprice"]);
+echo "</pre>";
 
 ?>
 
