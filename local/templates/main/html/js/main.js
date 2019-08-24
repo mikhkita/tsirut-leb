@@ -14,7 +14,9 @@ $(document).ready(function(){
         arrOperators = [],
         arrActiveCards = [],
         cardTimer = undefined,
-        step = 16;
+        step = 16,
+        isIE = isIE(),
+        isSafari = isSafari();
 
     function resize(){
         if( typeof( window.innerWidth ) == 'number' ) {
@@ -172,7 +174,7 @@ $(document).ready(function(){
             // });
             $(".stick").stick_in_parent({offset_top: 88});
         }
-        if(isMobile || isIE()){//Изменить анимацию на карточках
+        if(isMobile || isIE || isSafari){//Изменить анимацию на карточках
             if($(".b-card-template").hasClass("anim-3d")){
                 $(".b-card-template, .flip-card").removeClass("anim-3d").addClass("anim-opacity");
             }
@@ -241,6 +243,17 @@ $(document).ready(function(){
                 rv = parseFloat( RegExp.$1 );
         }
         return rv == -1 ? false: true;
+    }
+
+    function isSafari() {
+        var ua = navigator.userAgent.toLowerCase();
+        var isSafari = false;
+        if (ua.indexOf('safari') != -1) { 
+          if (ua.indexOf('chrome') == -1) {
+            isSafari = true;
+          }
+        }
+        return isSafari;
     }
 
     if(isRetina || isMobile){
@@ -387,7 +400,7 @@ $(document).ready(function(){
                 if($nextCard.hasClass("flipped")){
                     //заменить front
                     var $cont = $nextCard.find(".flip-card-front");
-                    if(isMobile || isIE()){
+                    if(isMobile || isIE || isSafari){
                         $nextCard.removeClass("flipped");
                         setTimeout(function() {
                             $cont.find(".b-operators-item").remove();
@@ -403,7 +416,7 @@ $(document).ready(function(){
                 }else{
                     //заменить back
                     var $cont = $nextCard.find(".flip-card-back");
-                    if(isMobile || isIE()){
+                    if(isMobile || isIE || isSafari){
                         $nextCard.addClass("flipped");
                         setTimeout(function() {
                             $cont.find(".b-operators-item").remove();
@@ -986,7 +999,8 @@ $(document).ready(function(){
         var waitTourvisorHidden = setInterval(function(){
             if( $(".b-tourvisor-hidden .TVCalendar").length ){
                 $(".calendar-preloader").hide();
-                var firstSearch = false;
+                var firstSearch = false,
+                    secondSearch = false;
                 //ищем страну в текущем городе
                 if($(".tv-calendar").attr("tv-departure")){
                     firstSearch = countryFind();
@@ -997,7 +1011,10 @@ $(document).ready(function(){
                     $(".b-tourvisor-hidden .TVCalendar .TVCalShowAll").click();//подгрузить все страны
                     var waitCountryLoad = setInterval(function(){
                         if($(".b-tourvisor-hidden .TVCalendar .TVCalShowAll.TVExpanded").length){
-                            countryFind();
+                            secondSearch = countryFind();
+                            if(!secondSearch){//если даже тут страна не найдена, то скрываем календарь
+                                $(".b-tourvisor-calendar-cont").hide();
+                            }
                             clearInterval(waitCountryLoad);
                         }
                     }, 10);

@@ -49,7 +49,7 @@ $this->setFrameMode(true);
 	</a>
 	<?if($i == 8 && 0):?>
 		<?$formShow = true?>
-		<div class="b-search-subscribe">
+		<div class="b-search-subscribe b-hot-search-subscribe">
 			<div class="b-subscribe-cont">
 				<div class="b-subscribe-form">
 					<h2><?=includeArea("hot-form-head")?></h2>
@@ -79,7 +79,7 @@ $this->setFrameMode(true);
 <?endforeach;?>
 </div>
 <?if(!$formShow):?>
-	<div class="b-search-subscribe">
+	<div class="b-search-subscribe b-hot-search-subscribe">
 		<div class="b-subscribe-cont">
 			<div class="b-subscribe-form">
 				<h2><?=includeArea("hot-form-head")?></h2>

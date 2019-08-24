@@ -4,6 +4,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $tourvisor = new Tourvisor();
 
 // die();
+// $countries = $tourvisor->getCountries(982990);
 
 $minPrices = $tourvisor->getMinPrices(982592);
 echo "<pre>";
@@ -39,6 +40,7 @@ foreach ($countriesTV["items"] as $key => $value) {
 echo "</pre>";
 
 
+// <<<<<<< HEAD
 // грузия
 // бали
 // нидерланды
@@ -76,6 +78,45 @@ foreach ($countries as $key => $country) {
 		"UF_T_AIR_1" => $country["AIR"],
 	));
 }
+// =======
+die();
+
+// $minPrices = $tourvisor->getMinPrices(982990);
+// echo "<pre>";
+
+// $rsSections = CIBlockSection::GetList(array(), array('IBLOCK_ID' => 1), false, array("ID", "UF_COUNTRY_NAME"));
+// $countries = array();
+// while($arSection = $rsSections->Fetch()){
+// 	if( !empty($arSection["UF_COUNTRY_NAME"]) ){
+// 		$countries[ mb_strtolower($arSection["UF_COUNTRY_NAME"], "UTF-8") ] = $arSection["ID"];
+// 	}
+// }
+
+// // грузия
+// // бали
+// // нидерланды
+// // крым
+// // анапа
+// // геленджик
+// // санкт-петербург
+
+
+// $departures = array(
+// 	"Белгорода" => 32,
+// 	"Москвы" => 1,
+// );
+// foreach ($minPrices["data"]["minprice"] as $key => $value) {
+// 	$name = mb_strtolower($value["country"], "UTF-8");
+
+// 	if( isset($countries[$name]) ){
+// 		$obSec = new CIBlockSection();
+// 		$boolResult = $obSec->Update($countries[$name], array(
+// 			"UF_PRICE_FROM" => $value["price"],
+// 			"UF_CITY_ID_TV" => $departures[ $value["departure"] ]
+// 		));
+// 	}
+// }
+// >>>>>>> 53f967f41657147805243d19588b7d434b1c8688
 
 // var_dump($countries);
 
@@ -85,7 +126,7 @@ echo "</pre>";
 ?>
 
 
-<div class="tv-min-price tv-moduleid-982592"></div>
+<div class="tv-min-price tv-moduleid-982990"></div>
 <script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
 
 

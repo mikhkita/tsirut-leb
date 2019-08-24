@@ -301,9 +301,9 @@ div.TVFORow3 {
 	.b-operators-item .b-img {
 	    width: calc(100% - 32px);
 	}
-	.visa-master{
+	/*.visa-master{
 		display: none;
-	}
+	}*/
 	.b-footer-item.column-1, .b-footer-item.column-2 {
 	    margin-right: 60px;
 	}

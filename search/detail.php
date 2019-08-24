@@ -6,15 +6,15 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 	<div class="b-tourvisor-calendar" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
 		<div class="b-block">
 			<div class="content">
-				<h2>Календарь туров</h2>
 				<div class="b-tourvisor-calendar-cont">
+					<h2>Календарь туров</h2>
 					<div class="calendar-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 					<a href="#" class="b-btn b-btn-orange one-line hidden">
 						<p class="btn-bold">Показать туры</p>
 					</a>
 				</div>
 				<div class="b-tourvisor-hidden">
-					<div class="tv-calendar tv-moduleid-982526" tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"></div>
+					<div class="tv-calendar tv-moduleid-982983" tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"></div>
 				</div>
 			</div>
 		</div>

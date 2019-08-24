@@ -77,10 +77,10 @@
 						<div class="b-copyright">© 2008-2019 Аквамарин. Все права защищены</div>
 						<a href="#" class="b-footer-politics">Политика обработки персональных данных</a>
 					</div>
-					<div class="visa-master"></div>
 					<div class="b-redder">
-						<span>Разработка стайта:</span>
-						<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a>
+						<!-- <span>Разработка стайта:</span>
+						<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a> -->
+						<div class="visa-master"></div>
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 	
 	<div style="display:none;">
 
-		<?if($GLOBALS["isDetail"]):?>
+		<?if($GLOBALS["isDetail"] || $GLOBALS["page"] == "search"):?>
 			<div class="b-search-subscribe-1" id="b-search-subscribe-1">
 				<div class="b-search-subscribe b-mailing-cont">
 					<div class="b-head-gradient"></div>
@@ -350,8 +350,8 @@
 					</a>
 					<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
 					<div class="b-checkbox">
-						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
-						<label for="agree-1">
+						<input id="agree-2" type="checkbox" name="agree-2" checked required> 
+						<label for="agree-2">
 						<div class="b-checked icon-checked"></div>
 						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
 						</label>
@@ -374,8 +374,8 @@
 					</a>
 					<a href="#b-review-success" class="b-thanks-link fancy" style="display:none;"></a>
 					<div class="b-checkbox">
-						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
-						<label for="agree-1">
+						<input id="agree-3" type="checkbox" name="agree-3" checked required> 
+						<label for="agree-3">
 						<div class="b-checked icon-checked"></div>
 						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
 						</label>
@@ -385,7 +385,7 @@
 		</div>
 
 		<div class="b-popup" id="b-popup-filter-mobile">
-				<div class="b-popup-content">
+			<div class="b-popup-content">
 				<div class="TVSideFilterForm TVTheme2">
 					<div class="defaultTVFilterForm"></div>
 				</div>
@@ -406,7 +406,7 @@
 			<div class="b-popup-content">
 				<div class="b">
 					<!-- <div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div> -->
-					<div class="tv-country tv-moduleid-982573"></div>
+					<div class="tv-country tv-moduleid-982989"></div>
 				</div>
 			</div>
 		</div>
