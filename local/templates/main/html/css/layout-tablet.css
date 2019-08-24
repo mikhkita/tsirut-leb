@@ -279,9 +279,11 @@ div.TVFORow3 {
     box-sizing: border-box;
     padding-right: 20px;
 }
+.b-search-tours{
+	min-width: 200px;
+}
 
 @media screen and (max-width: 1210px){
-
 	.b-menu li a{
 		padding: 6px 10px 7px 10px;
 	}

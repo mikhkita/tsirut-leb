@@ -112,7 +112,7 @@ $this->setFrameMode(true);
 							</ul>
 						</div>
 					<?endif;?>
-					<div class="b-tourvisor-nav-item">
+					<div class="b-tourvisor-nav-item b-tourvisor-nav-adv">
 						<h3>Наши преимущества</h3>
 						<div class="nav-adv">
 							<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-cards.svg">

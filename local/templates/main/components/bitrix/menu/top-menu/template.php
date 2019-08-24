@@ -29,8 +29,8 @@
 	</ul>
 	<a href="/search/" class="b-search-tours">
 		<p>
-			<span class="desktop">Перейти в поиск туров</span>
-			<span class="tablet">Поиск туров</span>
+			<span>Поиск туров</span>
+			<!-- <span class="tablet">Поиск туров</span> -->
 		</p>
 		<span class="icon-next"></span>
 	</a>

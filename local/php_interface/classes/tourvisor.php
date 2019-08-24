@@ -135,6 +135,39 @@ Class Tourvisor {
         print_r($result);
     }
 
+    public function getCountries($moduleid){
+        $params = array(
+            "page" => "1",
+            "limit" => 100000,
+            "sortProp" => "popularity",
+            "sortDir" => "desc",
+            "departure" => "1",
+            "viewType" => "1",
+        );
+
+        $result = $this->curl->request("http://tourvisor.ru/api/v1/countries?".http_build_query($params));
+
+        // $result = substr($result, strpos($result, "(")+1, -2);
+        return json_decode($result, true);
+        // var_dump($result);
+        // die();
+    }
+
+    public function getMinPrices($moduleid){
+        $params = array(
+            "format" => "json",
+            "moduleid" => $moduleid,
+            "callback" => "callback05674129482521311",
+        );
+
+        $result = $this->curl->request("http://tourvisor.ru/xml/modmin.php?".http_build_query($params));
+
+        $result = substr($result, strpos($result, "(")+1, -2);
+        return json_decode($result, true);
+        // var_dump($result);
+        // die();
+    }
+
     public function toArray($str){
         $str = substr($str, strpos($str, "(") + 1, -2 );
         return json_decode($str);

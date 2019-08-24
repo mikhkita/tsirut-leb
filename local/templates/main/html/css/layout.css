@@ -950,10 +950,12 @@ b{
 				}
 	
 	.b-search-tours{
+		text-align: center;
 		display: inline-block;
 		float: right;
 		padding: 13px 35px 14px 35px;
 		background-color: #1F82FF;
+		min-width: 250px;
 		color: #FFF;
 		font-family: 'Gilroy-Bold';
 		-webkit-transition: transform 150ms ease-out, border-radius 150ms ease-out, background-color 150ms;
@@ -1606,21 +1608,24 @@ b{
     	z-index: 1;
 	}
 	.b-5-manager{
-		width: 410px;
-	    height: 705px;
-	    background-image: url(../i/b-5-woman.png);
-	    background-size: cover;
-	    position: absolute;
-	    bottom: 0;
-    	right: 148px;
-    	z-index: 2;
+		width: 460px;
+		height: 705px;
+		background-image: url(../i/b-feedback-manager.png);
+		background-size: contain;
+		position: absolute;
+		bottom: 0;
+		right: 128px;
+		z-index: 2;
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
 	}
 		.b-5-name{
 			position: absolute;
 			bottom: 82px;
-    		right: 24px;
+			right: 84px;
 			background-color: #FFF;
 			border-radius: 6px;
+			box-shadow: 0px 15px 30px rgba(0,0,0,0.1);
 			overflow: hidden;
 			padding: 20px 30px 18px 30px;
 		}	
@@ -2456,8 +2461,8 @@ ul.b-breadcrumbs {
 		}
 		.b-feedback .b-5-manager{
 			background-image: url(../i/b-feedback-manager.png);
-    		right: 59px;
-    		bottom: 30px;
+			right: -1px;
+			bottom: 30px;
 		}
 		.b-feedback-form{
 			max-width: 400px;
@@ -2890,6 +2895,13 @@ ul.b-breadcrumbs {
 
 	.b-tourvisor-nav{
 		margin-top: 38px;
+	}
+	.b-tourvisor-nav-adv{
+	    background: #f9f9fb;
+	    padding: 20px 24px 26px;
+	    border-radius: 10px;
+	    box-shadow: inset 0 0 300px 0 rgba(31,61,135,0.07);
+	    margin-bottom: 32px;
 	}
 		.b-tourvisor-nav-item{
 			margin-bottom: 38px;
@@ -7547,7 +7559,12 @@ div.TVOrderHotelBlock{
 div.TVTourContainer{
 	background-color: transparent;
 }
-div.TVSearchResultPanel{
-	width: 100% !important;
+div.TVSearchResultPanel {
+    width: 100% !important;
+    background: transparent;
+    box-shadow: none;
+}
+div.TVSRGoTop{
+	display: none !important;
 }
 
