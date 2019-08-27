@@ -847,6 +847,15 @@ div.TVFORow3 {
 	.b-tourvisor-with-filter div.TVTem2Info {
 	    margin-left: 168px;
 	}
+
+	div.TVHelpFormControl .TVSRUserContactsBlock, div.TVHelpFormControl .TVSRUserDataSearch {
+	    width: 100%;
+	    padding-right: 0;
+	    box-sizing: border-box;
+	}
+	div.TVHelpFormControl .TVSRUserContactsBlock{
+		margin-bottom: 8px;
+	}
 }
 
 @media screen and (max-width: 850px){

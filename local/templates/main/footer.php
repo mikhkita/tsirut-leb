@@ -418,7 +418,7 @@
 			</div>
 			<div class="b-popup-content">
 				<form id="b-quiz-form" class="b-quiz-form" action="quiz.php" method="POST">
-					<h2 class="b-title white">Рассчитайте стоимость<br> вашего путешествия</h2>
+					<h2 class="b-title white">Рассчитайте стоимость <br> вашего путешествия</h2>
 					<div class="b-quiz b-quiz-screen-1">
 						<h3>В какой стране вы хотите отдохнуть?</h3>
 						<div class="b-quiz-error"></div>

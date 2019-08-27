@@ -1247,6 +1247,16 @@ div.TVTabedListContainer {
     padding: 0;
 }
 
+.b-tourvisor-with-filter div.TVSRBtnBlock {
+    text-align: center;
+}
+.b-dates-popup .TVCalendarControl .TVCalendarControlFooter .TVCheckBox:after {
+    content: "Скрыть туры на регулярных рейсах";
+}
+.b-dates-popup .TVCalendarControl .TVCalendarControlFooter{
+	padding-top: 12px;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -1726,6 +1736,14 @@ div.TVTabedListContainer {
 	div.TVTourContainer .TVTourBlock .TVInfo {
 	    margin-left: 156px;
 	}
+	div.TVHelpFormControl .TVSRUserContactsBlock, div.TVHelpFormControl .TVSRUserDataSearch {
+	    width: 100%;
+	    padding-right: 0;
+	    box-sizing: border-box;
+	}
+	div.TVHelpFormControl .TVSRUserContactsBlock{
+		margin-bottom: 8px;
+	}
 
 }
 
@@ -1986,7 +2004,7 @@ div.TVTabedListContainer {
     	margin-bottom: 16px;
     	font-size: 20px;
     	line-height: 28px;
- }
+ 	}
 	.b-quiz-adults {
 	    margin-bottom: 6px;
 	}
@@ -2219,10 +2237,12 @@ div.TVTabedListContainer {
 	    padding-left: 6px;
 	}
 	div.TVCalDirectOnly{
+		margin-top: 10px;
 		position: static;
 	}
 	div.TVCalDirectOnly .TVCheckBox{
 		float: none;
+		padding-left: 0;
 	}
 	div.TVCheckBoxContent {
 	    margin-left: 8px;
@@ -2306,6 +2326,11 @@ div.TVTabedListContainer {
 	.b-hotel-popup .TVScreenSm:not(.TVScreenMd) .TVCountry .TVCountryDetail.TVHotelDetail .TVCountryButtons .TVCountryButton {
 	    padding: 6px 10px;
 	    margin: 0px 6px 0 0;
+	}
+
+	.b-tourvisor-with-filter .TVSideFilterForm.TVTheme2 .TVHelpFormControl .TVSearchButton {
+	    width: 100%;
+	    margin-left: 0;
 	}
 
 }
