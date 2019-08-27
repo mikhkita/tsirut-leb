@@ -11,7 +11,7 @@ $GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "search" && !empty($urlArr[2])
 $GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "search" && !empty($urlArr[2]) && !empty($urlArr[3]));
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 8;
+$GLOBALS["version"] = 9;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )

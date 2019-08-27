@@ -5216,7 +5216,7 @@ div.TVCalendar .TVLocationBox .TVContent:after{
 	display: none;
 }
 div.TVCalendarDepartureHeader {
-    padding: 20px 0 5px;
+    padding: 20px 0 20px;
 }
 div.TVCalendarListHeader {
     border-bottom: 1px solid #E7ECF1;
@@ -5283,6 +5283,9 @@ div.TVDTCalendar .TVCalendarWeather{
 }
 div.TVDTCalendar .TVCalendarPrice {
 	width: 195px;
+}
+div.TVCalendarDepartureHeader .TVSelectCityCombobox:after{
+	display: none;
 }
 div.TVCalDirectOnly{
 	right: 0;
@@ -7567,4 +7570,88 @@ div.TVSearchResultPanel {
 div.TVSRGoTop{
 	display: none !important;
 }
+
+div.TVSearchResults .TVSRHelpForm{
+	border: 2px solid #EFF2F6;
+	border-radius: 10px;
+}
+	div.TVSearchResults .TVSRHelpForm input::-webkit-input-placeholder {
+		color: #BCC1C7;
+	}
+	div.TVSearchResults .TVSRHelpForm input:-moz-placeholder {
+		color: #BCC1C7;
+	}
+	div.TVSearchResults .TVSRHelpForm textarea::-webkit-input-placeholder {
+		color: #BCC1C7;
+	}
+	div.TVSearchResults .TVSRHelpForm textarea:-moz-placeholder {
+		color: #BCC1C7;
+	}
+	div.TVHelpFormControl .TVSRHelpFormNoToursHeader{
+		font-family: 'Gilroy-Regular';
+		margin-bottom: 10px;
+	}
+	div.TVHelpFormControl .TVSRHelpFormNoToursHeader:after {
+	    margin-top: 0; 
+	}
+	div.TVHelpFormControl .TVSRHelpFormHeader {
+	    font-family: 'Gilroy-Regular';
+	}
+	div.TVSRHelpForm .TVContract {
+	    font-family: 'Gilroy-Regular';
+	}
+	div.TVHelpFormControl .TVSRHelpInput input{
+		width: 100%;
+    	box-sizing: border-box;
+		display: inline-block;
+		font-family: 'Gilroy-Medium';
+		padding: 19px 32px 21px 32px;
+		font-size: 18px;
+		line-height: 24px;
+		border-radius: 100px;
+		background-color: transparent;
+	    border: 2px solid #BCC1C7;
+		color: #434343;
+	}
+	div.TVHelpFormControl .TVSRHelpArea textarea{
+		font-family: 'Gilroy-Regular';
+		width: 100%;
+    	box-sizing: border-box;
+	    height: 203px;
+	    font-size: 14px;
+	    line-height: 20px;
+	    padding: 20px 24px;
+	    border: 2px solid #BCC1C7;
+	    color: #282828;
+	    margin-bottom: 16px;
+	    background: #fff;
+	    resize: none;
+	    border-radius: 33px;
+	}
+	div.TVHelpFormControl .TVSRHelpArea:before {
+	    font-family: 'Gilroy-Regular';
+	    color: #282828;
+	    display: block;
+	    margin-bottom: 8px;
+	}
+	.b-tourvisor-with-filter .TVSideFilterForm.TVTheme2 .TVHelpFormControl .TVSearchButton{
+		width: 200px;
+		margin-left: 0;
+	}
+	div.TVSRBodyContainer .TVSRHelpForm .TVSearchButton {
+	    border-radius: 6px;
+	    font-size: 18px;
+	}
+	div.TVHelpFormControl .TVSRHelpInput input.TVWarning {
+	    border: 2px solid red;
+	}
+	div.TVHelpFormControl .TVSRUserContactsBlock,
+	div.TVHelpFormControl .TVSRUserDataSearch{
+		width: calc(50% - 4px);
+		box-sizing: border-box;
+	}
+
+	div.TVHelpFormControl .TVSRUserContactsBlock{
+		padding-right: 16px;
+	}
 
