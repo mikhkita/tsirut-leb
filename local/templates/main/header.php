@@ -148,24 +148,24 @@ if($isDetail){
 	$prevYear = (int)$curYear - 1;
 	$nextYear = (int)$curYear + 1;
 	$GLOBALS["monthsTV"] = array(
-		UF_MONTH_1 => array("start" => "01.01.".(($curMonth <= 1) ? $curYear : $nextYear), "end" => "31.01.".(($curMonth <= 1) ? $curYear : $nextYear)),
-		UF_MONTH_2 => array("start" => "01.02.".(($curMonth <= 2) ? $curYear : $nextYear), "end" => "29.02.".(($curMonth <= 2) ? $curYear : $nextYear)),
-		UF_MONTH_3 => array("start" => "01.03.".(($curMonth <= 3) ? $curYear : $nextYear), "end" => "31.03.".(($curMonth <= 3) ? $curYear : $nextYear)),
-		UF_MONTH_4 => array("start" => "01.04.".(($curMonth <= 4) ? $curYear : $nextYear), "end" => "30.04.".(($curMonth <= 4) ? $curYear : $nextYear)),
-		UF_MONTH_5 => array("start" => "01.05.".(($curMonth <= 5) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth <= 5) ? $curYear : $nextYear)),
-		UF_MONTH_6 => array("start" => "01.06.".(($curMonth <= 6) ? $curYear : $nextYear), "end" => "30.06.".(($curMonth <= 6) ? $curYear : $nextYear)),
-		UF_MONTH_7 => array("start" => "01.07.".(($curMonth <= 7) ? $curYear : $nextYear), "end" => "31.07.".(($curMonth <= 7) ? $curYear : $nextYear)),
-		UF_MONTH_8 => array("start" => "01.08.".(($curMonth <= 8) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth <= 8) ? $curYear : $nextYear)),
-		UF_MONTH_9 => array("start" => "01.09.".(($curMonth <= 9) ? $curYear : $nextYear), "end" => "30.09.".(($curMonth <= 9) ? $curYear : $nextYear)),
-		UF_MONTH_10 => array("start" => "01.10.".(($curMonth <= 10) ? $curYear : $nextYear), "end" => "31.10.".(($curMonth <= 10) ? $curYear : $nextYear)),
-		UF_MONTH_11 => array("start" => "01.11.".(($curMonth <= 11) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth <= 11) ? $curYear : $nextYear)),
-		UF_MONTH_12 => array("start" => "01.12.".(($curMonth <= 12) ? $curYear : $nextYear), "end" => "31.12.".(($curMonth <= 12) ? $curYear : $nextYear)),
+		UF_MONTH_1 => array("start" => "01.01.".(($curMonth <= 1) ? $curYear : $nextYear), "end" => "31.01.".(($curMonth <= 1) ? $curYear : $nextYear), "name" => "январь"),
+		UF_MONTH_2 => array("start" => "01.02.".(($curMonth <= 2) ? $curYear : $nextYear), "end" => "29.02.".(($curMonth <= 2) ? $curYear : $nextYear), "name" => "февраль"),
+		UF_MONTH_3 => array("start" => "01.03.".(($curMonth <= 3) ? $curYear : $nextYear), "end" => "31.03.".(($curMonth <= 3) ? $curYear : $nextYear), "name" => "март"),
+		UF_MONTH_4 => array("start" => "01.04.".(($curMonth <= 4) ? $curYear : $nextYear), "end" => "30.04.".(($curMonth <= 4) ? $curYear : $nextYear), "name" => "апрель"),
+		UF_MONTH_5 => array("start" => "01.05.".(($curMonth <= 5) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth <= 5) ? $curYear : $nextYear), "name" => "май"),
+		UF_MONTH_6 => array("start" => "01.06.".(($curMonth <= 6) ? $curYear : $nextYear), "end" => "30.06.".(($curMonth <= 6) ? $curYear : $nextYear), "name" => "июнь"),
+		UF_MONTH_7 => array("start" => "01.07.".(($curMonth <= 7) ? $curYear : $nextYear), "end" => "31.07.".(($curMonth <= 7) ? $curYear : $nextYear), "name" => "июль"),
+		UF_MONTH_8 => array("start" => "01.08.".(($curMonth <= 8) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth <= 8) ? $curYear : $nextYear), "name" => "август"),
+		UF_MONTH_9 => array("start" => "01.09.".(($curMonth <= 9) ? $curYear : $nextYear), "end" => "30.09.".(($curMonth <= 9) ? $curYear : $nextYear), "name" => "сентябрь"),
+		UF_MONTH_10 => array("start" => "01.10.".(($curMonth <= 10) ? $curYear : $nextYear), "end" => "31.10.".(($curMonth <= 10) ? $curYear : $nextYear), "name" => "октябрь"),
+		UF_MONTH_11 => array("start" => "01.11.".(($curMonth <= 11) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth <= 11) ? $curYear : $nextYear), "name" => "ноябрь"),
+		UF_MONTH_12 => array("start" => "01.12.".(($curMonth <= 12) ? $curYear : $nextYear), "end" => "31.12.".(($curMonth <= 12) ? $curYear : $nextYear), "name" => "декабрь"),
 	);
 	$GLOBALS["seasonsTV"] = array(
-		UF_SEASON_SUMMER => array("start" => "01.06.".(($curMonth < 9) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth < 9) ? $curYear : $nextYear), "img" => "tours-summer.svg"),//лето
-		UF_SEASON_AUTUNM => array("start" => "01.09.".(($curMonth < 12) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth < 12) ? $curYear : $nextYear), "img" => "tours-autumn.svg"),//осень
-		UF_SEASON_WINTER => array("start" => "01.12.".(($curMonth < 3) ? $prevYear : $curYear), "end" => "29.02.".(($curMonth < 3) ? $curYear : $nextYear), "img" => "tours-winter.svg"),//зима
-		UF_SEASON_SPRING => array("start" => "01.03.".(($curMonth < 6) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth < 6) ? $curYear : $nextYear), "img" => "tours-spring.svg"),//весна
+		UF_SEASON_SUMMER => array("start" => "01.06.".(($curMonth < 9) ? $curYear : $nextYear), "end" => "31.08.".(($curMonth < 9) ? $curYear : $nextYear), "img" => "tours-summer.svg", "name" => "лето", "nameEnd" => "летом"),//лето
+		UF_SEASON_AUTUNM => array("start" => "01.09.".(($curMonth < 12) ? $curYear : $nextYear), "end" => "30.11.".(($curMonth < 12) ? $curYear : $nextYear), "img" => "tours-autumn.svg", "name" => "осень", "nameEnd" => "осенью"),//осень
+		UF_SEASON_WINTER => array("start" => "01.12.".(($curMonth < 3) ? $prevYear : $curYear), "end" => "29.02.".(($curMonth < 3) ? $curYear : $nextYear), "img" => "tours-winter.svg", "name" => "зима", "nameEnd" => "зимой"),//зима
+		UF_SEASON_SPRING => array("start" => "01.03.".(($curMonth < 6) ? $curYear : $nextYear), "end" => "31.05.".(($curMonth < 6) ? $curYear : $nextYear), "img" => "tours-spring.svg", "name" => "весна", "nameEnd" => "весной"),//весна
 	);
 }
 
@@ -222,8 +222,8 @@ if($isDetailResort){
 			'title' => $arSection['NAME'],
 			'titleText' => $arSection['UF_HEADER_TEXT'],
 			'titleTV' => $arSection['UF_HEADER_TV'],
-			'monthList' => $arSection['UF_MONTH'],
-			'seasonList' => $arSection['UF_SEASON'],
+			'month' => $arSection['UF_MONTH'],
+			'season' => $arSection['UF_SEASON'],
 			'countryIDTV' => $arSection['UF_COUNTRY_ID_TV'],
 			'resortIDTV' => $arSection['UF_RESORT_ID_TV'],
 			'cityIDTV' => $arSection['UF_CITY_ID_TV'],
@@ -231,17 +231,27 @@ if($isDetailResort){
 			'seasonList' => array(),
 		);
 		foreach ($monthList as $value) {
-			$GLOBALS["arResort"]["monthList"][$value["UF_MONTH"]] = $value["NAME"];
+			$GLOBALS["arResort"]["monthList"][$value["UF_MONTH"]] = array(
+				"name" => $value["NAME"],
+				"code" => $value["CODE"],
+			);
 		}
 		foreach ($seasonList as $value) {
-			$GLOBALS["arResort"]["seasonList"][$value["UF_SEASON"]] = $value["NAME"];
+			$GLOBALS["arResort"]["seasonList"][$value["UF_SEASON"]] = array(
+				"name" => $value["NAME"],
+				"code" => $value["CODE"],
+			);
 		}
 		$headImg = CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 );
 	}else{
 		CHTTP::SetStatus('404 Not found');
 		defined('ERROR_404') or define('ERROR_404', 'Y');
 	}
-	if($GLOBALS["arResort"]["title"]){
+	if($GLOBALS["arResort"]["month"]){
+		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]." на ".$GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["name"]);
+	}elseif($GLOBALS["arResort"]["season"]){
+		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]." ".$GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["nameEnd"]);
+	}elseif($GLOBALS["arResort"]["title"]){
 		$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
 	}
 }

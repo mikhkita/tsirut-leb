@@ -22,10 +22,19 @@ $this->setFrameMode(true);
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
+				<?//если это месяц
+				$dates = "";
+				if($GLOBALS["arResort"]["month"]){
+					$dates = $GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["start"].",".$GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["end"];
+				}elseif($GLOBALS["arResort"]["season"]){
+					$dates = $GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["start"].",".$GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["end"];
+				}
+				?>
 				<div class="tv-search-form tv-moduleid-192034" 
 					tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" 
-					tv-resorts="<?//=$GLOBALS["arCountry"]["resortIDTV"]?>" 
-					tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"
+					tv-resorts="<?//=$GLOBALS["arResort"]["resortIDTV"]?>" 
+					tv-departure="<?=$GLOBALS["arResort"]["cityIDTV"]?>"
+					tv-flydates="<?=$dates?>"
 				></div>
 			</div>
 		</div>
@@ -88,21 +97,21 @@ $this->setFrameMode(true);
 					</div>
 				</div>
 				<div class="b-tourvisor-nav">
-					<?if($GLOBALS["arCountry"]["monthList"]):?>
+					<?if($GLOBALS["arResort"]["monthList"]):?>
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по месяцам</h3>
 							<ul class="months">
-								<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+								<?foreach ($GLOBALS["arResort"]["monthList"] as $key => $value):?>
 									<li><a href="<?=$value["code"]?>/"><?=$value["name"]?></a></li>
 								<?endforeach;?>
 							</ul>
 						</div>
 					<?endif;?>
-					<?if($GLOBALS["arCountry"]["seasonList"]):?>
+					<?if($GLOBALS["arResort"]["seasonList"]):?>
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по сезонам</h3>
 							<ul class="b-seasons">
-								<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+								<?foreach ($GLOBALS["arResort"]["seasonList"] as $key => $value):?>
 									<li class="b-season">
 										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
 										<a href="<?=$value["code"]?>/"><?=$value["name"]?></a>
@@ -163,7 +172,7 @@ $this->setFrameMode(true);
 						<p>Равным образом рамки и место обучения кадров требуют от нас анализа дальнейших направлений развития. Разнообразный и богатый опыт новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.<br><br>Значимость этих проблем настолько очевидна, что укрепление и развитие структуры требуют определения и уточнения форм развития.</p>
 					</div> -->
 					<div class="b-tourvisor-nav-item b-nav-seo">
-						<?=$GLOBALS["arCountry"]["seoText"]?>
+						<?=$GLOBALS["arResort"]["seoText"]?>
 					</div>
 				</div>
 			</div>
