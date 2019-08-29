@@ -663,6 +663,54 @@ $(document).ready(function(){
         $(".b-hot-border").css({"top" : $el.position().top - 5});
     }
 
+    if ($('.b-plup-photo').length && typeof(plupload) == "object"){
+        var uploaderReview = new plupload.Uploader({
+            runtimes : 'html5,flash,silverlight,html4',
+            browse_button : 'plup-button', // you can pass an id...
+            container: document.getElementById('plup-actions'), // ... or DOM Element itself
+            url : $('#b-review-form').attr("data-file-action"),
+            multi_selection: false,
+            
+            filters : {
+                max_file_size : '10mb',
+                mime_types: [
+                    {title : "Image files", extensions : "jpg,jpeg,gif,png,bmp"},
+                ]
+            },
+
+            init: {
+                PostInit: function() {
+                    //$('.plup-filelist .plupload-no-support').remove();
+                },
+                FilesAdded: function(up, files) {
+                    $("#plup-button .add-photo").show();
+                    $("#plup-button .success-photo").hide();
+                    plupload.each(up.files, function(file) {
+                        if (up.files.length > 1) {
+                            up.removeFile(up.files[0]);
+                        }
+                    });
+                    up.start();
+                },
+                UploadProgress: function(up, file) {
+                    $("#plup-button .add-photo .name").text("Загрузка "+file.percent+"%");
+                },
+                FileUploaded: function(up, file, res) {
+                    var json = JSON.parse(res.response);
+                    if(json.status){
+                        $("#plup-photo-file").val(json.filePath);
+                        $("#plup-button .add-photo").hide();
+                        $("#plup-button .success-photo").show();
+                    }
+                },
+                Error: function(up, err) {
+                    alert("При загрузке файла произошла ошибка.\n" + err.code + ": " + err.message);
+                }
+            }
+        });
+        uploaderReview.init();
+    }
+
     // =========Турвизор=========
 
     if($(".b-tourvisor-header").length){

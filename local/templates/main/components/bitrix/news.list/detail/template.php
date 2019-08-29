@@ -94,7 +94,7 @@ $this->setFrameMode(true);
 							<h3>Туры по месяцам</h3>
 							<ul class="months">
 								<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
-									<li><a href="?flydates_from=<?=$GLOBALS["monthsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["monthsTV"][$key]["end"]?>"><?=$value?></a></li>
+									<li><a href="<?=$value["code"]?>/?s_country=<?=$GLOBALS["arCountry"]["countryIDTV"]?>&flydates_from=<?=$GLOBALS["monthsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["monthsTV"][$key]["end"]?>"><?=$value["name"]?></a></li>
 								<?endforeach;?>
 							</ul>
 						</div>
@@ -106,7 +106,7 @@ $this->setFrameMode(true);
 								<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
 									<li class="b-season">
 										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
-										<a href="?flydates_from=<?=$GLOBALS["seasonsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["seasonsTV"][$key]["end"]?>"><?=$value?></a>
+										<a href="<?=$value["code"]?>/?s_country=<?=$GLOBALS["arCountry"]["countryIDTV"]?>&flydates_from=<?=$GLOBALS["seasonsTV"][$key]["start"]?>&flydates_to=<?=$GLOBALS["seasonsTV"][$key]["end"]?>"><?=$value["name"]?></a>
 									</li>
 								<?endforeach;?>
 							</ul>

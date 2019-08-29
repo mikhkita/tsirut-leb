@@ -37,12 +37,13 @@ switch ($action) {
 			  "NAME"           => $_POST["name"],
 			  "ACTIVE"         => "N",
 			  "PREVIEW_TEXT"   => $_POST['comment'],
+			  "PREVIEW_PICTURE" => CFile::MakeFileArray("/upload/tmp/".$_POST["FILE"]),
 			  "DATE_ACTIVE_FROM" => ConvertTimeStamp(time(), "FULL"),
 			);
 			
 			if ($id = $el->Add($arLoadProductArray)) {
 
-				$link = "http://beltour.pro/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=3&type=content&ID=".$id."&lang=ru&find_section_section=-1&WF=Y";
+				$link = "http://bel.redder.pro/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=3&type=content&ID=".$id."&lang=ru&find_section_section=-1&WF=Y";
 
 				if(CEvent::Send("NEW_REVIEW", "s1", array("LINK" => $link, "NAME" => $_POST["name"], "TOUR" => $_POST["tour"], "COMMENT" => $_POST["comment"]))){
 					echo "1";

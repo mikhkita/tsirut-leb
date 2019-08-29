@@ -363,10 +363,25 @@
 		<div class="b-popup b-aqua-popup b-popup-back-2" id="b-popup-review-form">
 			<div class="b-popup-content">
 				<h2 class="small-mb">Оставить отзыв</h2>
-				<form action="/ajax/?action=ADDREVIEW" method="POST">
+				<form action="/ajax/?action=ADDREVIEW" method="POST" id="b-review-form" data-file-action="/send/addPhoto.php">
 					<input type="text" name="name" placeholder="Вашe имя" required>
 					<input type="text" name="tour" placeholder="Место отдыха" required>
 					<textarea name="comment" rows="6" placeholder="Ваш отзыв"></textarea>
+					<div class="b-plup-photo">
+						<div id="plup-actions">
+							<input id="plup-photo-file" type="hidden" name="FILE">
+							<a id="plup-button" class="plup-button" href="javascript:;">
+								<div class="add-photo">
+									<span class="add-icon"></span>
+									<span class="name">Загрузить фото</span>
+								</div>
+								<div class="success-photo" style="display: none;">
+									<span class="success-icon icon-checked"></span>
+									<span class="name">Фото загружено</span>
+								</div>
+							</a>
+						</div>
+					</div>
 					<input type="text" name="MAIL">
 					<a href="#" class="b-btn b-btn-orange ajax b-btn-full">
 						<p class="btn-bold">Оставить отзыв</p>
@@ -692,6 +707,9 @@
 		<? foreach ($GLOBALS["depends"][$GLOBALS["page"]]["js"] as $scriptName): ?>
 			<script type="text/javascript" src="<?=$scriptName?>"></script>
 		<? endforeach; ?>
+	<? endif; ?>
+	<? if($GLOBALS["isMain"]): ?>
+		<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/plupload.full.min.js"></script>
 	<? endif; ?>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/main.js?<?=$GLOBALS["version"]?>"></script>
 </body>

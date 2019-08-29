@@ -1686,7 +1686,7 @@ b{
 						overflow-y: hidden;
 						background-position: 50% 50%;
 				    	background-repeat: no-repeat;
-				    	background-size: 100px;
+				    	background-size: cover;
 					}
 				.b-review-name{
 					display: table-cell;
@@ -4420,6 +4420,38 @@ textarea{
 				.b-popup .b-btn-cont .b-btn,{
 					color: #FFF;
 				}
+
+/*====plupload=====*/
+
+.plup-button{
+	position: relative;
+	display: block;
+    border-radius: 100px;
+    width: 100%;
+	text-align: left;
+    padding: 20px 32px 19px 55px;
+    border: 2px solid #BCC1C7;
+}
+.plup-button .add-icon:before{
+	content: "+";
+    font-size: 24px;
+    line-height: 24px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 31%;
+    left: 28px;
+}
+.plup-button .success-icon:before{
+    font-size: 14px;
+    line-height: 14px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 39%;
+    left: 25px;
+    color: #6fd06c;
+}
 
 @media screen and (max-width: 1420px){
 

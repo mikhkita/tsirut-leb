@@ -117,10 +117,16 @@ if($isDetail){
 		);
 
 		foreach ($monthList as $value) {
-			$GLOBALS["arCountry"]["monthList"][$value["UF_MONTH"]] = $value["NAME"];
+			$GLOBALS["arCountry"]["monthList"][$value["UF_MONTH"]] = array(
+				"name" => $value["NAME"],
+				"code" => $value["CODE"],
+			);
 		}
 		foreach ($seasonList as $value) {
-			$GLOBALS["arCountry"]["seasonList"][$value["UF_SEASON"]] = $value["NAME"];
+			$GLOBALS["arCountry"]["seasonList"][$value["UF_SEASON"]] = array(
+				"name" => $value["NAME"],
+				"code" => $value["CODE"],
+			);
 		}
 		foreach ($resortList as $value) {
 			$GLOBALS["arCountry"]["resortList"][] = array(
