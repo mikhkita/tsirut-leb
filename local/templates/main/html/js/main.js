@@ -61,7 +61,7 @@ $(document).ready(function(){
             reinitCards();
         }
 
-        $(".no-margin").removeClass("no-margin");
+        //$(".no-margin").removeClass("no-margin");
         if(isMobile){
             step = 4;
             if(!$('.b-statistics-slider').hasClass("slick-initialized")){

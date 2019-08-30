@@ -111,6 +111,119 @@ function writeLog($record, $filename){
 	}
 }
 
+//Получить инфу о разделе в стране
+function getCountrySection($code){
+	//CModule::IncludeModule('iblock');
+	$arCountrySect = array();
+	$rsSections = CIBlockSection::GetList(
+		array(),
+		array('IBLOCK_ID'=>1, '=CODE'=>$code),
+		false,
+		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON')
+	);
+	if($arSection = $rsSections->Fetch()){
+		//Получить месяцы, сезоны и курорты
+		$monthList = array();
+		$seasonList = array();
+		$resortList = array();
+		if(empty($arSection['UF_MONTH']) && empty($arSection['UF_SEASON'])){
+			$rsSectMonth = CIBlockSection::GetList(
+				array('sort' => 'asc'),
+				array(
+				   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+				   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+				   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+				   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
+				   '!UF_MONTH' => false
+				),
+				false,
+				array('IBLOCK_ID','ID','NAME','CODE','UF_MONTH')
+			);
+	
+			while ($arSectMonth = $rsSectMonth->GetNext()){
+				$monthList[] = $arSectMonth;
+			}
+			//Получить сезоны у этой страны
+			$rsSectSeason = CIBlockSection::GetList(
+				array('sort' => 'asc'),
+				array(
+				   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+				   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+				   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+				   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
+				   '!UF_SEASON' => false
+				),
+				false,
+				array('IBLOCK_ID','ID','NAME','CODE','UF_SEASON')
+			);
+			
+			while ($arSectSeason = $rsSectSeason->GetNext()){
+				$seasonList[] = $arSectSeason;
+			}
+			//Получить курорты у этой страны
+			$rsSectResort = CIBlockSection::GetList(
+				array('sort' => 'asc'),
+				array(
+				   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+				   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+				   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+				   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
+				   '!UF_RESORT_ID_TV' => false
+				),
+				false,
+				array('IBLOCK_ID','ID','NAME','CODE')
+			);
+			
+			while ($arSectResort = $rsSectResort->GetNext()){
+				$resortList[] = $arSectResort;
+			}
+		}
+		$arCountrySect = array(
+			'id' => $arSection['ID'],
+			'code' => $arSection['CODE'],
+			'name' => $arSection['UF_COUNTRY_NAME'],
+			'picture' => $arSection['DETAIL_PICTURE'],
+			'isRussia' => ((int)$arSection['IBLOCK_SECTION_ID'] == 2),
+			'seoText' => $arSection['DESCRIPTION'],
+			'title' => $arSection['NAME'],
+			'titleText' => $arSection['UF_HEADER_TEXT'],
+			'visa' => $arSection['UF_HEADER_VISA'],
+			'popular' => $arSection['UF_POPULAR_RESORT'],
+			'bestTime' => $arSection['UF_HEADER_TIME'],
+			'titleTV' => $arSection['UF_HEADER_TV'],
+			'countryIDTV' => $arSection['UF_COUNTRY_ID_TV'],
+			'resortIDTV' => $arSection['UF_RESORT_ID_TV'],
+			'cityIDTV' => $arSection['UF_CITY_ID_TV'],
+			'month' => $arSection['UF_MONTH'],
+			'season' => $arSection['UF_SEASON'],
+			'headImg' => CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 ),
+			'monthList' => array(),
+			'seasonList' => array(),
+			'resortList' => array()
+		);
+
+		foreach ($monthList as $value) {
+			$arCountrySect["monthList"][$value["UF_MONTH"]] = array(
+				"name" => $value["NAME"],
+				"code" => $value["CODE"],
+			);
+		}
+		foreach ($seasonList as $value) {
+			$arCountrySect["seasonList"][$value["UF_SEASON"]] = array(
+				"name" => $value["NAME"],
+				"code" => $value["CODE"],
+			);
+		}
+		foreach ($resortList as $value) {
+			$arCountrySect["resortList"][] = array(
+				'name' => $value["NAME"],
+				'url' => $value["CODE"],
+			);
+		}
+	}
+	return $arCountrySect;
+}
+
 // function getValidPhone($file){
 // 	global $APPLICATION;
 // 	$APPLICATION->IncludeComponent("bitrix:main.include","",Array(

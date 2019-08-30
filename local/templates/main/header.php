@@ -7,8 +7,14 @@ CModule::IncludeModule("iblock");
 $curPage = $APPLICATION->GetCurPage();
 $urlArr = explode("/", $curPage);
 $GLOBALS["isMain"] = $isMain = ( $curPage == "/" )?true:false;
+
+//Детальная страны
 $GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "search" && !empty($urlArr[2]));
+//Детальная курорта/месяца/сезона в стране
 $GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "search" && !empty($urlArr[2]) && !empty($urlArr[3]));
+//Детальная месяца/сезона в курорте
+$GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "search" && !empty($urlArr[2]) && !empty($urlArr[3]) && !empty($urlArr[4]));
+
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
 $GLOBALS["version"] = 9;
@@ -37,110 +43,17 @@ $GLOBALS["depends"] = array(
 
 if($isDetail){
 	//получить страну (раздел)
-	$rsSections = CIBlockSection::GetList(
-		array(),
-		array('IBLOCK_ID'=>1, '=CODE'=>$_REQUEST["SECTION_CODE"]),
-		false,
-		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON')
-	);
-	if($arSection = $rsSections->Fetch()){
-		//Получить месяцы у этой страны
-		$rsSectMonth = CIBlockSection::GetList(
-			array('sort' => 'asc'),
-			array(
-			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-			   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-			   '!UF_MONTH' => false
-			),
-			false,
-			array('IBLOCK_ID','ID','NAME','CODE','UF_MONTH')
-		);
-		$monthList = array();
-		while ($arSectMonth = $rsSectMonth->GetNext()){
-			$monthList[] = $arSectMonth;
+	$GLOBALS["arCountry"] = getCountrySection($_REQUEST["SECTION_CODE"]);
+	if(!empty($GLOBALS["arCountry"])){
+		//установить заголовок
+		if($GLOBALS["arCountry"]["title"]){
+			$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
 		}
-		//Получить сезоны у этой страны
-		$rsSectSeason = CIBlockSection::GetList(
-			array('sort' => 'asc'),
-			array(
-			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-			   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-			   '!UF_SEASON' => false
-			),
-			false,
-			array('IBLOCK_ID','ID','NAME','CODE','UF_SEASON')
-		);
-		$seasonList = array();
-		while ($arSectSeason = $rsSectSeason->GetNext()){
-			$seasonList[] = $arSectSeason;
-		}
-		//Получить курорты у этой страны
-		$rsSectResort = CIBlockSection::GetList(
-			array('sort' => 'asc'),
-			array(
-			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-			   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-			   '!UF_RESORT_ID_TV' => false
-			),
-			false,
-			array('IBLOCK_ID','ID','NAME','CODE')
-		);
-		$resortList = array();
-		while ($arSectResort = $rsSectResort->GetNext()){
-			$resortList[] = $arSectResort;
-		}
-		$GLOBALS["arCountry"] = array(
-			'id' => $arSection['ID'],
-			'code' => $arSection['CODE'],
-			'name' => $arSection['UF_COUNTRY_NAME'],
-			'picture' => $arSection['DETAIL_PICTURE'],
-			'isRussia' => ((int)$arSection['IBLOCK_SECTION_ID'] == 2),
-			'seoText' => $arSection['DESCRIPTION'],
-			'title' => $arSection['NAME'],
-			'titleText' => $arSection['UF_HEADER_TEXT'],
-			'visa' => $arSection['UF_HEADER_VISA'],
-			'popular' => $arSection['UF_POPULAR_RESORT'],
-			'bestTime' => $arSection['UF_HEADER_TIME'],
-			'titleTV' => $arSection['UF_HEADER_TV'],
-			'countryIDTV' => $arSection['UF_COUNTRY_ID_TV'],
-			'resortIDTV' => $arSection['UF_RESORT_ID_TV'],
-			'cityIDTV' => $arSection['UF_CITY_ID_TV'],
-			'monthList' => array(),
-			'seasonList' => array(),
-			'resortList' => array()
-		);
-
-		foreach ($monthList as $value) {
-			$GLOBALS["arCountry"]["monthList"][$value["UF_MONTH"]] = array(
-				"name" => $value["NAME"],
-				"code" => $value["CODE"],
-			);
-		}
-		foreach ($seasonList as $value) {
-			$GLOBALS["arCountry"]["seasonList"][$value["UF_SEASON"]] = array(
-				"name" => $value["NAME"],
-				"code" => $value["CODE"],
-			);
-		}
-		foreach ($resortList as $value) {
-			$GLOBALS["arCountry"]["resortList"][] = array(
-				'name' => $value["NAME"],
-				'url' => $value["CODE"],
-			);
-		}
-		$headImg = CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 );
+		//изображение в хедере
+		$headImg = $GLOBALS["arCountry"]["headImg"];
 	}else{
 		CHTTP::SetStatus('404 Not found');
 		defined('ERROR_404') or define('ERROR_404', 'Y');
-	}
-	if($GLOBALS["arCountry"]["title"]){
-		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
 	}
 
 	$curMonth = date("n");
@@ -170,89 +83,40 @@ if($isDetail){
 }
 
 if($isDetailResort){
-	//получить курорт (раздел)
-	$rsSections = CIBlockSection::GetList(
-		array(),
-		array('IBLOCK_ID'=>1, '=CODE'=>$_REQUEST["RESORT"]),
-		false,
-		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON')
-	);
-	if($arSection = $rsSections->Fetch()){
-		//Получить месяцы у этой страны
-		$rsSectMonth = CIBlockSection::GetList(
-			array('sort' => 'asc'),
-			array(
-			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-			   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-			   '!UF_MONTH' => false
-			),
-			false,
-			array('IBLOCK_ID','ID','NAME','CODE','UF_MONTH')
-		);
-		$monthList = array();
-		while ($arSectMonth = $rsSectMonth->GetNext()){
-			$monthList[] = $arSectMonth;
+	//получить курорт/месяц/сезон у страны (раздел)
+	$GLOBALS["arResort"] = getCountrySection($_REQUEST["RESORT"]);
+	if(!empty($GLOBALS["arResort"])){
+		//установить заголовок
+		if($GLOBALS["arResort"]["month"]){
+			$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]." на ".$GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["name"]);
+		}elseif($GLOBALS["arResort"]["season"]){
+			$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]." ".$GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["nameEnd"]);
+		}elseif($GLOBALS["arResort"]["title"]){
+			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
 		}
-		//Получить сезоны у этой страны
-		$rsSectSeason = CIBlockSection::GetList(
-			array('sort' => 'asc'),
-			array(
-			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-			   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-			   '!UF_SEASON' => false
-			),
-			false,
-			array('IBLOCK_ID','ID','NAME','CODE','UF_SEASON')
-		);
-		$seasonList = array();
-		while ($arSectSeason = $rsSectSeason->GetNext()){
-			$seasonList[] = $arSectSeason;
-		}
-		$GLOBALS["arResort"] = array(
-			'id' => $arSection['ID'],
-			'code' => $arSection['CODE'],
-			'name' => $arSection['UF_COUNTRY_NAME'],
-			'picture' => $arSection['DETAIL_PICTURE'],
-			'isRussia' => ((int)$arSection['IBLOCK_SECTION_ID'] == 2),
-			'seoText' => $arSection['DESCRIPTION'],
-			'title' => $arSection['NAME'],
-			'titleText' => $arSection['UF_HEADER_TEXT'],
-			'titleTV' => $arSection['UF_HEADER_TV'],
-			'month' => $arSection['UF_MONTH'],
-			'season' => $arSection['UF_SEASON'],
-			'countryIDTV' => $arSection['UF_COUNTRY_ID_TV'],
-			'resortIDTV' => $arSection['UF_RESORT_ID_TV'],
-			'cityIDTV' => $arSection['UF_CITY_ID_TV'],
-			'monthList' => array(),
-			'seasonList' => array(),
-		);
-		foreach ($monthList as $value) {
-			$GLOBALS["arResort"]["monthList"][$value["UF_MONTH"]] = array(
-				"name" => $value["NAME"],
-				"code" => $value["CODE"],
-			);
-		}
-		foreach ($seasonList as $value) {
-			$GLOBALS["arResort"]["seasonList"][$value["UF_SEASON"]] = array(
-				"name" => $value["NAME"],
-				"code" => $value["CODE"],
-			);
-		}
-		$headImg = CFile::ResizeImageGet($arSection["DETAIL_PICTURE"], Array("width" => 1920, "height" => 682), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 );
+		$headImg = $GLOBALS["arResort"]["headImg"];
 	}else{
 		CHTTP::SetStatus('404 Not found');
 		defined('ERROR_404') or define('ERROR_404', 'Y');
 	}
-	if($GLOBALS["arResort"]["month"]){
-		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]." на ".$GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["name"]);
-	}elseif($GLOBALS["arResort"]["season"]){
-		$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]." ".$GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["nameEnd"]);
-	}elseif($GLOBALS["arResort"]["title"]){
-		$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
+}
+
+if($isDetailResortMonth){
+	//получить месяц/сезон у курорта (раздел)
+	$GLOBALS["arMonth"] = getCountrySection($_REQUEST["MONTH"]);
+	if(!empty($GLOBALS["arMonth"])){
+		//установить заголовок
+		if($GLOBALS["arResort"]["title"] && $GLOBALS["arMonth"]["month"]){
+			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]." на ".$GLOBALS["monthsTV"][$GLOBALS["arMonth"]["month"]]["name"]);
+		}elseif($GLOBALS["arResort"]["title"] && $GLOBALS["arMonth"]["season"]){
+			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]." ".$GLOBALS["seasonsTV"][$GLOBALS["arMonth"]["season"]]["nameEnd"]);
+		}elseif($GLOBALS["arResort"]["title"]){
+			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
+		}
+		$headImg = $GLOBALS["arMonth"]["headImg"];
+	}else{
+		CHTTP::SetStatus('404 Not found');
+		defined('ERROR_404') or define('ERROR_404', 'Y');
 	}
 }
 
@@ -386,33 +250,58 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						</div>
 					</div>
 				</div>
-				<?if($isDetail && !$isDetailResort):?>
+
+				<?if($isDetail):?>
+					<?if($isDetail && !$isDetailResort && !$isDetailResortMonth){
+						$targetSect = $GLOBALS["arCountry"];
+					}elseif($isDetail && $isDetailResort && !$isDetailResortMonth){
+						$targetSect = $GLOBALS["arResort"];
+					}elseif($isDetail && $isDetailResortMonth){
+						$targetSect = $GLOBALS["arMonth"];
+					}
+					?>
 					<div class="b-head-content">
 						<?
-						$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], $curPage);//добавить текущую страну в цепочку
+						if($isDetail && !$isDetailResort && !$isDetailResortMonth){
+							//добавить текущую страну в цепочку
+							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], $curPage);
+						}elseif($isDetail && $isDetailResort && !$isDetailResortMonth){
+							//добавить текущую страну в цепочку
+							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/");
+							//добавить текущий курорт в цепочку
+							$APPLICATION->AddChainItem($GLOBALS["arResort"]["title"], $curPage);
+						}elseif($isDetail && $isDetailResortMonth){
+							//добавить текущую страну в цепочку
+							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/");
+							//добавить текущий курорт в цепочку
+							$APPLICATION->AddChainItem($GLOBALS["arResort"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/".$GLOBALS["arResort"]["code"]."/");
+							//добавить месяц/сезон в цепочку
+							$APPLICATION->AddChainItem($GLOBALS["arMonth"]["title"], $curPage);
+						}
 						$APPLICATION->IncludeComponent("bitrix:breadcrumb", "header", Array(
 							"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
 							"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
 							"START_FROM" => "0"	// Номер пункта, начиная с которого будет построена навигационная цепочка
-						), false);?>
+						), false);
+						?>
 						<h1><?$APPLICATION->ShowTitle()?></h1>
-						<p class="b-head-text"><?=$GLOBALS["arCountry"]["titleText"];?></p>
+						<p class="b-head-text"><?=$targetSect["titleText"];?></p>
 					</div>
 					<div class="b-adv-list clearfix">	
-						<?if($GLOBALS["arCountry"]["visa"]):?>
+						<?if($targetSect["visa"]):?>
 						<div class="b-adv-item">
 							<p><b>Виза в страну:</b></p>
-							<p><?=$GLOBALS["arCountry"]["visa"];?></p>
+							<p><?=$targetSect["visa"];?></p>
 						</div>
 						<?endif;?>
 					
-						<?if($GLOBALS["arCountry"]["resortList"]):?>
+						<?if($targetSect["resortList"]):?>
 						<div class="b-adv-item">
 							<p><b>Популярные курорты:</b></p>
 							<div>
 							<?
 								$arResortList = array();
-								foreach ($GLOBALS["arCountry"]["resortList"] as $value){
+								foreach ($targetSect["resortList"] as $value){
 									$arResortList[] = "<a href='".$value['url']."/'>".$value["name"]."</a>";
 								}
 								echo implode(", ", $arResortList);
@@ -420,25 +309,12 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 							</div>
 						</div>
 						<?endif;?>
-						<?if($GLOBALS["arCountry"]["bestTime"]):?>
+						<?if($targetSect["bestTime"]):?>
 						<div class="b-adv-item">
 							<p><b>Лучшее время для отдыха:</b></p>
-							<p><?=$GLOBALS["arCountry"]["bestTime"]?></p>
+							<p><?=$targetSect["bestTime"]?></p>
 						</div>
 						<?endif;?>
-					</div>
-				<?elseif($isDetailResort):?>
-					<div class="b-head-content">
-						<?
-						$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/");//добавить текущую страну в цепочку
-						$APPLICATION->AddChainItem($GLOBALS["arResort"]["title"], $curPage);//добавить текущий курорт в цепочку
-						$APPLICATION->IncludeComponent("bitrix:breadcrumb", "header", Array(
-							"PATH" => "",
-							"SITE_ID" => "s1",
-							"START_FROM" => "0"
-						), false);?>
-						<h1><?$APPLICATION->ShowTitle()?></h1>
-						<p class="b-head-text"><?=$GLOBALS["arResort"]["titleText"];?></p>
 					</div>
 				<?else:?>
 					<div class="b-head-content">

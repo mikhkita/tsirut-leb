@@ -52,7 +52,7 @@ function createMonthsAndSeasons($arSect){
 		   '!UF_MONTH' => false
 		),
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
+		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
 	);
 	$monthList = array();
 	while ($arSectMonth = $rsSectMonth->GetNext()){
@@ -75,7 +75,11 @@ function createMonthsAndSeasons($arSect){
 				"SORT" => $sort,
 				"DESCRIPTION" => "",
 				"DESCRIPTION_TYPE" => "",
-				"UF_MONTH" => $month
+				"UF_MONTH" => $month,
+				"UF_HEADER_TEXT" => $arSect["UF_HEADER_TEXT"],
+				"UF_HEADER_VISA" => $arSect["UF_HEADER_VISA"],
+				"UF_HEADER_TIME" => $arSect["UF_HEADER_TIME"],
+				"UF_HEADER_TV" => $arSect["UF_HEADER_TV"],
 			);
 			$ID = $bs->Add($arFields);
 			$res = ($ID>0);
@@ -102,7 +106,7 @@ function createMonthsAndSeasons($arSect){
 		   '!UF_SEASON' => false
 		),
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
+		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
 	);
 	$seasonList = array();
 	while ($arSectSeason = $rsSectSeason->GetNext()){
@@ -125,7 +129,11 @@ function createMonthsAndSeasons($arSect){
 				"SORT" => $sort,
 				"DESCRIPTION" => "",
 				"DESCRIPTION_TYPE" => "",
-				"UF_SEASON" => $season
+				"UF_SEASON" => $season,
+				"UF_HEADER_TEXT" => $arSect["UF_HEADER_TEXT"],
+				"UF_HEADER_VISA" => $arSect["UF_HEADER_VISA"],
+				"UF_HEADER_TIME" => $arSect["UF_HEADER_TIME"],
+				"UF_HEADER_TV" => $arSect["UF_HEADER_TV"],
 			);
 			$ID = $bs->Add($arFields);
 			$res = ($ID>0);
@@ -146,7 +154,7 @@ $rsSect = CIBlockSection::GetList(
 	array(),
 	array('IBLOCK_ID'=>1, 'ID' => $IDs),
 	false,
-	array()
+	array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
 );
 
 while($arSect = $rsSect->GetNext()){
@@ -163,7 +171,7 @@ while($arSect = $rsSect->GetNext()){
 		   '!UF_RESORT_ID_TV' => false
 		),
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
+		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
 	);
 	while ($arSectResort = $rsSectResort->GetNext()){
 		createMonthsAndSeasons($arSectResort);//генерим для курортов страны

@@ -1,5 +1,13 @@
 <?php
 $arUrlRewrite=array (
+  6 => 
+  array (
+    'CONDITION' => '#^/search/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'SECTION_CODE=$1&RESORT=$2&MONTH=$3$4',
+    'ID' => '',
+    'PATH' => '/search/detailResortMonth.php',
+    'SORT' => 100,
+  ),
   4 => 
   array (
     'CONDITION' => '#^/hot-tours/(.+)/(.+)/(\\\\?(.*))?#',
