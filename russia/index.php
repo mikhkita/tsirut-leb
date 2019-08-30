@@ -72,7 +72,7 @@ $APPLICATION->SetTitle("Отдых в России");
 		</div>
 	</div>
 </div>
-<div class="b b-popular">
+<div class="b b-popular-russia">
 	<div class="b-block">
 		<h2 class="b-title">Популярные направления</h2>
 		<div class="b-country-list square clearfix">

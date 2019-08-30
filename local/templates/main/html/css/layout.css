@@ -1037,7 +1037,7 @@ b{
 				line-height: 32px;
 			}
 
-.b-popular{
+.b-popular, .b-popular-russia{
 	z-index: 5;
 }
 	.b-country-list{

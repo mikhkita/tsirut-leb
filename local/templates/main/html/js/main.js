@@ -76,7 +76,7 @@ $(document).ready(function(){
                     autoplaySpeed: 3000,
                 });
             }
-            if(!$('b-country-wrap').length){
+            if(!$('.b-country-wrap').length && !$(".b-popular-russia").length){
                 $('.b-popular .b-country-list > .b-country-item').wrapAll('<div class="b-country-wrap mobile-slider"></div>');
             }
             if(!$('.b-country-wrap').hasClass("slick-initialized")){

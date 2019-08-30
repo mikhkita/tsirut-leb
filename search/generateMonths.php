@@ -4,7 +4,7 @@ $GLOBALS['APPLICATION']->RestartBuffer();
 $log = "";
 
 //Айдишники стран, для которых нужно сгенерить месяцы
-$IDs = array(4,5);
+$IDs = array(10,15,12,51,48,35,43,11,14,33,13,19,21,17,20,22);
 
 $months = array(
 	UF_MONTH_1 => "Январь",

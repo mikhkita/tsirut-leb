@@ -92,6 +92,9 @@ input {
 
 .b-country-list{
 	margin-bottom: 94px;
+}
+.b-popular-russia .b-country-list{
+	margin-bottom: 40px;
 }	
 	.b-country-slider {
 	    float: none;
@@ -108,6 +111,15 @@ input {
 	.b-country-item{
 		width: calc(50% - 12px);
 		margin: 0 12px;
+	}
+	.b-popular-russia .b-country-list .b-country-item{
+		width: calc(50% - 8px);
+		margin: 0;
+		margin-right: 16px;
+		margin-bottom: 24px;
+	}
+	.b-popular-russia .b-country-list .b-country-item:nth-child(2n){
+		margin-right: 0;
 	}
 	.b-country-list.square .b-country-item{
 		height: 250px;
@@ -2337,6 +2349,12 @@ div.TVTabedListContainer {
 }
 
 @media screen and (max-width: 430px){
+
+	.b-popular-russia .b-country-list .b-country-item{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 24px;
+	}
 
 	.b-content-deatail .detail-margin-b,
 	.detail-margin-b{
