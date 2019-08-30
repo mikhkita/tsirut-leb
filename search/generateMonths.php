@@ -4,7 +4,7 @@ $GLOBALS['APPLICATION']->RestartBuffer();
 $log = "";
 
 //Айдишники стран, для которых нужно сгенерить месяцы
-$IDs = array(10,15,12,51,48,35,43,11,14,33,13,19,21,17,20,22);
+$IDs = array(4,5);
 
 $months = array(
 	UF_MONTH_1 => "Январь",
@@ -46,9 +46,7 @@ function createMonthsAndSeasons($arSect){
 		array('sort' => 'asc'),
 		array(
 		   'IBLOCK_ID' => $arSect['IBLOCK_ID'],
-		   '>LEFT_MARGIN' => $arSect['LEFT_MARGIN'],
-		   '<RIGHT_MARGIN' => $arSect['RIGHT_MARGIN'],
-		   '>DEPTH_LEVEL' => $arSect['DEPTH_LEVEL'],
+		   'SECTION_ID' => $arSect['ID'],
 		   '!UF_MONTH' => false
 		),
 		false,
@@ -62,6 +60,7 @@ function createMonthsAndSeasons($arSect){
 	$sort = 100;
 	foreach ($months as $month => $name) {
 		if(!in_array($month, $monthList)){//если этот месяц ещё не создан, то создать
+
 			$bs = new CIBlockSection;
 
 			$code = getCode($name);
@@ -81,6 +80,7 @@ function createMonthsAndSeasons($arSect){
 				"UF_HEADER_TIME" => $arSect["UF_HEADER_TIME"],
 				"UF_HEADER_TV" => $arSect["UF_HEADER_TV"],
 			);
+
 			$ID = $bs->Add($arFields);
 			$res = ($ID>0);
 
@@ -100,9 +100,7 @@ function createMonthsAndSeasons($arSect){
 		array('sort' => 'asc'),
 		array(
 		   'IBLOCK_ID' => $arSect['IBLOCK_ID'],
-		   '>LEFT_MARGIN' => $arSect['LEFT_MARGIN'],
-		   '<RIGHT_MARGIN' => $arSect['RIGHT_MARGIN'],
-		   '>DEPTH_LEVEL' => $arSect['DEPTH_LEVEL'],
+		   'SECTION_ID' => $arSect['ID'],
 		   '!UF_SEASON' => false
 		),
 		false,
@@ -135,6 +133,7 @@ function createMonthsAndSeasons($arSect){
 				"UF_HEADER_TIME" => $arSect["UF_HEADER_TIME"],
 				"UF_HEADER_TV" => $arSect["UF_HEADER_TV"],
 			);
+			
 			$ID = $bs->Add($arFields);
 			$res = ($ID>0);
 
@@ -157,24 +156,26 @@ $rsSect = CIBlockSection::GetList(
 	array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
 );
 
-while($arSect = $rsSect->GetNext()){
-	createMonthsAndSeasons($arSect);//генерим для страны
+while($arSectCountry = $rsSect->GetNext()){
+	createMonthsAndSeasons($arSectCountry);//генерим для страны
 
 	//Получить курорты страны
 	$rsSectResort = CIBlockSection::GetList(
 		array('sort' => 'asc'),
 		array(
-		   'IBLOCK_ID' => $arSect['IBLOCK_ID'],
-		   '>LEFT_MARGIN' => $arSect['LEFT_MARGIN'],
-		   '<RIGHT_MARGIN' => $arSect['RIGHT_MARGIN'],
-		   '>DEPTH_LEVEL' => $arSect['DEPTH_LEVEL'],
+		   'IBLOCK_ID' => $arSectCountry['IBLOCK_ID'],
+		   'SECTION_ID' => $arSectCountry['ID'],
 		   '!UF_RESORT_ID_TV' => false
 		),
 		false,
 		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_MONTH','UF_SEASON','UF_RESORT_ID_TV')
 	);
+	$arResorts = array();
 	while ($arSectResort = $rsSectResort->GetNext()){
-		createMonthsAndSeasons($arSectResort);//генерим для курортов страны
+		$arResorts[] = $arSectResort;
+	}
+	foreach ($arResorts as $key => $value) {
+		createMonthsAndSeasons($value);//генерим для курортов страны
 	}
 }
 

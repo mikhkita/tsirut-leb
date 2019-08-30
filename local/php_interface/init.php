@@ -112,12 +112,17 @@ function writeLog($record, $filename){
 }
 
 //Получить инфу о разделе в стране
-function getCountrySection($code){
+function getCountrySection($country, $curSection = false){
 	//CModule::IncludeModule('iblock');
 	$arCountrySect = array();
+	if($curSection){//вложенный в страну раздел
+		$arFilter = array('IBLOCK_ID'=>1, '=CODE'=>$curSection, "=SECTION_ID"=>$country);
+	}else{
+		$arFilter = array('IBLOCK_ID'=>1, '=CODE'=>$country);
+	}
 	$rsSections = CIBlockSection::GetList(
 		array(),
-		array('IBLOCK_ID'=>1, '=CODE'=>$code),
+		$arFilter,
 		false,
 		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON')
 	);

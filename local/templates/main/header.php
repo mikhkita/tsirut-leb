@@ -84,7 +84,7 @@ if($isDetail){
 
 if($isDetailResort){
 	//получить курорт/месяц/сезон у страны (раздел)
-	$GLOBALS["arResort"] = getCountrySection($_REQUEST["RESORT"]);
+	$GLOBALS["arResort"] = getCountrySection($GLOBALS["arCountry"]["id"], $_REQUEST["RESORT"]);
 	if(!empty($GLOBALS["arResort"])){
 		//установить заголовок
 		if($GLOBALS["arResort"]["month"]){
@@ -103,7 +103,7 @@ if($isDetailResort){
 
 if($isDetailResortMonth){
 	//получить месяц/сезон у курорта (раздел)
-	$GLOBALS["arMonth"] = getCountrySection($_REQUEST["MONTH"]);
+	$GLOBALS["arMonth"] = getCountrySection($GLOBALS["arResort"]["id"], $_REQUEST["MONTH"]);
 	if(!empty($GLOBALS["arMonth"])){
 		//установить заголовок
 		if($GLOBALS["arResort"]["title"] && $GLOBALS["arMonth"]["month"]){
