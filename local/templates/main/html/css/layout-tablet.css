@@ -716,6 +716,52 @@ div.TVFORow3 {
 	    width: calc(100% - 48px);
 	}
 
+	.b-about-top-sign {
+	    margin-right: 40px;
+	    width: 140px;
+	    height: 77px;
+	}
+	.b-about-top-left {
+	    padding-right: 32px;
+	}
+	.b-about-top-right{
+		height: 400px;
+	}
+	.b-about-top-dir {
+	    width: calc(100% - 186px);
+	}
+	.b-about-top-left {
+	    font-size: 16px;
+	    line-height: 24px;
+	}
+	.b-about-top-left h3 {
+		font-size: 28px;
+    	line-height: 36px;
+	    margin-bottom: 20px;
+	}
+
+	.b-about-selection p {
+	    font-size: 28px;
+	    line-height: 36px;
+	}
+	.b-about-selection p br,
+	.b-about-services-item p br{
+		display: none;
+	}
+		.b-about-selection h2 {
+	    font-size: 45px;
+	    text-align: left;
+	    margin-bottom: 35px;
+	}
+	.b-about-services-item img {
+	    width: 120px;
+	    height: 120px;
+	    margin-bottom: 24px;
+	}
+	.b-about-wide {
+	    background-position: 75% 50%;
+	}
+
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 11px;
 	}

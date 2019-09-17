@@ -141,11 +141,12 @@ $(document).ready(function(){
                 });
             }
             $(".stick").trigger("sticky_kit:detach");
-            
+            if($(".b-about-top-right .b-about-img").length){
+                $(".b-about-mobile-cont").append($(".b-about-top-right .b-about-img"));
+            }
         }else{
             step = 16;
-            //удалить слайдеры
-            $(".mobile-slider").each(function() {
+            $(".mobile-slider").each(function() {//удалить слайдеры
                 if($(this).hasClass("slick-initialized")){
                     $(this).slick('unslick');
                     if($(this).hasClass("b-country-wrap")){
@@ -154,6 +155,9 @@ $(document).ready(function(){
                     }
                 }
             });
+            if(!$(".b-about-top-right .b-about-img").length){
+                $(".b-about-top-right").append($(".b-about-mobile-cont .b-about-img"));
+            }
             // if( myWidth > 1090 ){
             //     rowCountry = 4;
             // }else if( myWidth > 850 ){

@@ -843,6 +843,129 @@ ul.b-breadcrumbs{
 	min-width: 0 !important;
 }
 
+.b-half-gradient{
+    background-image: -webkit-linear-gradient(left, #0080FF 0%, rgba(255,145,42,0.35) 100%);
+    background-image: -o-linear-gradient(left, #0080FF 0%, rgba(255,145,42,0.35) 100%);
+    background-image: linear-gradient(to right, #0080FF 0%, rgba(255,145,42,0.35) 100%);
+}
+
+.b-about-selection p br,
+.b-about-services-item p br{
+	display: none;
+}
+
+.b-about{
+	margin-bottom: 50px;
+}
+	.b-about-top{
+		margin-bottom: 50px;
+	}
+		.b-about-top-left{
+			float: none;
+		    width: 100%;
+		    padding-right: 0;
+		    font-size: 16px;
+		    line-height: 24px;
+		}
+		.b-about-top-right{
+			display: none;
+		}
+			.b-about-top-left h3 {
+			    padding-top: 20px;
+	    		text-align: center;
+	    		font-size: 28px;
+    			line-height: 36px;
+	    		margin-bottom: 26px;
+			}
+			.b-about-top-right .b-about-img{
+				display: none;
+			}
+			.b-about-mobile-cont{
+				text-align: center;
+			}
+				.b-about-mobile-cont .b-about-img{
+					margin: 0 auto;
+					width: 100%;
+					max-width: 400px;
+					height: 400px;
+					margin-bottom: 24px;
+				}
+	.b-about-top-sign {
+	    margin-right: 40px;
+	    width: 140px;
+	    height: 77px;
+	}
+	.b-about-top-dir {
+	    width: calc(100% - 186px);
+	}
+
+.b-about-wide{
+
+}
+
+.b-about-selection{
+	padding-top: 100px;
+	padding-bottom: 100px;
+	margin-bottom: 50px;
+}
+	.b-about-selection-content{
+		max-width: none;
+	}
+		.b-about-selection h2{
+			font-size: 32px;
+			line-height: 40px;
+			margin-bottom: 24px;
+		}
+		.b-about-selection p{
+			font-size: 20px;
+			line-height: 30px;
+		}
+
+.b-about-5-cause{
+
+}
+	.b-about-5-cause.b-4 h2{
+		font-size: 32px;
+		line-height: 40px;
+		margin-bottom: 32px;
+	}
+
+.b-about-services{
+	padding-top: 40px;
+	padding-bottom: 60px;
+	margin-bottom: 40px;
+}
+	.b-about-services h2{
+		line-height: 40px;
+		margin-bottom: 40px;
+	}
+	.b-about-services-list{
+
+	}
+		.b-about-services-item{
+			display: inline-block;
+			vertical-align: top;
+			width: calc(100%/3 - 20px);
+			margin-right: 24px;
+			text-align: center;
+		}
+		.b-about-services-item:last-child{
+			margin-right: 0;
+		}
+			.b-about-services-item img{
+				display: inline-block;
+				vertical-align: top;
+				width: 148px;
+				height: 143px;
+				margin-bottom: 32px;
+			}
+			.b-about-services-item p{
+				max-width: 344px;
+				margin: 0 auto;
+				font-size: 20px;
+				line-height: 28px;
+			}
+
 
 /*===========*/
 
@@ -1637,6 +1760,11 @@ div.TVTabedListContainer {
 		background-color: #f9fafc;
 	}
 
+	.b-about-mobile-cont .b-about-img{
+	    max-width: 300px;
+	    height: 300px;
+	}
+
 	/*====*/
 
 	.b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton,
@@ -2420,6 +2548,14 @@ div.TVTabedListContainer {
 
 	.b-hot-group-dates span{
 		display: block;
+	}
+
+	.b-about-top-sign {
+	    display: none;
+	}
+	.b-about-top-dir {
+		text-align: left;
+	    width: 100%;
 	}
 
 	div.TVDTCalendar .TVCalendarPrice {
