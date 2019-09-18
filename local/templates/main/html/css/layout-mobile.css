@@ -276,7 +276,8 @@ ul.b-breadcrumbs{
     margin-left: -24px;
     width: calc(100% + 48px);
 }
-	.b-4-item{
+	.b-4-item,
+	.b-4-item.b-4-item-wide{
 		width: 100%;
 		margin-right: 0;
 	}
@@ -922,7 +923,26 @@ ul.b-breadcrumbs{
 		}
 
 .b-about-5-cause{
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 40px;
+}
+	.b-about-5-cause .b-4-item,
+	.b-about-5-cause .b-4-item.b-4-item-wide,
+	.b-about-5-cause .b-4-item:nth-child(3){
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
 
+.b-about-services-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 16px;
+}
+.b-about-services-item p {
+    font-size: 16px;
+    line-height: 24px;
 }
 	.b-about-5-cause.b-4 h2{
 		font-size: 32px;
@@ -943,27 +963,16 @@ ul.b-breadcrumbs{
 
 	}
 		.b-about-services-item{
-			display: inline-block;
-			vertical-align: top;
-			width: calc(100%/3 - 20px);
-			margin-right: 24px;
-			text-align: center;
+			
 		}
 		.b-about-services-item:last-child{
-			margin-right: 0;
+			
 		}
 			.b-about-services-item img{
-				display: inline-block;
-				vertical-align: top;
-				width: 148px;
-				height: 143px;
-				margin-bottom: 32px;
+				
 			}
 			.b-about-services-item p{
-				max-width: 344px;
-				margin: 0 auto;
-				font-size: 20px;
-				line-height: 28px;
+				
 			}
 
 
@@ -1764,6 +1773,12 @@ div.TVTabedListContainer {
 	    max-width: 300px;
 	    height: 300px;
 	}
+	.b-about-top-left h3 {
+	    padding-top: 0;
+	}
+	.b-about .b-content-back {
+	    padding: 24px 16px 0 16px;
+	}
 
 	/*====*/
 
@@ -2199,6 +2214,36 @@ div.TVTabedListContainer {
 	.b-city-tab {
 	    margin-bottom: 16px;
 	}
+
+	.b-half-gradient{
+		background-image: none;
+		background-color: #0080FF;
+		opacity: 0.75;
+	}
+
+	.b-about-services-item {
+	    display: block;
+	    width: 100%;
+	    margin-right: 0;
+	    margin-bottom: 24px;
+	}
+		.b-about-services-item img {
+		    display: inline-block;
+			vertical-align: top;
+			margin-bottom: 0;
+			margin-right: 16px;
+		}
+		.b-about-services-item p {
+			width: calc(100% - 90px);
+			text-align: left;
+		    display: inline-block;
+		    vertical-align: top;
+		    margin-bottom: 0;
+		}
+	.b-about-services {
+	    padding-bottom: 30px;
+	}
+
 
 	/*===============*/
 

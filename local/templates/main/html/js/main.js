@@ -108,6 +108,7 @@ $(document).ready(function(){
                     speed: 600,
                     autoplay: true,
                     autoplaySpeed: 3000,
+                    adaptiveHeight: true,
                 });
             }
             if(!$('.b-review-slider').hasClass("slick-initialized")){

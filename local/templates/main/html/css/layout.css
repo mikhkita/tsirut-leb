@@ -3341,6 +3341,11 @@ ul.b-breadcrumbs {
 .b-about{
 	margin-bottom: 80px;
 }
+	.b-about .b-content-back{
+		min-height: 0;
+		margin: 0 auto;
+		padding: 32px 40px 0 40px;
+	}
 	.b-about-top{
 		margin-bottom: 100px;
 	}
