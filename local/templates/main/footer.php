@@ -694,6 +694,7 @@
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/jquery.touch.min.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/jquery.maskedinput.min.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/KitProgress.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/KitAnimate.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/mask.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/KitSend.js"></script>

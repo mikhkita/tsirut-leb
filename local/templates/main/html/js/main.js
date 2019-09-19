@@ -1,4 +1,5 @@
-var clickToggle = false;
+var clickToggle = false,
+    progress = new KitProgress("#ED7408", 4);
 
 $(document).ready(function(){
 
@@ -715,6 +716,32 @@ $(document).ready(function(){
         });
         uploaderReview.init();
     }
+
+    var articlesAjax;
+    $(document).on("change", ".b-articles-sort-form .select-sort", function(){
+        var $form = $(this).parents("form");
+        window.history.replaceState(null , null, '?'+$form.serialize());
+        var url = window.location.href;
+        progress.start(1.5);
+        if(articlesAjax){
+            articlesAjax.abort();
+        }
+        articlesAjax = $.ajax({
+            type: $(this).attr("method"),
+            url: url,
+            dataType: "html",
+            success: function(data){
+                var $html = $(data).find(".b-article-page-list").html();
+                if ($html.length) {
+                    $(".b-article-page-list").html($html);
+                }
+            },
+            complete: function(){
+                articlesAjax = false;
+                progress.end();
+            }
+        });
+    })
 
     // =========Турвизор=========
 

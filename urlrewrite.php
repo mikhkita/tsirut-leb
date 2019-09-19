@@ -16,6 +16,14 @@ $arUrlRewrite=array (
     'PATH' => '/hot-tours/detail.php',
     'SORT' => 100,
   ),
+  7 => 
+  array (
+    'CONDITION' => '#^/articles-tag/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'TAG=$1&$2',
+    'ID' => '',
+    'PATH' => '/articles/index.php',
+    'SORT' => 100,
+  ),
   5 => 
   array (
     'CONDITION' => '#^/search/(.+)/(.+)/(\\\\?(.*))?#',
