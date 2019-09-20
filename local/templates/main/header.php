@@ -17,7 +17,7 @@ $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "search"
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 9;
+$GLOBALS["version"] = 10;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -333,7 +333,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						?>
 						<h1><?$APPLICATION->ShowTitle()?></h1>
 
-						<?if($APPLICATION->GetProperty("header-text") != "-"):?>
+						<?if($APPLICATION->GetProperty("header-text") != "-" && !isset($_REQUEST["TAG"])):?>
 							<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
 						<?endif;?>
 					</div>

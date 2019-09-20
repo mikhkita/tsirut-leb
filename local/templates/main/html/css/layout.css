@@ -3600,6 +3600,9 @@ ul.b-breadcrumbs {
 			background-color: transparent;
 		}
 
+.b-articles-page-right .b-tourvisor-nav{
+	margin-top: 0;
+}
 .b-articles-page-tags{
 
 }
@@ -3623,6 +3626,10 @@ ul.b-breadcrumbs {
 			border: 2px solid #E7ECF1;
 			border-radius: 3px;
 			padding: 2px 14px 4px 14px;
+		}
+		.b-tourvisor-nav-item ul.b-articles-page-tags li a.active{
+			color: #ED7408;
+			border: 2px solid #ED7408;
 		}
 	.b-tourvisor-nav-item ul.b-articles-page-tags li:hover a{
 		border: 2px solid #ED7408;

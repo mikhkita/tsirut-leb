@@ -476,6 +476,14 @@ div.TVFORow3 {
 	    line-height: 36px;
 	}
 
+	.b-article-page-item .b-img{
+		width: 200px;
+		height: 120px;
+	}
+	.b-article-page-item .b-right{
+		width: calc(100% - 226px);
+	}
+
 	.b-tourvisor-with-filter div.TVMainFilter{
 		white-space: normal;
 	}
@@ -762,6 +770,13 @@ div.TVFORow3 {
 	    background-position: 75% 50%;
 	}
 
+	.b-articles-page-left {
+	    width: calc(100% - 280px);
+	}
+	.b-articles-page-right {
+	    width: 254px;
+	}
+
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 11px;
 	}
@@ -829,6 +844,17 @@ div.TVFORow3 {
 	.b-categories-item p {
 	    font-size: 18px;
 	    line-height: 18px;
+	}
+
+	.b-article-page-item .b-img {
+		display: block;
+	    width: 302px;
+		height: 180px;
+		margin-bottom: 20px;
+	}
+	.b-article-page-item .b-right{
+		display: block;
+		width: 100%;
 	}
 	
 	/*.b-tourvisor-header div.TVMainFilter{

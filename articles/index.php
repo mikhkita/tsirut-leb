@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Статьи");
+$APPLICATION->SetTitle("Наш блог о путешествиях");
 ?><div class="b-articles-page">
 	<div class="b-content-back b-contacts-top">
 		<div class="b-block">
@@ -47,7 +47,7 @@ $APPLICATION->SetTitle("Статьи");
 						"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 						"INCLUDE_SUBSECTIONS" => "Y",
 						"MESSAGE_404" => "",
-						"NEWS_COUNT" => "2",
+						"NEWS_COUNT" => "7",
 						"PAGER_BASE_LINK_ENABLE" => "N",
 						"PAGER_DESC_NUMBERING" => "N",
 						"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -64,8 +64,12 @@ $APPLICATION->SetTitle("Статьи");
 						"SET_META_DESCRIPTION" => "Y",
 						"SET_META_KEYWORDS" => "Y",
 						"SET_STATUS_404" => "N",
-						"SET_TITLE" => "Y",
+						"SET_TITLE" => "N",
 						"SHOW_404" => "N",
+						"SORT_BY1" => "CREATED",
+						"SORT_BY2" => "SORT",
+						"SORT_ORDER1" => "ASC",
+						"SORT_ORDER2" => "ASC",
 						"STRICT_SECTION_CHECK" => "N"
 					);
 					//Сортировка
@@ -74,13 +78,12 @@ $APPLICATION->SetTitle("Статьи");
 						$params["SORT_BY2"] = "SORT";
 						$params["SORT_ORDER1"] = $_REQUEST["SORT"];
 						$params["SORT_ORDER2"] = "ASC";
-					}else{
-						$params["SORT_BY1"] = "CREATED";
-						$params["SORT_BY2"] = "SORT";
-						$params["SORT_ORDER1"] = "DESC";
-						$params["SORT_ORDER2"] = "ASC";
 					}
 					//Наличие тега
+					if(isset($_REQUEST["TAG"]) && !empty($_REQUEST["TAG"])){
+						$GLOBALS["arrFilter"] = array("?TAGS" => $_REQUEST["TAG"]);
+						$params["FILTER_NAME"] = "arrFilter";
+					}
 					
 					$APPLICATION->IncludeComponent(
 						"bitrix:news.list",

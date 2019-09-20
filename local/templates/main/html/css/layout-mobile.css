@@ -975,6 +975,29 @@ ul.b-breadcrumbs{
 				
 			}
 
+.b-articles-sort {
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+.b-articles-page-top {
+    margin-bottom: 40px;
+}
+.b-articles-page-left{
+	margin-bottom: 40px;
+}
+.b-articles-page-left,
+.b-articles-page-right{
+	display: block;
+	margin-right: 0;
+	width: 100%;
+}
+.b-article-page-item {
+    margin-bottom: 30px;
+}
+.b-tourvisor-nav-item ul.months {
+    -webkit-column-count: 3;
+    column-count: 3;
+}
 
 /*===========*/
 
@@ -1780,6 +1803,14 @@ div.TVTabedListContainer {
 	    padding: 24px 16px 0 16px;
 	}
 
+	.b-article-page-item .b-img{
+		width: 200px;
+		height: 120px;
+	}
+	.b-article-page-item .b-right{
+		width: calc(100% - 226px);
+	}
+
 	/*====*/
 
 	.b-tourvisor-with-filter div.TVTheme2 .TVSRNavButton,
@@ -2243,7 +2274,21 @@ div.TVTabedListContainer {
 	.b-about-services {
 	    padding-bottom: 30px;
 	}
-
+	
+	.b-tourvisor-nav-item ul.months {
+	    -webkit-column-count: 2;
+	    column-count: 2;
+	}
+	.b-article-page-item .b-img {
+		display: block;
+	    width: 302px;
+		height: 180px;
+		margin-bottom: 20px;
+	}
+	.b-article-page-item .b-right{
+		display: block;
+		width: 100%;
+	}
 
 	/*===============*/
 

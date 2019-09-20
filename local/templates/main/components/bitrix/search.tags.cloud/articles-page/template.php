@@ -13,11 +13,17 @@
 $this->setFrameMode(true);
 ?>
 <ul class="b-articles-page-tags">
-<?//print_r($arResult);?>
+	
 <?if(is_array($arResult["SEARCH"]) && !empty($arResult["SEARCH"])):?>
 	<?foreach ($arResult["SEARCH"] as $key => $res):?>
 	<li class="tag-item">
-		<a href="/articles-tag/<?=$res["NAME"]?>/"><?=$res["NAME"]?></a>
+		<?
+		$class = "";
+		if(isset($_REQUEST["TAG"]) && !empty($_REQUEST["TAG"]) && $_REQUEST["TAG"] == $res["NAME"]){
+			$class = "active";
+		}
+		?>
+		<a href="/articles-tag/<?=$res["NAME"]?>/" class="<?=$class?>"><?=$res["NAME"]?></a>
 	</li>
 	<?endforeach;?>
 <?endif;?>
