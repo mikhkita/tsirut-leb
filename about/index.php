@@ -13,19 +13,18 @@ $APPLICATION->SetTitle("О компании");
 				<div class="b-about-mobile-cont"></div>
 				<p><?=includeArea("about-top-text");?></p>
 				<div class="b-about-top-bottom">
-					<div class="b-about-top-sign" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/html/i/about-sign.png);"></div>
+					<div class="b-about-top-sign"></div>
 					<div class="b-about-top-dir"><?=includeArea("about-top-sign");?></div>
 				</div>
 			</div>
 			<div class="b-about-top-right">
-				<div class="b-about-img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/html/i/about-dir.jpg);"></div>
+				<div class="b-about-img"></div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="b b-about-selection b-about-wide" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/html/i/about-back-1.jpg);">
-	<div class="b-half-gradient"></div>
-	<div class="b-block gradient-after">
+<div class="b b-about-selection b-about-wide">
+	<div class="b-block">
 		<div class="b-about-selection-content">
 			<h2 class="b-title white regular"><?=includeArea("about-select-head");?></h2>
 			<p><?=includeArea("about-select-text");?></p>
@@ -92,9 +91,8 @@ $APPLICATION->SetTitle("О компании");
 		</div>
 	</div>
 </div>
-<div class="b b-about-services b-about-wide" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/html/i/about-back-2.jpg);">
-	<div class="b-head-gradient"></div>
-	<div class="b-block gradient-after">
+<div class="b b-about-services b-about-wide">
+	<div class="b-block">
 		<h2 class="b-title white regular">Все для <b>вашего удобства</b></h2>
 		<div class="b-about-services-list">
 			<div class="b-about-services-item">
