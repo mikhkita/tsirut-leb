@@ -21,7 +21,7 @@ $APPLICATION->SetTitle("Наш блог о путешествиях");
 						 <?
 					$params = Array(
 						"ACTIVE_DATE_FORMAT" => "j F Y",
-						"ADD_SECTIONS_CHAIN" => "Y",
+						"ADD_SECTIONS_CHAIN" => "N",
 						"AJAX_MODE" => "N",
 						"AJAX_OPTION_ADDITIONAL" => "",
 						"AJAX_OPTION_HISTORY" => "N",
@@ -44,7 +44,7 @@ $APPLICATION->SetTitle("Наш блог о путешествиях");
 						"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 						"IBLOCK_ID" => "6",
 						"IBLOCK_TYPE" => "content",
-						"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+						"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 						"INCLUDE_SUBSECTIONS" => "Y",
 						"MESSAGE_404" => "",
 						"NEWS_COUNT" => "7",
@@ -81,8 +81,10 @@ $APPLICATION->SetTitle("Наш блог о путешествиях");
 					}
 					//Наличие тега
 					if(isset($_REQUEST["TAG"]) && !empty($_REQUEST["TAG"])){
+						$APPLICATION->SetTitle("По тегу \"".$_REQUEST["TAG"]."\"");
 						$GLOBALS["arrFilter"] = array("?TAGS" => $_REQUEST["TAG"]);
 						$params["FILTER_NAME"] = "arrFilter";
+						$params["INCLUDE_IBLOCK_INTO_CHAIN"] = "Y";
 					}
 					
 					$APPLICATION->IncludeComponent(

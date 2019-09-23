@@ -81,7 +81,8 @@ div.TVTourBlock .TVPriceArrow:before,
 .b-tourvisor-calendar-cont .TVCalTempSun .TVCalTemperatureValue:before,
 .b-tourvisor-calendar-cont .TVCalTempWater .TVCalTemperatureValue:before,
 div.TVOrderHotelStar:before,
-div.TVHotelTypeItem:before{
+div.TVHotelTypeItem:before,
+.b-select-chosen:before{
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -2959,7 +2960,6 @@ ul.b-breadcrumbs {
 				display: table-cell;
 				vertical-align: middle;
 				width: 302px;
-				height: 302px;
 				border-radius: 10px;
 			}
 			.b-advice-text{
@@ -3490,6 +3490,10 @@ ul.b-breadcrumbs {
 	.b-articles-page{
 
 	}
+	.b-articles-sort,
+	.b-articles-page-top h3{
+		color: #282828;
+	}
 		.b-articles-page-left{
 			display: inline-block;
 			vertical-align: top;
@@ -3509,7 +3513,7 @@ ul.b-breadcrumbs {
 						height: 180px;
 					    background-position: 50% 50%;
 					    background-repeat: no-repeat;
-					    background-size: contain;
+					    background-size: cover;
 						margin-right: 20px;
 					}
 					.b-article-page-item .b-right{
@@ -3592,6 +3596,20 @@ ul.b-breadcrumbs {
 			padding: 8px 32px 8px 22px;
 			background-color: transparent;
 		}
+
+.b-select-chosen{
+	position: relative;
+}
+	.b-select-chosen select{
+		width: 100%;
+		padding: 8px 32px 8px 22px;
+		background-color: transparent;
+		border: 2px solid #B5C3D6;
+		border-radius: 6px;
+		font-size: 16px;
+		line-height: 24px;
+		font-family: 'Gilroy-Medium';
+	}
 
 .b-articles-page-right .b-tourvisor-nav{
 	margin-top: 0;

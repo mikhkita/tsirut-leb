@@ -6,6 +6,7 @@ CModule::IncludeModule("iblock");
 
 $curPage = $APPLICATION->GetCurPage();
 $urlArr = explode("/", $curPage);
+$GLOBALS["urlArr"] = $urlArr;
 $GLOBALS["isMain"] = $isMain = ( $curPage == "/" )?true:false;
 
 //Детальная страны
@@ -17,7 +18,7 @@ $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "search"
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 10;
+$GLOBALS["version"] = 11;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
