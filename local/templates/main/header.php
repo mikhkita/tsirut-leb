@@ -235,11 +235,14 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		>
 			<div class="b-block">
 				<div class="b-head-top clearfix">
-					<a href="/" class="b-logo"></a>
-					<div class="b-head-feedback">
-						<a href="tel:<?=includeArea("phone", true)?>" class="b-head-phone"><?=includeArea("phone")?></a><br>
-						<a href="#b-popup-call" class="dashed fancy">Заказать звонок</a>
+					<div class="b-head-top-left">
+						<a href="/" class="b-logo"></a>
+						<div class="b-head-feedback">
+							<a href="tel:<?=includeArea("phone", true)?>" class="b-head-phone"><?=includeArea("phone")?></a><br>
+							<a href="#b-popup-call" class="dashed fancy">Заказать звонок</a>
+						</div>
 					</div>
+					<div class="b-head-top-right"><?=includeArea("footer-addr")?></div>
 					<div class="b-menu-mobile-cont">
 						<div class="b-menu-mobile">
 							<span class="b-menu-button icon-menu"></span>

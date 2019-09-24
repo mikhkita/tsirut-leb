@@ -280,7 +280,7 @@ div.TVFORow3 {
     padding-right: 20px;
 }
 .b-search-tours{
-	min-width: 200px;
+	min-width: 180px;
 }
 
 @media screen and (max-width: 1210px){
@@ -573,6 +573,15 @@ div.TVFORow3 {
 
 @media screen and (max-width: 1024px){
 	
+	.b-head-top-right {
+		text-align: left;
+    	float: none;
+    	padding-top: 14px;
+        margin-left: 26px;
+	}
+	.b-head-inner .b-head-top{
+		margin-bottom: 15px;
+	}
 	.b-menu{
 		display: none;
 	}

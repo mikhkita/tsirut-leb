@@ -44,6 +44,9 @@ input {
 	padding-top: 20px;
 	min-height: 515px;
 }
+	.b-head-top-right{
+		display: none;
+	}
 	.b-head-text {
 	    max-width: 435px;
 	    margin: 0 auto 50px auto;

@@ -743,6 +743,50 @@ $(document).ready(function(){
         });
     })
 
+    // =========ТурТранс=========
+
+    if($(".b-block-ttv").length){
+        var waitTTV = setInterval(function(){
+            if( $(".b-block-ttv .ttv-search").length ){
+                $(".b-block-ttv .ttv-search h1").remove();
+                //заменить подписи
+                $(".ttv-field label[for='ttv-city-out']").text("Город отправления");
+                $(".ttv-field label[for='ttv-country']").text("Страна");
+                $(".ttv-field label[for='ttv-cities']").text("Город");
+                $(".ttv-field label[for='ttv-price']").text("Стоимость до, руб.");
+                $(".ttv-field label[for='ttv-duration-min']").text("Кол-во дней");
+                $(".ttv-field label[for='ttv-out-from']").text("Даты отправления");
+                //добавить "-" между инпутами
+                $(".ttv-search .ttv-field:nth-child(4), .ttv-search .ttv-field:nth-child(5)")
+                    .contents().filter(function() {return this.nodeType == 3;}).remove();
+                $("#ttv-duration-min, #ttv-out-from").after("<div class='ttv-sep'>-</div>");
+                //обернуть блоки с чекбоксами
+                $(".ttv-checkboxes .ttv-column").wrapAll("<div class='ttv-column-wrap'></div>");
+                $(".ttv-actions button").text("Найти тур");
+                //создать свои чекбоксы
+                $(".ttv-checkboxes .ttv-column label").each(function(){
+                    var checkboxTemplate = '<div class="b-checkbox">'+
+                        '<input data-checkbox="'+$(this).attr("for")+'" id="custom-'+$(this).attr("for")+'" type="checkbox">'+
+                        '<label for="custom-'+$(this).attr("for")+'">'+
+                            '<div class="b-checked icon-checked"></div>'+
+                            '<p>'+$(this).text().trim()+'</p>'+
+                        '</label>'+
+                    '</div>';
+                    $(this).after(checkboxTemplate);
+                    //связать чекбоксы
+                    $(document).on("change", "#custom-"+$(this).attr("for"), function(){
+                        $("#"+$(this).attr("data-checkbox")).click();
+                    });
+                });
+                clearInterval(waitTTV);
+            }
+        }, 30);
+    }
+
+    // function createCheckboxTTV(id) {
+    //     // body...
+    // }
+
     // =========Турвизор=========
 
     if($(".b-tourvisor-header").length){

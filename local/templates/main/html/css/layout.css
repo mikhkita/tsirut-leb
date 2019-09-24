@@ -82,7 +82,8 @@ div.TVTourBlock .TVPriceArrow:before,
 .b-tourvisor-calendar-cont .TVCalTempWater .TVCalTemperatureValue:before,
 div.TVOrderHotelStar:before,
 div.TVHotelTypeItem:before,
-.b-select-chosen:before{
+.b-select-chosen:before,
+.b-block-ttv div.ttv-search .ttv-field > label:before{
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -494,6 +495,19 @@ b{
 		z-index: 5;
 		margin-bottom: 30px;
 	}
+		.b-head-top-left{
+			display: inline-block;
+			vertical-align: top;
+		}
+		.b-head-top-right{
+			display: inline-block;
+			vertical-align: top;
+			padding-top: 5px;
+			width: 220px;
+    		text-align: right;
+    		color: #FFF;
+			float: right;
+		}
 		.b-logo{
 			display: inline-block;
 			width: 125px;
@@ -7848,5 +7862,292 @@ div.TVSearchResults .TVSRHelpForm{
 
 	div.TVHelpFormControl .TVSRUserContactsBlock{
 		padding-right: 16px;
+	}
+
+/*===========TourTrans==========*/
+
+.b-block-ttv div.ttv-search{
+	color: #282828;
+	font-family: 'Gilroy-Regular';
+}
+.b-block-ttv div.ttv-search .ttv-column.ttv-first {
+	width: 100%;
+	min-height: 80px;
+	float: none;
+    margin-right: 0;
+    border: 5px solid #EFF2F6;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 0 4px;
+}
+
+.b-block-ttv div.ttv-field{
+	float: left;
+	height: 100%;
+	position: relative;
+	width: calc(100%/6);
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(5){
+	width: calc(100%/6 - 20px);
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(6){
+	width: calc(100%/6 + 20px);
+}
+.b-block-ttv div.ttv-field:after {
+    content: " ";
+    position: absolute;
+    top: 16px;
+    right: 0;
+    width: 1px;
+    height: 39px;
+    background-color: #D8D8D8;
+}
+.b-block-ttv div.ttv-field:last-child:after{
+	display: none;
+}
+.b-block-ttv div.ttv-search .ttv-field .ttv-select{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+	.b-block-ttv div.ttv-search .ttv-field .ttv-select select{
+		width: 100%;
+		height: 100%;
+		border: 0;
+    	padding: 30px 0 16px 0;
+    	font-family: 'Gilroy-Bold';
+    	font-size: 20px;
+    	line-height: 24px;
+    	color: #282828;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+	}
+
+.b-block-ttv div.ttv-search .ttv-field > label {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    display: inline-block;
+    width: 100%;
+    pointer-events: none;
+    font-family: 'Gilroy-Regular';
+    font-size: 14px;
+    color: #A4A4A4;
+}
+.b-block-ttv div.ttv-search .ttv-field{
+    padding: 0 16px;
+}
+
+.b-block-ttv div.ttv-search .ttv-field > label:before{
+	margin-right: 6px;
+	color: #A4A4A4
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(1) > label:before{
+	content: "\e91c";
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(2) > label:before{
+	content: "\e919";
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(3) > label:before{
+	content: "\e91c";
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(4) > label:before{
+	content: "\e918";
+	font-size: 12px;
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(5) > label:before{
+	content: "\e91b";
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(6) > label:before{
+	content: "\e91a";
+}
+
+.b-block-ttv div.ttv-search .ttv-field:nth-child(4) span,
+.b-block-ttv div.ttv-search .ttv-field:nth-child(5) span,
+.b-block-ttv div.ttv-search .ttv-field:nth-child(6) span{
+	display: none;
+}
+
+.b-block-ttv div.ttv-search input[type=text]{
+	padding: 30px 0 0 0;
+    height: auto;
+    border: 0;
+    border-bottom: 1px solid #E7ECF1;
+    background-color: transparent;
+    font-family: 'Gilroy-Bold';
+	font-size: 20px;
+	line-height: 24px;
+	color: #282828;
+}
+
+.b-block-ttv div.ttv-search #ttv-price{
+	width: 115px;
+	margin-right: 0;
+}
+.b-block-ttv div.ttv-search #ttv-duration-min, 
+.b-block-ttv div.ttv-search #ttv-duration-max{
+	display: inline-block;
+	width: 35px;
+	margin-right: 0;
+}
+.b-block-ttv div.ttv-search #ttv-out-to,
+.b-block-ttv div.ttv-search #ttv-out-from{
+	display: inline-block;
+	width: 81px;
+	font-size: 16px;
+	margin-right: 0;
+}
+
+.ttv-sep{
+	display: inline-block;
+	vertical-align: top;
+	padding: 30px 7px 0 9px;
+    font-family: 'Gilroy-Bold';
+    font-size: 20px;
+    line-height: 24px;
+    color: #282828;
+}
+
+.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes{
+	display: block;
+	width: 100%;
+    padding-top: 26px;
+}
+.b-block-ttv div.ttv-search .ttv-column .ttv-checkbox-label{
+    display: block;
+    float: left;
+    width: 25%;
+    margin: 0;
+    padding-right: 16px;
+}
+	.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap{
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100% - 224px);
+	}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap .ttv-column {
+		    width: 100%;
+		    float: none;
+		}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap .ttv-column > label{
+			display: none;
+		}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap .ttv-column label{
+		    width: 100%;
+		}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox{
+			float: left;
+		    width: 25%;
+		    margin-bottom: 10px;
+		    padding-right: 16px;
+		}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox .icon-checked {
+		    border: 2px solid #C1CEDF;
+		}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox .icon-checked:before {
+		    color: #ED7408;
+		}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox:hover .icon-checked,
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox input:checked + label .b-checked{
+			border: 2px solid #ED7408;
+		}
+		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox input:checked + label .b-checked:before{
+			display: block;
+		}
+
+	.b-block-ttv div.ttv-search .ttv-actions{
+		text-align: center;
+		width: 218px;
+		display: inline-block;
+		vertical-align: top;
+	}
+		.b-block-ttv div.ttv-search button[type=submit]{
+			margin-top: 3px;
+			margin-bottom: 16px;
+			width: 100% !important;
+			text-transform: none;
+			font-family: 'Gilroy-Bold';
+			font-size: 20px;
+			line-height: 24px;
+			text-shadow: none;
+			background-image: linear-gradient(180deg, #FFBD73 0%, #ED7408 100%);
+			border-radius: 6px;
+			padding: 14px 16px;
+		}
+		.b-block-ttv div.ttv-search button[type=submit]:hover{
+			background-image: linear-gradient(180deg, #FFBD73 0%, #d26707 100%);
+		}
+		.b-block-ttv div.ttv-search .ttv-actions .ttv-total-results-label{
+			color: #A4A4A4;
+			font-size: 16px;
+			line-height: 16px;
+		}
+		.b-block-ttv div.ttv-search .ttv-actions .ttv-clear{
+			display: none;
+		}
+div.ttv-datepicker{
+	font-family: 'Gilroy-Bold';
+}
+div.ttv-datepicker a{
+	color: #282828;
+}
+div.ttv-datepicker .ui-datepicker-calendar{
+	text-align: center;
+	margin-top: 8px;
+	color: #282828;
+}
+div.ttv-datepicker .ui-datepicker-header .ui-datepicker-prev,
+div.ttv-datepicker .ui-datepicker-header .ui-datepicker-next{
+	position: relative;
+	top: 4px;
+}
+div.ttv-datepicker .ui-datepicker-header .ui-datepicker-next{
+	top: 5px;
+}
+
+.b-block-ttv div.ttv-hottours ul a .ttv-title, 
+.b-block-ttv div.ttv-hottours ul a:hover .ttv-title{
+	height: auto;
+	bottom: 45px;
+    right: auto;
+    top: auto;
+    left: 0;
+    font-family: 'Gilroy-Bold';
+    font-size: 28px;
+    line-height: 32px;
+    padding: 32px 24px;
+}
+.b-block-ttv div.ttv-hottours ul a .ttv-price,
+.b-block-ttv div.ttv-hottours ul a:hover .ttv-price{
+	bottom: 0;
+    right: 0;
+    top: auto;
+    left: auto;
+    font-family: 'Gilroy-Bold';
+    font-size: 28px;
+    line-height: 32px;
+    padding: 32px 24px;
+}
+
+.b-block-ttv div.ttv-hottours ul a .ttv-date,
+.b-block-ttv div.ttv-hottours ul a:hover .ttv-date{
+	bottom: 0;
+    right: auto;
+    top: auto;
+    left: 0;
+    font-family: 'Gilroy-Medium';
+    font-size: 16px;
+    line-height: 19px;
+    padding: 35px 24px;
+}
+
+.b-block-ttv div.ttv-hottours .ttv-slides{
+	margin: 0;
+}
+	.b-block-ttv div.ttv-hottours .ttv-slides .swiper-slide{
+		margin-right: 26px !important;
+		border-radius: 5px;
+		overflow: hidden;
 	}
 
