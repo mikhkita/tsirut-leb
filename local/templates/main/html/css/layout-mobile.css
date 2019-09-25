@@ -1430,6 +1430,55 @@ div.TVTabedListContainer {
 	padding-top: 12px;
 }
 
+/*===*/
+
+.b-block-ttv div.ttv-search .ttv-column.ttv-first{
+	min-height: 220px;
+	padding: 0;
+}
+.b-block-ttv div.ttv-field{
+	position: relative;
+	width: 50%;
+	border-bottom: 1px solid #D8D8D8;
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(2):after,
+.b-block-ttv div.ttv-search .ttv-field:nth-child(4):after{
+	display: none;
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(3){
+	z-index: 2;
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(5),
+.b-block-ttv div.ttv-search .ttv-field:nth-child(6){
+	width: 50%;
+	border-bottom: none;
+}
+
+.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox {
+    width: 50%;
+}
+.b-block-ttv div.ttv-search .ttv-actions {
+    width: 170px;
+}
+.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap {
+    width: calc(100% - 176px);
+}
+
+.ttv-add-city {
+    width: 45px;
+    height: 45px;
+    bottom: calc(50% - 21px);
+    left: auto;
+    right: 16px;
+    background-image: none;
+    border: 5px solid #EFF2F6;
+    border-radius: 100px;
+}
+.ttv-add-city:before{
+	display: block;
+    padding-top: 8px;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -1944,6 +1993,20 @@ div.TVTabedListContainer {
 	}
 	div.TVHelpFormControl .TVSRUserContactsBlock{
 		margin-bottom: 8px;
+	}
+
+	.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap {
+	    width: 100%;
+	    margin-bottom: 12px;
+	}
+	.b-block-ttv div.ttv-search {
+	    margin-bottom: 20px;
+	}
+	.b-block-ttv .ttv-hottours {
+	    margin: 24px 0 40px 0;
+	}
+	.b-block-ttv .ttv-hottours .swiper-pagination {
+	    padding: 16px 0 8px 0;
 	}
 
 }
@@ -2572,6 +2635,26 @@ div.TVTabedListContainer {
 	    margin-left: 0;
 	}
 
+	/*===*/
+	.b-block-ttv div.ttv-search .ttv-column.ttv-first{
+		min-height: auto;
+	}
+	.b-block-ttv div.ttv-field{
+		width: 100% !important;
+		border-bottom: 1px solid #D8D8D8;
+		float: none;
+	}
+	.b-block-ttv div.ttv-search .ttv-field:nth-child(5){
+		border-bottom: 1px solid #D8D8D8;
+	}
+	.b-block-ttv div.ttv-search .ttv-field:after{
+		display: none !important;
+	}
+
+	.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox {
+	    width: 100%;
+	}
+
 }
 
 @media screen and (max-width: 430px){
@@ -2903,6 +2986,22 @@ div.TVTabedListContainer {
 	}
 	div.TVTourBlock .TVPriceArrow{
 		display: none;
+	}
+	.b-block-ttv div.ttv-hottours ul a .ttv-title,
+	.b-block-ttv div.ttv-hottours ul a:hover .ttv-title{
+		font-size: 24px;
+    	line-height: 30px;
+		padding: 16px 24px;
+	}
+	.b-block-ttv div.ttv-hottours ul a .ttv-price,
+	.b-block-ttv div.ttv-hottours ul a:hover .ttv-price {
+	    font-size: 20px;
+    	line-height: 28px;
+    	padding: 20px 24px;
+	}
+	.b-block-ttv div.ttv-hottours ul a .ttv-date,
+	.b-block-ttv div.ttv-hottours ul a:hover .ttv-date{
+		padding: 23px 24px;
 	}
 
 }

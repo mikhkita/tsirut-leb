@@ -761,7 +761,7 @@ $(document).ready(function(){
                     .contents().filter(function() {return this.nodeType == 3;}).remove();
                 $("#ttv-duration-min, #ttv-out-from").after("<div class='ttv-sep'>-</div>");
                 //обернуть блоки с чекбоксами
-                $(".ttv-checkboxes .ttv-column").wrapAll("<div class='ttv-column-wrap'></div>");
+                $(".ttv-checkboxes .ttv-column").wrapAll("<div class='ttv-column-wrap clearfix'></div>");
                 $(".ttv-actions button").text("Найти тур");
                 //создать свои чекбоксы
                 $(".ttv-checkboxes .ttv-column label").each(function(){
@@ -778,14 +778,24 @@ $(document).ready(function(){
                         $("#"+$(this).attr("data-checkbox")).click();
                     });
                 });
+                $(".ttv-cities-container").addClass("open").append("<div class='ttv-add-city icon-plus'></div>");
+                $(document).on("click", ".ttv-add-city", function(){
+                    $(".ttv-cities-container").addClass("open").parent().addClass("no-border");
+                });
+                $(document).click(function(event) {
+                    if($(event.target).closest(".ttv-cities-container").length) return;
+                    if($(".ttv-selected-cities").children("li").length){
+                        $(".ttv-cities-container").removeClass("open").parent().removeClass("no-border");
+                    }
+                    event.stopPropagation();
+                });
+                $("#ttv-cities").attr("placeholder","Введите город");
+
+                $(".ttv-hottours").before("<h2 class='b-title'>Ближайшие туры</h2>");
                 clearInterval(waitTTV);
             }
         }, 30);
     }
-
-    // function createCheckboxTTV(id) {
-    //     // body...
-    // }
 
     // =========Турвизор=========
 

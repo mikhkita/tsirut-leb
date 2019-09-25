@@ -9,8 +9,10 @@ $urlArr = explode("/", $curPage);
 $GLOBALS["urlArr"] = $urlArr;
 $GLOBALS["isMain"] = $isMain = ( $curPage == "/" )?true:false;
 
+$otherSearchPages = array("excursions", "bus-tours");
+
 //Детальная страны
-$GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "search" && !empty($urlArr[2]));
+$GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages));
 //Детальная курорта/месяца/сезона в стране
 $GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "search" && !empty($urlArr[2]) && !empty($urlArr[3]));
 //Детальная месяца/сезона в курорте

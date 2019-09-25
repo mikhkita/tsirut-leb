@@ -83,7 +83,8 @@ div.TVTourBlock .TVPriceArrow:before,
 div.TVOrderHotelStar:before,
 div.TVHotelTypeItem:before,
 .b-select-chosen:before,
-.b-block-ttv div.ttv-search .ttv-field > label:before{
+.b-block-ttv div.ttv-search .ttv-field > label:before,
+.ttv-add-city:before{
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -7869,6 +7870,11 @@ div.TVSearchResults .TVSRHelpForm{
 .b-block-ttv div.ttv-search{
 	color: #282828;
 	font-family: 'Gilroy-Regular';
+	margin-bottom: 55px;
+}
+.b-block-ttv div.ttv-search form{
+	background-color: transparent;
+    padding: 0; 
 }
 .b-block-ttv div.ttv-search .ttv-column.ttv-first {
 	width: 100%;
@@ -7879,6 +7885,8 @@ div.TVSearchResults .TVSRHelpForm{
     background-color: #FFF;
     border-radius: 10px;
     padding: 0 4px;
+    position: relative;
+    z-index: 2;
 }
 
 .b-block-ttv div.ttv-field{
@@ -7887,6 +7895,15 @@ div.TVSearchResults .TVSRHelpForm{
 	position: relative;
 	width: calc(100%/6);
 }
+.b-block-ttv div.ttv-field.no-border{
+	border-bottom: 0 !important;
+}
+.b-block-ttv div.ttv-search .ttv-field:nth-child(3){
+	padding: 0;
+}
+	.b-block-ttv div.ttv-search .ttv-field:nth-child(3) input[type=text]{
+		margin: 0 16px;
+	}
 .b-block-ttv div.ttv-search .ttv-field:nth-child(5){
 	width: calc(100%/6 - 20px);
 }
@@ -7911,6 +7928,7 @@ div.TVSearchResults .TVSRHelpForm{
     height: 100%;
 }
 	.b-block-ttv div.ttv-search .ttv-field .ttv-select select{
+		cursor: pointer;
 		width: 100%;
 		height: 100%;
 		border: 0;
@@ -7933,10 +7951,12 @@ div.TVSearchResults .TVSRHelpForm{
     pointer-events: none;
     font-family: 'Gilroy-Regular';
     font-size: 14px;
+    margin: 0;
     color: #A4A4A4;
 }
 .b-block-ttv div.ttv-search .ttv-field{
     padding: 0 16px;
+    height: 70px;
 }
 
 .b-block-ttv div.ttv-search .ttv-field > label:before{
@@ -7999,6 +8019,10 @@ div.TVSearchResults .TVSRHelpForm{
 	margin-right: 0;
 }
 
+.b-block-ttv div.ttv-search input[type=text]{
+    width: 178px;
+}
+
 .ttv-sep{
 	display: inline-block;
 	vertical-align: top;
@@ -8013,6 +8037,8 @@ div.TVSearchResults .TVSRHelpForm{
 	display: block;
 	width: 100%;
     padding-top: 26px;
+    position: relative;
+    z-index: 1;
 }
 .b-block-ttv div.ttv-search .ttv-column .ttv-checkbox-label{
     display: block;
@@ -8035,6 +8061,7 @@ div.TVSearchResults .TVSRHelpForm{
 		}
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap .ttv-column label{
 		    width: 100%;
+		    margin: 0;
 		}
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox{
 			float: left;
@@ -8146,8 +8173,121 @@ div.ttv-datepicker .ui-datepicker-header .ui-datepicker-next{
 	margin: 0;
 }
 	.b-block-ttv div.ttv-hottours .ttv-slides .swiper-slide{
-		margin-right: 26px !important;
+		/*margin-right: 26px !important;*/
 		border-radius: 5px;
 		overflow: hidden;
 	}
+
+.b-block-ttv .ttv-cities-container{
+	position: relative;
+}
+.swiper-button-prev, .swiper-button-next{
+	display: none !important;
+}
+.b-block-ttv .ttv-hottours .swiper-pagination {
+    padding: 40px 0 8px 0;
+}
+.b-block-ttv .ttv-hottours .swiper-pagination-bullet {
+    margin: 0 8px;
+    width: 8px;
+    height: 8px;
+    background: #ED7408;
+}
+.b-block-ttv .ttv-hottours .swiper-pagination-bullet-active{
+	background: #ED7408;
+}
+
+.b-block-ttv .ttv-field input::-webkit-input-placeholder {
+	color: #DFE4EA;
+}
+.b-block-ttv .ttv-field input:-moz-placeholder {
+	color: #DFE4EA;
+}
+.ttv-add-city{
+	position: absolute;
+    width: 45px;
+    height: 30px;
+    bottom: -22px;
+    left: calc(50% - 22px);
+    background-position: 50% 100%;
+    background-image: url(../i/plus-back.svg);
+    background-repeat: no-repeat;
+    background-size: 45px;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+.ttv-add-city:before{
+	content: "\e91d";
+	font-size: 16px;
+	line-height: 16px;
+	color: #EFF2F6;
+	position: relative;
+	top: 1px;
+	-webkit-transition: color 150ms ease-out;
+	   -moz-transition: color 150ms ease-out;
+	    -ms-transition: color 150ms ease-out;
+	   	 -o-transition: color 150ms ease-out;
+			transition: color 150ms ease-out;
+}
+.ttv-add-city:hover:before{
+	color: #ED7408;
+}
+.b-block-ttv .ttv-cities-container.open .ttv-add-city{
+	display: none;
+}
+
+#ttv-cities{
+	opacity: 0;
+	visibility: hidden;
+}
+.ttv-cities-container.open #ttv-cities{
+	opacity: 1;
+	visibility: visible;
+}
+.b-block-ttv .ttv-search .ttv-selected-cities{
+	position: absolute;
+    top: 28px;
+    max-height: 26px;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 16px;
+}
+.b-block-ttv .ttv-search .ttv-cities-container.open .ttv-selected-cities{
+	max-height: 200px;
+    overflow: visible;
+    position: absolute;
+    top: 64px;
+    padding: 0px 11px;
+    background-color: #FFF;
+    border: 5px solid #EFF2F6;
+    border-top: 0;
+    background-color: #FFF;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.b-block-ttv .ttv-search .ttv-selected-cities li {
+	padding: 0px 6px;
+    border: 2px solid #ACBBCE;
+    background-color: #B5C3D6;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+.b-block-ttv .ttv-search .ttv-selected-cities li img {
+    margin-left: 6px;
+    padding-top: 7px;
+    vertical-align: top;
+}
+.b-block-ttv .ttv-search .ttv-cities-list{
+	top: 55px;
+	width: 100%;
+	z-index: 10;
+}
+
+.b-block-ttv .ttv-hottours {
+    margin: 55px 0 70px 0;
+}
 
