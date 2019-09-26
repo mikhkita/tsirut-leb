@@ -22,7 +22,6 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 
 $month = date('n');
 ?>
-
 <?foreach ($arResult['SECTIONS'] as $arSection):?>
 	<?
 	$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);

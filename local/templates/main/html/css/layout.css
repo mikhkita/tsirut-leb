@@ -3664,6 +3664,67 @@ ul.b-breadcrumbs {
 		text-decoration: none;
 	}
 
+
+/*==== Экскурсии ====*/
+
+.b-excursions-popular{
+	margin-bottom: 90px;
+}
+
+/*===== Стили для конструктора =====*/
+
+.b-constructor-wide{
+	background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 86px 0 114px 0;
+    margin-bottom: 70px;
+}
+	.b-constructor-wide h2{
+		text-align: left;
+		max-width: 685px;
+		color: #FFF;
+		margin-bottom: 42px;
+	}
+	.b-constructor-wide p{
+		max-width: 628px;
+		color: #FFF;
+	}
+.b-constructor-pic-text{
+	display: table;
+	margin-bottom: 44px;
+}
+	.pic-text-left{
+		display: table-cell;
+		vertical-align: middle;
+		width: 50%;
+	}
+		.pic-text-left img{
+			width: 100%;
+			border-radius: 6px;
+			overflow: hidden;
+		}
+	.pic-text-right{
+		display: table-cell;
+		vertical-align: middle;
+		width: 50%;
+		padding-left: 24px;
+	}
+		.pic-text-right h3{
+			font-family: 'Gilroy-Regular';
+			font-size: 32px;
+			line-height: 40px;
+			margin-bottom: 24px;
+			color: #282828;
+		}
+		.pic-text-right h3 b{
+			font-family: 'Gilroy-bold';
+		}
+		.pic-text-right p{
+
+		}
+
+
 /*========*/
 
 .b-popup.b-hotel-popup {
@@ -8184,18 +8245,6 @@ div.ttv-datepicker .ui-datepicker-header .ui-datepicker-next{
 .swiper-button-prev, .swiper-button-next{
 	display: none !important;
 }
-.b-block-ttv .ttv-hottours .swiper-pagination {
-    padding: 40px 0 8px 0;
-}
-.b-block-ttv .ttv-hottours .swiper-pagination-bullet {
-    margin: 0 8px;
-    width: 8px;
-    height: 8px;
-    background: #ED7408;
-}
-.b-block-ttv .ttv-hottours .swiper-pagination-bullet-active{
-	background: #ED7408;
-}
 
 .b-block-ttv .ttv-field input::-webkit-input-placeholder {
 	color: #DFE4EA;
@@ -8288,6 +8337,18 @@ div.ttv-datepicker .ui-datepicker-header .ui-datepicker-next{
 }
 
 .b-block-ttv .ttv-hottours {
-    margin: 55px 0 70px 0;
+    margin: 55px 0 110px 0;
+}
+.b-block-ttv .ttv-hottours .swiper-pagination {
+    padding: 32px 0 8px 0;
+}
+.b-block-ttv .ttv-hottours .swiper-pagination-bullet {
+    margin: 0 8px;
+    width: 8px;
+    height: 8px;
+    background: #ED7408;
+}
+.b-block-ttv .ttv-hottours .swiper-pagination-bullet-active{
+	background: #ED7408;
 }
 
