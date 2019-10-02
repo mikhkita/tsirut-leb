@@ -385,13 +385,15 @@ ul.b-breadcrumbs{
 		margin-bottom: 90px;
 	}
 	.b-article-slider{
-		margin-left: -24px;
-    	width: calc(100% + 48px);
+		/*margin-left: -24px;
+    	width: calc(100% + 48px);*/
+    	margin-left: 0;
+    	width: 100%;
 	}
 		.b-article-item,
 		.b-article-item:nth-child(4n){
 			width: 100%;
-			margin: 0 12px;
+			margin-right: 16px;
 		}
 		.b-article-slider .slick-dots{
 			bottom: -50px;
@@ -423,7 +425,7 @@ ul.b-breadcrumbs{
 	}
 	.b-seo-separator {
 		max-width: none;
-	    margin: 32px auto 24px auto;
+	    margin: 0 auto 24px auto;
 	}
 	.b-seo-separator-wide {
 	    margin-bottom: 32px;
@@ -658,7 +660,7 @@ ul.b-breadcrumbs{
     margin-bottom: 16px;
 }
 
-.b-country-adv-item{
+.b-constructor-adv-item{
 	width: calc((100% - 24px)/2 - 15px);
 }
 
@@ -787,7 +789,7 @@ ul.b-breadcrumbs{
 	.b-articles-detail-left .adv-main-left{
 		vertical-align: top;
 	}
-	.b-country-adv-item h3 {
+	.b-constructor-adv-item h3 {
 	    font-size: 20px;
 	    line-height: 26px;
 	}
@@ -1479,16 +1481,25 @@ div.TVTabedListContainer {
     padding-top: 8px;
 }
 
+.b-block-ttv .ttv-search .ttv-cities-container.open .ttv-selected-cities{
+    border: 1px solid #D8D8D8;
+    border-top: 0;
+    top: 63px;
+}
+.b-block-ttv .ttv-search .ttv-selected-cities {
+    padding: 0 65px 0 16px;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
 		width: calc(100% - 32px);
 	}
-	.b-content-deatail .detail-wide,
+	.b-constructor .detail-wide,
 	.detail-wide{
 		width: calc(100% + 16px);
 	}
-	.b-content-deatail .detail-wide-cancel,
+	.b-constructor .detail-wide-cancel,
 	.detail-wide-cancel{
 		width: calc(100% - 16px);
 	}
@@ -1700,21 +1711,21 @@ div.TVTabedListContainer {
 	.b-head.b-head-detail .b-head-white {
 
 	}
-	.b-country-desc {
+	.b-constructor-desc {
 		padding: 60px 0 80px 0;
 	}
-		.b-country-desc p {
+		.b-constructor-desc .preview-text {
 		    font-size: 16px;
 		    line-height: 24px;
 		}
-		.b-country-desc h2{
+		.b-constructor-desc h2{
 			margin-bottom: 16px;
 		}
 	.adv-main-right h3 {
 		text-align: center;
 	}
 
-	.b-country-adv-main {
+	.b-constructor-adv-main {
 	    display: block;
 	}
 		.adv-main-right {
@@ -1733,7 +1744,7 @@ div.TVTabedListContainer {
 	    height: 200px;
 	}
 
-	.b-country-adv-item{
+	.b-constructor-adv-item{
 		width: calc((100% - 24px)/2 - 8px);
 		margin-right: 16px;
 	}
@@ -2134,13 +2145,13 @@ div.TVTabedListContainer {
 			height: 280px;
 		}
 		.b-article-slider{
-			margin-left: -16px;
-	    	width: calc(100% + 32px);
+			/*margin-left: -16px;
+	    	width: calc(100% + 32px);*/
 		}
 			.b-article-item,
 			.b-article-item:nth-child(4n){
 				width: 100%;
-				margin: 0 12px;
+				margin-right: 16px;
 			}
 			.b-article-slider .slick-dots{
 
@@ -2211,7 +2222,7 @@ div.TVTabedListContainer {
 		height: 276px;
 	}
 
-	.b-country-adv-img {
+	.b-constructor-adv-img {
 	    height: 160px;
 	}
 	.b-resorts-item a {
@@ -2665,17 +2676,17 @@ div.TVTabedListContainer {
 		margin-bottom: 24px;
 	}
 
-	.b-content-deatail .detail-margin-b,
+	.b-constructor .detail-margin-b,
 	.detail-margin-b{
 	    margin-bottom: 50px;
 	}
-	.b-content-deatail .detail-margin-b-s,
+	.b-constructor .detail-margin-b-s,
 	.detail-margin-b-s{
 	    margin-bottom: 30px;
 	}
-	.b-content-deatail .detail-wide,
+	.b-constructor .detail-wide,
 	.detail-wide,
-	.b-content-deatail .detail-wide-cancel,
+	.b-constructor .detail-wide-cancel,
 	.detail-wide-cancel{
 		width: 100%;
 	}
@@ -2760,11 +2771,11 @@ div.TVTabedListContainer {
 	    padding: 20px 22px 21px 22px !important;
 	}
 
-	.b-country-adv-item {
+	.b-constructor-adv-item {
 	    width: 100%;
 	    margin-right: 0;
 	}
-	.b-country-adv-img {
+	.b-constructor-adv-img {
 	    height: 240px;
 	}
 	.b-feedback.b-feedback-shadow .b-feedback-text {

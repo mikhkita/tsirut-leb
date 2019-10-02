@@ -151,10 +151,10 @@
 		color: #434343;
 	}
 
-.b-country-adv{
+.b-constructor-adv{
 
 }
-	.b-country-adv-main{
+	.b-constructor-adv-main{
 		display: table;
 		margin-bottom: 44px;
 	}
@@ -187,38 +187,38 @@
 			.adv-main-right p{
 
 			}
-	.b-country-adv-list{
+	.b-constructor-adv-list{
 		margin-bottom: 90px;
 	}
-		.b-country-adv-item{
+		.b-constructor-adv-item{
 			display: inline-block;
 			vertical-align: top;
 			width: calc((100% - 24px)/3 - 19px);
 			margin-right: 24px;
 			margin-bottom: 24px;
 		}
-			.b-country-adv-img{
+			.b-constructor-adv-img{
 				width: 100%;
 				height: 260px;
 				margin-bottom: 14px;
 				border-radius: 6px;
 				overflow: hidden;
 			}
-				.b-country-adv-img img{
+				.b-constructor-adv-img img{
 					height: 100%;
 				}
-			.b-country-adv-item h3{
+			.b-constructor-adv-item h3{
 				font-family: 'Gilroy-bold';
 				font-size: 24px;
 				line-height: 30px;
 				margin-bottom: 10px;
 				color: #282828;
 			}
-			.b-country-adv-item p{
+			.b-constructor-adv-item p{
 
 			}
 
-.b-country-resorts{
+.b-constructor-resorts{
 	margin-bottom: 80px;
 }
 	.b-resorts-list{

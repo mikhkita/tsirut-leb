@@ -1,7 +1,6 @@
 			<?if(!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]):?>
-						</div> <!-- b-content-back b-contacts-top -->
-					</div> <!-- b-block -->
-				</div> <!-- b-text -->
+					</div> <!-- b-content-back b-contacts-top -->
+				</div> <!-- b-constructor -->
 			<?endif;?>
 		</div> <!-- b-content -->
 

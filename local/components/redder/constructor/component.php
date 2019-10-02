@@ -90,7 +90,7 @@ $arParams["CACHE_FILTER"] = $arParams["CACHE_FILTER"]=="Y";
 if(!$arParams["CACHE_FILTER"] && count($arrFilter)>0)
 	$arParams["CACHE_TIME"] = 0;
 
-$arParams["SET_TITLE"] = $arParams["SET_TITLE"]!="N";
+$arParams["SET_TITLE"] = false;
 $arParams["SET_BROWSER_TITLE"] = (isset($arParams["SET_BROWSER_TITLE"]) && $arParams["SET_BROWSER_TITLE"] === 'N' ? 'N' : 'Y');
 $arParams["SET_META_KEYWORDS"] = (isset($arParams["SET_META_KEYWORDS"]) && $arParams["SET_META_KEYWORDS"] === 'N' ? 'N' : 'Y');
 $arParams["SET_META_DESCRIPTION"] = (isset($arParams["SET_META_DESCRIPTION"]) && $arParams["SET_META_DESCRIPTION"] === 'N' ? 'N' : 'Y');

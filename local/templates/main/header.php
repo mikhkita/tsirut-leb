@@ -352,6 +352,5 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		<div class="b b-content <?if($isMain) echo 'b-content-main'?>">
 			<?if(!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]):?>
 				<div class="b-content-back b-contacts-top">
-					<div class="b-block">
-						<div class="b-text">
+					<div class="b-constructor">
 			<?endif;?>

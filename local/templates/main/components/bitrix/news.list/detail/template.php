@@ -171,7 +171,7 @@ $this->setFrameMode(true);
 	</div>
 </div>
 
-<div class="b-content-deatail">
+<div class="b-constructor">
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -182,20 +182,24 @@ $this->setFrameMode(true);
 	switch ($type) {
 	    case 1:
 	?>
-		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b-country-desc detail-margin-b" style="background-image: url('<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>')">
+		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b-constructor-desc detail-margin-b" style="background-image: url('<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>')">
 			<div class="b-block">
-				<h2 class="b-title"><b><?=$arItem["PROPERTIES"]["B_1_HEADER"]["VALUE"]?></b></h2>
-				<p><?=$arItem["PROPERTIES"]["B_1_TEXT"]["VALUE"]?></p>
+				<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
+					<h2 class="b-title"><b><?=$arItem["NAME"]?></b></h2>
+				<?endif;?>
+				<div class="preview-text"><?=$arItem["PREVIEW_TEXT"];?></div>
 			</div>
 		</div>
 	<?
 	        break;
 	    case 2:
 	?>
-		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b-country-adv detail-margin-b-s">
+		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b-constructor-adv detail-margin-b-s">
 			<div class="b-block">
 				<div class="detail-wide">
-					<h2 class="b-title detail-wide-cancel"><?=$arItem["NAME"];?></h2>
+					<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
+						<h2 class="b-title detail-wide-cancel"><?=$arItem["NAME"];?></h2>
+					<?endif;?>
 					<?=$arItem["PREVIEW_TEXT"];?>
 				</div>
 			</div>
@@ -207,8 +211,10 @@ $this->setFrameMode(true);
 		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b b-feedback b-feedback-shadow detail-margin-b">
 			<div class="b-block">
 				<div class="b-feedback-text">
-					<h2><?=$arItem["PROPERTIES"]["B_FORM_HEADER"]["VALUE"]?></h2>
-					<p><?=$arItem["PROPERTIES"]["B_FORM_TEXT"]["VALUE"]?></p>
+					<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
+						<h2><b><?=$arItem["NAME"];?></b></h2>
+					<?endif;?>
+					<p><?=$arItem["PREVIEW_TEXT"];?></p>
 					<form class="b-feedback-form" method="post" action="/subscribe.php">
 						<input type="text" name="name" placeholder="Ваше имя" required>
 						<input type="text" name="phone" placeholder="Ваш телефон" required>
@@ -242,11 +248,13 @@ $this->setFrameMode(true);
 	    	break;
 	    case 4:
 	?>
-		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b-country-resorts detail-margin-b-s">
+		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b-constructor-resorts detail-margin-b-s">
 			<div class="b-block">
-				<h2 class="b-title regular"><b><?=$arItem["NAME"]?></b></h2>
+				<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
+					<h2 class="b-title"><?=$arItem["NAME"];?></h2>
+				<?endif;?>
 				<div class="b-resorts-list detail-wide">
-					<?=$arItem["PREVIEW_TEXT"]?>
+					<?=$arItem["PREVIEW_TEXT"];?>
 				</div>
 			</div>
 		</div>
@@ -259,8 +267,10 @@ $this->setFrameMode(true);
 				<div class="b-mailing-cont">
 					<div class="b-head-gradient"></div>
 					<div class="gradient-after">
-						<h2><?=$arItem["PROPERTIES"]["B_MAILING_HEADER"]["VALUE"]?></h2>
-						<p class="mailing-text"><?=$arItem["PROPERTIES"]["B_MAILING_TEXT"]["VALUE"]?></p>
+						<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
+							<h2><b><?=$arItem["NAME"];?></b></h2>
+						<?endif;?>
+						<p class="mailing-text"><?=$arItem["PREVIEW_TEXT"];?></p>
 						<form class="b-mailing-form" method="post" action="/subscribe.php">
 							<input type="text" name="email" placeholder="Ваш e-mail" required>
 							<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
@@ -308,8 +318,9 @@ $this->setFrameMode(true);
 	?>
 		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b b-articles detail-margin-b-s">
 			<div class="b-block">
-				<h2 class="b-title"><?=$arItem["NAME"]?></h2>
-				<div class="b-article-list b-article-slider mobile-slider detail-wide">
+				<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
+					<h2 class="b-title"><?=$arItem["NAME"];?></h2>
+				<?endif;?>
 					<?$GLOBALS["articlesFilter"] = array("PROPERTY_COUNTRY" => $GLOBALS["arCountry"]["id"]);?>
 					<?$APPLICATION->IncludeComponent("bitrix:news.list", "articles", Array(
 						"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
@@ -375,7 +386,6 @@ $this->setFrameMode(true);
 					),
 					false
 				);?>
-				</div>
 			</div>
 		</div>
 	<?
@@ -383,6 +393,9 @@ $this->setFrameMode(true);
 	    case 7:
 	?>
 		<div id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+			<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
+				<h2 class="b-title"><?=$arItem["NAME"];?></h2>
+			<?endif;?>
 			<?=$arItem["PREVIEW_TEXT"]?>
 		</div>
 	<?

@@ -25,7 +25,7 @@ $this->setFrameMode(true);
 	}
 	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>628*2, 'height'=>383*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?>
-	<a  href="/" 
+	<a  href="<?=$arItem["CODE"]?>" 
 		id="<?=$this->GetEditAreaId($arItem['ID']);?>" 
 		class="b-country-item-slider <?if($hasButton) echo 'with-button';?>" 
 		style="background-image: url('<?=$img['src']?>')"

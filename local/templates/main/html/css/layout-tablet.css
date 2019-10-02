@@ -323,8 +323,16 @@ div.TVFORow3 {
 .b-block-ttv .ttv-search .ttv-selected-cities {
     padding: 0 65px 0 16px;
 }
+.b-block-ttv .ttv-search .ttv-cities-container.open .ttv-selected-cities{
+    border: 1px solid #D8D8D8;
+    border-top: 0;
+    top: 63px;
+}
 
 @media screen and (max-width: 1210px){
+	.b-search-tours{
+		min-width: 165px;
+	}
 	.b-menu li a{
 		padding: 6px 10px 7px 10px;
 	}
@@ -476,7 +484,7 @@ div.TVFORow3 {
 	.b-articles-detail .b-content-back {
 	    padding: 20px 24px;
 	}
-	.b-articles-detail-left .b-country-adv-item {
+	.b-articles-detail-left .b-constructor-adv-item {
 	    width: calc(50% - 26px);
 	}
 	.b-advice img {
@@ -705,7 +713,7 @@ div.TVFORow3 {
 		    width: 365px;
 		    height: 635px;
 		}
-	.b-country-adv-img{
+	.b-constructor-adv-img{
 		height: 200px;
 	}
 	.b-footer-item.column-1,
