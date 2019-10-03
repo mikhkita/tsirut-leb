@@ -1007,6 +1007,25 @@ ul.b-breadcrumbs{
     color: #C1CEDF;
 }
 
+.b-bus-tours-left{
+	display: block;
+	width: 100%;
+	margin-bottom: 24px;
+}
+.b-bus-tours-right{
+	display: block;
+	width: 100%;
+}
+.b-bus-tours-filter{
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3;
+}
+
+.b-bus-tours-left .b-btn-rect{
+	padding: 16px 0 15px;
+}
+
 /*===========*/
 
 .b-tourvisor-calendar{
@@ -1854,6 +1873,7 @@ div.TVTabedListContainer {
 	}
 
 	.b-hot-search-subscribe .b-mailing-form input[type=text],
+	.b-bus-search-subscribe .b-mailing-form input[type=text],
 	.b-search-subscribe-2 .b-mailing-form input[type=text]{
 		background-color: #f9fafc;
 	}
@@ -1884,6 +1904,19 @@ div.TVTabedListContainer {
 		.b-about-selection h2.b-title {
 		    margin-bottom: 24px;
 		}
+
+	.b-bus-tours-filter{
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+	.b-bus-tours-item h3 {
+	    max-width: none;
+	}
+	.b-bus-tours-item .price {
+	    position: static;
+	    margin-top: 12px;
+	}
 
 	/*====*/
 
@@ -2369,6 +2402,19 @@ div.TVTabedListContainer {
 	}
 	.b-article-page-item .b-right{
 		display: block;
+		width: 100%;
+	}
+
+	.b-bus-tours-filter{
+		-webkit-column-count: auto;
+		-moz-column-count: auto;
+		column-count: auto;
+	}
+	.b-bus-tours-item .b-img{
+		display: block;
+    	margin-bottom: 16px;
+	}
+	.b-bus-tours-item .b-right{
 		width: 100%;
 	}
 

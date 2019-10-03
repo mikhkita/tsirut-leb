@@ -393,6 +393,14 @@ div.TVFORow3 {
 	.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox {
 	    width: 33%;
 	}
+
+	.b-bus-tours-item .b-img{
+		width: 150px;
+    	height: 90px;
+	}
+	.b-bus-tours-item .b-right{
+		width: calc(100% - 172px);
+	}
 	
 }
 
@@ -868,6 +876,20 @@ div.TVFORow3 {
 	    width: 50%;
 	}
 
+	.b-bus-tours-left{
+		width: 250px;
+	}
+	.b-bus-tours-right {
+	    width: calc(100% - 274px);
+	}
+	.b-bus-tours-item h3 {
+	    max-width: none;
+	}
+	.b-bus-tours-item .price {
+	    position: static;
+	    margin-top: 12px;
+	}
+
 }
 
 @media screen and (max-width: 920px){
@@ -918,6 +940,16 @@ div.TVFORow3 {
 	}
 	.b-article-page-item .b-right{
 		display: block;
+		width: 100%;
+	}
+
+	.b-bus-tours-item .b-img{
+		display: block;
+		width: 220px;
+    	height: 154px;
+    	margin-bottom: 16px;
+	}
+	.b-bus-tours-item .b-right{
 		width: 100%;
 	}
 	

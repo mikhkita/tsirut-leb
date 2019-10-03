@@ -439,6 +439,22 @@ b{
 		color: #434343;
 	}
 
+.b-btn-rect{
+	display: inline-block;
+	background-image: linear-gradient(180deg, #FFBD73 0%, #ED7408 100%);
+	color: #FFF;    
+	border-radius: 6px;
+	padding: 16px 0 15px;
+	text-align: center;
+	font-family: 'Gilroy-Bold';
+	font-size: 20px;
+	line-height: 20px;
+	min-width: 200px;
+}
+	.b-btn-rect:hover{
+		background-image: linear-gradient(180deg, #FFBD73 0%, #d26707 100%);
+	}
+
 /*====Кнопки турвизора====*/
 
 .b-tourvisor-with-filter .TVSRSearchMoreBtn,
@@ -2696,7 +2712,7 @@ ul.b-breadcrumbs {
 	.b-content-back{
 		position: relative;
 		width: 1420px;
-		margin: 0 auto 110px auto;
+		margin: 0 auto;
 		background-color: rgba(255,255,255,0.7);
 		border-radius: 8px;
 		padding: 45px 70px 0 70px;
@@ -3517,6 +3533,157 @@ ul.b-breadcrumbs {
 
 .b-excursions-popular{
 	margin-bottom: 90px;
+}
+
+/*==== Автобусные туры ====*/
+
+.b-bus-tours-main{
+	margin-top: 20px;
+	margin-bottom: 80px;
+}
+	.b-bus-tours-left{
+		position: relative;
+		width: 302px;
+		border-radius: 10px;
+		border: 5px solid #EFF2F6;
+		margin-right: 24px;
+		background-color: #FFF;
+		padding: 20px 20px 30px 20px;
+		float: left;
+	}
+		.b-bus-tours-left h3{
+			margin-bottom: 20px;
+			color: #282828;
+		}
+		.b-bus-tours-filter{
+			margin-bottom: 32px;
+		}
+			.b-bus-tours-filter li{
+				margin-bottom: 12px;
+			}
+			.b-bus-tours-filter li:last-child{
+				margin-bottom: 0;
+			}
+				.b-bus-tours-filter li label{
+					display: inline-block;
+					font-size: 16px;
+					line-height: 16px;
+					color: #000;
+				}
+					.b-bus-tours-filter .b-checkbox .b-checked{
+					    border: 2px solid #BCC1C7;
+					}
+					.b-bus-tours-filter .b-checkbox:hover .b-checked{
+					    border: 2px solid #ED7408;
+					}
+					.b-bus-tours-filter .b-checkbox:hover .b-checked:before{
+						color: #ED7408;
+					}
+					.b-bus-tours-filter .b-checkbox input[type="checkbox"]:checked + label .b-checked{
+						border: 2px solid #ED7408;
+					}
+					.b-bus-tours-filter .b-checkbox input[type="checkbox"]:checked + label .b-checked:before{
+						color: #ED7408;
+					}
+					.b-bus-tours-filter li p{
+
+					}
+		.b-bus-tours-left .b-btn-rect{
+			max-width: 300px;
+			min-width: 200px;
+			width: 100%;
+		}
+		.b-bus-tours-left .filter-refresh{
+			display: inline-block;
+			margin-top: 20px;
+			font-size: 16px;
+			line-height: 20px;
+		}
+	.b-bus-tours-right{
+		width: calc(100% - 326px);
+		float: right;
+	}
+		.b-bus-tours-right .b-bus-tours-item:first-child{
+			padding-top: 0;
+		}
+		.b-bus-tours-right .b-bus-tours-item:first-child .price{
+			top: 0;
+		}
+		.b-bus-tours-item{
+			position: relative;
+			padding: 19px 0 24px 0;
+		}
+		.b-bus-tours-item:after {
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    content: " ";
+		    width: 100%;
+		    height: 5px;
+		    border-radius: 5px;
+		    background-color: #EFF2F6;
+		}
+			.b-bus-tours-item .b-img{
+				display: inline-block;
+			    vertical-align: top;
+			    width: 220px;
+			    height: 154px;
+			    background-position: 50% 50%;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			    margin-right: 16px;
+			    overflow: hidden;
+			    border-radius: 6px;
+			}
+			.b-bus-tours-item .b-right{
+				display: inline-block;
+			    vertical-align: top;
+			    width: calc(100% - 240px);
+			}
+				.b-bus-tours-item h3{
+    				display: inline-block;
+    				font-size: 20px;
+    				line-height: 28px;
+					color: #282828;
+					text-transform: uppercase;
+					margin-bottom: 10px;
+					max-width: calc(100% - 190px);
+				}
+				.b-bus-tours-item h3:hover{
+					text-decoration: underline;
+				}
+				.b-bus-tours-item .city{
+					color: #B5C3D6;
+    				margin-bottom: 4px;
+				}
+				.b-bus-tours-item p{
+
+				}
+				.b-bus-tours-item .price{
+					position: absolute;
+					top: 19px;
+					right: 0;
+					color: #282828;
+					font-size: 28px;
+					line-height: 32px;
+					font-family: 'Gilroy-Bold';
+				}
+				.b-bus-tours-item .price .icon-next{
+					display: inline-block;
+					vertical-align: top;
+					margin-left: 16px;
+					color: #C1CEDF;
+					font-size: 17px;
+					padding-top: 7px;
+				}
+.b-search-subscribe.b-bus-search-subscribe{
+	margin-top: 19px;
+	margin-bottom: 0;
+	padding-bottom: 19px;
+	border-bottom: 5px solid #EFF2F6;
+}
+.b-search-subscribe.b-bus-search-subscribe .b-subscribe-form .b-btn-submit {
+    min-width: 248px;
 }
 
 /*===== Стили для конструктора =====*/
@@ -4650,7 +4817,7 @@ textarea{
 
 	.b-content-back{
 		width: calc(100% - 48px);
-		padding: 32px 40px;
+		padding: 32px 40px 0 40px;
 	}
 		.b-content-back .b-block{
 			width: 100%;

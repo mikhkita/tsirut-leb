@@ -338,7 +338,7 @@
 		<div class="b-popup b-aqua-popup b-popup-back-2" id="b-popup-tour-selection">
 			<div class="b-popup-content">
 				<h2 class="small-mb">Заявка на подбор тура</h2>
-				<h4>Оставьте заявку нашему менеджеру  и он подберет для вас лучший тур по цене туроператора</h4>
+				<h4>Оставьте заявку нашему менеджеру и он подберет для вас лучший тур по цене туроператора</h4>
 				<form action="/subscribe.php" method="POST">
 					<input type="text" name="name" placeholder="Вашe имя" required>
 					<input type="text" name="phone" placeholder="Ваш телефон" required>
@@ -669,7 +669,7 @@
 		<div class="b-thanks b-aqua-popup b-popup b-popup-back-1" id="b-review-success" >
 			<div class="b-popup-content">
 				<h2>Спасибо за отзыв!</h2>
-				<h4>Ваш отзыв успешно отправлен.  Мы опубликуем его на сайте сразу после проверки менеджером</h4>
+				<h4>Ваш отзыв успешно отправлен. Мы опубликуем его на сайте сразу после проверки менеджером</h4>
 				<a href="#" class="b-btn b-btn-orange one-line" onclick="$.fancybox.close(); return false;">
 					<p class="btn-bold">Закрыть</p>
 				</a>

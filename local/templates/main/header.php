@@ -9,7 +9,7 @@ $urlArr = explode("/", $curPage);
 $GLOBALS["urlArr"] = $urlArr;
 $GLOBALS["isMain"] = $isMain = ( $curPage == "/" )?true:false;
 
-$otherSearchPages = array("excursions", "bus-tours");
+$otherSearchPages = array("excursions", "bus");
 
 //Детальная страны
 $GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages));
