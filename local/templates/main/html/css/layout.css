@@ -3544,48 +3544,50 @@ ul.b-breadcrumbs {
 	.b-bus-tours-left{
 		position: relative;
 		width: 302px;
-		border-radius: 10px;
-		border: 5px solid #EFF2F6;
-		margin-right: 24px;
-		background-color: #FFF;
-		padding: 20px 20px 30px 20px;
 		float: left;
+		margin-right: 24px;
 	}
-		.b-bus-tours-left h3{
+		.b-bus-tours-filter h3{
 			margin-bottom: 20px;
 			color: #282828;
 		}
 		.b-bus-tours-filter{
+			border-radius: 10px;
+			border: 5px solid #EFF2F6;
+			background-color: #FFF;
+			padding: 20px 20px 30px 20px;
+		}
+		.b-bus-tours-filter ul{
 			margin-bottom: 32px;
 		}
-			.b-bus-tours-filter li{
+			.b-bus-tours-filter ul li{
 				margin-bottom: 12px;
 			}
-			.b-bus-tours-filter li:last-child{
+			.b-bus-tours-filter ul li:last-child{
 				margin-bottom: 0;
 			}
-				.b-bus-tours-filter li label{
+				.b-bus-tours-filter ul li label{
 					display: inline-block;
 					font-size: 16px;
 					line-height: 16px;
 					color: #000;
 				}
-					.b-bus-tours-filter .b-checkbox .b-checked{
+					.b-bus-tours-filter ul .b-checkbox .b-checked{
 					    border: 2px solid #BCC1C7;
 					}
-					.b-bus-tours-filter .b-checkbox:hover .b-checked{
+					.b-bus-tours-filter ul .b-checkbox:hover .b-checked{
 					    border: 2px solid #ED7408;
 					}
-					.b-bus-tours-filter .b-checkbox:hover .b-checked:before{
+					.b-bus-tours-filter ul .b-checkbox:hover .b-checked:before{
 						color: #ED7408;
 					}
-					.b-bus-tours-filter .b-checkbox input[type="checkbox"]:checked + label .b-checked{
+					.b-bus-tours-filter ul .b-checkbox input[type="checkbox"]:checked + label .b-checked{
 						border: 2px solid #ED7408;
 					}
-					.b-bus-tours-filter .b-checkbox input[type="checkbox"]:checked + label .b-checked:before{
+					.b-bus-tours-filter ul .b-checkbox input[type="checkbox"]:checked + label .b-checked:before{
 						color: #ED7408;
 					}
-					.b-bus-tours-filter li p{
+					.b-bus-tours-filter ul li p{
 
 					}
 		.b-bus-tours-left .b-btn-rect{

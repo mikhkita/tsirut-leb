@@ -1016,7 +1016,7 @@ ul.b-breadcrumbs{
 	display: block;
 	width: 100%;
 }
-.b-bus-tours-filter{
+.b-bus-tours-filter ul{
 	-webkit-column-count: 3;
 	-moz-column-count: 3;
 	column-count: 3;
@@ -1905,7 +1905,7 @@ div.TVTabedListContainer {
 		    margin-bottom: 24px;
 		}
 
-	.b-bus-tours-filter{
+	.b-bus-tours-filter ul{
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
 		column-count: 2;
@@ -2405,7 +2405,7 @@ div.TVTabedListContainer {
 		width: 100%;
 	}
 
-	.b-bus-tours-filter{
+	.b-bus-tours-filter ul{
 		-webkit-column-count: auto;
 		-moz-column-count: auto;
 		column-count: auto;

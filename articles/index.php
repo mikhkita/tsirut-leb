@@ -125,22 +125,16 @@ $APPLICATION->SetTitle("Наш блог о путешествиях");
 							<div class="b-tourvisor-nav-item">
 								<h3>Наши преимущества</h3>
 								<div class="nav-adv">
- <img src="/local/templates/main/html/i/adv-cards.svg">
-									<p>
-										 Онлайн-оплата туров прямо на сайте
-									</p>
+									<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-cards.svg">
+									<p><?=includeArea("filter-adv-1")?></p>
 								</div>
 								<div class="nav-adv">
- <img src="/local/templates/main/html/i/adv-earth.svg">
-									<p>
-										 Поиск туров по всем туроператорам
-									</p>
+									<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-earth.svg">
+									<p><?=includeArea("filter-adv-2")?></p>
 								</div>
 								<div class="nav-adv">
- <img src="/local/templates/main/html/i/adv-money.svg">
-									<p>
-										 Комиссию за вас платит туроператор
-									</p>
+									<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-money.svg">
+									<p><?=includeArea("filter-adv-3")?></p>
 								</div>
 							</div>
 							<div class="b-tourvisor-nav-item">

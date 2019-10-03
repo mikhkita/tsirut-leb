@@ -9,40 +9,85 @@ $APPLICATION->SetTitle("Автобусные туры из Белгорода");
 	<div class="b-bus-tours">
 		<div class="b-bus-tours-main clearfix">
 			<div class="b-bus-tours-left">
-				<h3>Фильтр туров</h3>
-				<ul class="b-bus-tours-filter">
-					<li class="b-checkbox">
-						<input id="bus-city-1" type="checkbox" name="">
-						<label for="bus-city-1">
-							<div class="b-checked icon-checked"></div>
-							<p>Абхазия</p>
-						</label>
-					</li>
-					<li class="b-checkbox">
-						<input id="bus-city-2" type="checkbox" name="">
-						<label for="bus-city-2">
-							<div class="b-checked icon-checked"></div>
-							<p>Адлер</p>
-						</label>
-					</li>
-					<li class="b-checkbox">
-						<input id="bus-city-3" type="checkbox" name="">
-						<label for="bus-city-3">
-							<div class="b-checked icon-checked"></div>
-							<p>Абхазия</p>
-						</label>
-					</li>
-					<li class="b-checkbox">
-						<input id="bus-city-4" type="checkbox" name="">
-						<label for="bus-city-4">
-							<div class="b-checked icon-checked"></div>
-							<p>Адлер</p>
-						</label>
-					</li>
-				</ul>
-				<div class="center">
-					<a href="#" class="b-btn b-btn-rect">Найти туры</a><br>
-					<a href="#" class="filter-refresh dashed">Сбросить фильтр</a>
+				<div class="b-bus-tours-filter">
+					<h3>Фильтр туров</h3>
+					<ul>
+						<li class="b-checkbox">
+							<input id="bus-city-1" type="checkbox" name="">
+							<label for="bus-city-1">
+								<div class="b-checked icon-checked"></div>
+								<p>Абхазия</p>
+							</label>
+						</li>
+						<li class="b-checkbox">
+							<input id="bus-city-2" type="checkbox" name="">
+							<label for="bus-city-2">
+								<div class="b-checked icon-checked"></div>
+								<p>Адлер</p>
+							</label>
+						</li>
+						<li class="b-checkbox">
+							<input id="bus-city-3" type="checkbox" name="">
+							<label for="bus-city-3">
+								<div class="b-checked icon-checked"></div>
+								<p>Абхазия</p>
+							</label>
+						</li>
+						<li class="b-checkbox">
+							<input id="bus-city-4" type="checkbox" name="">
+							<label for="bus-city-4">
+								<div class="b-checked icon-checked"></div>
+								<p>Адлер</p>
+							</label>
+						</li>
+					</ul>
+					<div class="center">
+						<a href="#" class="b-btn b-btn-rect">Найти туры</a><br>
+						<a href="#" class="filter-refresh dashed">Сбросить фильтр</a>
+					</div>
+				</div>
+				<div class="b-tourvisor-nav">
+					<div class="b-tourvisor-nav-item clearfix">
+						<h3>Популярные направления</h3>
+						 <?$APPLICATION->IncludeComponent(
+							"bitrix:catalog.section.list",
+							"country-list-articles",
+							Array(
+								"ADD_SECTIONS_CHAIN" => "N",
+								"CACHE_FILTER" => "N",
+								"CACHE_GROUPS" => "Y",
+								"CACHE_TIME" => "36000000",
+								"CACHE_TYPE" => "A",
+								"COUNT_ELEMENTS" => "Y",
+								"FILTER_NAME" => "sectionsFilter",
+								"IBLOCK_ID" => "1",
+								"IBLOCK_TYPE" => "content",
+								"SECTION_CODE" => "",
+								"SECTION_FIELDS" => array("PICTURE",""),
+								"SECTION_ID" => "1",
+								"SECTION_URL" => "",
+								"SECTION_USER_FIELDS" => array("UF_COUNTRY_NAME",""),
+								"SHOW_PARENT_NAME" => "Y",
+								"TOP_DEPTH" => "2",
+								"VIEW_MODE" => "LINE"
+							)
+						);?>
+					</div>
+					<div class="b-tourvisor-nav-item">
+						<h3>Наши преимущества</h3>
+						<div class="nav-adv">
+							<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-cards.svg">
+							<p><?=includeArea("filter-adv-1")?></p>
+						</div>
+						<div class="nav-adv">
+							<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-earth.svg">
+							<p><?=includeArea("filter-adv-2")?></p>
+						</div>
+						<div class="nav-adv">
+							<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-money.svg">
+							<p><?=includeArea("filter-adv-3")?></p>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="b-bus-tours-right">

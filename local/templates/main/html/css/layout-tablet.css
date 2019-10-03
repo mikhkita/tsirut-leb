@@ -401,6 +401,9 @@ div.TVFORow3 {
 	.b-bus-tours-item .b-right{
 		width: calc(100% - 172px);
 	}
+	.b-bus-tours-right .b-search-subscribe .b-subscribe-cont{
+		padding: 22px 30px 26px 30px;
+	}
 	
 }
 
