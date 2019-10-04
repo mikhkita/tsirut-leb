@@ -226,11 +226,15 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 			</div>
 		</div>
 
-		<?if($isDetail && isset($headImg['src'])){
+		<?
+		$headImgSrc = SITE_TEMPLATE_PATH.'/html/i/head.jpg';
+		if($isDetail && isset($headImg['src'])){
 			$headImgSrc = $headImg['src'];
-		}else{
-			$headImgSrc = SITE_TEMPLATE_PATH.'/html/i/head.jpg';
-		}?>
+		}
+		if($urlArr[1] == "search" && $urlArr[2] == "bus"){
+			$headImgSrc = SITE_TEMPLATE_PATH.'/html/i/head-bus.jpg';
+		}
+		?>
 		<div 
 			class="b b-head <?if($isDetail) echo 'b-head-detail';?> <?if(!$isMain) echo 'b-head-inner'?>" 
 			style="background-image: url('<?=$headImgSrc?>')"

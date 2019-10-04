@@ -727,7 +727,7 @@ $(document).ready(function(){
             articlesAjax.abort();
         }
         articlesAjax = $.ajax({
-            type: $(this).attr("method"),
+            type: $form.attr("method"),
             url: url,
             dataType: "html",
             success: function(data){
@@ -741,7 +741,44 @@ $(document).ready(function(){
                 progress.end();
             }
         });
-    })
+    });
+
+    $(document).on("click", ".bus-filter-submit", function(){
+        busAjaxFilter(false);
+        return false;
+    });
+    $(document).on("click", ".bus-filter-refresh", function(){
+        $(".b-bus-filter-form input:checked").prop("checked", false);
+        busAjaxFilter(true);
+        return false;
+    });
+
+    var busAjax;
+    function busAjaxFilter(refresh) {
+        var $form = $(".b-bus-filter-form");
+        var dataAjax = (refresh) ? "refresh=Y" : $form.serialize();
+        window.history.replaceState(null , null, '?'+dataAjax);
+        var url = window.location.href;
+        progress.start(1.5);
+        if(busAjax){
+            busAjax.abort();
+        }
+        busAjax = $.ajax({
+            type: $form.attr("method"),
+            url: url,
+            dataType: "html",
+            success: function(data){
+                var $html = $(data).find(".b-bus-tours-list").html();
+                if ($html.length) {
+                    $(".b-bus-tours-list").html($html);
+                }
+            },
+            complete: function(){
+                busAjax = false;
+                progress.end();
+            }
+        });
+    }
 
     // =========ТурТранс=========
 

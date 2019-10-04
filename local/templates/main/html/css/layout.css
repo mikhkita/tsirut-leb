@@ -3567,7 +3567,6 @@ ul.b-breadcrumbs {
 				margin-bottom: 0;
 			}
 				.b-bus-tours-filter ul li label{
-					display: inline-block;
 					font-size: 16px;
 					line-height: 16px;
 					color: #000;
@@ -3595,7 +3594,7 @@ ul.b-breadcrumbs {
 			min-width: 200px;
 			width: 100%;
 		}
-		.b-bus-tours-left .filter-refresh{
+		.b-bus-tours-left .bus-filter-refresh{
 			display: inline-block;
 			margin-top: 20px;
 			font-size: 16px;
@@ -3686,6 +3685,13 @@ ul.b-breadcrumbs {
 }
 .b-search-subscribe.b-bus-search-subscribe .b-subscribe-form .b-btn-submit {
     min-width: 248px;
+}
+
+.elements-not-found{
+	color: #282828;
+	margin: 10px 0 30px 0;
+	font-size: 28px;
+    line-height: 36px;
 }
 
 /*===== Стили для конструктора =====*/
