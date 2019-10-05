@@ -10,8 +10,8 @@ $APPLICATION->SetTitle("Наш блог о путешествиях");
 					<form method="GET" action="" class="b-articles-sort-form">
 						<div class="b-select-chosen">
 							<select class="select-sort" name="SORT">
-								<option value="asc">Возрастанию даты</option>
-								<option value="desc">Убыванию даты</option>
+								<option value="asc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "asc") echo "selected"?>>Возрастанию даты</option>
+								<option value="desc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "desc") echo "selected"?>>Убыванию даты</option>
 							</select>
 						</div>
 					</form>

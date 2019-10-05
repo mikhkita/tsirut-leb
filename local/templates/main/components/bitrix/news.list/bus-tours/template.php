@@ -17,10 +17,18 @@ $this->setFrameMode(true);
 		<h3>Фильтр туров</h3>
 		<form method="GET" action="" class="b-bus-filter-form">
 			<ul>
-			<?$property_enums = CIBlockPropertyEnum::GetList(Array("SORT"=>"ASC", "VALUE"=>"ASC"), Array("IBLOCK_ID"=>$arResult["IBLOCK_ID"], "CODE"=>"LOCATION_FILTER"));?>
+			<?
+			$ids = array();
+			if(isset($_REQUEST["loc"]) && !empty($_REQUEST["loc"])){
+				foreach ($_REQUEST["loc"] as $id => $value) {
+					$ids[] = $id;
+				}
+			}
+			$property_enums = CIBlockPropertyEnum::GetList(Array("SORT"=>"ASC", "VALUE"=>"ASC"), Array("IBLOCK_ID"=>$arResult["IBLOCK_ID"], "CODE"=>"LOCATION_FILTER"));
+			?>
 			<?while($enum_fields = $property_enums->GetNext()):?>
 				<li class="b-checkbox">
-					<input id="bus-city-<?=$enum_fields["ID"]?>" type="checkbox" name="loc[<?=$enum_fields["ID"]?>]">
+					<input id="bus-city-<?=$enum_fields["ID"]?>" type="checkbox" name="loc[<?=$enum_fields["ID"]?>]" <?if(in_array($enum_fields["ID"], $ids)) echo "checked"?>>
 					<label for="bus-city-<?=$enum_fields["ID"]?>">
 						<div class="b-checked icon-checked"></div>
 						<p><?=$enum_fields["VALUE"]?></p>

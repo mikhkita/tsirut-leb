@@ -771,6 +771,8 @@ $(document).ready(function(){
                 var $html = $(data).find(".b-bus-tours-list").html();
                 if ($html.length) {
                     $(".b-bus-tours-list").html($html);
+                    bindValidateAjax(".b-bus-tours-list .b-mailing-form .b-btn-submit.ajax");
+                    bindFancy(".b-bus-tours-list .b-mailing-form .fancy");
                 }
             },
             complete: function(){
@@ -930,7 +932,7 @@ $(document).ready(function(){
                         $sub.removeAttr("id");
                         $(".blpricesort").eq(6).after($sub);
                     }
-                    bindValidateAjax();
+                    bindValidateAjax(".TVSRBodyContainer .b-btn-submit.ajax");
                     bindFancy(".TVSRBodyContainer form .fancy");
                 }, 500);
 
@@ -991,8 +993,8 @@ $(document).ready(function(){
         });
     }
 
-    function bindValidateAjax() {
-        $(".TVSRBodyContainer .b-btn-submit.ajax").parents("form").each(function(){
+    function bindValidateAjax(selector) {
+        $(selector).parents("form").each(function(){
             //валидация
             if(!$(this).hasClass("validate-ready")){
                 $(this).validate({
