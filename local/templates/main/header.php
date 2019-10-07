@@ -14,9 +14,9 @@ $otherSearchPages = array("excursions", "bus");
 //Детальная страны
 $GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages));
 //Детальная курорта/месяца/сезона в стране
-$GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "search" && !empty($urlArr[2]) && !empty($urlArr[3]));
+$GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages) && !empty($urlArr[3]));
 //Детальная месяца/сезона в курорте
-$GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "search" && !empty($urlArr[2]) && !empty($urlArr[3]) && !empty($urlArr[4]));
+$GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages) && !empty($urlArr[3]) && !empty($urlArr[4]));
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];

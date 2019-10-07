@@ -2418,6 +2418,10 @@ div.TVTabedListContainer {
 		width: 100%;
 	}
 
+	.b-sea-cruises-img{
+		display: none;
+	}
+
 	/*===============*/
 
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVLocationButton,

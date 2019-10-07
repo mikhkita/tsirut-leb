@@ -3694,6 +3694,32 @@ ul.b-breadcrumbs {
     line-height: 36px;
 }
 
+/*===== Морские круизы =====*/
+
+.b-sea-cruises{
+	margin-bottom: 80px;
+}
+	.b-sea-cruises-left{
+		display: inline-block;
+		vertical-align: top;
+	}
+	.b-sea-cruises-img{
+		float: right;
+		width: 200px;
+		height: 200px;
+		background-position: 50% 50%;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-image: url(../i/sea-cruises.jpg);
+	    margin: 0 0 24px 24px;
+	}
+
+.b-ces-container #ces_container{
+    font-size: 16px;
+    line-height: 24px;
+    min-width: 0;
+}
+
 /*===== Стили для конструктора =====*/
 
 .b-constructor-desc{
@@ -3856,6 +3882,42 @@ ul.b-breadcrumbs {
 			.b-resorts-item a:hover{
 				border-bottom: 1px solid transparent;
 			}
+
+.b-text{
+	
+}	.b-text p{
+		margin-bottom: 10px;
+	}
+	.b-text h2{
+		color: #282828;
+		padding-top: 20px;
+		margin-bottom: 16px;
+	}
+	.b-text h3{
+		color: #282828;
+		padding-top: 12px;
+		margin-bottom: 8px;
+	}
+	.b-text ul{
+	    list-style: none;
+	    margin-top: 12px;
+	    margin-bottom: 12px;
+	}
+		.b-text ul li{
+			position: relative;
+			padding-left: 22px;
+			margin-bottom: 8px;
+		}
+		.b-text ul li:before {
+			content: " ";
+		    position: absolute;
+		    top: 8px;
+		    left: 0;
+		    width: 8px;
+		    height: 8px;
+		    background-color: #ED7408;
+		    border-radius: 4px;
+		}
 
 /*========*/
 
