@@ -12,10 +12,12 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="b-articles-detail">
+<div class="b-bus-detail">
 	<div class="b-content-back">
 		<div class="b-block">
-			<p>Детальная</p>
+			<div class="b-constructor">
+				<?=$arResult["DETAIL_TEXT"];?>
+			</div>
 		</div>
 	</div>
 </div>

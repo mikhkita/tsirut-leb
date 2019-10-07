@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Морские круизы");
 ?>
-	
+<div class="b-content-back b-contacts-top">
 	<div class="b-sea-cruises">
 		<div class="b-text">
 			<div class="b-sea-cruises-left">
@@ -46,4 +46,5 @@ $APPLICATION->SetTitle("Морские круизы");
 			<p>Программа и длительность маршрутов по всем направлениям разнообразна, включает в себя заходы в порты основных европейских городов, маленьких островков, пешие и индивидуальные экскурсии, много свободного времени, которое каждый турист может потратить на свое усмотрение.</p>
 		</div>
 	</div>
+</div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

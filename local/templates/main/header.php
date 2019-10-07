@@ -29,7 +29,7 @@ if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[4]) )
 	$page = $GLOBALS["page"] = "hot-detail";
 
-$GLOBALS["pagesList"] = array("search","hot-tours","russia","contacts","articles","articles-tag","about");
+$GLOBALS["pagesList"] = array("search","bus","sea-cruises","hot-tours","russia","contacts","articles","articles-tag","about");
 
 $GLOBALS["depends"] = array(
 	"search" => array(
