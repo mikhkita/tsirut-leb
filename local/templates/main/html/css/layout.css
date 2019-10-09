@@ -2712,7 +2712,7 @@ ul.b-breadcrumbs {
 	.b-content-back{
 		position: relative;
 		width: 1420px;
-		margin: 0 auto;
+		margin: 0 auto 80px auto;
 		background-color: rgba(255,255,255,0.7);
 		border-radius: 8px;
 		padding: 45px 70px 0 70px;
@@ -3889,12 +3889,12 @@ ul.b-breadcrumbs {
 		margin-bottom: 10px;
 	}
 	.b-text h2{
-		color: #282828;
+		/*color: #282828;*/
 		padding-top: 20px;
 		margin-bottom: 16px;
 	}
 	.b-text h3{
-		color: #282828;
+		/*color: #282828;*/
 		padding-top: 12px;
 		margin-bottom: 8px;
 	}

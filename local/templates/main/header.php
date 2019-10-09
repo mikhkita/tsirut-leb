@@ -159,6 +159,9 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/slick.css" type="text/css">
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/chosen.min.css" type="text/css">
+	<?if($urlArr[1] == "search" && $urlArr[2] == "excursions"):?>
+		<link href="https://www.tourtrans.ru/js/online-styles/new/modules.css" rel="stylesheet" type="text/css" />
+	<?endif;?>
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/layout.css?<?=$GLOBALS["version"]?>" type="text/css">
 
 	<?$APPLICATION->ShowHead();?>

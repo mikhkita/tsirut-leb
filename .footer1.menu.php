@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Экскурсионные туры", 
-		"/search/excursion/index.php", 
+		"/search/excursions/index.php", 
 		Array(), 
 		Array(), 
 		"" 
