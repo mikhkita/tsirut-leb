@@ -2,35 +2,35 @@
 $aMenuLinks = Array(
 	Array(
 		"Визы", 
-		"/visa/index.php", 
+		"/visa/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Морские круизы", 
-		"/sea-cruises/index.php", 
+		"/sea-cruises/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Экскурсионные туры", 
-		"/search/excursions/index.php", 
+		"/tours/excursions/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Автобусные туры", 
-		"/bus/index.php", 
+		"/bus/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Поиск туров", 
-		"/search/index.php", 
+		"/tours/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -2,10 +2,10 @@
 $arUrlRewrite=array (
   6 => 
   array (
-    'CONDITION' => '#^/search/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
+    'CONDITION' => '#^/tours/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1&RESORT=$2&MONTH=$3&$4',
     'ID' => '',
-    'PATH' => '/search/detailResortMonth.php',
+    'PATH' => '/tours/detailResortMonth.php',
     'SORT' => 100,
   ),
   4 => 
@@ -26,10 +26,10 @@ $arUrlRewrite=array (
   ),
   5 => 
   array (
-    'CONDITION' => '#^/search/(.+)/(.+)/(\\\\?(.*))?#',
+    'CONDITION' => '#^/tours/(.+)/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1&RESORT=$2&$3',
     'ID' => '',
-    'PATH' => '/search/detailResort.php',
+    'PATH' => '/tours/detailResort.php',
     'SORT' => 100,
   ),
   3 => 
@@ -50,10 +50,10 @@ $arUrlRewrite=array (
   ),
   1 => 
   array (
-    'CONDITION' => '#^/search/(.+)/(\\\\?(.*))?#',
+    'CONDITION' => '#^/tours/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1',
     'ID' => '',
-    'PATH' => '/search/detail.php',
+    'PATH' => '/tours/detail.php',
     'SORT' => 100,
   ),
   8 => 

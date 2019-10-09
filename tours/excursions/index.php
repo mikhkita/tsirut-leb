@@ -7,9 +7,9 @@ $APPLICATION->SetTitle("Экскурсионные туры по Европе");
 ?><div class="b-block">
 	<div class="b-block-ttv">
 		 <script type="text/javascript" src="https://www.tourtrans.ru/js/online-styles/new/modules.js" charset="uft-8"></script>
-		<div class="ttv-search" data-catalog-url="/search/excursions/results.php">
+		<div class="ttv-search" data-catalog-url="/tours/excursions/results.php">
 		</div>
-		<div class="ttv-hottours" data-catalog-url="/search/excursions/results.php">
+		<div class="ttv-hottours" data-catalog-url="/tours/excursions/results.php">
 		</div>
 	</div>
 </div>

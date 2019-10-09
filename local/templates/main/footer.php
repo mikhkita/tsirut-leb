@@ -89,7 +89,7 @@
 	
 	<div style="display:none;">
 
-		<?if($GLOBALS["isDetail"] || $GLOBALS["page"] == "search"):?>
+		<?if($GLOBALS["isDetail"] || $GLOBALS["page"] == "tours"):?>
 			<div class="b-search-subscribe-1" id="b-search-subscribe-1">
 				<div class="b-search-subscribe b-mailing-cont">
 					<div class="b-head-gradient"></div>

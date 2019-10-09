@@ -2,35 +2,35 @@
 $aMenuLinks = Array(
 	Array(
 		"О нас", 
-		"/about/index.php", 
+		"/about/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Клубная карта", 
-		"/club-card/index.php", 
+		"/club-card/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Подарочный сертификат", 
-		"/certificate/index.php", 
+		"/certificate/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Рассрочка 0%", 
-		"/installment/index.php", 
+		"/installment/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Акции и скидки!", 
-		"/discounts/index.php", 
+		"/discounts/", 
 		Array(), 
 		Array(), 
 		"" 

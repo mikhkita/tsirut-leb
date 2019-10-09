@@ -126,7 +126,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 );?>
 		</div>
 		<div class="center">
- <a href="/search/" class="b-btn b-btn-blue one-line">
+ <a href="/tours/" class="b-btn b-btn-blue one-line">
 			<p class="btn-bold">
 				 Все направления
 			</p>

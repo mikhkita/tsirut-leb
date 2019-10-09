@@ -9,14 +9,14 @@ $urlArr = explode("/", $curPage);
 $GLOBALS["urlArr"] = $urlArr;
 $GLOBALS["isMain"] = $isMain = ( $curPage == "/" )?true:false;
 
-$otherSearchPages = array("excursions", "bus");
+$otherToursPages = array("excursions", "bus");
 
 //Детальная страны
-$GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages));
+$GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages));
 //Детальная курорта/месяца/сезона в стране
-$GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages) && !empty($urlArr[3]));
+$GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]));
 //Детальная месяца/сезона в курорте
-$GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "search" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherSearchPages) && !empty($urlArr[3]) && !empty($urlArr[4]));
+$GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]) && !empty($urlArr[4]));
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
@@ -29,10 +29,10 @@ if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[4]) )
 	$page = $GLOBALS["page"] = "hot-detail";
 
-$GLOBALS["pagesList"] = array("search","bus","sea-cruises","hot-tours","russia","contacts","articles","articles-tag","about");
+$GLOBALS["pagesList"] = array("tours","bus","sea-cruises","hot-tours","russia","contacts","articles","articles-tag","about");
 
 $GLOBALS["depends"] = array(
-	"search" => array(
+	"tours" => array(
 		"js" => array(
 			SITE_TEMPLATE_PATH."/html/js/isotope.pkgd.min.js"
 		)
@@ -159,7 +159,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/slick.css" type="text/css">
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/chosen.min.css" type="text/css">
-	<?if($urlArr[1] == "search" && $urlArr[2] == "excursions"):?>
+	<?if($urlArr[1] == "tours" && $urlArr[2] == "excursions"):?>
 		<link href="https://www.tourtrans.ru/js/online-styles/new/modules.css" rel="stylesheet" type="text/css" />
 	<?endif;?>
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/html/css/layout.css?<?=$GLOBALS["version"]?>" type="text/css">
@@ -234,7 +234,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		if($isDetail && isset($headImg['src'])){
 			$headImgSrc = $headImg['src'];
 		}
-		if($urlArr[1] == "search" && $urlArr[2] == "bus"){
+		if($urlArr[1] == "bus"){
 			$headImgSrc = SITE_TEMPLATE_PATH.'/html/i/head-bus.jpg';
 		}
 		?>
@@ -280,14 +280,14 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], $curPage);
 						}elseif($isDetail && $isDetailResort && !$isDetailResortMonth){
 							//добавить текущую страну в цепочку
-							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/");
+							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/tours/".$GLOBALS["arCountry"]["code"]."/");
 							//добавить текущий курорт в цепочку
 							$APPLICATION->AddChainItem($GLOBALS["arResort"]["title"], $curPage);
 						}elseif($isDetail && $isDetailResortMonth){
 							//добавить текущую страну в цепочку
-							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/");
+							$APPLICATION->AddChainItem($GLOBALS["arCountry"]["title"], "/tours/".$GLOBALS["arCountry"]["code"]."/");
 							//добавить текущий курорт в цепочку
-							$APPLICATION->AddChainItem($GLOBALS["arResort"]["title"], "/search/".$GLOBALS["arCountry"]["code"]."/".$GLOBALS["arResort"]["code"]."/");
+							$APPLICATION->AddChainItem($GLOBALS["arResort"]["title"], "/tours/".$GLOBALS["arCountry"]["code"]."/".$GLOBALS["arResort"]["code"]."/");
 							//добавить месяц/сезон в цепочку
 							$APPLICATION->AddChainItem($GLOBALS["arMonth"]["title"], $curPage);
 						}

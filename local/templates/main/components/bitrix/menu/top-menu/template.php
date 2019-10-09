@@ -27,7 +27,7 @@
 			</ul>
 		</li>
 	</ul>
-	<a href="/search/" class="b-search-tours">
+	<a href="/tours/" class="b-search-tours">
 		<p>
 			<span>Поиск туров</span>
 			<!-- <span class="tablet">Поиск туров</span> -->
