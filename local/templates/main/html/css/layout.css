@@ -3885,30 +3885,30 @@ ul.b-breadcrumbs {
 
 .b-text{
 	
-}	.b-text p{
+}	.b-text > p{
 		margin-bottom: 10px;
 	}
-	.b-text h2{
+	.b-text > h2{
 		/*color: #282828;*/
 		padding-top: 20px;
 		margin-bottom: 16px;
 	}
-	.b-text h3{
+	.b-text > h3{
 		/*color: #282828;*/
 		padding-top: 12px;
 		margin-bottom: 8px;
 	}
-	.b-text ul{
+	.b-text > ul{
 	    list-style: none;
 	    margin-top: 12px;
 	    margin-bottom: 12px;
 	}
-		.b-text ul li{
+		.b-text > ul li{
 			position: relative;
 			padding-left: 22px;
 			margin-bottom: 8px;
 		}
-		.b-text ul li:before {
+		.b-text > ul li:before {
 			content: " ";
 		    position: absolute;
 		    top: 8px;
