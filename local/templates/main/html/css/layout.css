@@ -2497,7 +2497,7 @@ ul.b-breadcrumbs {
 		width: 302px;
 	}
 	.b-filter-cont.hidden{
-		display: none !important;
+		/*display: none !important;*/
 	}
 		.b-filter{
 			width: 100%;
@@ -3718,6 +3718,10 @@ ul.b-breadcrumbs {
     font-size: 16px;
     line-height: 24px;
     min-width: 0;
+}
+
+.b-sea-cruises #ces_container table{
+
 }
 
 /*===== Стили для конструктора =====*/

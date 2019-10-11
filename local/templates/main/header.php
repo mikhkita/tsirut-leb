@@ -20,7 +20,7 @@ $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" 
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 11;
+$GLOBALS["version"] = 12;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
