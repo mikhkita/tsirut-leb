@@ -836,6 +836,69 @@ $(document).ready(function(){
         }, 30);
     }
 
+    // =========Морские круизы=========
+
+    var listen = false;
+    if($(".b-sea-cruises").length){
+        waitLoadCruises();
+    }
+
+    function waitLoadCruises() {
+        listen = true;
+        var waitCruises = setInterval(function(){
+            if( $("#cruises_schedule_filter").length && !$("#ces_loading").is(":visible") ){
+                setTimeout(function(){
+                    $("#csf_price_from").attr("placeholder", "от");
+                    $("#csf_price_thru").attr("placeholder", "до");
+                    $("#csf_length_from").attr("placeholder", "c");
+                    $("#csf_length_thru").attr("placeholder", "по");
+                    $("#cruises_schedule_filter .csf_extra_pannel > div").addClass("filter-select");
+                    $("#cruises_schedule_filter .csf_main .clear").remove();
+                    $("#cruises_schedule_filter .csf_main p").each(function(){
+                        if( $.trim($(this).text()) == "" ){
+                            $(this).remove();
+                        }
+                    });
+                    $("#cruises_schedule_filter .csf_main").prepend($("#cruises_schedule_filter .csf_main p").eq(1));
+                    //расставить чекбоксы
+                    $("#cruises_schedule_filter input[type=checkbox]").each(function(){
+                        var $cont = $(this).parent();
+                        $cont.addClass("b-checkbox");
+                        var text = $cont.children("label").text();
+                        $cont.children("label").html("<div class='b-checked icon-checked'></div><p>"+$.trim(text)+"</p>");
+                        $cont.prepend($(this));
+                    });
+                    //расставить радиокнопки
+                    var i = 1;
+                    $("#currency_selector").addClass("b-radio-list");
+                    $("#currency_selector span").each(function(){
+                        $(this).children("input").attr("id", "currency_selector_"+i);
+                        $(this).append("<label for='currency_selector_"+i+"'>"+ $.trim($(this).text()) +"</label>");
+                        $(this).contents().filter(function() {return this.nodeType == 3;}).remove();
+                        i++;
+                    });
+                    console.log("cruises loaded");
+                    listen = false;
+                }, 50);
+                clearInterval(waitCruises);
+            }
+            console.log("listen");
+        }, 30);
+    }
+
+    $(document).on("click", "#ces_menu_container a", function(){
+        if(!listen){
+            waitLoadCruises();
+            console.log("link-click!");
+        }
+    });
+    $(document).on("change", "#currency_selector input", function(){
+        if(!listen){
+            waitLoadCruises();
+            console.log("input-change!");
+        }
+    });
+
     // =========Турвизор=========
 
     if($(".b-tourvisor-header").length){
