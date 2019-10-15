@@ -1509,6 +1509,55 @@ div.TVTabedListContainer {
     padding: 0 65px 0 16px;
 }
 
+.b-sea-cruises #ces_container .csf_extra input {
+    width: 70px;
+}
+.b-sea-cruises #ces_container #cruises_schedule_filter input {
+    margin-right: 10px;
+}
+.b-sea-cruises #ces_container .csf_main > p,
+.b-sea-cruises #ces_container #cruises_schedule_filter .filter-select{
+	width: calc(50% - 14px);
+}
+.b-sea-cruises #ces_container #cruises_schedule_filter .filter-select:nth-child(2n){
+	margin-right: 0;
+}
+.b-sea-cruises #ces_container .csf_main > p:nth-child(2){
+	margin-right: 0;
+	margin-bottom: 0;
+}
+.b-sea-cruises #ces_container #cruises_schedule_filter #csf_submit {
+    width: calc(50% - 8px);
+}
+
+.b-sea-cruises #ces_container {
+    overflow: visible;
+}
+
+.b-sea-cruises #ces_container .cruise_timetable {
+	float: none;
+    width: 100%;
+}
+.b-sea-cruises #ces_container .cruise_map {
+    float: none;
+}
+
+.b-sea-cruises #ces_container .cruise_boarding table {
+    width: auto;
+}
+.b-sea-cruises #ces_container #cruises_schedule th, 
+.b-sea-cruises #ces_container #cruises_schedule td, 
+.b-sea-cruises #ces_container #cruise_page table th, 
+.b-sea-cruises #ces_container #cruise_page table td {
+    padding: 8px 10px;
+}
+
+.b-sea-cruises #ces_container .cab_header {
+	float: none;
+    padding-left: 0;
+}
+
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -1916,6 +1965,28 @@ div.TVTabedListContainer {
 	.b-bus-tours-item .price {
 	    position: static;
 	    margin-top: 12px;
+	}
+
+	.simplemodal-container {
+	    width: 320px !important;
+	}
+	.simplemodal-container textarea {
+		width: 320px;
+	    height: 145px;
+	}
+	.simplemodal-container table th, 
+	.simplemodal-container table td {
+	    display: block;
+	}
+	#ces_booking_head {
+	    width: 320px;
+	}
+	#ces_booking_form {
+	    width: 100% !important;
+	}
+	.simplemodal-container #ces_booking_submit, 
+	.simplemodal-container #ces_booking_cancel {
+	    font-size: 18px;
 	}
 
 	/*====*/
@@ -2420,6 +2491,31 @@ div.TVTabedListContainer {
 
 	.b-sea-cruises-img{
 		display: none;
+	}
+
+	.b-sea-cruises #ces_container .csf_extra input {
+
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter input {
+
+	}
+	.b-sea-cruises #ces_container .csf_main > p,
+	.b-sea-cruises #ces_container #cruises_schedule_filter .filter-select{
+		width: 100%;
+		margin-right: 0;
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter .filter-select:nth-child(2n){
+
+	}
+	.b-sea-cruises #ces_container .csf_main > p:nth-child(2){
+
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter #csf_submit {
+	    width: 100%;
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter .csf_main > p:nth-child(2) {
+	    margin-top: 8px;
+	    width: 100%;
 	}
 
 	/*===============*/
@@ -3165,6 +3261,17 @@ div.TVTabedListContainer {
 	.b-calendar .TVCalShowAll:before {
 	    font-size: 18px;
 	    line-height: 24px;
+	}
+
+	.b-sea-cruises #ces_container .cruise_map {
+	    float: none;
+	    height: auto;
+	    width: 100%;
+	    background: none;
+	}
+	.b-sea-cruises #ces_container .cruise_map IMG {
+	    width: 100%;
+	    position: static;
 	}
 
 	/*====*/

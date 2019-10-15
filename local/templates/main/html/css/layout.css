@@ -3719,6 +3719,10 @@ ul.b-breadcrumbs {
     line-height: 24px;
     min-width: 0;
 }
+.b-ces-container #ces_container h1 {
+    color: #282828;
+    margin-top: 50px;
+}
 
 .b-sea-cruises #ces_container .csf_main {
     float: none;
@@ -3734,8 +3738,10 @@ ul.b-breadcrumbs {
 	    font-family: 'Gilroy-Medium';
 	    height: auto;
 	}
-	.b-sea-cruises #ces_container #cruises_schedule_filter .csf_main label[for=csf_rus_group]{
+	.b-sea-cruises #ces_container #cruises_schedule_filter .csf_main > p:nth-child(2){
 		margin-top: 44px;
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter .csf_main label[for=csf_rus_group]{
 		width: 100%;
 	}
 	.b-sea-cruises #ces_container #cruises_schedule_filter .csf_main label[for=csf_month]{
@@ -3746,7 +3752,7 @@ ul.b-breadcrumbs {
     float: none;
     width: 100%;
 }
-.b-sea-cruises #ces_container .csf_main p,
+.b-sea-cruises #ces_container .csf_main > p,
 .b-sea-cruises #ces_container #cruises_schedule_filter .filter-select{
 	display: inline-block;
 	vertical-align: top;
@@ -3828,11 +3834,13 @@ ul.b-breadcrumbs {
 
 .b-sea-cruises #ces_container #cruises_schedule_filter .b-checkbox .b-checked{
 	margin-right: 10px;
-    border: 2px solid #BCC1C7;
+    border: 2px solid #B5C3D6;
 }
 .b-sea-cruises #ces_container #cruises_schedule_filter .b-checkbox label p{
+	vertical-align: top;
 	width: calc(100% - 40px);
 	margin-right: 0;
+	margin-bottom: 0;
 }
 .b-sea-cruises #ces_container #cruises_schedule_filter .b-checkbox:hover .b-checked{
     border: 2px solid #ED7408;
@@ -3848,7 +3856,7 @@ ul.b-breadcrumbs {
 }
 
 .b-sea-cruises #ces_container table{
-
+	width: 100%;
 }
 	.b-sea-cruises #ces_container #cruises_schedule th,
 	.b-sea-cruises #ces_container #cruises_schedule td,
@@ -3858,9 +3866,145 @@ ul.b-breadcrumbs {
 	    padding: 12px 16px;
 	}
 
+	.b-sea-cruises #ces_container #cruises_schedule .sch_price {
+	    color: #ED7408;
+	}
+
 	.b-sea-cruises #ces_container #currency_selector label{
 		padding-left: 26px;
 	}
+
+.b-sea-cruises #ces_container .b-table-wrap {
+    overflow: auto;
+    width: 100vw;
+    margin-left: -16px;
+    box-sizing: border-box;
+}
+
+.b-sea-cruises #ces_container .cruise_timetable {
+    width: calc(100% - 400px);
+}
+	.b-sea-cruises #ces_container #cruise_timetable {
+	    width: 100%;
+	}
+
+.b-sea-cruises #ces_container .cruise_boarding {
+    float: left;
+    padding-top: 0;
+    margin-bottom: 16px;
+}
+.b-sea-cruises #ces_container .cruise_description {
+	padding-top: 0;
+    float: right;
+}
+.b-sea-cruises #ces_container .cruise_description.with_boardings {
+    float: none;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.b-sea-cruises #ces_container .cruise_boarding table {
+    width: 377px;
+}
+.b-sea-cruises #ces_container table.cruise_dates{
+	width: auto;
+}
+	.b-sea-cruises #ces_container #cruise_block_dates table.cruise_dates td{
+		padding: 0;
+	}
+		.b-sea-cruises #ces_container #cruise_block_dates table.cruise_dates span,
+		.b-sea-cruises #ces_container #cruise_block_dates table.cruise_dates a{
+			border-bottom: 0;
+			height: auto;
+    		padding: 8px;
+		}
+
+.b-sea-cruises #ces_container .boardings_cb {
+    background: none;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #ED7408;
+    border-radius: 3px;
+}
+.b-sea-cruises #ces_container .boardings_cb.cb_checked{
+    background: url(../i/icon-checked-orange.svg) 50% 50% no-repeat;
+}
+.b-sea-cruises #ces_container .cruise_price_table.with_packet {
+    float: left;
+    width: 100%;
+}
+
+.simplemodal-container{
+	padding: 24px;
+    background-color: #FFF;
+    box-sizing: content-box;
+    border-radius: 10px;
+}
+#ces_booking_form {
+    width: 600px !important;
+}
+.simplemodal-container input{
+	padding: 0;
+	border-radius: 0;
+	color: #282828;
+	border-bottom: 2px solid #B5C3D6;
+}
+
+.simplemodal-container textarea{
+	padding: 14px;
+	border-radius: 6px;
+	color: #282828;
+	border: 2px solid #B5C3D6;
+}
+
+.simplemodal-container table{
+	border-spacing: 0;
+}
+	.simplemodal-container table th,
+	.simplemodal-container table td{
+		border: 0;
+	}
+	.simplemodal-container table h3{
+		margin-top: 20px;
+		margin-bottom: 16px;
+	}
+
+.simplemodal-container #ces_booking_submit,
+.simplemodal-container #ces_booking_cancel{
+	font-family: 'Gilroy-Bold';
+    font-size: 20px;
+    line-height: 24px;
+    background-image: linear-gradient(180deg, #FFBD73 0%, #ED7408 100%);
+    border-radius: 6px;
+    border: 0;
+    padding: 14px 16px;
+    color: #FFF;
+    cursor: pointer;
+    margin-top: 16px;
+}
+.simplemodal-container #ces_booking_cancel{
+    background-image: linear-gradient(180deg, #b5b5b5 0%, #7b7b7b 100%);
+}
+#ces_booking_head{
+	margin-top: 0;
+}
+
+#client_adults, #client_childs {
+    padding: 6px 34px 6px 10px;
+    background-color: transparent;
+    border: 2px solid #B5C3D6;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Gilroy-Medium';
+    background-position: 78% 50%;
+    background-repeat: no-repeat;
+    background-size: 17px;
+    background-image: url(../i/icon-select.svg);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-right: 24px;
+}
 
 /*===== Стили для конструктора =====*/
 

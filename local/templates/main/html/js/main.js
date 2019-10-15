@@ -838,9 +838,14 @@ $(document).ready(function(){
 
     // =========Морские круизы=========
 
-    var listen = false;
+    var listen = false,
+        listenDetail = false;
     if($(".b-sea-cruises").length){
-        waitLoadCruises();
+        var watchPreloader = setInterval(function(){//всегда отслеживаем появление прелоадера
+            if($("#ces_loading").is(":visible") && !listen){
+                waitLoadCruises();
+            }
+        }, 50);
     }
 
     function waitLoadCruises() {
@@ -877,27 +882,64 @@ $(document).ready(function(){
                         $(this).contents().filter(function() {return this.nodeType == 3;}).remove();
                         i++;
                     });
-                    console.log("cruises loaded");
+                    if(isMobile && $("#cruises_schedule").length){
+                        $("#cruises_schedule").wrap('<div class="b-table-wrap"></div>');
+                    }
+                    console.log("waitLoadCruises. end.");
                     listen = false;
                 }, 50);
                 clearInterval(waitCruises);
             }
             console.log("listen");
-        }, 30);
+        }, 50);
     }
 
     $(document).on("click", "#ces_menu_container a", function(){
         if(!listen){
             waitLoadCruises();
-            console.log("link-click!");
         }
     });
-    $(document).on("change", "#currency_selector input", function(){
-        if(!listen){
+    $(document).on("click", "#currency_selector span", function(){
+        if($("#cruises_schedule_filter").length && !listen){
             waitLoadCruises();
-            console.log("input-change!");
+        }
+        if($("#cruise_page").length && !listenDetail){
+            waitLoadCruisesDetail();
         }
     });
+
+    $(document).on("click", "#cruises_schedule a", function(){
+        if(!listenDetail){
+            waitLoadCruisesDetail();
+            console.log("click! cruises_schedule a");
+        }
+    });
+
+    function waitLoadCruisesDetail() {
+        listenDetail = true;
+        var waitCruisesDetail = setInterval(function(){
+            if( $("#cruise_page").length && !$("#ces_loading").is(":visible") ){
+                setTimeout(function(){
+                    //расставить радиокнопки
+                    var i = 1;
+                    $("#currency_selector").addClass("b-radio-list");
+                    $("#currency_selector span").each(function(){
+                        $(this).children("input").attr("id", "currency_selector_"+i);
+                        $(this).append("<label for='currency_selector_"+i+"'>"+ $.trim($(this).text()) +"</label>");
+                        $(this).contents().filter(function() {return this.nodeType == 3;}).remove();
+                        i++;
+                    });
+                    if(isMobile && $(".cruise_price_table").length){
+                        $(".cruise_price_table").wrap('<div class="b-table-wrap"></div>');
+                    }
+                    console.log("waitLoadCruisesDetail. end.");
+                    listenDetail = false;
+                }, 50);
+                clearInterval(waitCruisesDetail);
+            }
+            console.log("listenDetail");
+        }, 50);
+    }
 
     // =========Турвизор=========
 

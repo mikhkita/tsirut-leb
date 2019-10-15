@@ -404,6 +404,27 @@ div.TVFORow3 {
 	.b-bus-tours-right .b-search-subscribe .b-subscribe-cont{
 		padding: 22px 30px 26px 30px;
 	}
+
+	.b-sea-cruises #ces_container .csf_extra input {
+	    width: 70px;
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter input {
+	    margin-right: 10px;
+	}
+	.b-sea-cruises #ces_container .csf_main > p,
+	.b-sea-cruises #ces_container #cruises_schedule_filter .filter-select{
+		width: calc(50% - 14px);
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter .filter-select:nth-child(2n){
+		margin-right: 0;
+	}
+	.b-sea-cruises #ces_container .csf_main > p:nth-child(2){
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+	.b-sea-cruises #ces_container #cruises_schedule_filter #csf_submit {
+	    width: calc(50% - 8px);
+	}
 	
 }
 
@@ -891,6 +912,14 @@ div.TVFORow3 {
 	.b-bus-tours-item .price {
 	    position: static;
 	    margin-top: 12px;
+	}
+
+	.b-sea-cruises #ces_container .cruise_timetable {
+	    float: none;
+	    width: 100%;
+	}
+	.b-sea-cruises #ces_container .cruise_map {
+	    float: none;
 	}
 
 }
