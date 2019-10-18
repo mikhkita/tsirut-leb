@@ -128,7 +128,7 @@ $APPLICATION->SetTitle("Поиск туров");
 					</p>
  </label>
 				</div>
-				<input type="submit" value="Подписаться" style="display:none;">
+				<input type="submit" value="Отправить" style="display:none;">
 			</form>
 		</div>
 		<div class="b-5-manager">

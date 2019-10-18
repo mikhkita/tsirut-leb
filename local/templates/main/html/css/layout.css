@@ -8833,3 +8833,99 @@ div.ttv-datepicker .ui-datepicker-header .ui-datepicker-next{
 	background: #ED7408;
 }
 
+/*===========TourTrans (список туров)==========*/
+
+.b-block-ttv .ttv-catalog{
+	font-family: 'Gilroy-Regular';
+	color: #434343;
+}
+	.b-block-ttv .ttv-catalog h1{
+		font-size: 45px;
+	    line-height: 55px;
+	    margin-bottom: 35px;
+	    color: #282828;
+	    font-family: 'Gilroy-Bold';
+	    margin-top: 0;
+	}
+		.b-block-ttv .ttv-catalog .ttv-options {
+		    font-family: 'Gilroy-Medium';
+		    font-size: 16px;
+		    right: 0;
+		}
+			.b-block-ttv .ttv-catalog .ttv-options .ttv-results {
+			    font-family: 'Gilroy-Bold';
+			    font-size: 18px;
+			    margin-bottom: 10px;
+			}
+			.b-block-ttv .ttv-catalog .ttv-options .sort_duration{
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.b-block-ttv .ttv-catalog .ttv-options a{
+				padding: 2px 0;
+			}
+
+	.b-block-ttv .ttv-search .ttv-tour-title a, 
+	.b-block-ttv .ttv-catalog .ttv-tour-title a{
+		font-family: 'Gilroy-Bold';
+		color: #282828;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-actions a {
+	    color: #434343;
+	    border-bottom: 1px dashed #434343;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-actions a:hover{
+		border-bottom: 1px dashed transparent;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data .ttv-tour-prices {
+	    background-color: transparent;
+	    padding: 0;
+	    font-family: 'Gilroy-Bold';
+	    width: auto;
+	    max-width: 190px;
+	    color: #ED7409;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data .ttv-tour-prices .ttv-tour-dop {
+	    font-size: 16px;
+	    font-family: 'Gilroy-Regular';
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data .ttv-tour-names{
+		min-height: 0;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data .ttv-tour-route {
+	    font-size: 16px;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data .ttv-tour-visa {
+	    font-size: 16px;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data .ttv-tour-update {
+	    font-size: 14px;
+	}
+
+	.b-block-ttv .ttv-catalog .ttv-options a:hover{
+		color: #ED7409;
+	}
+	.b-block-ttv .ttv-catalog .ttv-options a.active {
+	    text-decoration: none;
+	    background-color: transparent;
+	    color: #ED7409;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-bottom > div > div {
+	    font-size: 16px;
+	}
+
+@media screen and (max-width: 950px){
+	.b-block-ttv .ttv-catalog.mobile .ttv-tour-image{
+	    width: 200px;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data{
+		float: right;
+		width: calc(100% - 210px);
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-top, 
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-bottom{
+		padding: 16px !important;
+	}
+}
+
+

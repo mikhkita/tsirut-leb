@@ -111,7 +111,7 @@
 							<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
 							<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
 							<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">
-								<p class="btn-bold">Подписаться</p>
+								<p class="btn-bold">Отправить</p>
 							</a>
 							<div class="b-checkbox">
 								<input id="TVcheckbox-politics-2" type="checkbox" name="politics" checked required>
@@ -120,7 +120,7 @@
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
 							</div>
-							<input type="submit" value="Подписаться" style="display:none;">
+							<input type="submit" value="Отправить" style="display:none;">
 						</form>
 					</div>
 				</div>
@@ -315,7 +315,7 @@
 			<div class="b-popup-content">
 				<h2 class="small-mb">Заказать обратный звонок</h2>
 				<h4>Оставьте заявку и наш менеджер перезвонит Вам в ближайшее время</h4>
-				<form action="/subscribe.php" method="POST">
+				<form action="/backCall.php" method="POST">
 					<input type="text" name="name" placeholder="Вашe имя" required>
 					<input type="text" name="phone" placeholder="Ваш телефон" required>
 					<input type="text" name="MAIL" required placeholder="Ваш e-mail">
@@ -339,7 +339,7 @@
 			<div class="b-popup-content">
 				<h2 class="small-mb">Заявка на подбор тура</h2>
 				<h4>Оставьте заявку нашему менеджеру и он подберет для вас лучший тур по цене туроператора</h4>
-				<form action="/subscribe.php" method="POST">
+				<form action="/searchTour.php" method="POST">
 					<input type="text" name="name" placeholder="Вашe имя" required>
 					<input type="text" name="phone" placeholder="Ваш телефон" required>
 					<input type="text" name="MAIL" required placeholder="Ваш e-mail">
@@ -637,7 +637,7 @@
 									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
  								</label>
 							</div>
-							<input type="submit" value="Подписаться" style="display:none;">
+							<input type="submit" value="Отправить" style="display:none;">
 						</div>
 					</div>
 				</form>
