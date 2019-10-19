@@ -9,9 +9,6 @@ $filterTags = array(
 	"prodawez392@gmail.com",
 );
 
-echo "1";
-die();
-
 $spam = false;
 foreach ($_POST as $i => $value)
 	foreach ($filterTags as $j => $tag)
@@ -28,6 +25,14 @@ if( (isset($_POST["MAIL"]) && $_POST["MAIL"] != "") || $spam ){
 		echo "0";
 	}
 }else{
-	echo "0";
+	$arEventFields = array(
+		"EMAIL"	=> $_POST["email"],
+	);
+
+	if(CEvent::Send("SUBSCRIBE", "s1", $arEventFields)){
+		echo "1";
+	}else{
+		echo "0";
+	}
 }
 ?>

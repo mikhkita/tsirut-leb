@@ -695,7 +695,11 @@
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/KitProgress.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/KitAnimate.js"></script>
-	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/mask.js"></script>
+	<? if( !(strpos($_SERVER['HTTP_USER_AGENT'],'MSIE')!==false || strpos($_SERVER['HTTP_USER_AGENT'],'rv:11.0')!==false) ): ?>
+		<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/mask.js"></script>
+	<? else: ?>
+		<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/jquery.maskedinput.min.js"></script>
+	<? endif; ?>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/KitSend.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/slick.min.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/parallax.min.js"></script>

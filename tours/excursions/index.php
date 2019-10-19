@@ -13,7 +13,7 @@ $APPLICATION->SetTitle("Экскурсионные туры по Европе");
 		</div>
 	</div>
 </div>
-<div class="b b-excursions-popular">
+<div class="b b-popular-excursions">
 	<div class="b-block">
 		<h2 class="b-title">Самые популярные направления</h2>
 		 <?$APPLICATION->IncludeComponent(
