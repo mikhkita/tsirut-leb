@@ -7,6 +7,8 @@ $(document).ready(function(){
         isTablet = false,
         isMobile = false,
         isMobileSmall = false,
+        myWidth,
+        myHeight,
         isRetina = retina(),
         rowCountry = 0,
         countCards = 0,
@@ -462,6 +464,36 @@ $(document).ready(function(){
               breakpoint: 768,
               settings: {
                 fade: false,
+              }
+            },
+          ]
+    });
+
+    $(".b-review-slider").on('init', function(event, slick){
+        if(slick.slideCount < 4 && myWidth >= 920){
+            $(".b-review-slider .slick-dots").addClass("hide");
+        }
+    });
+    $(".b-review-slider").slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        speed: 600,
+        cssEase: 'linear',
+        adaptiveHeight: true,
+        responsive: [
+            {
+              breakpoint: 920,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
               }
             },
           ]

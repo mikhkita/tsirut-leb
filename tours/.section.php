@@ -1,6 +1,7 @@
 <?
 $sSectionName = "Поиск туров";
 $arDirProperties = Array(
-   "header-title" => "Онлайн поиск туров<br> по всем туроператорам"
+   "header-title" => "Онлайн поиск туров<br> по всем туроператорам",
+   "header-text" => "-"
 );
 ?>

@@ -13,7 +13,7 @@
 	<?endforeach?>
 	</ul>
 	<div class="slideout-button">
-		<a href="/tours/" class="b-btn b-btn-blue one-line">
+		<a href="/tours/poisk/" class="b-btn b-btn-blue one-line">
 			<p class="btn-bold">Поиск туров</p>
 		</a>
 	</div>

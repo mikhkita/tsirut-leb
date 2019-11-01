@@ -113,6 +113,9 @@ function writeLog($record, $filename){
 
 //Получить инфу о разделе в стране
 function getCountrySection($country, $curSection = false){
+	if(empty($country)){
+		return false;
+	}
 	//CModule::IncludeModule('iblock');
 	$arCountrySect = array();
 	if($curSection){//вложенный в страну раздел

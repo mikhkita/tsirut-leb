@@ -9,7 +9,9 @@ $urlArr = explode("/", $curPage);
 $GLOBALS["urlArr"] = $urlArr;
 $GLOBALS["isMain"] = $isMain = ( $curPage == "/" )?true:false;
 
-$otherToursPages = array("excursions", "bus");
+$GLOBALS["is404"] = $is404 = ($urlArr[1] == "404.php") || (ERROR_404 == "Y");
+//Разделы, которые находятся в /tours/
+$otherToursPages = array("excursions", "bus", "sea-cruises", "poisk");
 
 //Детальная страны
 $GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages));
@@ -20,7 +22,7 @@ $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" 
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 13;
+$GLOBALS["version"] = 14;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -29,10 +31,15 @@ if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[4]) )
 	$page = $GLOBALS["page"] = "hot-detail";
 
-$GLOBALS["pagesList"] = array("tours","bus","sea-cruises","hot-tours","russia","contacts","articles","articles-tag","about");
+$GLOBALS["pagesList"] = array("tours","hot-tours","russia","contacts","articles","articles-tag","about");
 
 $GLOBALS["depends"] = array(
 	"tours" => array(
+		"js" => array(
+			SITE_TEMPLATE_PATH."/html/js/isotope.pkgd.min.js"
+		)
+	),
+	"poisk" => array(
 		"js" => array(
 			SITE_TEMPLATE_PATH."/html/js/isotope.pkgd.min.js"
 		)
@@ -221,7 +228,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						0 => "",
 					),
 					"MAX_LEVEL" => "2",	// Уровень вложенности меню
-					"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+					"CHILD_MENU_TYPE" => "sub",	// Тип меню для остальных уровней
 					"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 					"DELAY" => "N",	// Откладывать выполнение шаблона меню
 					"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
@@ -339,14 +346,20 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 							), false);?>
 						<?endif;?>
 						<?
-						if(!empty($APPLICATION->GetProperty("header-title"))){
-							$title = $APPLICATION->GetProperty("header-title");
-							echo $APPLICATION->SetTitle($title);
+						if($APPLICATION->GetProperty("header-title") != "-" && !isset($_REQUEST["TAG"]) && !$GLOBALS["is404"]){
+							$titleHeader = $APPLICATION->GetProperty("header-title");
+							//echo $APPLICATION->SetTitle($title);
 						}
 						?>
-						<h1><?$APPLICATION->ShowTitle()?></h1>
+						<h1>
+							<?if(isset($titleHeader)){
+								echo $titleHeader;
+							}else{
+								$APPLICATION->ShowTitle();
+							}?>
+						</h1>
 
-						<?if($APPLICATION->GetProperty("header-text") != "-" && !isset($_REQUEST["TAG"])):?>
+						<?if($APPLICATION->GetProperty("header-text") != "-" && !isset($_REQUEST["TAG"]) && !$GLOBALS["is404"]):?>
 							<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
 						<?endif;?>
 					</div>
@@ -357,7 +370,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		</div>
 
 		<div class="b b-content <?if($isMain) echo 'b-content-main'?>">
-			<?if(!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]):?>
+			<?if((!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]) || $GLOBALS["is404"]):?>
 				<div class="b-content-back b-contacts-top">
 					<div class="b-constructor">
 			<?endif;?>

@@ -1,4 +1,4 @@
-			<?if(!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]):?>
+			<?if((!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]) || $GLOBALS["is404"]):?>
 					</div> <!-- b-content-back b-contacts-top -->
 				</div> <!-- b-constructor -->
 			<?endif;?>

@@ -336,7 +336,13 @@ $this->setFrameMode(true);
 				<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
 					<h2 class="b-title"><?=$arItem["NAME"];?></h2>
 				<?endif;?>
-					<?$GLOBALS["articlesFilter"] = array("PROPERTY_COUNTRY" => $GLOBALS["arCountry"]["id"]);?>
+					<?
+					$tags = array();
+					foreach ($arItem["PROPERTIES"]["TAGS"]["VALUE"] as $value) {
+						$tags[] = $value;
+					}
+					$tags = implode("|", $tags);
+					$GLOBALS["articlesFilter"] = array("?TAGS" => $tags);?>
 					<?$APPLICATION->IncludeComponent("bitrix:news.list", "articles", Array(
 						"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
 						"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации

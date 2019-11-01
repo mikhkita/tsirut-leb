@@ -64,7 +64,7 @@ if(isset($arParams["COUNT_ELEMENTS_SHOW"]) && !empty($arParams["COUNT_ELEMENTS_S
 
 <?if($showButton):?>
 	<div class="center">
- 		<a href="/tours/" class="b-btn b-btn-blue one-line">
+ 		<a href="/tours/poisk/" class="b-btn b-btn-blue one-line">
 			<p class="btn-bold">Все направления</p>
  		</a>
 	</div>

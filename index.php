@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-
+$APPLICATION->SetTitle("Туры");
 ?>
 <div class="center b-block">
 	<a href="#b-popup-quiz" class="fancy b-btn b-btn-orange b-btn-quiz">
@@ -126,7 +126,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 );?>
 		</div>
 		<div class="center">
- <a href="/tours/" class="b-btn b-btn-blue one-line">
+ <a href="/tours/poisk/" class="b-btn b-btn-blue one-line">
 			<p class="btn-bold">
 				 Все направления
 			</p>

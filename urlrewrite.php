@@ -1,5 +1,13 @@
 <?php
 $arUrlRewrite=array (
+  8 => 
+  array (
+    'CONDITION' => '#^/tours/bus/(.+)/(\\\\?(.*)(.*)(.*)(.*)(.*)(.*)(.*)(.*))?#',
+    'RULE' => 'ELEMENT_CODE=$1',
+    'ID' => '',
+    'PATH' => '/tours/bus/detail.php',
+    'SORT' => 100,
+  ),
   6 => 
   array (
     'CONDITION' => '#^/tours/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
@@ -48,20 +56,12 @@ $arUrlRewrite=array (
     'PATH' => '/articles/detail.php',
     'SORT' => 100,
   ),
-  1 => 
+  9 => 
   array (
     'CONDITION' => '#^/tours/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1',
     'ID' => '',
     'PATH' => '/tours/detail.php',
-    'SORT' => 100,
-  ),
-  8 => 
-  array (
-    'CONDITION' => '#^/bus/(.+)/(\\\\?(.*))?#',
-    'RULE' => 'ELEMENT_CODE=$1',
-    'ID' => '',
-    'PATH' => '/bus/detail.php',
     'SORT' => 100,
   ),
   0 => 

@@ -136,9 +136,9 @@ $this->setFrameMode(true);
 								"CACHE_FILTER" => "N",
 								"CACHE_GROUPS" => "Y",
 								"CACHE_TIME" => "36000000",
-								"CACHE_TYPE" => "A",
+								"CACHE_TYPE" => "N",
 								"COUNT_ELEMENTS" => "Y",
-								"FILTER_NAME" => "sectionsFilter",
+								"FILTER_NAME" => "",
 								"IBLOCK_ID" => "1",
 								"IBLOCK_TYPE" => "content",
 								"SECTION_CODE" => "",
@@ -321,7 +321,13 @@ $this->setFrameMode(true);
 				<?if($arItem["PROPERTIES"]["TITLE_SHOW"]["VALUE"]):?>
 					<h2 class="b-title"><?=$arItem["NAME"];?></h2>
 				<?endif;?>
-					<?$GLOBALS["articlesFilter"] = array("PROPERTY_COUNTRY" => $GLOBALS["arCountry"]["id"]);?>
+					<?
+					$tags = array();
+					foreach ($arItem["PROPERTIES"]["TAGS"]["VALUE"] as $value) {
+						$tags[] = $value;
+					}
+					$tags = implode("|", $tags);
+					$GLOBALS["articlesFilter"] = array("?TAGS" => $tags);?>
 					<?$APPLICATION->IncludeComponent("bitrix:news.list", "articles", Array(
 						"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
 						"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации

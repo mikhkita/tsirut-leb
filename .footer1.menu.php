@@ -9,7 +9,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Морские круизы", 
-		"/sea-cruises/", 
+		"/tours/sea-cruises/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -23,14 +23,14 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Автобусные туры", 
-		"/bus/", 
+		"/tours/bus/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Поиск туров", 
-		"/tours/", 
+		"/tours/poisk/", 
 		Array(), 
 		Array(), 
 		"" 

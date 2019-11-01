@@ -97,12 +97,12 @@ if (0 < $arResult['SECTIONS_COUNT'])
 	}
 }
 
-$cnt = 8; 
-$i = 0;
-foreach ($arResult["SECTIONS"] as $key => $arSection) { 
-    if ($i >= $cnt){ 
-    	unset ($arResult["SECTIONS"][$key]); 
-	}
-    $i++;
-}
+// $cnt = 8; 
+// $i = 0;
+// foreach ($arResult["SECTIONS"] as $key => $arSection) { 
+//     if ($i >= $cnt){ 
+//     	unset ($arResult["SECTIONS"][$key]); 
+// 	}
+//     $i++;
+// }
 ?>

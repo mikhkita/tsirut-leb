@@ -657,7 +657,7 @@ b{
 		.b-menu li{
 			position: relative;
 			display: inline-block;
-			margin-right: 28px;
+			margin-right: 47px;
 			-webkit-transition: margin-right 150ms ease-out;
 			   -moz-transition: margin-right 150ms ease-out;
 			    -ms-transition: margin-right 150ms ease-out;
@@ -718,7 +718,7 @@ b{
 		    		transform: translateY(12px);
 		}
 		.b-menu.transform li{
-			margin-right: 5px;
+			margin-right: 28px;
 		}
 		.b-menu li .b-submenu{
 		    position: absolute;
@@ -803,11 +803,11 @@ b{
 				    padding: 0;
 				    line-height: 16px;
 				    color: #434343;
-				    font-family: "Geometria-Medium";
+				    font-family: "Gilroy-Regular";
 				    border-radius: 0;
 				}
 				.b-submenu li a.active{
-					color: #6e58ac;
+					color: #ED7408;
 				}
 	
 	.b-search-tours{
@@ -1522,17 +1522,15 @@ b{
 	margin-bottom: 90px;
 }
 	.b-review-list{
-		margin-bottom: 12px;
+		margin-bottom: 74px;
 	}
+		.b-review-list .slick-dots{
+			bottom: -35px;
+		}
 		.b-review-item{
 			display: inline-block;
 			vertical-align: top;
 			width: calc(100%/3 - 20px);
-			margin-right: 24px;
-			margin-bottom: 32px;
-		}
-		.b-review-item:nth-child(3n){
-			margin-right: 0;
 		}
 			.b-review-top{
 				display: table;
@@ -1572,13 +1570,16 @@ b{
 					.b-review-tour{
 						line-height: 16px;
 					}
-				.b-review-cont p{
-				    margin-bottom: 16px;
+				.b-review-cont{
+					padding-right: 24px;
 				}
-				.b-review-list .b-review-cont p{
-					max-height: 122px;
-				    overflow: hidden;
-				}
+					.b-review-cont p{
+					    margin-bottom: 16px;
+					}
+					.b-review-list .b-review-cont p{
+						max-height: 122px;
+					    overflow: hidden;
+					}
 
 .read-more{
 	display: inline-block;
@@ -2212,6 +2213,7 @@ ul.b-breadcrumbs {
 		    padding-top: 5px;
 		    display: block;
 		    float: left;
+		    border-bottom: 1px solid transparent;
 		}
 		ul.b-breadcrumbs li a:hover{
 			border-bottom: 1px solid #FFF;
@@ -4380,6 +4382,31 @@ ul.b-breadcrumbs {
 	.b-city-tab:last-child{
 		margin-right: 0;
 	}
+
+/*====Карта сайта====*/
+
+.b-404-content{
+
+}
+	.b-404-content h2{
+		color: #282828;
+		margin-bottom: 24px;
+	}
+	.map-columns{
+
+	}
+		.map-columns ul.map-level-0 a{
+			font-weight: normal;
+		}
+		.map-columns td {
+		    width: 250px;
+		}
+			.map-columns td li{
+				margin-bottom: 4px;
+			}
+			.map-columns td li:hover a{
+				text-decoration: underline;
+			}
 
 /*===========================*/
 

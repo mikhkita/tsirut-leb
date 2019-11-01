@@ -8,6 +8,9 @@ body {
 	width: calc(100% - 48px);
 }
 
+.b-menu li{
+	margin-right: 36px;
+}
 .b-search-tours .desktop{
 	display: none;
 }
@@ -948,13 +951,6 @@ div.TVFORow3 {
 		}
 			.b-review-item{
 				width: calc(50% - 20px);
-			}
-
-			.b-review-item:nth-child(3n){
-				margin-right: 24px;
-			}
-			.b-review-item:nth-child(2n){
-				margin-right: 0;
 			}
 				.b-review-item p {
 				    margin-bottom: 12px;

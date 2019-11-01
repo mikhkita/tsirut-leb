@@ -15,8 +15,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Специальные туры", 
-		"/special/", 
+		"Туры", 
+		"/tours/", 
 		Array(), 
 		Array(), 
 		"" 

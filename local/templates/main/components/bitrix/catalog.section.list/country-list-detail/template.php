@@ -12,12 +12,36 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?shuffle($arResult['SECTIONS']);
-$arResult['SECTIONS'] = array_slice($arResult['SECTIONS'], 0, 6);?>
+<?
+	$fixIDs = array("10","11","20","48","13");
+	$arCountry = array();
+	$counter = 0;
+	foreach ($arResult['SECTIONS'] as $arSection){
+		$arCountry[$arSection["ID"]] = array("NAME" => $arSection["NAME"], "SECTION_PAGE_URL" => $arSection["SECTION_PAGE_URL"]);
+	}
+	$currentCountry = $GLOBALS["arCountry"]["id"];
+	$counter = 0;
+?>
 <ul>
-<?foreach ($arResult['SECTIONS'] as $arSection):?>
-	<?if($arSection["ID"] != $GLOBALS["arCountry"]["id"]):?>
-		<li><a href="<?=$arSection['SECTION_PAGE_URL'];?>"><?=$arSection["NAME"]?></a></li>
-	<?endif;?>
-<?endforeach;?>
+	<? foreach ($fixIDs as $id) :?>
+		<?if($currentCountry != $id) :?>
+			<li><a href="<?=$arCountry[$id]['SECTION_PAGE_URL'];?>"><?=$arCountry[$id]["NAME"]?></a></li>
+			<?
+			$counter++;
+			unset($arCountry[$id]);
+			?>
+		<?endif;?>
+	<? endforeach; ?>
+
+	<?$i = 0;
+	shuffle($arCountry);?>
+	<? while ($counter < 7) :?>
+		<? if(isset($arCountry[$i])) :?>
+			<li><a href="<?=$arCountry[$i]['SECTION_PAGE_URL'];?>"><?=$arCountry[$i]["NAME"]?></a></li>
+			<?$counter++; $i++;?>
+		<? else: ?>
+			<?break;?>
+		<? endif; ?>
+	<? endwhile; ?>
+
 </ul>

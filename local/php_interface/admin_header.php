@@ -20,34 +20,36 @@ $(document).ready(function(){
 			case "1"://широкий блок
 				$("#tr_PREVIEW_TEXT_LABEL td").text("Текст блока");
 				$("#tr_PREVIEW_TEXT_EDITOR, #tr_PREVIEW_TEXT_LABEL, #tr_PREVIEW_PICTURE").show();
+				$("#tr_PROPERTY_29").hide();
 				break;
 			case "2"://преимущества
 				$("#tr_PREVIEW_TEXT_LABEL td").text("Контент");
 				$("#tr_PREVIEW_TEXT_EDITOR, #tr_PREVIEW_TEXT_LABEL").show();
-				$("#tr_PREVIEW_PICTURE").hide();
+				$("#tr_PROPERTY_29, #tr_PREVIEW_PICTURE").hide();
 				break;
 			case "3"://форма
 				$("#tr_PREVIEW_TEXT_LABEL td").text("Текст формы");
 				$("#tr_PREVIEW_TEXT_EDITOR, #tr_PREVIEW_TEXT_LABEL").show();
-				$("#tr_PREVIEW_PICTURE").hide();
+				$("#tr_PROPERTY_29, #tr_PREVIEW_PICTURE").hide();
 				break;
 			case "4"://курорты
 				$("#tr_PREVIEW_TEXT_LABEL td").text("Контент");
 				$("#tr_PREVIEW_TEXT_EDITOR, #tr_PREVIEW_TEXT_LABEL").show();
-				$("#tr_PREVIEW_PICTURE").hide();
+				$("#tr_PROPERTY_29, #tr_PREVIEW_PICTURE").hide();
 				break;
 			case "5"://рассылка
 				$("#tr_PREVIEW_TEXT_LABEL td").text("Текст формы рассылки");
 				$("#tr_PREVIEW_TEXT_EDITOR, #tr_PREVIEW_TEXT_LABEL").show();
-				$("#tr_PREVIEW_PICTURE").hide();
+				$("#tr_PROPERTY_29, #tr_PREVIEW_PICTURE").hide();
 				break;
 			case "6"://статьи
+				$("#tr_PROPERTY_29").show();
 				$("#tr_PREVIEW_PICTURE, #tr_PREVIEW_TEXT_EDITOR, #tr_PREVIEW_TEXT_LABEL").hide();
 				break;
 			case "7"://СЕО
 				$("#tr_PREVIEW_TEXT_LABEL td").text("Контент");
 				$("#tr_PREVIEW_TEXT_EDITOR, #tr_PREVIEW_TEXT_LABEL").show();
-				$("#tr_PREVIEW_PICTURE").hide();
+				$("#tr_PROPERTY_29, #tr_PREVIEW_PICTURE").hide();
 				break;
 		}
 	}

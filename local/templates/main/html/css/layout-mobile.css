@@ -340,9 +340,10 @@ ul.b-breadcrumbs{
 	}
 		.b-review-item{
 			width: 100%;
-			margin-right: 0;
-			margin-bottom: 0;
 		}
+			.b-review-cont{
+				padding-right: 0;
+			}
 			.b-review-list .b-review-cont,
 			.read-more-cont{
 				max-width: 410px;
@@ -2495,6 +2496,14 @@ div.TVTabedListContainer {
 	.b-sea-cruises-img{
 		display: none;
 	}
+
+	.map-columns{
+		display: block;
+	}
+		.map-columns td {
+			display: block;
+			width: 100%;
+		}
 
 	.b-sea-cruises #ces_container .csf_extra input {
 
