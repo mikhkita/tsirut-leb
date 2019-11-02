@@ -15,7 +15,6 @@ $this->setFrameMode(true);
 <?
 	$fixIDs = array("10","11","20","48","13");
 	$arCountry = array();
-	$counter = 0;
 	foreach ($arResult['SECTIONS'] as $arSection){
 		$arCountry[$arSection["ID"]] = array("NAME" => $arSection["NAME"], "SECTION_PAGE_URL" => $arSection["SECTION_PAGE_URL"]);
 	}
@@ -26,11 +25,9 @@ $this->setFrameMode(true);
 	<? foreach ($fixIDs as $id) :?>
 		<?if($currentCountry != $id) :?>
 			<li><a href="<?=$arCountry[$id]['SECTION_PAGE_URL'];?>"><?=$arCountry[$id]["NAME"]?></a></li>
-			<?
-			$counter++;
-			unset($arCountry[$id]);
-			?>
+			<?$counter++;?>
 		<?endif;?>
+		<?unset($arCountry[$id]);?>
 	<? endforeach; ?>
 
 	<?$i = 0;

@@ -788,13 +788,6 @@ b{
 			.b-submenu li:hover a{
 				text-decoration: underline;
 			}
-			.b-submenu li:active,
-			.b-submenu li.active{
-			}
-				.b-submenu li:active a,
-				.b-submenu li.active a{
-					color: #6e58ac;
-				}
 				.b-submenu li a {
 				    white-space: nowrap;
 				    display: inline-block;
