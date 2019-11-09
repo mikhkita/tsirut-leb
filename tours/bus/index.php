@@ -1,7 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("header-text", "Онлайн поиск и бронирование автобусных туров в Европу. <br>Экскурсионные туры в Прагу, Вену, Париж, Амстердам,<br> Рим, Будапешт.");
-$APPLICATION->SetPageProperty("header-title", "Автобусные туры из Белгорода");
 $APPLICATION->SetTitle("Автобусные туры из Белгорода");
 
 ?>

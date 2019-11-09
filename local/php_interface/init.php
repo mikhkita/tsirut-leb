@@ -209,6 +209,14 @@ function getCountrySection($country, $curSection = false){
 			'seasonList' => array(),
 			'resortList' => array()
 		);
+		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arSection['IBLOCK_ID'],$arSection['ID']);
+		$IPROPERTY  = $ipropValues->getValues();
+		if(!empty($IPROPERTY)){
+			$arCountrySect['seoTitle'] = $IPROPERTY['SECTION_META_TITLE'];
+			$arCountrySect['seoKeywords'] = $IPROPERTY['SECTION_META_KEYWORDS'];
+			$arCountrySect['seoDesc'] = $IPROPERTY['SECTION_META_DESCRIPTION'];
+			$arCountrySect['seoPageTitle'] = $IPROPERTY['SECTION_PAGE_TITLE'];
+		}
 
 		foreach ($monthList as $value) {
 			$arCountrySect["monthList"][$value["UF_MONTH"]] = array(

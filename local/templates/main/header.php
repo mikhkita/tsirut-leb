@@ -56,8 +56,17 @@ if($isDetail){
 	$GLOBALS["arCountry"] = getCountrySection($_REQUEST["SECTION_CODE"]);
 	if(!empty($GLOBALS["arCountry"])){
 		//установить заголовок
+		if($GLOBALS["arCountry"]["seoKeywords"]){
+			$APPLICATION->SetPageProperty("keywords", $GLOBALS["arCountry"]["seoKeywords"]);
+		}
+		if($GLOBALS["arCountry"]["seoDesc"]){
+			$APPLICATION->SetPageProperty("description", $GLOBALS["arCountry"]["seoDesc"]);
+		}
 		if($GLOBALS["arCountry"]["title"]){
 			$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
+		}
+		if($GLOBALS["arCountry"]["seoTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arCountry"]["seoTitle"]);
 		}
 		//изображение в хедере
 		$headImg = $GLOBALS["arCountry"]["headImg"];
@@ -104,6 +113,8 @@ if($isDetailResort){
 		}elseif($GLOBALS["arResort"]["title"]){
 			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
 		}
+		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arCountry"]["seoKeywords"]);
+		$APPLICATION->SetPageProperty("description", $GLOBALS["arCountry"]["seoDesc"]);
 		$headImg = $GLOBALS["arResort"]["headImg"];
 	}else{
 		CHTTP::SetStatus('404 Not found');
@@ -123,6 +134,8 @@ if($isDetailResortMonth){
 		}elseif($GLOBALS["arResort"]["title"]){
 			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
 		}
+		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arCountry"]["seoKeywords"]);
+		$APPLICATION->SetPageProperty("description", $GLOBALS["arCountry"]["seoDesc"]);
 		$headImg = $GLOBALS["arMonth"]["headImg"];
 	}else{
 		CHTTP::SetStatus('404 Not found');
@@ -150,6 +163,14 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		"CODE" => "voronezh",
 	),
 );
+
+function ShowCondBrowser()
+{
+	global $APPLICATION;
+
+	return $APPLICATION->GetTitle();
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -304,7 +325,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 							"START_FROM" => "0"	// Номер пункта, начиная с которого будет построена навигационная цепочка
 						), false);
 						?>
-						<h1><?$APPLICATION->ShowTitle()?></h1>
+						<h1><?$APPLICATION->AddBufferContent('ShowCondBrowser');?></h1>
 						<p class="b-head-text"><?=$targetSect["titleText"];?></p>
 					</div>
 					<div class="b-adv-list clearfix">	
@@ -345,20 +366,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 								"START_FROM" => "0",
 							), false);?>
 						<?endif;?>
-						<?
-						if($APPLICATION->GetProperty("header-title") != "-" && !isset($_REQUEST["TAG"]) && !$GLOBALS["is404"]){
-							$titleHeader = $APPLICATION->GetProperty("header-title");
-							//echo $APPLICATION->SetTitle($title);
-						}
-						?>
-						<h1>
-							<?if(isset($titleHeader)){
-								echo $titleHeader;
-							}else{
-								$APPLICATION->ShowTitle();
-							}?>
-						</h1>
-
+						<h1><?$APPLICATION->AddBufferContent('ShowCondBrowser');?></h1>
 						<?if($APPLICATION->GetProperty("header-text") != "-" && !isset($_REQUEST["TAG"]) && !$GLOBALS["is404"]):?>
 							<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
 						<?endif;?>

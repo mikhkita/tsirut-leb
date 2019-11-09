@@ -1,6 +1,5 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("header-title", "-");
 $APPLICATION->SetTitle("Наш блог о путешествиях");
 ?><div class="b-articles-page">
 	<div class="b-content-back b-contacts-top">
