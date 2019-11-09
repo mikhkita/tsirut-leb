@@ -17,8 +17,8 @@ $strReturn .= '<ul class="b-breadcrumbs">';
 if($GLOBALS["is404"]){
 	$title = htmlspecialcharsex($arResult[0]["TITLE"]);
 	$strReturn .= '
-		<li id="bx_breadcrumb_0">
-			<a href="'.$arResult[0]["LINK"].'" title="'.$title.'">'.$title.'</a>
+		<li id="bx_breadcrumb_0" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="'.$arResult[0]["LINK"].'" title="'.$title.'" itemprop="url"><span itemprop="title">'.$title.'</span></a>
 		</li></ul>';
 }else{
 	$itemSize = count($arResult);
@@ -32,8 +32,8 @@ if($GLOBALS["is404"]){
 
 		if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1){
 			$strReturn .= '
-				<li id="bx_breadcrumb_'.$index.'">
-					<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'">'.$title.'</a>
+				<li id="bx_breadcrumb_'.$index.'" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="url"><span itemprop="title">'.$title.'</span></a>
 				</li>';
 		}else{
 			if(!$excludeItem){
