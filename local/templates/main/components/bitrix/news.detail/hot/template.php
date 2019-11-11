@@ -39,7 +39,6 @@ $departureId = $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["TOURVISOR_ID"];
 ?>
 <div class="b-content-back">
 	<div class="b-block b-hot-block b-hot-groups-block clearfix" data-way="<?=$way?>">
-		<!-- <span class="b-grey-note">* Стоимость указана на одного человека при двухместном размещении</span> -->
 		<div class="b-hot-nav left stick">
 			<? $tours = json_decode($arResult["~PREVIEW_TEXT"], true); ?>
 			<div class="b-hot-nav-list b-hot-tog">

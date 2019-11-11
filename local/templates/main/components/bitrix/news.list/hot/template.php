@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 	?>
 	<? $renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 302*2, "height" => 302*2), BX_RESIZE_IMAGE_EXACT, false, false, false, 70 ); ?>
 	<? $tours = json_decode($arItem["~PREVIEW_TEXT"], true); ?>
-	<a href="/<?=$GLOBALS["hotDir"]?>/<?=str_replace("-", "/", $arItem["CODE"])?>/" class="b-hot-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+	<a href="/<?=$GLOBALS["hotDir"]?>/<?=$arItem["PROPERTIES"]["CITY"]["VALUE_XML_ID"]?>/<?=$arItem["CODE"]?>/" class="b-hot-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<div class="hot-top" style="background-image: url('<?=$renderImage["src"]?>')">
 			<div class="blackout"></div>
 			<div class="blackout-full"></div>

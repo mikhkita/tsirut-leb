@@ -263,6 +263,11 @@ function getCountrySection($country, $curSection = false){
 	return $arCountrySect;
 }
 
+function ShowCondBrowser(){
+	global $APPLICATION;
+	return $APPLICATION->GetTitle();
+}
+
 // function getValidPhone($file){
 // 	global $APPLICATION;
 // 	$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
