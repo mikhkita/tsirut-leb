@@ -776,7 +776,12 @@ $(document).ready(function(){
     });
 
     $(document).on("click", ".bus-filter-submit", function(){
-        busAjaxFilter(false);
+        if ($(this).hasClass('bus-filter-detail-submit')) {
+            $(this).parents('form').submit();
+        }else{
+            busAjaxFilter(false);
+        }
+        
         return false;
     });
     $(document).on("click", ".bus-filter-refresh", function(){
