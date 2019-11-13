@@ -17,7 +17,7 @@ $this->setFrameMode(true);
 	<div class="b-content-back">
 		<div class="b-block">
 			<div class="clearfix">
-				<div class="b-articles-detail-left">
+				<div class="b-articles-detail-left b-text">
 					<?=$arResult["DETAIL_TEXT"];?>
 				</div>
 				<div class="b-articles-detail-right">

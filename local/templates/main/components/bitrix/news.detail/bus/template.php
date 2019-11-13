@@ -89,7 +89,7 @@ $this->setFrameMode(true);
 	<div class="b-bus-detail">
 		<!-- <div class="b-content-back"> -->
 			<div class="b-block">
-				<div class="b-constructor">
+				<div class="b-constructor b-text">
 					<?=$arResult["DETAIL_TEXT"];?>
 				</div>
 			</div>
