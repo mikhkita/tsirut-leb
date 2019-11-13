@@ -103,6 +103,7 @@ $this->setFrameMode(true);
 					</div>
 				</div>
 				<div class="b-tourvisor-nav">
+					
 					<?if($GLOBALS["arResort"]["monthList"]):?>
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по месяцам</h3>
@@ -112,7 +113,19 @@ $this->setFrameMode(true);
 								<?endforeach;?>
 							</ul>
 						</div>
+					<?else:?>
+						<?if($GLOBALS["arCountry"]["monthList"]):?>
+							<div class="b-tourvisor-nav-item clearfix">
+								<h3>Туры по месяцам</h3>
+								<ul class="months">
+									<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+										<li><a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a></li>
+									<?endforeach;?>
+								</ul>
+							</div>
+						<?endif;?>
 					<?endif;?>
+
 					<?if($GLOBALS["arResort"]["seasonList"]):?>
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по сезонам</h3>
@@ -125,7 +138,22 @@ $this->setFrameMode(true);
 								<?endforeach;?>
 							</ul>
 						</div>
+					<?else:?>
+						<?if($GLOBALS["arCountry"]["seasonList"]):?>
+							<div class="b-tourvisor-nav-item clearfix">
+								<h3>Туры по сезонам</h3>
+								<ul class="b-seasons">
+									<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+										<li class="b-season">
+											<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
+											<a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a>
+										</li>
+									<?endforeach;?>
+								</ul>
+							</div>
+						<?endif;?>
 					<?endif;?>
+
 					<div class="b-tourvisor-nav-item b-tourvisor-nav-adv">
 						<h3>Наши преимущества</h3>
 						<div class="nav-adv">
@@ -167,16 +195,6 @@ $this->setFrameMode(true);
 							)
 						);?>
 					</div>
-					<!-- <div class="b-tourvisor-nav-item b-nav-seo">
-						<h3>Заголовок первого блока</h3>
-						<p>Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. </p>
-					</div>
-					<div class="b-tourvisor-nav-item b-nav-seo">
-						<h3 class="with-icon">
-							<span class="seo-icon seo-icon-gift"></span><span class="title">Заголовок второго блока с иконкой</span></span>
-						</h3>
-						<p>Равным образом рамки и место обучения кадров требуют от нас анализа дальнейших направлений развития. Разнообразный и богатый опыт новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.<br><br>Значимость этих проблем настолько очевидна, что укрепление и развитие структуры требуют определения и уточнения форм развития.</p>
-					</div> -->
 					<div class="b-tourvisor-nav-item b-nav-seo">
 						<?=$GLOBALS["arResort"]["seoText"]?>
 					</div>

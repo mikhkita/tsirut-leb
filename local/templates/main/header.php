@@ -164,13 +164,6 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 	),
 );
 
-function ShowCondBrowser()
-{
-	global $APPLICATION;
-
-	return $APPLICATION->GetTitle();
-
-}
 ?>
 
 <!DOCTYPE html>
@@ -229,11 +222,27 @@ function ShowCondBrowser()
 				0 => "",
 			),
 			"MAX_LEVEL" => "2",	// Уровень вложенности меню
-			"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+			"CHILD_MENU_TYPE" => "sub",	// Тип меню для остальных уровней
 			"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 			"DELAY" => "N",	// Откладывать выполнение шаблона меню
 			"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
 		),false);?>
+		<div style="display: none;">
+			<?$APPLICATION->IncludeComponent("bitrix:menu", "hide-menu", Array(
+				"ROOT_MENU_TYPE" => "sub",	// Тип меню для первого уровня
+				"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+				"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+				"MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
+				"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+					0 => "",
+				),
+				"MAX_LEVEL" => "2",	// Уровень вложенности меню
+				"CHILD_MENU_TYPE" => "sub",	// Тип меню для остальных уровней
+				"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+				"DELAY" => "N",	// Откладывать выполнение шаблона меню
+				"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+			),false);?>
+		</div>
 	</div>
 
 	<div id="panel-page" class="slideout-panel">

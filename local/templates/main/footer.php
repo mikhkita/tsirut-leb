@@ -77,8 +77,6 @@
 						<a href="#" class="b-footer-politics">Политика обработки персональных данных</a>
 					</div>
 					<div class="b-redder">
-						<!-- <span>Разработка стайта:</span>
-						<a href="http://redder.pro/" class="b-redder-logo" target="_blank"></a> -->
 						<div class="visa-master"></div>
 					</div>
 				</div>
@@ -136,13 +134,6 @@
 			</div>
 		<?endif;?>
 
-		<!-- <a href="#b-detail-popup" class="fancy"></a>
-		<div class="b-popup b-detail-popup" id="b-detail-popup">
-			<div class="b-for-detail">
-				
-			</div>
-		</div> -->
-
 		<a href="#b-filter-city" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-city-popup" id="b-filter-city">
 			<div class="b-popup-content">
@@ -162,32 +153,6 @@
 				</ul>
 			</div>
 		</div>
-
-		<!-- <a href="#b-filter-regions" class="fancy"></a>
-		<div class="b-popup b-filter-popup b-regions-popup" id="b-filter-regions">
-			<h3>Выбор курорта</h3>
-			<div class="b-for-regions">
-				
-			</div>
-			<div class="center">
-				<a href="#" class="b-btn b-btn-orange one-line">
-					<p class="btn-bold">Перейти к выбору отеля</p>
-				</a>
-			</div>
-		</div>
-
-		<a href="#b-filter-hotels" class="fancy"></a>
-		<div class="b-popup b-filter-popup b-hotels-popup" id="b-filter-hotels">
-			<h3>Выбор отеля</h3>
-			<div class="b-for-hotels">
-				
-			</div>
-			<div class="center">
-				<a href="#" class="b-btn b-btn-orange one-line">
-					<p class="btn-bold">Выбрать</p>
-				</a>
-			</div>
-		</div> -->
 
 		<a href="#b-filter-nights" class="fancy"></a>
 		<div class="b-popup b-filter-popup b-nights-popup" id="b-filter-nights">
@@ -271,7 +236,6 @@
 						<p class="btn-bold">Применить</p>
 					</a>
 				</div>
-				<!-- <div class="b-btn-cont"><a href="#" class="b-btn b-blue-btn b-submit-btn">Применить</a></div> -->
 			</div>
 		</div>
 
@@ -419,7 +383,6 @@
 		<div class="b-popup b-hotel-popup" id="b-hotel-popup">
 			<div class="b-popup-content">
 				<div class="b">
-					<!-- <div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div> -->
 					<div class="tv-country tv-moduleid-982989"></div>
 				</div>
 			</div>
