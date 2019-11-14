@@ -14,4 +14,5 @@ $SNIPPETS['Статья. Детальная/snippet0003.snp'] = Array('title' =>
 $SNIPPETS['Статья. Детальная/snippet0004.snp'] = Array('title' => 'Текст по центру');
 $SNIPPETS['Статья. Детальная/snippet0005.snp'] = Array('title' => 'Длинный заголовок с текстом');
 $SNIPPETS['Статьи/snippet0001.snp'] = Array('title' => 'Статья');
+$SNIPPETS['Статья. Детальная/snippet0006.snp'] = Array('title' => 'Совет (без картинки)');
 ?>

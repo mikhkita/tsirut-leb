@@ -275,6 +275,56 @@ b{
 	z-index: 2;
 }
 
+.b-text{
+	
+}	
+	.b-text img{
+		margin-bottom: 32px;
+		max-width: 100%;
+		display: block;
+	}
+	.b-text p{
+		margin-bottom: 24px;
+	}
+	.b-text h2{
+		margin-top: 40px;
+		margin-bottom: 24px;
+		font-size: 32px;
+		line-height: 40px;
+	}
+	.b-text h3{
+		margin-top: 30px;
+		margin-bottom: 24px;
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.b-text ul{
+	    list-style: none;
+	    margin-top: 24px;
+	    margin-bottom: 24px;
+	}
+		.b-text ul li{
+			position: relative;
+			padding-left: 22px;
+			margin-bottom: 8px;
+		}
+		.b-text ul li:last-child{
+			margin-bottom: 0;
+		}
+		.b-text ul li:before {
+			content: " ";
+		    position: absolute;
+		    top: 8px;
+		    left: 0;
+		    width: 8px;
+		    height: 8px;
+		    background-color: #ED7408;
+		    border-radius: 4px;
+		}
+			.b-text table{
+				margin: 32px 0;
+			}
+
 /*====Кнопки====*/
 
 .b-btn{
@@ -308,6 +358,7 @@ b{
 		text-transform: uppercase;
 		text-shadow: 0 1px 3px rgba(0,0,0,0.20);
 		letter-spacing: 1px;
+		margin-bottom: 0;
 		-webkit-transition: transform 100ms ease-out;
 		   -moz-transition: transform 100ms ease-out;
 		    -ms-transition: transform 100ms ease-out;
@@ -322,6 +373,7 @@ b{
 		line-height: 20px;
 		margin-top: 7px;
 		letter-spacing: 0.6px;
+		margin-bottom: 0;
 		-webkit-transition: transform 100ms ease-out;
 		   -moz-transition: transform 100ms ease-out;
 		    -ms-transition: transform 100ms ease-out;
@@ -1623,6 +1675,7 @@ b{
 			font-family: 'Gilroy-Bold';
 			font-size: 45px;
 			line-height: 55px;
+			margin-top: 0;
 			margin-bottom: 24px;
 			color: #FFF;
 		}
@@ -2565,6 +2618,7 @@ ul.b-breadcrumbs {
 					color: #282828;
 					font-size: 20px;
 					line-height: 28px;
+					margin-top: 0;
 					margin-bottom: 14px;
 				}
 			.b-star-list{
@@ -2732,6 +2786,7 @@ ul.b-breadcrumbs {
 					vertical-align: middle;
 					width: 60px;
 					height: 60px;
+					margin: 0;
 				}
 				.b-tourvisor-nav-item .nav-adv p{
 					display: table-cell;
@@ -2891,9 +2946,10 @@ ul.b-breadcrumbs {
 				display: table-cell;
 				vertical-align: middle;
 				width: 302px;
+				margin: 0;
 				border-radius: 10px;
 			}
-			.b-advice-text{
+			.b-advice .b-advice-text{
 				padding-left: 24px;
 				display: table-cell;
 				vertical-align: middle;
@@ -2904,6 +2960,7 @@ ul.b-breadcrumbs {
 					line-height: 30px;
 					max-width: 540px;
 					padding-left: 40px;
+					margin-bottom: 0;
 				}
 				.b-advice-text p:before{
 					content: " ";
@@ -3416,7 +3473,7 @@ ul.b-breadcrumbs {
 /*=======Статьи=======*/
 
 .b-articles-page-top{
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 }
 	.b-articles-page{
 
@@ -3456,6 +3513,7 @@ ul.b-breadcrumbs {
 							display: inline-block;
 							font-size: 24px;
 							line-height: 32px;
+							margin-top: 0;
 							margin-bottom: 16px;
 							text-decoration: none;
 						}
@@ -3481,17 +3539,21 @@ ul.b-breadcrumbs {
 		.b-nav-pages{
 
 		}
-			.b-nav-pages li{
+			.b-nav .b-nav-pages li{
 				display: inline-block;
 				font-size: 16px;
 				line-height: 24px;
 				color: #434343;
 				margin-right: 12px;
+				padding-left: 0 !important;
 			}
-			.b-nav-pages li:last-child{
+			.b-nav .b-nav-pages li:before{
+				display: none;
+			}
+			.b-nav .b-nav-pages li:last-child{
 				margin-right: 0;
 			}
-				.b-nav-pages li a{
+				.b-nav .b-nav-pages li a{
 					display: block;
 					width: 48px;
 					height: 48px;
@@ -3500,7 +3562,7 @@ ul.b-breadcrumbs {
 					border: 2px solid #E7ECF1;
 					border-radius: 6px;
 				}
-				.b-nav-pages li a.active{
+				.b-nav .b-nav-pages li a.active{
 					color: #ED7408;
 					border: 2px solid #ED7408;
 				}
@@ -3517,6 +3579,7 @@ ul.b-breadcrumbs {
 		line-height: 32px;
 		font-family: 'Gilroy-Bold';
 		margin-right: 18px;
+		margin-bottom: 0;
 	}
 	.b-articles-sort-form{
 		display: inline-block;
@@ -4225,56 +4288,6 @@ ul.b-breadcrumbs {
 			}
 			.b-resorts-item a:hover{
 				border-bottom: 1px solid transparent;
-			}
-
-.b-text{
-	
-}	
-	.b-text img{
-		margin: 32px 0;
-		max-width: 100%;
-		display: block;
-	}
-	.b-text p{
-		margin-bottom: 24px;
-	}
-	.b-text h2{
-		margin-top: 40px;
-		margin-bottom: 24px;
-		font-size: 32px;
-		line-height: 40px;
-	}
-	.b-text h3{
-		margin-top: 30px;
-		margin-bottom: 24px;
-		font-size: 20px;
-		line-height: 30px;
-	}
-	.b-text ul{
-	    list-style: none;
-	    margin-top: 24px;
-	    margin-bottom: 24px;
-	}
-		.b-text ul li{
-			position: relative;
-			padding-left: 22px;
-			margin-bottom: 8px;
-		}
-		.b-text ul li:last-child{
-			margin-bottom: 0;
-		}
-		.b-text ul li:before {
-			content: " ";
-		    position: absolute;
-		    top: 8px;
-		    left: 0;
-		    width: 8px;
-		    height: 8px;
-		    background-color: #ED7408;
-		    border-radius: 4px;
-		}
-			.b-text table{
-				margin: 32px 0;
 			}
 
 /*========*/

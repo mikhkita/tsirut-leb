@@ -22,7 +22,7 @@ $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" 
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 16;
+$GLOBALS["version"] = 17;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -340,7 +340,13 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 							"START_FROM" => "0"	// Номер пункта, начиная с которого будет построена навигационная цепочка
 						), false);
 						?>
-						<h1><?$APPLICATION->AddBufferContent('ShowCondBrowser');?></h1>
+						<h1><?
+							if($targetSect["seoTitle"]){
+								echo $targetSect["seoTitle"];
+							}else{
+								$APPLICATION->AddBufferContent('ShowCondBrowser');
+							}
+						?></h1>
 						<p class="b-head-text"><?=$targetSect["titleText"];?></p>
 					</div>
 					<div class="b-adv-list clearfix">	
@@ -397,3 +403,13 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 				<div class="b-content-back b-contacts-top">
 					<div class="b-constructor">
 			<?endif;?>
+		<?
+		$curPageFull = isset($_SERVER["REAL_FILE_PATH"]) ? $_SERVER["REAL_FILE_PATH"] : $_SERVER["SCRIPT_NAME"];
+		$curPageArr = explode("/", $curPageFull);
+		$curPageName = explode(".", end($curPageArr));
+		array_pop($curPageArr);
+		$curDir = $_SERVER["DOCUMENT_ROOT"].implode("/",$curPageArr)."/";
+		if(file_exists($curDir.$curPageName[0]."-inc.php")){
+			include($curDir.$curPageName[0]."-inc.php");
+		}
+		?>
