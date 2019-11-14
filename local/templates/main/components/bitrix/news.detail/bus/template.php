@@ -87,8 +87,12 @@ $this->setFrameMode(true);
 </div>
 <div class="b-bus-tours-right b-bus-tours-list">
 	<div class="b-bus-detail">
-		<div class="b-constructor">
-			<?=$arResult["DETAIL_TEXT"];?>
-		</div>
+		<!-- <div class="b-content-back"> -->
+			<div class="b-block">
+				<div class="b-constructor b-text">
+					<?=$arResult["DETAIL_TEXT"];?>
+				</div>
+			</div>
+		<!-- </div> -->
 	</div>
 </div>
