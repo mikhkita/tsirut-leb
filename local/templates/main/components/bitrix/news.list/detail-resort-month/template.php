@@ -103,6 +103,29 @@ $this->setFrameMode(true);
 					</div>
 				</div>
 				<div class="b-tourvisor-nav">
+					<?if($GLOBALS["arCountry"]["monthList"]):?>
+						<div class="b-tourvisor-nav-item clearfix">
+							<h3>Туры по месяцам</h3>
+							<ul class="months">
+								<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+									<li><a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a></li>
+								<?endforeach;?>
+							</ul>
+						</div>
+					<?endif;?>
+					<?if($GLOBALS["arCountry"]["seasonList"]):?>
+						<div class="b-tourvisor-nav-item clearfix">
+							<h3>Туры по сезонам</h3>
+							<ul class="b-seasons">
+								<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+									<li class="b-season">
+										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
+										<a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a>
+									</li>
+								<?endforeach;?>
+							</ul>
+						</div>
+					<?endif;?>
 					<div class="b-tourvisor-nav-item b-tourvisor-nav-adv">
 						<h3>Наши преимущества</h3>
 						<div class="nav-adv">

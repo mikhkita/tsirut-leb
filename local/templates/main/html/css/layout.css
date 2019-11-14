@@ -1587,6 +1587,14 @@ b{
 					    overflow: hidden;
 					}
 
+.b-reviews-detail .b-review-item{
+	width: calc(100%/3 - 3px);
+	margin-bottom: 40px;
+}
+.b-reviews-detail .b-review-list {
+    margin-bottom: 34px;
+}
+
 .read-more{
 	display: inline-block;
 	font-family: 'Gilroy-Light';
@@ -4940,6 +4948,14 @@ textarea{
 		    line-height: 32px;
 		    margin-bottom: 16px;
 		}
+
+.b-popup-review .review-content{
+	margin-bottom: 14px;
+	padding-top: 15px;
+}	
+	.b-popup-review .review-content.review-error{
+		text-align: center;
+	}
 
 .b-popup-quiz{
 	position: relative;

@@ -338,7 +338,11 @@ ul.b-breadcrumbs{
 	.b-review-list{
 		margin-bottom: 98px;
 	}
-		.b-review-item{
+	.b-reviews-detail .b-review-list {
+		margin-bottom: 0;
+	}
+		.b-review-item,
+		.b-reviews-detail .b-review-item{
 			width: 100%;
 		}
 			.b-review-cont{

@@ -114,16 +114,6 @@ $(document).ready(function(){
                     adaptiveHeight: true,
                 });
             }
-            if(!$('.b-review-slider').hasClass("slick-initialized")){
-                $('.b-review-slider').not('.slick-initialized').slick({
-                    dots: true,
-                    arrows: false,
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    speed: 600,
-                });
-            }
             if(!$('.b-article-slider').hasClass("slick-initialized")){
                 $('.b-article-slider').not('.slick-initialized').slick({
                     dots: true,
@@ -479,21 +469,23 @@ $(document).ready(function(){
         arrows: false,
         infinite: false,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         speed: 600,
-        cssEase: 'linear',
+        cssEase: 'ease-out',
         adaptiveHeight: true,
         responsive: [
             {
               breakpoint: 920,
               settings: {
                 slidesToShow: 2,
+                slidesToScroll: 2
               }
             },
             {
               breakpoint: 768,
               settings: {
                 slidesToShow: 1,
+                slidesToScroll: 1
               }
             },
           ]
@@ -598,8 +590,51 @@ $(document).ready(function(){
     });
 
     $(".read-more").on('click', function(){
-        $("#b-popup-review").find(".b-review-cont").remove();
-        $(this).parents(".b-review-item").children(".b-review-cont").clone().prependTo("#b-popup-review .b-popup-content");
+        var $this = $(this);
+        $.fancybox.open({
+            src : $this.attr("href"),
+            type : 'inline',
+            opts : {
+                padding : 0,
+                touch: false,
+                helpers: {
+                    overlay: {
+                        locked: true 
+                    }
+                },
+                btnTpl : {
+                    smallBtn   : '<button data-fancybox-close class="fancybox-close-small" title="Закрыть"></button>',
+                },
+                beforeShow: function(){
+                    var $review = $this.parents(".b-review-item").find(".b-review-top").clone(),
+                        $popup =  $("#b-popup-review .review-content");
+                    $popup.removeClass("review-error").html("");
+                    $popup.append($review);
+                    $popup.append("<p></p>");
+                    $.ajax({
+                        type: "GET",
+                        url: "/send/detailReview.php",
+                        data: {"ID" : $this.attr("data-id") },
+                        success: function(data){
+                            var json = JSON.parse(data);
+                            if(json.result == "success"){
+                               $("#b-popup-review .review-content p").html(json.text);  
+                            }else{
+                                $popup.addClass("review-error").html("");
+                                $popup.append("<h3>Ошибка отправки!</h3>");
+                                $popup.append("<p>"+json.errorMsg+"</p>");
+                            }
+                        },
+                        error: function(){
+                            $popup.html("");
+                            $popup.append("<h3>Ошибка отправки!</h3>");
+                            $popup.append("<p>"+json.errorMsg+"</p>");
+                        }
+                    });
+                }
+            }
+        });
+        return false;
     });
 
     $(".b-quiz").hide();

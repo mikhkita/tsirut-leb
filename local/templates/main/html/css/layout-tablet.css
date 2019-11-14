@@ -872,6 +872,14 @@ div.TVFORow3 {
 	    width: 254px;
 	}
 
+	.b-reviews-detail .b-review-img-cont {
+	    padding-right: 16px;
+	}
+	.b-reviews-detail .b-review-img{
+		width: 80px;
+		height: 80px;
+	}
+
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 11px;
 	}
@@ -951,6 +959,9 @@ div.TVFORow3 {
 		}
 			.b-review-item{
 				width: calc(50% - 20px);
+			}
+			.b-reviews-detail .b-review-item{
+				width: calc(50% - 3px);
 			}
 				.b-review-item p {
 				    margin-bottom: 12px;

@@ -370,8 +370,11 @@
 			</div>
 		</div>
 
-		<div class="b-popup" id="b-popup-review">
+		<div class="b-popup b-popup-review" id="b-popup-review">
 			<div class="b-popup-content">
+				<div class="review-content">
+					
+				</div>
 				<div class="center">
 					<a href="#" class="b-btn b-btn-blue one-line" onclick="$.fancybox.close(); return false;">
 						<p class="btn-bold">Закрыть</p>
@@ -675,7 +678,7 @@
 			<script type="text/javascript" src="<?=$scriptName?>"></script>
 		<? endforeach; ?>
 	<? endif; ?>
-	<? if($GLOBALS["isMain"]): ?>
+	<? if($GLOBALS["isMain"] || ($GLOBALS["urlArr"][1] == "about" && $GLOBALS["urlArr"][2] == "reviews") ): ?>
 		<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/plupload.full.min.js"></script>
 	<? endif; ?>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/html/js/main.js?<?=$GLOBALS["version"]?>"></script>

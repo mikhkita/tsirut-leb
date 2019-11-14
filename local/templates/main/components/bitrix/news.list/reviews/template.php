@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="b-review-list b-review-slider">
+<div class="b-review-list <?if(isset($arParams["CUSTOM_SLIDER"]) && $arParams["CUSTOM_SLIDER"] == "Y") echo 'b-review-slider';?>">
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -37,10 +37,10 @@ $this->setFrameMode(true);
 					<div class="b-review-tour"><?=$arItem["PROPERTIES"]["TOUR"]["VALUE"]?></div>
 				</div>
 			</div>
-			<p><?=$arItem["PREVIEW_TEXT"]?></p>
+			<p><?=mb_substr($arItem["PREVIEW_TEXT"],0,250);?></p>
 		</div>
 		<div class="read-more-cont">
-			<a href="#b-popup-review" class="fancy read-more dashed">Читать полностью</a>
+			<a href="#b-popup-review" data-id="<?=$arItem['ID']?>" class="fancy-ajax read-more dashed">Читать полностью</a>
 		</div>
 	</div>
 <?endforeach;?>

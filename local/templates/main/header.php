@@ -22,7 +22,7 @@ $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" 
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 14;
+$GLOBALS["version"] = 16;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -48,7 +48,7 @@ $GLOBALS["depends"] = array(
 		"js" => array(
 			"https://api-maps.yandex.ru/2.1.41/?load=package.full&amp;lang=ru-RU&onload=yandexMapInit"
 		)
-	)
+	),
 );
 
 if($isDetail){
@@ -113,8 +113,11 @@ if($isDetailResort){
 		}elseif($GLOBALS["arResort"]["title"]){
 			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
 		}
-		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arCountry"]["seoKeywords"]);
-		$APPLICATION->SetPageProperty("description", $GLOBALS["arCountry"]["seoDesc"]);
+		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arResort"]["seoKeywords"]);
+		$APPLICATION->SetPageProperty("description", $GLOBALS["arResort"]["seoDesc"]);
+		if($GLOBALS["arResort"]["seoTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arResort"]["seoTitle"]);
+		}
 		$headImg = $GLOBALS["arResort"]["headImg"];
 	}else{
 		CHTTP::SetStatus('404 Not found');
@@ -134,8 +137,11 @@ if($isDetailResortMonth){
 		}elseif($GLOBALS["arResort"]["title"]){
 			$APPLICATION->SetTitle($GLOBALS["arResort"]["title"]);
 		}
-		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arCountry"]["seoKeywords"]);
-		$APPLICATION->SetPageProperty("description", $GLOBALS["arCountry"]["seoDesc"]);
+		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arMonth"]["seoKeywords"]);
+		$APPLICATION->SetPageProperty("description", $GLOBALS["arMonth"]["seoDesc"]);
+		if($GLOBALS["arResort"]["seoTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arMonth"]["seoTitle"]);
+		}
 		$headImg = $GLOBALS["arMonth"]["headImg"];
 	}else{
 		CHTTP::SetStatus('404 Not found');
