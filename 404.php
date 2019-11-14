@@ -12,7 +12,6 @@ $APPLICATION->SetTitle("404. Страница не найдена");
 <div class="b-404-content b-text">
 	<div class="b-block">
 		<p>Страницы, которую Вы запрашиваете, не существует.<br>Возможно она была удалена или Вы неправильно ввели адрес.</p>
-		<br>
 		<h2>Карта сайта: </h2>
 		<?
 		$APPLICATION->IncludeComponent("bitrix:main.map", ".default", Array(

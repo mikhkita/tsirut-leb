@@ -4478,18 +4478,24 @@ ul.b-breadcrumbs {
 	.map-columns{
 
 	}
-		.map-columns ul.map-level-0 a{
-			font-weight: normal;
+		.b-404-content table{
+			margin: 0;
 		}
-		.map-columns td {
-		    width: 250px;
+		.map-columns ul.map-level-0{
+			margin-top: 0;
 		}
-			.map-columns td li{
-				margin-bottom: 4px;
+			.map-columns ul.map-level-0 a{
+				font-weight: normal;
 			}
-			.map-columns td li:hover a{
-				text-decoration: underline;
+			.map-columns td {
+			    width: 250px;
 			}
+				.map-columns td li{
+					margin-bottom: 4px;
+				}
+				.map-columns td li:hover a{
+					text-decoration: underline;
+				}
 
 /*===========================*/
 
