@@ -401,7 +401,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		<div class="b b-content <?if($isMain) echo 'b-content-main'?>">
 			<?if((!in_array($urlArr[1], $GLOBALS["pagesList"]) && !$GLOBALS["isMain"]) || $GLOBALS["is404"]):?>
 				<div class="b-content-back b-contacts-top">
-					<div class="b-constructor">
+					<div class="b-constructor b-text">
 			<?endif;?>
 		<?
 		$curPageFull = isset($_SERVER["REAL_FILE_PATH"]) ? $_SERVER["REAL_FILE_PATH"] : $_SERVER["SCRIPT_NAME"];

@@ -375,6 +375,11 @@
 				<div class="review-content">
 					
 				</div>
+				<div class="review-preloader">
+					<div class="tourvisor-preloader">
+						<img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg">
+					</div>
+				</div>
 				<div class="center">
 					<a href="#" class="b-btn b-btn-blue one-line" onclick="$.fancybox.close(); return false;">
 						<p class="btn-bold">Закрыть</p>

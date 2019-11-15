@@ -5007,6 +5007,14 @@ textarea{
 	.b-popup-review .review-content.review-error{
 		text-align: center;
 	}
+.b-popup-review .review-preloader{
+	position: relative;
+	width: 100%;
+	height: 120px;
+}
+	.b-popup-review .review-preloader .tourvisor-preloader{
+		top: calc(50% - 29px);
+	}
 
 .b-popup-quiz{
 	position: relative;

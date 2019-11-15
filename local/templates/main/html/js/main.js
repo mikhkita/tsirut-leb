@@ -608,6 +608,7 @@ $(document).ready(function(){
                 beforeShow: function(){
                     var $review = $this.parents(".b-review-item").find(".b-review-top").clone(),
                         $popup =  $("#b-popup-review .review-content");
+                    $("#b-popup-review .review-preloader").removeClass("hide");
                     $popup.removeClass("review-error").html("");
                     $popup.append($review);
                     $popup.append("<p></p>");
@@ -618,17 +619,19 @@ $(document).ready(function(){
                         success: function(data){
                             var json = JSON.parse(data);
                             if(json.result == "success"){
-                               $("#b-popup-review .review-content p").html(json.text);  
+                               $("#b-popup-review .review-content p").html(json.text);
                             }else{
                                 $popup.addClass("review-error").html("");
                                 $popup.append("<h3>Ошибка отправки!</h3>");
                                 $popup.append("<p>"+json.errorMsg+"</p>");
                             }
+                            $("#b-popup-review .review-preloader").addClass("hide");
                         },
                         error: function(){
                             $popup.html("");
                             $popup.append("<h3>Ошибка отправки!</h3>");
                             $popup.append("<p>"+json.errorMsg+"</p>");
+                            $("#b-popup-review .review-preloader").addClass("hide");
                         }
                     });
                 }
