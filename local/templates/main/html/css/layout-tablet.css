@@ -524,9 +524,10 @@ div.TVFORow3 {
 	}
 	.b-advice img {
 	    width: 180px;
+	    margin-right: 12px;
 	}
 	.b-advice-text {
-	    padding-left: 16px;
+
 	}
 	.b-advice-text p {
 	    font-size: 16px;

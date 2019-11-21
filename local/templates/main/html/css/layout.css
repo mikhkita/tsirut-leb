@@ -254,7 +254,7 @@ input[name="MAIL"]{
 	display: none !important;
 }
 
-b{
+b, strong{
 	font-family: 'Gilroy-Bold';
 }
 
@@ -291,12 +291,14 @@ b{
 		margin-bottom: 24px;
 		font-size: 32px;
 		line-height: 40px;
+		color: #282828;
 	}
 	.b-text h3{
 		margin-top: 30px;
 		margin-bottom: 24px;
 		font-size: 20px;
 		line-height: 30px;
+		color: #282828;
 	}
 	.b-text ul{
 	    list-style: none;
@@ -324,6 +326,9 @@ b{
 			.b-text table{
 				margin: 32px 0;
 			}
+		.b-text ul.slick-dots li:before{
+			display: none;
+		}
 
 /*====Кнопки====*/
 
@@ -1670,6 +1675,7 @@ b{
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	    color: #FFF;
+	    min-height: 385px;
 	}
 		.b-mailing-cont h2{
 			font-family: 'Gilroy-Bold';
@@ -1766,6 +1772,7 @@ b{
 					font-size: 20px;
 					line-height: 28px;
 					color: #FFF;
+					margin-bottom: 0;
 				}
 		.b-article-item p{
 
@@ -1941,6 +1948,7 @@ b{
 			font-family: 'Gilroy-Bold';
 			font-size: 24px;
 			line-height: 34px;
+			margin-top: 0;
 			margin-bottom: 24px;
 		}
 		.b-seo h3{
@@ -1949,6 +1957,7 @@ b{
 			font-family: 'Gilroy-Bold';
 			font-size: 20px;
 			line-height: 28px;
+			margin-top: 0;
 			margin-bottom: 24px;
 		}
 		/*.b-seo h2.with-icon,
@@ -2406,6 +2415,7 @@ ul.b-breadcrumbs {
 			font-family: 'Gilroy-Bold';
 			font-size: 50px;
 			line-height: 60px;
+			margin-top: 0;
 			margin-bottom: 38px;
 		}
 		.b-feedback-text > p,
@@ -2939,26 +2949,25 @@ ul.b-breadcrumbs {
 			margin-bottom: 32px;
 		}
 		.b-advice{
-			display: table;
 			margin-bottom: 32px;
 		}
 			.b-advice img{
-				display: table-cell;
+				display: inline-block;
 				vertical-align: middle;
 				width: 302px;
 				margin: 0;
+				margin-right: 20px;
 				border-radius: 10px;
 			}
 			.b-advice .b-advice-text{
-				padding-left: 24px;
-				display: table-cell;
+				display: inline-block;
 				vertical-align: middle;
+				max-width: 540px;
 			}
 				.b-advice-text p{
 					position: relative;
 					font-size: 20px;
 					line-height: 30px;
-					max-width: 540px;
 					padding-left: 40px;
 					margin-bottom: 0;
 				}
@@ -4200,9 +4209,12 @@ ul.b-breadcrumbs {
 		.b-constructor-adv-item{
 			display: inline-block;
 			vertical-align: top;
-			width: calc((100% - 24px)/3 - 19px);
-			margin-right: 24px;
+			width: calc(100%/3 - 16px);
+			margin-right: 20px;
 			margin-bottom: 24px;
+		}
+		.b-constructor-adv-item:nth-child(3n){
+			margin-right: 0;
 		}
 			.b-constructor-adv-img{
 				width: 100%;
@@ -4218,11 +4230,15 @@ ul.b-breadcrumbs {
 				font-family: 'Gilroy-bold';
 				font-size: 24px;
 				line-height: 30px;
+				margin-top: 0;
 				margin-bottom: 10px;
 				color: #282828;
 			}
 			.b-constructor-adv-item p{
-
+				margin-bottom: 0;
+			}
+			.b-constructor-adv-p{
+				margin-bottom: 16px;
 			}
 
 .b-constructor-resorts{
@@ -4234,11 +4250,11 @@ ul.b-breadcrumbs {
 		.b-resorts-item{
 			display: inline-block;
 			vertical-align: top;
-			width: calc((100% - 24px)/3 - 19px);
-			margin-right: 24px;
-			margin-bottom: 24px;
+			width: calc(100%/3 - 16px);
+			margin-right: 20px;
+			margin-bottom: 40px;
 		}
-		.b-resorts-item:last-child{
+		.b-resorts-item:nth-child(3n){
 			margin-right: 0;
 		}
 			.b-resorts-top{
@@ -4276,9 +4292,10 @@ ul.b-breadcrumbs {
 					font-size: 32px;
 					line-height: 40px;
 					color: #FFF;
+					margin-bottom: 0;
 				}
 			.b-resorts-item p{
-				margin-bottom: 16px;
+				margin-bottom: 0;
 			}
 			.b-resorts-item a{
 				font-size: 20px;
@@ -4288,6 +4305,9 @@ ul.b-breadcrumbs {
 			}
 			.b-resorts-item a:hover{
 				border-bottom: 1px solid transparent;
+			}
+			.b-resorts-p{
+				margin-bottom: 16px;
 			}
 
 /*========*/

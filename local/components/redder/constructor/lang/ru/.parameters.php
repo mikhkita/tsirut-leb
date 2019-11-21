@@ -34,6 +34,6 @@ $MESS["CP_BNL_SET_META_KEYWORDS"] = "Устанавливать ключевые
 $MESS["CP_BNL_SET_META_DESCRIPTION"] = "Устанавливать описание страницы";
 $MESS["CP_BNL_SET_LAST_MODIFIED"] = "Устанавливать в заголовках ответа время модификации страницы";
 $MESS["CP_BNL_STRICT_SECTION_CHECK"] = "Строгая проверка раздела для показа списка";
-$MESS["TARGET_ID"] = "ID раздела в конструкторе";
+$MESS["TARGET_ID"] = "ID элемента в конструкторе";
 $MESS["SETTINGS_MAIN"] = "Основные параметры";
 ?>

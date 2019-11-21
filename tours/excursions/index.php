@@ -3,9 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("header-text", "Онлайн поиск и бронирование автобусных туров в Европу. <br>Экскурсионные туры в Прагу, Вену, Париж, Амстердам,<br> Рим, Будапешт.");
 $APPLICATION->SetTitle("Экскурсионные туры по Европе");
 
-?>
-
-<?$APPLICATION->IncludeComponent(
+?><?$APPLICATION->IncludeComponent(
 	"redder:constructor",
 	"",
 	Array(
@@ -60,8 +58,6 @@ $APPLICATION->SetTitle("Экскурсионные туры по Европе");
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"TARGET_ID" => "3443"
+		"TARGET_ID" => "96"
 	)
-);?>
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
