@@ -15,9 +15,7 @@ $image = Sprint\Editor\Blocks\Image::getImage($block['image'], array(
 <? endif; ?>
 
 <div class="b-constructor-adv-item">
-	<div class="b-constructor-adv-img">
-		 <img alt="<?=$image['DESCRIPTION']?>" src="<?=$image['SRC']?>">
-	</div>
+	<div class="b-constructor-adv-img" style="background-image: url(<?=$image['SRC']?>);"></div>
 	<h3><?=Sprint\Editor\Blocks\Text::getValue($block['title'])?></h3>
 	<div class="b-constructor-adv-p"><?=Sprint\Editor\Blocks\Text::getValue($block['text'])?></div>
 </div>

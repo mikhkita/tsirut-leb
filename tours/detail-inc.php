@@ -19,71 +19,166 @@
 	</div>
 <?endif;?>
 
-<?$GLOBALS["arFilterDetail"] = array("IBLOCK_ID"=>1, "ACTIVE"=>"Y", "SECTION_CODE"=>$_REQUEST["SECTION_CODE"]);?>
-<?$APPLICATION->IncludeComponent("bitrix:news.list", "detail", Array(
-	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
-		"AJAX_MODE" => "N",	// Включить режим AJAX
-		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
-		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
-		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
-		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
-		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
-		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
-		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
-		"CACHE_TYPE" => "A",	// Тип кеширования
-		"CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
-		"DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
-		"DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком
-		"DISPLAY_DATE" => "Y",	// Выводить дату элемента
-		"DISPLAY_NAME" => "Y",	// Выводить название элемента
-		"DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
-		"DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
-		"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
-		"FIELD_CODE" => array(	// Поля
-			0 => "ID",
-			1 => "CODE",
-			2 => "NAME",
-			3 => "PREVIEW_TEXT",
-			4 => "PREVIEW_PICTURE",
-			5 => "",
-		),
-		"FILTER_NAME" => "arFilterDetail",	// Фильтр
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
-		"IBLOCK_ID" => "1",	// Код информационного блока
-		"IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
-		"INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
-		"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
-		"NEWS_COUNT" => "20",	// Количество новостей на странице
-		"PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
-		"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
-		"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
-		"PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
-		"PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
-		"PAGER_TITLE" => "Новости",	// Название категорий
-		"PARENT_SECTION" => "",	// ID раздела
-		"PARENT_SECTION_CODE" => "",	// Код раздела
-		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
-		"PROPERTY_CODE" => array(	// Свойства
-			0 => "B_1_HEADER",
-			1 => "B_1_TEXT",
-			2 => "TYPE",
-			3 => "",
-		),
-		"SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
-		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
-		"SET_META_DESCRIPTION" => "Y",	// Устанавливать описание страницы
-		"SET_META_KEYWORDS" => "Y",	// Устанавливать ключевые слова страницы
-		"SET_STATUS_404" => "Y",	// Устанавливать статус 404
-		"SET_TITLE" => "N",	// Устанавливать заголовок страницы
-		"SHOW_404" => "Y",	// Показ специальной страницы
-		"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
-		"SORT_BY2" => "ID",	// Поле для второй сортировки новостей
-		"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей
-		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
-		"STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
-	),
-	false
-);?>
+<div class="b-online-search">
+	<div class="b-block">
+		<h2 class="b-title regular"><b><?=$GLOBALS["arCountry"]["titleTV"];?></b></h2>
+		<div class="filter-mobile-cont hide">
+			<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
+		</div>
+		<div class="b b-tourvisor">
+			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
+			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
+				<div class="tv-search-form tv-moduleid-192034" 
+					tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" 
+					tv-resorts="<?//=$GLOBALS["arCountry"]["resortIDTV"]?>" 
+					tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"
+				></div>
+			</div>
+		</div>
+		<div class="b-tourvisor-list">
+			<div class="b-filter-cont hidden">
+				<div class="b-filter">
+					<div class="b-TVMeal b-filter-item">
+						<h3>Питание</h3>
+						<ul class="b-radio-list">
+							<li>
+								<input id="food-all" type="radio" name="food" value="all" checked>
+								<label for="food-all" data-TV="Любое">Любое</label>
+							</li>
+							<li>
+								<input id="food-BB" type="radio" name="food" value="BB">
+								<label for="food-BB" data-TV="Только завтрак"><b>BB</b> – Только завтрак</label>
+							</li>
+							<li>
+								<input id="food-HB" type="radio" name="food" value="HB">
+								<label for="food-HB" data-TV="Завтрак, ужин"><b>HB</b> – Завтрак, ужин</label>
+							</li>
+							<li>
+								<input id="food-FB" type="radio" name="food" value="FB">
+								<label for="food-FB" data-TV="Полный пансион"><b>FB</b> – Полный пансион</label>
+							</li>
+							<li>
+								<input id="food-Al" type="radio" name="food" value="Al">
+								<label for="food-Al" data-TV="Все включено"><b>Al</b> – Все включено</label>
+							</li>
+							<li>
+								<input id="food-UAl" type="radio" name="food" value="UAl">
+								<label for="food-UAl" data-TV="Ультра все включено"><b>UAl</b> – Ультра все включено</label>
+							</li>
+						</ul>
+					</div>
+					<div class="b-TVRating b-filter-item">
+						<h3>Рейтинг</h3>
+						<ul class="b-radio-list">
+							<li>
+								<input id="rating-all" type="radio" name="rating" value="all" checked>
+								<label for="rating-all" data-TV="Любой">Любой рейтинг</label>
+							</li>
+							<li>
+								<input id="rating-4_5" type="radio" name="rating" value="4.5">
+								<label for="rating-4_5" data-TV="4,5 и более"><b>4.5+</b>&nbsp;Превосходно</label>
+							</li>
+							<li>
+								<input id="rating-4_0" type="radio" name="rating" value="4.0">
+								<label for="rating-4_0" data-TV="4,0 и более"><b>4.0+</b>&nbsp;Очень хорошо</label>
+							</li>
+							<li>
+								<input id="rating-3_5" type="radio" name="rating" value="3.5">
+								<label for="rating-3_5" data-TV="3,5 и более"><b>3.5+</b>&nbsp;Хорошо</label>
+							</li>
+							<li>
+								<input id="rating-3_0" type="radio" name="rating" value="3.0">
+								<label for="rating-3_0" data-TV="3,0 и более"><b>3.0+</b>&nbsp;Удовлетворительно</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="b-tourvisor-nav">
+					<?if($GLOBALS["arCountry"]["monthList"]):?>
+						<div class="b-tourvisor-nav-item clearfix">
+							<h3>Туры по месяцам</h3>
+							<ul class="months">
+								<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+									<li><a href="<?=$value["code"]?>/"><?=$value["name"]?></a></li>
+								<?endforeach;?>
+							</ul>
+						</div>
+					<?endif;?>
+					<?if($GLOBALS["arCountry"]["seasonList"]):?>
+						<div class="b-tourvisor-nav-item clearfix">
+							<h3>Туры по сезонам</h3>
+							<ul class="b-seasons">
+								<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+									<li class="b-season">
+										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
+										<a href="<?=$value["code"]?>/"><?=$value["name"]?></a>
+									</li>
+								<?endforeach;?>
+							</ul>
+						</div>
+					<?endif;?>
+					<div class="b-tourvisor-nav-item b-tourvisor-nav-adv">
+						<h3>Наши преимущества</h3>
+						<div class="nav-adv">
+							<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-cards.svg">
+							<p><?=includeArea("filter-adv-1")?></p>
+						</div>
+						<div class="nav-adv">
+							<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-earth.svg">
+							<p><?=includeArea("filter-adv-2")?></p>
+						</div>
+						<div class="nav-adv">
+							<img src="<?=SITE_TEMPLATE_PATH?>/html/i/adv-money.svg">
+							<p><?=includeArea("filter-adv-3")?></p>
+						</div>
+					</div>
+					<div class="b-tourvisor-nav-item clearfix">
+						<h3>Туры в другие страны</h3>
+						<?$APPLICATION->IncludeComponent(
+							"bitrix:catalog.section.list",
+							"country-list-detail",
+							Array(
+								"ADD_SECTIONS_CHAIN" => "N",
+								"CACHE_FILTER" => "N",
+								"CACHE_GROUPS" => "Y",
+								"CACHE_TIME" => "36000000",
+								"CACHE_TYPE" => "N",
+								"COUNT_ELEMENTS" => "Y",
+								"FILTER_NAME" => "",
+								"IBLOCK_ID" => "1",
+								"IBLOCK_TYPE" => "content",
+								"SECTION_CODE" => "",
+								"SECTION_FIELDS" => array("PICTURE",""),
+								"SECTION_ID" => "1",
+								"SECTION_URL" => "",
+								"SECTION_USER_FIELDS" => array("UF_COUNTRY_NAME",""),
+								"SHOW_PARENT_NAME" => "Y",
+								"TOP_DEPTH" => "2",
+								"VIEW_MODE" => "LINE"
+							)
+						);?>
+					</div>
+					<div class="b-tourvisor-nav-item b-nav-seo">
+						<?=$GLOBALS["arCountry"]["seoText"]?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="b-constructor b-text">
+	<?$APPLICATION->IncludeComponent(
+	    "sprint.editor:blocks", 
+	    ".default", 
+	    Array(
+	        "IBLOCK_ID" => 1,
+	        "SECTION_ID" => $GLOBALS["arCountry"]["id"],
+	        "PROPERTY_CODE" => "UF_EDITOR",
+	    ),
+	    false,
+	    Array(
+	        "HIDE_ICONS" => "Y"
+	    )
+	);?>
+</div>

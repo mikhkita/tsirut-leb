@@ -124,6 +124,14 @@ body {
 .b-hot-block{
 	margin-top: 0;
 }
+
+.b-text.b-text-short .b-feedback .b-feedback-form {
+	max-width: none;
+}
+.b-text.b-text-short .b-feedback .b-5-manager {
+    display: none;
+}
+
 /*.b-tourvisor-header div.TVMainFilterButton{
 	box-sizing: border-box;
 	max-height: 100px;
@@ -427,6 +435,14 @@ div.TVFORow3 {
 	}
 	.b-sea-cruises #ces_container #cruises_schedule_filter #csf_submit {
 	    width: calc(50% - 8px);
+	}
+
+	.b-text.b-text-short .b-mailing-cont{
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	.b-text.b-text-short .b-widget-vk{
+		float: none;
 	}
 	
 }
@@ -881,6 +897,21 @@ div.TVFORow3 {
 		height: 80px;
 	}
 
+	.b-text.b-text-short .b-feedback .b-feedback-text,
+	.b-text.b-text-short .b-mailing-cont{
+		padding: 24px;
+	}
+
+	.b-text.b-text-short .b-article-item{
+	    width: calc(100%/2 - 16px);
+	}
+	.b-text.b-text-short .b-article-item:nth-child(3n){
+		margin-right: 24px;
+	}
+	.b-text.b-text-short .b-article-item:nth-child(2n){
+		margin-right: 0;
+	}
+
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 11px;
 	}
@@ -1183,6 +1214,10 @@ div.TVFORow3 {
 	.b-5-name small {
 	    font-size: 14px;
 	    line-height: 14px;
+	}
+
+	.b-advice .b-advice-text{
+		max-width: 500px;
 	}
 
 	.TVTheme2 .TVNavButton.TVReviewTitle{

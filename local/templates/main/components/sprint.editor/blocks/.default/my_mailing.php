@@ -6,7 +6,7 @@
 			<div class="b-head-gradient"></div>
 			<div class="gradient-after">
 				<h2><b><?=$block['value_title'];?></b></h2>
-				<p class="mailing-text"><?=$block['value'];?></p>
+				<div class="mailing-text"><?=$block['value'];?></div>
 				<form class="b-mailing-form" method="post" action="/subscribe.php">
 					<input type="text" name="email" placeholder="Ваш e-mail" required>
 					<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">

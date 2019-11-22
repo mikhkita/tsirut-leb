@@ -330,6 +330,49 @@ b, strong{
 			display: none;
 		}
 
+	.b-text.b-text-short{
+
+	}
+		.b-text.b-text-short .b-block{
+			width: 100%;
+		}
+		.b-text.b-text-short .b-feedback{
+
+		}
+			.b-text.b-text-short .b-feedback .b-block{
+
+			}
+			.b-text.b-text-short .b-feedback .b-feedback-text {
+			    padding: 44px 54px;
+			}
+			.b-text.b-text-short .b-feedback .b-5-manager {
+			    width: 390px;
+			    height: 565px;
+			    right: 56px;
+			}
+			.b-text.b-text-short .b-feedback .b-5-name{
+				right: 0;
+			}
+		.b-text.b-text-short .b-mailing{
+
+		}
+			.b-text.b-text-short .b-mailing .b-block{
+
+			}
+			.b-text.b-text-short .b-mailing-form input[type=text]{
+				width: 100%;
+				margin-bottom: 24px;
+			}
+			.b-text.b-text-short .b-mailing-form .b-btn-submit{
+				width: 100%;
+			}
+		.b-text.b-text-short .b-article-item{
+		    width: calc(100%/3 - 16px);
+		}
+		.b-text.b-text-short .b-article-item:nth-child(3n){
+			margin-right: 0;
+		}
+
 /*====Кнопки====*/
 
 .b-btn{
@@ -1668,14 +1711,14 @@ b, strong{
 		border-radius: 10px;
 		overflow: hidden;
 		width: 100%;
-		width: calc(100% - 320px);
-		padding: 46px 56px 62px 56px;
+		width: calc(100% - 308px);
+		padding: 42px 56px 58px 56px;
 		background-image: url(../i/head.jpg);
 	    background-position: 50% 50%;
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	    color: #FFF;
-	    min-height: 385px;
+	    min-height: 384px;
 	}
 		.b-mailing-cont h2{
 			font-family: 'Gilroy-Bold';
@@ -1685,7 +1728,7 @@ b, strong{
 			margin-bottom: 24px;
 			color: #FFF;
 		}
-		.mailing-text{
+		.b-mailing-cont .mailing-text{
 			max-width: 594px;
 			font-size: 20px;
 			line-height: 30px;
@@ -1709,7 +1752,7 @@ b, strong{
 			}
 	.b-widget-vk{
 		float: right;
-		width: 302px;
+		width: 290px;
 		height: 384px;
 	}
 
@@ -1733,19 +1776,23 @@ b, strong{
 				margin-bottom: 20px;
 				overflow: hidden;
 			}
-				.b-article-top .b-article-img{
+				.b-article-top .b-article-img-cont{
 					width: 100%;
 					height: 100%;
 				}
-					.b-article-top .b-article-img img{
+					.b-article-top .b-article-img-cont .b-article-img{
+						width: 100%;
 						height: 100%;
+						background-position: 50% 50%;
+					    background-repeat: no-repeat;
+					    background-size: cover;
 						-webkit-transition: transform 500ms ease-out;
 						   -moz-transition: transform 500ms ease-out;
 						    -ms-transition: transform 500ms ease-out;
 						   	 -o-transition: transform 500ms ease-out;
 								transition: transform 500ms ease-out;
 					}
-					.b-article-top:hover .b-article-img img{
+					.b-article-top:hover .b-article-img-cont .b-article-img{
 						-webkit-transform: scale(1.1);
 						   -moz-transform: scale(1.1);
 						    -ms-transform: scale(1.1);
@@ -4182,6 +4229,7 @@ ul.b-breadcrumbs {
 				width: 100%;
 				border-radius: 6px;
 				overflow: hidden;
+				margin-bottom: 0;
 			}
 		.adv-main-right{
 			display: table-cell;
@@ -4204,7 +4252,7 @@ ul.b-breadcrumbs {
 			}
 
 	.b-constructor-adv-list{
-		margin-bottom: 90px;
+		margin-bottom: 60px;
 	}
 		.b-constructor-adv-item{
 			display: inline-block;
@@ -4221,11 +4269,11 @@ ul.b-breadcrumbs {
 				height: 260px;
 				margin-bottom: 14px;
 				border-radius: 6px;
+				background-position: 50% 50%;
+		    	background-size: cover;
+		    	background-repeat: no-repeat;
 				overflow: hidden;
 			}
-				.b-constructor-adv-img img{
-					height: 100%;
-				}
 			.b-constructor-adv-item h3{
 				font-family: 'Gilroy-bold';
 				font-size: 24px;
@@ -4268,10 +4316,10 @@ ul.b-breadcrumbs {
 				.b-resorts-top .b-resorts-img{
 					width: 100%;
 					height: 100%;
+					background-position: 50% 50%;
+			    	background-size: cover;
+			    	background-repeat: no-repeat;
 				}
-					.b-resorts-top .b-resorts-img img{
-						height: 100%;
-					}
 				.b-resorts-top .blackout{
 					position: absolute;
 					left: 0;

@@ -16,9 +16,7 @@ $image = Sprint\Editor\Blocks\Image::getImage($block['image'], array(
 
 <div class="b-resorts-item">
 	<div class="b-resorts-top">
-		<div class="b-resorts-img">
-			 <img alt="<?=$image['DESCRIPTION']?>" src="<?=$image['SRC']?>">
-		</div>
+		<div class="b-resorts-img" style="background-image: url(<?=$image['SRC']?>);"></div>
 		<div class="blackout"></div>
 		<h3><?=Sprint\Editor\Blocks\Text::getValue($block['title'])?></h3>
 	</div>

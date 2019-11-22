@@ -1049,6 +1049,18 @@ ul.b-breadcrumbs{
 	padding: 16px 0 15px;
 }
 
+.b-text.b-text-short .b-mailing-cont{
+	width: 100%;
+}
+.b-text.b-text-short .b-feedback .b-feedback-text,
+.b-text.b-text-short .b-mailing-cont{
+	padding: 24px;
+}
+
+.b-text.b-text-short .b-article-item:nth-child(3n) {
+    margin-right: 24px;
+}
+
 /*===========*/
 
 .b-tourvisor-calendar{
@@ -1725,7 +1737,7 @@ div.TVTabedListContainer {
 	    line-height: 36px;
 	    margin-bottom: 16px;
 	}
-	.mailing-text {
+	.b-mailing-cont .mailing-text {
 	    font-size: 16px;
 	    line-height: 24px;
 	    margin-bottom: 24px;
