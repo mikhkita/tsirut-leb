@@ -36,9 +36,18 @@
 				<?//если это месяц
 				$dates = "";
 				if($GLOBALS["arResort"]["month"]){
-					$dates = $GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["start"].",".$GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["end"];
+					//если заполнены даты берем их
+					if($GLOBALS["arResort"]["flydates_start"] && $GLOBALS["arResort"]["flydates_end"]){
+						$dates = $GLOBALS["arResort"]["flydates_start"].",".$GLOBALS["arResort"]["flydates_end"];
+					}else{
+						$dates = $GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["start"].",".$GLOBALS["monthsTV"][$GLOBALS["arResort"]["month"]]["end"];
+					}
 				}elseif($GLOBALS["arResort"]["season"]){
-					$dates = $GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["start"].",".$GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["end"];
+					if($GLOBALS["arResort"]["dates"]){
+						$dates = $GLOBALS["arResort"]["dates"]["start"].",".$GLOBALS["arResort"]["dates"]["end"];
+					}else{
+						$dates = $GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["start"].",".$GLOBALS["seasonsTV"][$GLOBALS["arResort"]["season"]]["end"];
+					}
 				}
 				?>
 				<div class="tv-search-form tv-moduleid-192034" 
@@ -200,7 +209,7 @@
 							)
 						);?>
 					</div>
-					<div class="b-tourvisor-nav-item b-nav-seo">
+					<div class="b-tourvisor-nav-item b-nav-seo b-text">
 						<?=$GLOBALS["arResort"]["seoText"]?>
 					</div>
 				</div>

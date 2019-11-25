@@ -167,7 +167,7 @@ $this->setFrameMode(true);
 							)
 						);?>
 					</div>
-					<div class="b-tourvisor-nav-item b-nav-seo">
+					<div class="b-tourvisor-nav-item b-nav-seo b-text">
 						<?=$GLOBALS["arMonth"]["seoText"]?>
 					</div>
 				</div>

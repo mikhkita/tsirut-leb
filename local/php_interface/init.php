@@ -158,7 +158,7 @@ function getCountrySection($country, $curSection = false){
 		array(),
 		$arFilter,
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON', "UF_COUNTY_NAME_V", "UF_COUNTY_NAME_R", "UF_EDITOR")
+		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON', "UF_COUNTY_NAME_V", "UF_COUNTY_NAME_R", "UF_EDITOR", "UF_FLYDATES_START", "UF_FLYDATES_END")
 	);
 	if($arSection = $rsSections->Fetch()){
 		//Получить месяцы, сезоны и курорты
@@ -241,6 +241,8 @@ function getCountrySection($country, $curSection = false){
 			'resortList' => array(),
 			'name_v' => $arSection['UF_COUNTY_NAME_V'],
 			'name_r' => $arSection['UF_COUNTY_NAME_R'],
+			'flydates_start' => $arSection['UF_FLYDATES_START'],
+			'flydates_end' => $arSection['UF_FLYDATES_END'],
 		);
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arSection['IBLOCK_ID'],$arSection['ID']);
 		$IPROPERTY  = $ipropValues->getValues();

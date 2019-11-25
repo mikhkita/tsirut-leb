@@ -36,9 +36,17 @@
 				<?
 				$dates = "";
 				if($GLOBALS["arMonth"]["month"]){
-					$dates = $GLOBALS["monthsTV"][$GLOBALS["arMonth"]["month"]]["start"].",".$GLOBALS["monthsTV"][$GLOBALS["arMonth"]["month"]]["end"];
+					if($GLOBALS["arMonth"]["flydates_start"] && $GLOBALS["arMonth"]["flydates_end"]){
+						$dates = $GLOBALS["arMonth"]["flydates_start"].",".$GLOBALS["arMonth"]["flydates_end"];
+					}else{
+						$dates = $GLOBALS["monthsTV"][$GLOBALS["arMonth"]["month"]]["start"].",".$GLOBALS["monthsTV"][$GLOBALS["arMonth"]["month"]]["end"];
+					}
 				}elseif($GLOBALS["arMonth"]["season"]){
-					$dates = $GLOBALS["seasonsTV"][$GLOBALS["arMonth"]["season"]]["start"].",".$GLOBALS["seasonsTV"][$GLOBALS["arMonth"]["season"]]["end"];
+					if($GLOBALS["arMonth"]["flydates_start"] && $GLOBALS["arMonth"]["flydates_end"]){
+						$dates = $GLOBALS["arMonth"]["flydates_start"].",".$GLOBALS["arMonth"]["flydates_end"];
+					}else{
+						$dates = $GLOBALS["seasonsTV"][$GLOBALS["arMonth"]["season"]]["start"].",".$GLOBALS["seasonsTV"][$GLOBALS["arMonth"]["season"]]["end"];
+					}
 				}
 				?>
 				<div class="tv-search-form tv-moduleid-192034" 
@@ -172,7 +180,7 @@
 							)
 						);?>
 					</div>
-					<div class="b-tourvisor-nav-item b-nav-seo">
+					<div class="b-tourvisor-nav-item b-nav-seo b-text">
 						<?=$GLOBALS["arMonth"]["seoText"]?>
 					</div>
 				</div>

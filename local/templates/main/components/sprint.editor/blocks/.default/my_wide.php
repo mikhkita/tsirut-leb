@@ -10,6 +10,7 @@ $image = Sprint\Editor\Blocks\Image::getImage($block['image'], array(
 ?>
 
 <div class="b-constructor-desc detail-margin-b" style="background-image: url('<?=$image['SRC']?>')">
+	<div class="blackout"></div>
 	<div class="b-block">
 		<h2 class="b-title"><b><?=Sprint\Editor\Blocks\Text::getValue($block['title'])?></b></h2>
 		<div class="preview-text"><?=Sprint\Editor\Blocks\Text::getValue($block['text'])?></div>

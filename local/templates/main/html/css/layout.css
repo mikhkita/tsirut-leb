@@ -1969,6 +1969,9 @@ b, strong{
 		.seo-block p{
 			margin-bottom: 24px;
 		}
+		.seo-block p:empty{
+			margin-bottom: 0;
+		}
 	/*.seo-block.center h2.with-icon{
 		margin-left: auto;
 		margin-right: auto;
@@ -2677,6 +2680,13 @@ ul.b-breadcrumbs {
 					line-height: 28px;
 					margin-top: 0;
 					margin-bottom: 14px;
+				}
+				.b-tourvisor-nav-item.b-text h2,
+				.b-tourvisor-nav-item.b-text h3{
+					font-size: 20px;
+					line-height: 28px;
+					margin-top: 30px;
+    				margin-bottom: 24px;
 				}
 			.b-star-list{
 
@@ -4180,6 +4190,7 @@ ul.b-breadcrumbs {
 /*===== Стили для конструктора =====*/
 
 .b-constructor-desc{
+	position: relative;
 	padding: 80px 0 127px 0;
 	background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -4188,27 +4199,42 @@ ul.b-breadcrumbs {
 	line-height: 28px;
 	color: #FFF;
 }
-	.b-constructor-desc h2{
-		font-size: 45px;
-    	line-height: 55px;
-		max-width: 706px;
-		font-family: 'Gilroy-Light';
-		margin-bottom: 40px;
-		color: #FFF;
-		text-align: left;
+	.b-constructor-desc .blackout{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.4);
 	}
-	.b-constructor-desc h2 b{
-		font-family: 'Gilroy-Bold';
-	}
-	.b-constructor-desc .preview-text{
-		max-width: 628px;
-		font-size: 20px;
-		line-height: 28px;
-		color: #FFF;
-	}
-		.b-constructor-desc .preview-text p{
-			margin-bottom: 24px;
+		.b-constructor-desc h2{
+			font-size: 45px;
+	    	line-height: 55px;
+			max-width: 706px;
+			font-family: 'Gilroy-Light';
+			margin-bottom: 40px;
+			color: #FFF;
+			text-align: left;
 		}
+		.b-constructor-desc h2 b{
+			font-family: 'Gilroy-Bold';
+		}
+		.b-constructor-desc .preview-text{
+			max-width: 628px;
+			font-size: 20px;
+			line-height: 28px;
+			color: #FFF;
+		}
+			.b-constructor-desc .preview-text p{
+				margin-bottom: 24px;
+			}
+			.b-constructor-desc .preview-text a{
+				color: #FFF;
+				text-decoration: underline;
+			}
+			.b-constructor-desc .preview-text a:hover{
+				text-decoration: none;
+			}
 
 .b-constructor-adv{
 
@@ -8804,11 +8830,12 @@ div.TVSearchResults .TVSRHelpForm{
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap .ttv-column label{
 		    width: 100%;
 		    margin: 0;
+		    line-height: 24px;
 		}
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox{
 			float: left;
 		    width: 25%;
-		    margin-bottom: 10px;
+		    margin-bottom: 12px;
 		    padding-right: 16px;
 		}
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox .icon-checked {
