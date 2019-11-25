@@ -245,15 +245,3 @@
 		</script>
 	</div>
 </div>
- <div class="b-block">
-	<div class="b-seo-separator-wide">
-	</div>
-</div>
-<div class="b-seo b-block">
-	<div class="seo-block center">
-		<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>Заголовок блока</h2>
-		<p>
-			Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! укрепление и развитие структуры требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. 
-		</p>
-	</div>
-</div>

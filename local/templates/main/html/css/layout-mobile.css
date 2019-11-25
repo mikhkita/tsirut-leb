@@ -2556,6 +2556,16 @@ div.TVTabedListContainer {
 	    width: 100%;
 	}
 
+	.sp-gallery-custom-items{
+	    display: block;
+	}
+		.sp-gallery-custom-item{
+			display: block;
+			width: 100%;
+			margin-right: 0;
+			min-width: 225px;
+		}
+
 	/*===============*/
 
 	.b-tourvisor-with-filter div.TVSideFilterForm.TVTheme2 .TVLocationButton,

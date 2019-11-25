@@ -401,6 +401,11 @@
 	),
 	false
 );?>
+		<div class="center">
+			<a href="/articles/" class="b-btn b-btn-blue one-line">
+				<p class="btn-bold">Все статьи</p>
+		 	</a>
+	 	</div>
 	</div>
 </div>
 <div class="b b-tour-operators">

@@ -4491,6 +4491,7 @@ ul.b-breadcrumbs {
 		.b-search-subscribe .b-subscribe-cont h2{
 			font-size: 32px;
 			line-height: 40px;
+			margin-top: 0;
 			margin-bottom: 16px;
 			color: #282828;
 		}
@@ -5394,6 +5395,38 @@ textarea{
     left: 25px;
     color: #6fd06c;
 }
+
+/* ==== Стили для виз. редактора ==== */
+
+.sp-gallery-custom-items{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+	.sp-gallery-custom-item{
+		-webkit-box-flex: 1;
+       	-ms-flex: 1;
+        flex: 1;
+		margin-right: 16px;
+		min-width: 225px;
+	}
+	.sp-gallery-custom-item:last-child{
+		margin-right: 0;
+	}
+		.sp-gallery-custom-item-img{
+
+		}
+			.sp-gallery-custom-item-img img{
+				width: 100%;
+			}
 
 @media screen and (max-width: 1420px){
 

@@ -1,18 +1,18 @@
 <div class="b-articles-page">
 	<div class="b-content-back b-contacts-top">
 		<div class="b-block">
+			<div class="b-articles-sort">
+				<p>Сортировать по: </p>
+				<form method="GET" action="" class="b-articles-sort-form">
+					<div class="b-select-chosen">
+						<select class="select-sort" name="SORT">
+							<option value="asc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "asc") echo "selected"?>>Возрастанию даты</option>
+							<option value="desc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "desc") echo "selected"?>>Убыванию даты</option>
+						</select>
+					</div>
+				</form>
+			</div>
 			<div class="b-text">
-				<div class="b-articles-sort">
-					<p>Сортировать по: </p>
-					<form method="GET" action="" class="b-articles-sort-form">
-						<div class="b-select-chosen">
-							<select class="select-sort" name="SORT">
-								<option value="asc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "asc") echo "selected"?>>Возрастанию даты</option>
-								<option value="desc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "desc") echo "selected"?>>Убыванию даты</option>
-							</select>
-						</div>
-					</form>
-				</div>
 				<div class="b-articles-page-top">
 					<div class="b-articles-page-left">
 						 <?
