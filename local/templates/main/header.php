@@ -409,7 +409,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		$curPageName = explode(".", end($curPageArr));
 		array_pop($curPageArr);
 		$curDir = $_SERVER["DOCUMENT_ROOT"].implode("/",$curPageArr)."/";
-		if(file_exists($curDir.$curPageName[0]."-inc.php")){
+		if(file_exists($curDir.$curPageName[0]."-inc.php") && !$GLOBALS["is404"]){
 			include($curDir.$curPageName[0]."-inc.php");
 		}
 		?>

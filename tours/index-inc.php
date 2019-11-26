@@ -70,7 +70,7 @@
 </div>
 <div class="b b-categories">
 	<div class="b-block">
-		<h2 class="b-title">Популярные направления</h2>
+		<h2 class="b-title">Путевки «все включено» из Белгорода – лучший выбор</h2>
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"categories",
@@ -205,7 +205,7 @@
 </div>
 <div class="b-calendar">
 	<div class="b-block">
-		<h2 class="b-title">Календарь выгодных туров</h2>
+		<h2 class="b-title">Туры и путевки на море из Белгорода 2020</h2>
 		<!-- <div class="tv-calendar tv-moduleid-980631"></div> -->
 		<div class="tv-calendar tv-moduleid-982983"></div>
 	</div>
