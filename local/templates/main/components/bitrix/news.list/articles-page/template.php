@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 		<a class="b-img" href="<?=$arItem['DETAIL_PAGE_URL']?>" style="background-image: url(<?=$img['src']?>)"></a>
 		<div class="b-right">
 			<a href="<?=$arItem['DETAIL_PAGE_URL']?>"><h3><?=$arItem['NAME']?></h3></a>
-			<?$date = CIBlockFormatProperties::DateFormat("j F Y", MakeTimeStamp($arElement["DATE_CREATE"], CSite::GetDateFormat()));?>
+			<?$date = CIBlockFormatProperties::DateFormat("j F Y", MakeTimeStamp($arItem["DATE_CREATE"], CSite::GetDateFormat()));?>
 			<div class="date"><?=$date?></div>
 			<p><?=$arItem['PREVIEW_TEXT']?></p>
 		</div>

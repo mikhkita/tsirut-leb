@@ -254,7 +254,7 @@ input[name="MAIL"]{
 	display: none !important;
 }
 
-b{
+b, strong{
 	font-family: 'Gilroy-Bold';
 }
 
@@ -291,12 +291,14 @@ b{
 		margin-bottom: 24px;
 		font-size: 32px;
 		line-height: 40px;
+		color: #282828;
 	}
 	.b-text h3{
 		margin-top: 30px;
 		margin-bottom: 24px;
 		font-size: 20px;
 		line-height: 30px;
+		color: #282828;
 	}
 	.b-text ul{
 	    list-style: none;
@@ -324,6 +326,52 @@ b{
 			.b-text table{
 				margin: 32px 0;
 			}
+		.b-text ul.slick-dots li:before{
+			display: none;
+		}
+
+	.b-text.b-text-short{
+
+	}
+		.b-text.b-text-short .b-block{
+			width: 100%;
+		}
+		.b-text.b-text-short .b-feedback{
+
+		}
+			.b-text.b-text-short .b-feedback .b-block{
+
+			}
+			.b-text.b-text-short .b-feedback .b-feedback-text {
+			    padding: 44px 54px;
+			}
+			.b-text.b-text-short .b-feedback .b-5-manager {
+			    width: 390px;
+			    height: 565px;
+			    right: 56px;
+			}
+			.b-text.b-text-short .b-feedback .b-5-name{
+				right: 0;
+			}
+		.b-text.b-text-short .b-mailing{
+
+		}
+			.b-text.b-text-short .b-mailing .b-block{
+
+			}
+			.b-text.b-text-short .b-mailing-form input[type=text]{
+				width: 100%;
+				margin-bottom: 24px;
+			}
+			.b-text.b-text-short .b-mailing-form .b-btn-submit{
+				width: 100%;
+			}
+		.b-text.b-text-short .b-article-item{
+		    width: calc(100%/3 - 16px);
+		}
+		.b-text.b-text-short .b-article-item:nth-child(3n){
+			margin-right: 0;
+		}
 
 /*====Кнопки====*/
 
@@ -1663,13 +1711,14 @@ b{
 		border-radius: 10px;
 		overflow: hidden;
 		width: 100%;
-		width: calc(100% - 320px);
-		padding: 46px 56px 62px 56px;
+		width: calc(100% - 308px);
+		padding: 42px 56px 58px 56px;
 		background-image: url(../i/head.jpg);
 	    background-position: 50% 50%;
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	    color: #FFF;
+	    min-height: 384px;
 	}
 		.b-mailing-cont h2{
 			font-family: 'Gilroy-Bold';
@@ -1679,7 +1728,7 @@ b{
 			margin-bottom: 24px;
 			color: #FFF;
 		}
-		.mailing-text{
+		.b-mailing-cont .mailing-text{
 			max-width: 594px;
 			font-size: 20px;
 			line-height: 30px;
@@ -1703,7 +1752,7 @@ b{
 			}
 	.b-widget-vk{
 		float: right;
-		width: 302px;
+		width: 290px;
 		height: 384px;
 	}
 
@@ -1727,19 +1776,23 @@ b{
 				margin-bottom: 20px;
 				overflow: hidden;
 			}
-				.b-article-top .b-article-img{
+				.b-article-top .b-article-img-cont{
 					width: 100%;
 					height: 100%;
 				}
-					.b-article-top .b-article-img img{
+					.b-article-top .b-article-img-cont .b-article-img{
+						width: 100%;
 						height: 100%;
+						background-position: 50% 50%;
+					    background-repeat: no-repeat;
+					    background-size: cover;
 						-webkit-transition: transform 500ms ease-out;
 						   -moz-transition: transform 500ms ease-out;
 						    -ms-transition: transform 500ms ease-out;
 						   	 -o-transition: transform 500ms ease-out;
 								transition: transform 500ms ease-out;
 					}
-					.b-article-top:hover .b-article-img img{
+					.b-article-top:hover .b-article-img-cont .b-article-img{
 						-webkit-transform: scale(1.1);
 						   -moz-transform: scale(1.1);
 						    -ms-transform: scale(1.1);
@@ -1766,6 +1819,7 @@ b{
 					font-size: 20px;
 					line-height: 28px;
 					color: #FFF;
+					margin-bottom: 0;
 				}
 		.b-article-item p{
 
@@ -1915,6 +1969,9 @@ b{
 		.seo-block p{
 			margin-bottom: 24px;
 		}
+		.seo-block p:empty{
+			margin-bottom: 0;
+		}
 	/*.seo-block.center h2.with-icon{
 		margin-left: auto;
 		margin-right: auto;
@@ -1941,6 +1998,7 @@ b{
 			font-family: 'Gilroy-Bold';
 			font-size: 24px;
 			line-height: 34px;
+			margin-top: 0;
 			margin-bottom: 24px;
 		}
 		.b-seo h3{
@@ -1949,6 +2007,7 @@ b{
 			font-family: 'Gilroy-Bold';
 			font-size: 20px;
 			line-height: 28px;
+			margin-top: 0;
 			margin-bottom: 24px;
 		}
 		/*.b-seo h2.with-icon,
@@ -2406,6 +2465,7 @@ ul.b-breadcrumbs {
 			font-family: 'Gilroy-Bold';
 			font-size: 50px;
 			line-height: 60px;
+			margin-top: 0;
 			margin-bottom: 38px;
 		}
 		.b-feedback-text > p,
@@ -2620,6 +2680,13 @@ ul.b-breadcrumbs {
 					line-height: 28px;
 					margin-top: 0;
 					margin-bottom: 14px;
+				}
+				.b-tourvisor-nav-item.b-text h2,
+				.b-tourvisor-nav-item.b-text h3{
+					font-size: 20px;
+					line-height: 28px;
+					margin-top: 30px;
+    				margin-bottom: 24px;
 				}
 			.b-star-list{
 
@@ -2939,26 +3006,25 @@ ul.b-breadcrumbs {
 			margin-bottom: 32px;
 		}
 		.b-advice{
-			display: table;
 			margin-bottom: 32px;
 		}
 			.b-advice img{
-				display: table-cell;
+				display: inline-block;
 				vertical-align: middle;
 				width: 302px;
 				margin: 0;
+				margin-right: 20px;
 				border-radius: 10px;
 			}
 			.b-advice .b-advice-text{
-				padding-left: 24px;
-				display: table-cell;
+				display: inline-block;
 				vertical-align: middle;
+				max-width: 540px;
 			}
 				.b-advice-text p{
 					position: relative;
 					font-size: 20px;
 					line-height: 30px;
-					max-width: 540px;
 					padding-left: 40px;
 					margin-bottom: 0;
 				}
@@ -3525,7 +3591,7 @@ ul.b-breadcrumbs {
 							margin-bottom: 8px;
 						}
 						.b-article-page-item p{
-
+							margin-bottom: 0;
 						}
 		.b-articles-page-right{
 			display: inline-block;
@@ -4124,6 +4190,7 @@ ul.b-breadcrumbs {
 /*===== Стили для конструктора =====*/
 
 .b-constructor-desc{
+	position: relative;
 	padding: 80px 0 127px 0;
 	background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -4132,27 +4199,42 @@ ul.b-breadcrumbs {
 	line-height: 28px;
 	color: #FFF;
 }
-	.b-constructor-desc h2{
-		font-size: 45px;
-    	line-height: 55px;
-		max-width: 706px;
-		font-family: 'Gilroy-Light';
-		margin-bottom: 40px;
-		color: #FFF;
-		text-align: left;
+	.b-constructor-desc .blackout{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.4);
 	}
-	.b-constructor-desc h2 b{
-		font-family: 'Gilroy-Bold';
-	}
-	.b-constructor-desc .preview-text{
-		max-width: 628px;
-		font-size: 20px;
-		line-height: 28px;
-		color: #FFF;
-	}
-		.b-constructor-desc .preview-text p{
-			margin-bottom: 24px;
+		.b-constructor-desc h2{
+			font-size: 45px;
+	    	line-height: 55px;
+			max-width: 706px;
+			font-family: 'Gilroy-Light';
+			margin-bottom: 40px;
+			color: #FFF;
+			text-align: left;
 		}
+		.b-constructor-desc h2 b{
+			font-family: 'Gilroy-Bold';
+		}
+		.b-constructor-desc .preview-text{
+			max-width: 628px;
+			font-size: 20px;
+			line-height: 28px;
+			color: #FFF;
+		}
+			.b-constructor-desc .preview-text p{
+				margin-bottom: 24px;
+			}
+			.b-constructor-desc .preview-text a{
+				color: #FFF;
+				text-decoration: underline;
+			}
+			.b-constructor-desc .preview-text a:hover{
+				text-decoration: none;
+			}
 
 .b-constructor-adv{
 
@@ -4173,6 +4255,7 @@ ul.b-breadcrumbs {
 				width: 100%;
 				border-radius: 6px;
 				overflow: hidden;
+				margin-bottom: 0;
 			}
 		.adv-main-right{
 			display: table-cell;
@@ -4195,34 +4278,41 @@ ul.b-breadcrumbs {
 			}
 
 	.b-constructor-adv-list{
-		margin-bottom: 90px;
+		margin-bottom: 60px;
 	}
 		.b-constructor-adv-item{
 			display: inline-block;
 			vertical-align: top;
-			width: calc((100% - 24px)/3 - 19px);
-			margin-right: 24px;
+			width: calc(100%/3 - 16px);
+			margin-right: 20px;
 			margin-bottom: 24px;
+		}
+		.b-constructor-adv-item:nth-child(3n){
+			margin-right: 0;
 		}
 			.b-constructor-adv-img{
 				width: 100%;
 				height: 260px;
 				margin-bottom: 14px;
 				border-radius: 6px;
+				background-position: 50% 50%;
+		    	background-size: cover;
+		    	background-repeat: no-repeat;
 				overflow: hidden;
 			}
-				.b-constructor-adv-img img{
-					height: 100%;
-				}
 			.b-constructor-adv-item h3{
 				font-family: 'Gilroy-bold';
 				font-size: 24px;
 				line-height: 30px;
+				margin-top: 0;
 				margin-bottom: 10px;
 				color: #282828;
 			}
 			.b-constructor-adv-item p{
-
+				margin-bottom: 0;
+			}
+			.b-constructor-adv-p{
+				margin-bottom: 16px;
 			}
 
 .b-constructor-resorts{
@@ -4234,11 +4324,11 @@ ul.b-breadcrumbs {
 		.b-resorts-item{
 			display: inline-block;
 			vertical-align: top;
-			width: calc((100% - 24px)/3 - 19px);
-			margin-right: 24px;
-			margin-bottom: 24px;
+			width: calc(100%/3 - 16px);
+			margin-right: 20px;
+			margin-bottom: 40px;
 		}
-		.b-resorts-item:last-child{
+		.b-resorts-item:nth-child(3n){
 			margin-right: 0;
 		}
 			.b-resorts-top{
@@ -4252,10 +4342,10 @@ ul.b-breadcrumbs {
 				.b-resorts-top .b-resorts-img{
 					width: 100%;
 					height: 100%;
+					background-position: 50% 50%;
+			    	background-size: cover;
+			    	background-repeat: no-repeat;
 				}
-					.b-resorts-top .b-resorts-img img{
-						height: 100%;
-					}
 				.b-resorts-top .blackout{
 					position: absolute;
 					left: 0;
@@ -4276,9 +4366,10 @@ ul.b-breadcrumbs {
 					font-size: 32px;
 					line-height: 40px;
 					color: #FFF;
+					margin-bottom: 0;
 				}
 			.b-resorts-item p{
-				margin-bottom: 16px;
+				margin-bottom: 0;
 			}
 			.b-resorts-item a{
 				font-size: 20px;
@@ -4288,6 +4379,9 @@ ul.b-breadcrumbs {
 			}
 			.b-resorts-item a:hover{
 				border-bottom: 1px solid transparent;
+			}
+			.b-resorts-p{
+				margin-bottom: 16px;
 			}
 
 /*========*/
@@ -4397,6 +4491,7 @@ ul.b-breadcrumbs {
 		.b-search-subscribe .b-subscribe-cont h2{
 			font-size: 32px;
 			line-height: 40px;
+			margin-top: 0;
 			margin-bottom: 16px;
 			color: #282828;
 		}
@@ -5300,6 +5395,38 @@ textarea{
     left: 25px;
     color: #6fd06c;
 }
+
+/* ==== Стили для виз. редактора ==== */
+
+.sp-gallery-custom-items{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+	.sp-gallery-custom-item{
+		-webkit-box-flex: 1;
+       	-ms-flex: 1;
+        flex: 1;
+		margin-right: 16px;
+		min-width: 225px;
+	}
+	.sp-gallery-custom-item:last-child{
+		margin-right: 0;
+	}
+		.sp-gallery-custom-item-img{
+
+		}
+			.sp-gallery-custom-item-img img{
+				width: 100%;
+			}
 
 @media screen and (max-width: 1420px){
 
@@ -8736,11 +8863,12 @@ div.TVSearchResults .TVSRHelpForm{
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .ttv-column-wrap .ttv-column label{
 		    width: 100%;
 		    margin: 0;
+		    line-height: 24px;
 		}
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox{
 			float: left;
 		    width: 25%;
-		    margin-bottom: 10px;
+		    margin-bottom: 12px;
 		    padding-right: 16px;
 		}
 		.b-block-ttv div.ttv-search .ttv-column.ttv-checkboxes .b-checkbox .icon-checked {

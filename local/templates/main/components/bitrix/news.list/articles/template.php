@@ -20,8 +20,8 @@ $this->setFrameMode(true);
 	$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>302*2, 'height'=>180*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?><a id="<?=$this->GetEditAreaId($arItem['ID']);?>" href="<?=$arItem['DETAIL_PAGE_URL']?>" class="b-article-item">
 		<div class="b-article-top">
-			<div class="b-article-img">
-				<img src="<?=$img['src']?>">
+			<div class="b-article-img-cont">
+				<div class="b-article-img" style="background-image: url(<?=$img['src']?>);"></div>
 			</div>
 			<div class="blackout"></div>
 			<h3><?=$arItem['NAME']?></h3>

@@ -64,7 +64,7 @@ if(!preg_match('/^(asc|desc|nulls)(,asc|,desc|,nulls){0,1}$/i', $arParams["SORT_
 // }
 
 $arParams["TARGET_ID"] = intval($arParams["TARGET_ID"]);
-$arrFilter = array("IBLOCK_ID"=>$arParams["IBLOCK_ID"], "ACTIVE"=>"Y", "SECTION_ID"=>$arParams["TARGET_ID"]);
+$arrFilter = array("IBLOCK_ID"=>$arParams["IBLOCK_ID"], "ACTIVE"=>"Y", "ID"=>$arParams["TARGET_ID"]);
 
 $arParams["CHECK_DATES"] = $arParams["CHECK_DATES"]!="N";
 

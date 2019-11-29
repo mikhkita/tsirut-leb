@@ -70,7 +70,7 @@
 </div>
 <div class="b b-categories">
 	<div class="b-block">
-		<h2 class="b-title">Популярные направления</h2>
+		<h2 class="b-title">Турвизор - поиск туров из Белгорода</h2>
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"categories",
@@ -205,7 +205,7 @@
 </div>
 <div class="b-calendar">
 	<div class="b-block">
-		<h2 class="b-title">Календарь выгодных туров</h2>
+		<h2 class="b-title">Календарь недорогих туров - цена дня</h2>
 		<!-- <div class="tv-calendar tv-moduleid-980631"></div> -->
 		<div class="tv-calendar tv-moduleid-982983"></div>
 	</div>
@@ -243,17 +243,5 @@
 	        	VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "200", no_cover: 1}, 56008470);
 	        }
 		</script>
-	</div>
-</div>
- <div class="b-block">
-	<div class="b-seo-separator-wide">
-	</div>
-</div>
-<div class="b-seo b-block">
-	<div class="seo-block center">
-		<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span>Заголовок блока</h2>
-		<p>
-			Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! укрепление и развитие структуры требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. 
-		</p>
 	</div>
 </div>

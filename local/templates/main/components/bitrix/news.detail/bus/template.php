@@ -86,11 +86,19 @@ $this->setFrameMode(true);
 	</div>
 </div>
 <div class="b-bus-tours-right b-bus-tours-list">
-	<div class="b-bus-detail">
-		<!-- <div class="b-content-back"> -->
-				<div class="b-constructor b-text">
-					<?=$arResult["DETAIL_TEXT"];?>
-				</div>
-		<!-- </div> -->
+	<div class="b-text b-text-short">
+		<?$APPLICATION->IncludeComponent(
+		    "sprint.editor:blocks",
+		    ".default",
+		    Array(
+		        "ELEMENT_ID" => $arResult["ID"],
+		        "IBLOCK_ID" => $arResult["IBLOCK_ID"],
+		        "PROPERTY_CODE" => "EDITOR",
+		    ),
+		    $component,
+		    Array(
+		        "HIDE_ICONS" => "Y"
+		    )
+		);?>
 	</div>
 </div>

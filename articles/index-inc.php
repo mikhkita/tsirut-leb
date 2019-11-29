@@ -1,18 +1,18 @@
 <div class="b-articles-page">
 	<div class="b-content-back b-contacts-top">
 		<div class="b-block">
+			<div class="b-articles-sort">
+				<p>Сортировать по: </p>
+				<form method="GET" action="" class="b-articles-sort-form">
+					<div class="b-select-chosen">
+						<select class="select-sort" name="SORT">
+							<option value="asc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "asc") echo "selected"?>>Возрастанию даты</option>
+							<option value="desc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "desc") echo "selected"?>>Убыванию даты</option>
+						</select>
+					</div>
+				</form>
+			</div>
 			<div class="b-text">
-				<div class="b-articles-sort">
-					<p>Сортировать по: </p>
-					<form method="GET" action="" class="b-articles-sort-form">
-						<div class="b-select-chosen">
-							<select class="select-sort" name="SORT">
-								<option value="asc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "asc") echo "selected"?>>Возрастанию даты</option>
-								<option value="desc" <?if(isset($_REQUEST["SORT"]) && $_REQUEST["SORT"] == "desc") echo "selected"?>>Убыванию даты</option>
-							</select>
-						</div>
-					</form>
-				</div>
 				<div class="b-articles-page-top">
 					<div class="b-articles-page-left">
 						 <?
@@ -78,7 +78,6 @@
 					}
 					//Наличие тега
 					if(isset($_REQUEST["TAG"]) && !empty($_REQUEST["TAG"])){
-						$APPLICATION->SetTitle("По тегу \"".$_REQUEST["TAG"]."\"");
 						$GLOBALS["arrFilter"] = array("?TAGS" => $_REQUEST["TAG"]);
 						$params["FILTER_NAME"] = "arrFilter";
 						$params["INCLUDE_IBLOCK_INTO_CHAIN"] = "Y";
@@ -199,38 +198,6 @@
 					        	VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "200", no_cover: 1}, 56008470);
 					        }
 						</script>
-					</div>
-				</div>
-				<div class="b-block">
-					<div class="b-seo-separator-wide">
-					</div>
-				</div>
-				<div class="b-seo b-block">
-					<div class="b-seo-two-blocks">
-						<div class="seo-block first">
-							<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span><span class="title">Заголовок блока</span></h2>
-							<p>
-								 Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации новых предложений. Равным образом укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.
-							</p>
-						</div>
-						<div class="seo-block second">
-							<h2>Заголовок блока</h2>
-							<p>
-								 Равным образом рамки и место обучения кадров требуют от нас анализа дальнейших направлений развития. Разнообразный и богатый опыт новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="b-block">
-					<div class="b-seo-separator">
-					</div>
-				</div>
-				<div class="b-seo b-block">
-					<div class="seo-block center">
-						<h2 class="with-icon"><span class="seo-icon seo-icon-coin"></span><span class="title">Заголовок блока</span></h2>
-						<p>
-							 Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки дальнейших направлений развития. Товарищи! укрепление и развитие структуры влечет за собой процесс внедрения и модернизации новых предложений. Равным образом укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития.
-						</p>
 					</div>
 				</div>
 			</div>

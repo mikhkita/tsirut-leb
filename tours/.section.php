@@ -1,4 +1,4 @@
 <?
-$sSectionName = "Поиск туров";
+$sSectionName = "Туры";
 
 ?>

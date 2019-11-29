@@ -17,8 +17,22 @@ $this->setFrameMode(true);
 	<div class="b-content-back">
 		<div class="b-block">
 			<div class="clearfix">
-				<div class="b-articles-detail-left b-text">
-					<?=$arResult["DETAIL_TEXT"];?>
+				<div class="b-articles-detail-left">
+					<div class="b-text b-text-short">
+						<?$APPLICATION->IncludeComponent(
+						    "sprint.editor:blocks",
+						    ".default",
+						    Array(
+						        "ELEMENT_ID" => $arResult["ID"],
+						        "IBLOCK_ID" => $arResult["IBLOCK_ID"],
+						        "PROPERTY_CODE" => "EDITOR",
+						    ),
+						    $component,
+						    Array(
+						        "HIDE_ICONS" => "Y"
+						    )
+						);?>
+					</div>
 				</div>
 				<div class="b-articles-detail-right">
 					<h3>Последние статьи</h3>

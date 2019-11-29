@@ -22,7 +22,7 @@ $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" 
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 17;
+$GLOBALS["version"] = 21;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -65,8 +65,8 @@ if($isDetail){
 		if($GLOBALS["arCountry"]["title"]){
 			$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
 		}
-		if($GLOBALS["arCountry"]["seoTitle"]){
-			$APPLICATION->SetPageProperty("title", $GLOBALS["arCountry"]["seoTitle"]);
+		if($GLOBALS["arCountry"]["seoPageTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arCountry"]["seoPageTitle"]);
 		}
 		//изображение в хедере
 		$headImg = $GLOBALS["arCountry"]["headImg"];
@@ -115,8 +115,8 @@ if($isDetailResort){
 		}
 		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arResort"]["seoKeywords"]);
 		$APPLICATION->SetPageProperty("description", $GLOBALS["arResort"]["seoDesc"]);
-		if($GLOBALS["arResort"]["seoTitle"]){
-			$APPLICATION->SetPageProperty("title", $GLOBALS["arResort"]["seoTitle"]);
+		if($GLOBALS["arResort"]["seoPageTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arResort"]["seoPageTitle"]);
 		}
 		$headImg = $GLOBALS["arResort"]["headImg"];
 	}else{
@@ -139,8 +139,8 @@ if($isDetailResortMonth){
 		}
 		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arMonth"]["seoKeywords"]);
 		$APPLICATION->SetPageProperty("description", $GLOBALS["arMonth"]["seoDesc"]);
-		if($GLOBALS["arResort"]["seoTitle"]){
-			$APPLICATION->SetPageProperty("title", $GLOBALS["arMonth"]["seoTitle"]);
+		if($GLOBALS["arResort"]["seoPageTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arMonth"]["seoPageTitle"]);
 		}
 		$headImg = $GLOBALS["arMonth"]["headImg"];
 	}else{
@@ -341,8 +341,8 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						), false);
 						?>
 						<h1><?
-							if($targetSect["seoTitle"]){
-								echo $targetSect["seoTitle"];
+							if($targetSect["seoPageTitle"]){
+								echo $targetSect["seoPageTitle"];
 							}else{
 								$APPLICATION->AddBufferContent('ShowCondBrowser');
 							}
@@ -409,7 +409,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 		$curPageName = explode(".", end($curPageArr));
 		array_pop($curPageArr);
 		$curDir = $_SERVER["DOCUMENT_ROOT"].implode("/",$curPageArr)."/";
-		if(file_exists($curDir.$curPageName[0]."-inc.php")){
+		if(file_exists($curDir.$curPageName[0]."-inc.php") && !$GLOBALS["is404"]){
 			include($curDir.$curPageName[0]."-inc.php");
 		}
 		?>
