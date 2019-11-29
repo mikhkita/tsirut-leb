@@ -105,7 +105,6 @@ function replacePlaceholders(&$content){
 	$urlArr = explode("/", $curPage);
 
 	if (!in_array('admin', $urlArr)) {
-		$year = date("Y");
 		$year1 = date("Y", strtotime("+1 month"));
 		$year2 = date("Y", strtotime("+2 month"));
 		$year3 = date("Y", strtotime("+3 month"));
@@ -118,19 +117,25 @@ function replacePlaceholders(&$content){
 		$year10 = date("Y", strtotime("+10 month"));
 		$year11 = date("Y", strtotime("+11 month"));
 
+		$year = date("Y");
+		
+		if ($year != $year4) {
+			$year = $year.'-'.$year4;
+		}
+
 		$content = str_replace("#YEAR#", $year, $content);
-		$content = str_replace("#YEAR1#", $year1, $content);
-		$content = str_replace("#YEAR2#", $year2, $content);
-		$content = str_replace("#YEAR3#", $year3, $content);
-		$content = str_replace("#YEAR3#", $year3, $content);
-		$content = str_replace("#YEAR4#", $year4, $content);
-		$content = str_replace("#YEAR5#", $year5, $content);
+		$content = str_replace("#YEAR12#", $year, $content);
+		$content = str_replace("#YEAR11#", $year1, $content);
+		$content = str_replace("#YEAR10#", $year2, $content);
+		$content = str_replace("#YEAR9#", $year3, $content);
+		$content = str_replace("#YEAR8#", $year4, $content);
+		$content = str_replace("#YEAR7#", $year5, $content);
 		$content = str_replace("#YEAR6#", $year6, $content);
-		$content = str_replace("#YEAR7#", $year7, $content);
-		$content = str_replace("#YEAR8#", $year8, $content);
-		$content = str_replace("#YEAR9#", $year9, $content);
-		$content = str_replace("#YEAR10#", $year10, $content);
-		$content = str_replace("#YEAR11#", $year11, $content);
+		$content = str_replace("#YEAR5#", $year7, $content);
+		$content = str_replace("#YEAR4#", $year8, $content);
+		$content = str_replace("#YEAR3#", $year9, $content);
+		$content = str_replace("#YEAR2#", $year10, $content);
+		$content = str_replace("#YEAR1#", $year11, $content);
 	}
 }
 
