@@ -3591,7 +3591,7 @@ ul.b-breadcrumbs {
 							margin-bottom: 8px;
 						}
 						.b-article-page-item p{
-
+							margin-bottom: 0;
 						}
 		.b-articles-page-right{
 			display: inline-block;
