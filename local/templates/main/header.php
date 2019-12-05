@@ -65,8 +65,8 @@ if($isDetail){
 		if($GLOBALS["arCountry"]["title"]){
 			$APPLICATION->SetTitle($GLOBALS["arCountry"]["title"]);
 		}
-		if($GLOBALS["arCountry"]["seoPageTitle"]){
-			$APPLICATION->SetPageProperty("title", $GLOBALS["arCountry"]["seoPageTitle"]);
+		if($GLOBALS["arCountry"]["seoTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arCountry"]["seoTitle"]);
 		}
 		//изображение в хедере
 		$headImg = $GLOBALS["arCountry"]["headImg"];
@@ -115,8 +115,8 @@ if($isDetailResort){
 		}
 		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arResort"]["seoKeywords"]);
 		$APPLICATION->SetPageProperty("description", $GLOBALS["arResort"]["seoDesc"]);
-		if($GLOBALS["arResort"]["seoPageTitle"]){
-			$APPLICATION->SetPageProperty("title", $GLOBALS["arResort"]["seoPageTitle"]);
+		if($GLOBALS["arResort"]["seoTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arResort"]["seoTitle"]);
 		}
 		$headImg = $GLOBALS["arResort"]["headImg"];
 	}else{
@@ -139,8 +139,8 @@ if($isDetailResortMonth){
 		}
 		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arMonth"]["seoKeywords"]);
 		$APPLICATION->SetPageProperty("description", $GLOBALS["arMonth"]["seoDesc"]);
-		if($GLOBALS["arResort"]["seoPageTitle"]){
-			$APPLICATION->SetPageProperty("title", $GLOBALS["arMonth"]["seoPageTitle"]);
+		if($GLOBALS["arResort"]["seoTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arMonth"]["seoTitle"]);
 		}
 		$headImg = $GLOBALS["arMonth"]["headImg"];
 	}else{
