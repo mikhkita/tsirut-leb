@@ -2647,7 +2647,7 @@ ul.b-breadcrumbs {
 		width: 302px;
 	}
 	.b-filter-cont.hidden{
-		/*display: none !important;*/
+		display: none !important;
 	}
 		.b-filter{
 			width: 100%;
@@ -3719,7 +3719,7 @@ ul.b-breadcrumbs {
 /*==== Экскурсии ====*/
 
 .b-popular-excursions{
-	margin-bottom: 90px;
+	margin-bottom: 40px;
 }
 
 /*==== Автобусные туры ====*/
