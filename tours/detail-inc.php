@@ -1,11 +1,25 @@
 
+<?
+	if($GLOBALS["isDetail"]){
+		$arTarget = $GLOBALS["arCountry"];
+	}
+	if ($GLOBALS["isDetailResort"]) {
+		$arTarget = $GLOBALS["arResort"];
+	}
+	if ($GLOBALS["isDetailResortMonth"]) {
+		$arTarget = $GLOBALS["arMonth"];
+	}
+	if ($GLOBALS["isDetailInnerSection"]) {
+		$arTarget = $GLOBALS["arInnerSection"];
+	}
+?>
 
 <?if($GLOBALS["arCountry"]["name"] && !$GLOBALS["arCountry"]["isRussia"]):?>
 	<div class="b-tourvisor-calendar" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
 		<div class="b-block">
 			<div class="content">
+				<h2>Календарь туров</h2>
 				<div class="b-tourvisor-calendar-cont">
-					<h2>Календарь туров</h2>
 					<div class="calendar-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 					<a href="#" class="b-btn b-btn-orange one-line hidden">
 						<p class="btn-bold">Показать туры</p>
@@ -21,17 +35,43 @@
 
 <div class="b-online-search">
 	<div class="b-block">
-		<h2 class="b-title regular"><b><?=$GLOBALS["arCountry"]["titleTV"];?></b></h2>
+		<h2 class="b-title regular">
+			<b><?
+			if($arTarget["titleTV"]){
+				echo $arTarget["titleTV"];
+			}else{
+				echo $GLOBALS["arCountry"]["titleTV"];
+			}
+			?></b></h2>
 		<div class="filter-mobile-cont hide">
 			<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
 		</div>
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
+				<?//если это месяц
+				$dates = "";
+				if($arTarget["month"]){
+					//если заполнены даты берем их
+					if($arTarget["flydates_start"] && $arTarget["flydates_end"]){
+						$dates = $arTarget["flydates_start"].",".$arTarget["flydates_end"];
+					}else{
+						$dates = $GLOBALS["monthsTV"][$arTarget["month"]]["start"].",".$GLOBALS["monthsTV"][$arTarget["month"]]["end"];
+					}
+				}elseif($arTarget["season"]){
+					if($arTarget["dates"]){
+						$dates = $arTarget["dates"]["start"].",".$arTarget["dates"]["end"];
+					}else{
+						$dates = $GLOBALS["seasonsTV"][$arTarget["season"]]["start"].",".$GLOBALS["seasonsTV"][$arTarget["season"]]["end"];
+					}
+				}
+				
+				?>
 				<div class="tv-search-form tv-moduleid-192034" 
 					tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" 
 					tv-resorts="<?//=$GLOBALS["arCountry"]["resortIDTV"]?>" 
 					tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"
+					tv-flydates="<?if($dates) echo $dates;?>"
 				></div>
 			</div>
 		</div>
@@ -94,21 +134,43 @@
 					</div>
 				</div>
 				<div class="b-tourvisor-nav">
-					<?if($GLOBALS["arCountry"]["monthList"]):?>
+
+					<?if($arTarget["monthList"]):?>
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по месяцам</h3>
 							<ul class="months">
-								<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+								<?foreach ($arTarget["monthList"] as $key => $value):?>
 									<li><a href="<?=$value["code"]?>/"><?=$value["name"]?></a></li>
 								<?endforeach;?>
 							</ul>
 						</div>
+					<?else:?>
+						<?if($GLOBALS["arResort"]["monthList"]):?>
+							<div class="b-tourvisor-nav-item clearfix">
+								<h3>Туры по месяцам</h3>
+								<ul class="months">
+									<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+										<li><a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$GLOBALS["arResort"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a></li>
+									<?endforeach;?>
+								</ul>
+							</div>
+						<?elseif($GLOBALS["arCountry"]["monthList"]):?>
+							<div class="b-tourvisor-nav-item clearfix">
+								<h3>Туры по месяцам</h3>
+								<ul class="months">
+									<?foreach ($GLOBALS["arCountry"]["monthList"] as $key => $value):?>
+										<li><a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a></li>
+									<?endforeach;?>
+								</ul>
+							</div>
+						<?endif;?>
 					<?endif;?>
-					<?if($GLOBALS["arCountry"]["seasonList"]):?>
+
+					<?if($arTarget["seasonList"]):?>
 						<div class="b-tourvisor-nav-item clearfix">
 							<h3>Туры по сезонам</h3>
 							<ul class="b-seasons">
-								<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+								<?foreach ($arTarget["seasonList"] as $key => $value):?>
 									<li class="b-season">
 										<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
 										<a href="<?=$value["code"]?>/"><?=$value["name"]?></a>
@@ -116,7 +178,34 @@
 								<?endforeach;?>
 							</ul>
 						</div>
+					<?else:?>
+						<?if($GLOBALS["arResort"]["seasonList"]):?>
+							<div class="b-tourvisor-nav-item clearfix">
+								<h3>Туры по сезонам</h3>
+								<ul class="b-seasons">
+									<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+										<li class="b-season">
+											<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
+											<a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$GLOBALS["arResort"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a>
+										</li>
+									<?endforeach;?>
+								</ul>
+							</div>
+						<?elseif($GLOBALS["arCountry"]["seasonList"]):?>
+							<div class="b-tourvisor-nav-item clearfix">
+								<h3>Туры по сезонам</h3>
+								<ul class="b-seasons">
+									<?foreach ($GLOBALS["arCountry"]["seasonList"] as $key => $value):?>
+										<li class="b-season">
+											<img src="<?=SITE_TEMPLATE_PATH?>/html/i/<?=$GLOBALS["seasonsTV"][$key]["img"]?>">
+											<a href="/tours/<?=$GLOBALS["arCountry"]["code"]?>/<?=$value["code"]?>/"><?=$value["name"]?></a>
+										</li>
+									<?endforeach;?>
+								</ul>
+							</div>
+						<?endif;?>
 					<?endif;?>
+
 					<div class="b-tourvisor-nav-item b-tourvisor-nav-adv">
 						<h3>Наши преимущества</h3>
 						<div class="nav-adv">
@@ -159,7 +248,7 @@
 						);?>
 					</div>
 					<div class="b-tourvisor-nav-item b-nav-seo b-text">
-						<?=$GLOBALS["arCountry"]["seoText"]?>
+						<?=$arTarget["seoText"]?>
 					</div>
 				</div>
 			</div>
@@ -173,7 +262,7 @@
 	    ".default", 
 	    Array(
 	        "IBLOCK_ID" => 1,
-	        "SECTION_ID" => $GLOBALS["arCountry"]["id"],
+	        "SECTION_ID" => $arTarget["id"],
 	        "PROPERTY_CODE" => "UF_EDITOR",
 	    ),
 	    false,

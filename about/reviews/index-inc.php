@@ -1,5 +1,5 @@
+</div> <!-- close b-text -->
 
-<div class="b-content-back b-contacts-top">
 	<div class="b b-reviews-detail">
 		<div class="b-block">
 			<h2 class="b-title">Отзывы туристов, которые доверились нам</h2>
@@ -63,4 +63,3 @@
 	);?>
 		</div>
 	</div>
-</div>

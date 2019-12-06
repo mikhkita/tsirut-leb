@@ -1,5 +1,4 @@
 
-
 <?if($GLOBALS["arCountry"]["name"] && !$GLOBALS["arCountry"]["isRussia"]):?>
 	<div class="b-tourvisor-calendar" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
 		<div class="b-block">
@@ -18,6 +17,7 @@
 		</div>
 	</div>
 <?endif;?>
+
 <div class="b-online-search">
 	<div class="b-block">
 		<h2 class="b-title regular">
@@ -33,9 +33,10 @@
 		<div class="b b-tourvisor">
 			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 			<div class="b b-tourvisor-with-filter b-tourvisor-detail" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
-				<?
+				<?//если это месяц
 				$dates = "";
 				if($GLOBALS["arMonth"]["month"]){
+					//если заполнены даты берем их
 					if($GLOBALS["arMonth"]["flydates_start"] && $GLOBALS["arMonth"]["flydates_end"]){
 						$dates = $GLOBALS["arMonth"]["flydates_start"].",".$GLOBALS["arMonth"]["flydates_end"];
 					}else{
@@ -164,9 +165,9 @@
 								"CACHE_FILTER" => "N",
 								"CACHE_GROUPS" => "Y",
 								"CACHE_TIME" => "36000000",
-								"CACHE_TYPE" => "A",
+								"CACHE_TYPE" => "N",
 								"COUNT_ELEMENTS" => "Y",
-								"FILTER_NAME" => "sectionsFilter",
+								"FILTER_NAME" => "",
 								"IBLOCK_ID" => "1",
 								"IBLOCK_TYPE" => "content",
 								"SECTION_CODE" => "",

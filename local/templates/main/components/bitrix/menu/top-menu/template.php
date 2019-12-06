@@ -20,7 +20,9 @@
 				</li>
 			<? endif; ?>
 			
-			<li><a href="<?=$arItem["LINK"]?>" <?if($arItem["SELECTED"]):?> class="active"<?endif;?>><?=$arItem["TEXT"]?></a>
+			<?if($arItem["LINK"] != "/"):?>
+				<li><a href="<?=$arItem["LINK"]?>" <?if($arItem["SELECTED"]):?> class="active"<?endif;?>><?=$arItem["TEXT"]?></a>
+			<?endif;?>
 			<? $prevLevel = $arItem["DEPTH_LEVEL"]; ?>
 		<?endforeach?>
 				</li>

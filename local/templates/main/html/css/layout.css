@@ -775,7 +775,7 @@ b, strong{
 				border-radius: 6px;
 				border: 1px solid transparent;
 			}
-			.b-menu li a:hover{
+			.b-menu li:hover a{
 				border: 1px solid #FFF;
 			}
 			.b-menu li a.active{
@@ -2046,15 +2046,14 @@ b, strong{
 		width: 100%;
 	}
 	.b-seo-separator{
-		margin: 44px auto;
+		margin: 44px auto 64px auto;
 		width: 100%;
 		max-width: 300px;
 		height: 2px;
 		background-color: #EFF2F6;
 	}
 	.b-seo-separator-wide{
-		/*margin: 60px 0;*/
-		margin: 44px auto;
+		margin: 44px auto 64px auto;
 		width: 100%;
 		height: 2px;
 		background-color: #EFF2F6;
@@ -2871,12 +2870,24 @@ ul.b-breadcrumbs {
 }
 	.b-content-back{
 		position: relative;
+		min-height: 300px;
+		padding-top: 45px;
+		margin-bottom: 80px;
+	}
+	.b-content-back:before{
+		content: '';
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		top: 0;
+		left: 0;
+		right: 0;
 		width: 1420px;
-		margin: 0 auto 80px auto;
+		height: 100%;
 		background-color: rgba(255,255,255,0.7);
 		border-radius: 8px;
-		padding: 45px 70px 0 70px;
-		min-height: 300px;
+		box-sizing: border-box;
+		z-index: -1;
 	}
 		.b-contacts-left{
 			float: left;
@@ -3384,9 +3395,9 @@ ul.b-breadcrumbs {
 	margin-bottom: 80px;
 }
 	.b-about .b-content-back{
-		min-height: 0;
+		/*min-height: 0;
 		margin: 0 auto;
-		padding: 60px 40px 0 40px;
+		padding: 60px 40px 0 40px;*/
 	}
 	.b-about-top{
 		margin-bottom: 100px;
@@ -3432,13 +3443,8 @@ ul.b-breadcrumbs {
 			width: 37%;
 			height: 484px;
 		}
-			.b-about-img{
+			.b-about-top-right img{
 				width: 100%;
-				height: 100%;
-				background-position: 50% 50%;
-			    background-size: cover;
-			    background-repeat: no-repeat;
-			    background-image: url(../i/about-dir.jpg);
 			}
 
 .b-about-wide{
@@ -4198,6 +4204,11 @@ ul.b-breadcrumbs {
     font-size: 20px;
 	line-height: 28px;
 	color: #FFF;
+	margin-top: 50px;
+	margin-bottom: 68px;
+}
+.b-text .b-constructor-desc ul li:before{
+	color: #FFF;
 }
 	.b-constructor-desc .blackout{
 		position: absolute;
@@ -4469,6 +4480,9 @@ ul.b-breadcrumbs {
 
 .b-search-subscribe{
 	margin-bottom: 60px;
+}
+.b-search-subscribe.b-mailing-cont{
+	min-height: 0;
 }
 .b-tourvisor-with-filter .b-search-subscribe{
 	margin-bottom: 0;
@@ -5428,14 +5442,13 @@ textarea{
 				width: 100%;
 			}
 
-@media screen and (max-width: 1420px){
+@media screen and (max-width: 1468px){
 
-	.b-content-back{
-		width: calc(100% - 48px);
-		padding: 32px 40px 0 40px;
+	.b-content-back:before{
+		width: 100%;
 	}
 		.b-content-back .b-block{
-			width: 100%;
+			/*width: 100%;*/
 		}
 
 }
@@ -6639,6 +6652,11 @@ div.TVTem2TourContainer{
 body.TVHidePopup .TVOverLay,
 body.TVHidePopup .TVModalContainer{
 	display: none !important;
+}
+
+.not-show-calendar div.TVOverLay,
+.not-show-calendar div.TVModalContainer{
+	display: none;
 }
 div.TVTem2PriceContainer{
 

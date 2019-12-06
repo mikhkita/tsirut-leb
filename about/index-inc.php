@@ -1,7 +1,8 @@
 
+</div> <!-- close b-text -->
 <div class="b-about">
 
-<div class="b-content-back b-contacts-top">
+
 	<div class="b b-about-top clearfix">
 		<div class="b-block">
 			<div class="b-about-top-left">
@@ -14,7 +15,33 @@
 				</div>
 			</div>
 			<div class="b-about-top-right">
-				<div class="b-about-img"></div>
+				<?
+				// подключаем пространство имен класса HighloadBlockTable и даём ему псевдоним HLBT для удобной работы
+				use Bitrix\Highloadblock\HighloadBlockTable as HLBT;
+				// id highload-инфоблока
+				const MY_HL_BLOCK_ID = 1;
+				//подключаем модуль highloadblock
+				CModule::IncludeModule('highloadblock');
+				//Напишем функцию получения экземпляра класса:
+				function GetEntityDataClass($HlBlockId) {
+				    if (empty($HlBlockId) || $HlBlockId < 1)
+				    {
+				        return false;
+				    }
+				    $hlblock = HLBT::getById($HlBlockId)->fetch();   
+				    $entity = HLBT::compileEntity($hlblock);
+				    $entity_data_class = $entity->getDataClass();
+				    return $entity_data_class;
+				}
+
+				$entity_data_class = GetEntityDataClass(MY_HL_BLOCK_ID);
+				$rsData = $entity_data_class::getList(array(
+				   'select' => array('*')
+				));
+				?>
+				<? while($el = $rsData->fetch()) :?>
+				    <img src="<?=CFile::GetPath($el["UF_ABOUT_IMAGE"])?>">
+				<? endwhile; ?>
 			</div>
 		</div>
 	</div>
@@ -171,6 +198,4 @@
 	),
 	false
 );?>
-</div>
-
 </div>

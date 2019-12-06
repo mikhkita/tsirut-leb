@@ -912,6 +912,10 @@ div.TVFORow3 {
 		margin-right: 0;
 	}
 
+	.b-content-back{
+		padding-top: 32px;
+	}
+
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 11px;
 	}

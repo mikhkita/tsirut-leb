@@ -148,80 +148,87 @@ function writeLog($record, $filename){
 }
 
 //Получить инфу о разделе в стране
-function getCountrySection($country, $curSection = false){
-	if(empty($country)){
+function getCountrySection($parentSection, $curSection = false){
+	if(empty($parentSection)){
 		return false;
 	}
 	//CModule::IncludeModule('iblock');
 	$arCountrySect = array();
 	if($curSection){//вложенный в страну раздел
-		$arFilter = array('IBLOCK_ID'=>1, '=CODE'=>$curSection, "=SECTION_ID"=>$country);
+		//$arFilter = array('IBLOCK_ID'=>1, '=CODE'=>$curSection, "=SECTION_ID"=>$parentSection);
+		$rsParentSection = CIBlockSection::GetByID($parentSection);
+		if ($arParentSection = $rsParentSection->GetNext()){
+		   $arFilter = array('IBLOCK_ID' => $arParentSection['IBLOCK_ID'],'>LEFT_MARGIN' => $arParentSection['LEFT_MARGIN'],'<RIGHT_MARGIN' => $arParentSection['RIGHT_MARGIN'],'>DEPTH_LEVEL' => $arParentSection['DEPTH_LEVEL'], '=CODE'=>$curSection); // выберет потомков без учета активности
+		}else{
+			return false;
+		}
 	}else{
-		$arFilter = array('IBLOCK_ID'=>1, '=CODE'=>$country);
+		$arFilter = array('IBLOCK_ID'=>1, '=CODE'=>$parentSection);
 	}
 	$rsSections = CIBlockSection::GetList(
-		array(),
+		array('depth_level' => 'asc'),
 		$arFilter,
 		false,
 		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON', "UF_COUNTY_NAME_V", "UF_COUNTY_NAME_R", "UF_EDITOR", "UF_FLYDATES_START", "UF_FLYDATES_END")
 	);
 	if($arSection = $rsSections->Fetch()){
+		//print_r($arSection);
 		//Получить месяцы, сезоны и курорты
 		$monthList = array();
 		$seasonList = array();
 		$resortList = array();
-		if(empty($arSection['UF_MONTH']) && empty($arSection['UF_SEASON'])){
-			$rsSectMonth = CIBlockSection::GetList(
-				array('sort' => 'asc'),
-				array(
-				   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-				   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-				   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-				   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-				   '!UF_MONTH' => false
-				),
-				false,
-				array('IBLOCK_ID','ID','NAME','CODE','UF_MONTH')
-			);
-	
-			while ($arSectMonth = $rsSectMonth->GetNext()){
-				$monthList[] = $arSectMonth;
-			}
-			//Получить сезоны у этой страны
-			$rsSectSeason = CIBlockSection::GetList(
-				array('sort' => 'asc'),
-				array(
-				   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-				   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-				   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-				   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-				   '!UF_SEASON' => false
-				),
-				false,
-				array('IBLOCK_ID','ID','NAME','CODE','UF_SEASON')
-			);
-			
-			while ($arSectSeason = $rsSectSeason->GetNext()){
-				$seasonList[] = $arSectSeason;
-			}
-			//Получить курорты у этой страны
-			$rsSectResort = CIBlockSection::GetList(
-				array('sort' => 'asc'),
-				array(
-				   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
-				   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
-				   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
-				   '>DEPTH_LEVEL' => $arSection['DEPTH_LEVEL'],
-				   '!UF_RESORT_ID_TV' => false
-				),
-				false,
-				array('IBLOCK_ID','ID','NAME','CODE')
-			);
-			
-			while ($arSectResort = $rsSectResort->GetNext()){
-				$resortList[] = $arSectResort;
-			}
+
+		$rsSectMonth = CIBlockSection::GetList(
+			array('sort' => 'asc'),
+			array(
+			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+			   '=DEPTH_LEVEL' => (int)$arSection['DEPTH_LEVEL'] + 2,
+			   '!UF_MONTH' => false
+			),
+			false,
+			array('IBLOCK_ID','ID','NAME','CODE','UF_MONTH')
+		);
+
+		while ($arSectMonth = $rsSectMonth->GetNext()){
+			$monthList[] = $arSectMonth;
 		}
+		//Получить сезоны у этой страны
+		$rsSectSeason = CIBlockSection::GetList(
+			array('sort' => 'asc'),
+			array(
+			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+			   '=DEPTH_LEVEL' => (int)$arSection['DEPTH_LEVEL'] + 2,
+			   '!UF_SEASON' => false
+			),
+			false,
+			array('IBLOCK_ID','ID','NAME','CODE','UF_SEASON')
+		);
+		
+		while ($arSectSeason = $rsSectSeason->GetNext()){
+			$seasonList[] = $arSectSeason;
+		}
+		//Получить курорты у этой страны
+		$rsSectResort = CIBlockSection::GetList(
+			array('sort' => 'asc'),
+			array(
+			   'IBLOCK_ID' => $arSection['IBLOCK_ID'],
+			   '>LEFT_MARGIN' => $arSection['LEFT_MARGIN'],
+			   '<RIGHT_MARGIN' => $arSection['RIGHT_MARGIN'],
+			   '=DEPTH_LEVEL' => (int)$arSection['DEPTH_LEVEL'] + 2,
+			   '!UF_RESORT_ID_TV' => false
+			),
+			false,
+			array('IBLOCK_ID','ID','NAME','CODE')
+		);
+		
+		while ($arSectResort = $rsSectResort->GetNext()){
+			$resortList[] = $arSectResort;
+		}
+
 		$arCountrySect = array(
 			'id' => $arSection['ID'],
 			'code' => $arSection['CODE'],

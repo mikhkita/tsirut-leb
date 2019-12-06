@@ -1,6 +1,6 @@
+</div> <!-- close b-text -->
 
 <div class="b-contacts">
-	<div class="b-content-back b-contacts-top">
 		<div class="b-block clearfix">
 			<div class="b-contacts-left">
 				<div class="b-contacts-item address">
@@ -97,4 +97,3 @@
 	false
 );?>
 	</div>
-</div>

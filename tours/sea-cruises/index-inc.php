@@ -1,6 +1,6 @@
 
 <div class="b-content-back b-contacts-top">
-	<div class="b-sea-cruises">
+	<div class="b-sea-cruises b-block">
 		<div class="b-text">
 			<div class="b-sea-cruises-left">
 				<div class="b-sea-cruises-img"></div>

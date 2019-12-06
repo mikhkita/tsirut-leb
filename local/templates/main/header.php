@@ -19,10 +19,12 @@ $GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "tours" && !empty($urlArr[2]) 
 $GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]));
 //Детальная месяца/сезона в курорте
 $GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]) && !empty($urlArr[4]));
+//4 уровень вложенности
+$GLOBALS["isDetailInnerSection"] = $isDetailInnerSection = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]) && !empty($urlArr[4]) && !empty($urlArr[5]));
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 21;
+$GLOBALS["version"] = 22;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -31,7 +33,7 @@ if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[4]) )
 	$page = $GLOBALS["page"] = "hot-detail";
 
-$GLOBALS["pagesList"] = array("tours","hot-tours","russia","contacts","articles","articles-tag","about");
+$GLOBALS["pagesList"] = array("tours","hot-tours","russia","articles","articles-tag");
 
 $GLOBALS["depends"] = array(
 	"tours" => array(
@@ -50,6 +52,10 @@ $GLOBALS["depends"] = array(
 		)
 	),
 );
+
+$GLOBALS["arCountry"] = array();
+$GLOBALS["arResort"] = array();
+$GLOBALS["arMonth"] = array();
 
 if($isDetail){
 	//получить страну (раздел)
@@ -143,6 +149,22 @@ if($isDetailResortMonth){
 			$APPLICATION->SetPageProperty("title", $GLOBALS["arMonth"]["seoTitle"]);
 		}
 		$headImg = $GLOBALS["arMonth"]["headImg"];
+	}else{
+		CHTTP::SetStatus('404 Not found');
+		defined('ERROR_404') or define('ERROR_404', 'Y');
+	}
+}
+
+if($isDetailInnerSection){
+	$GLOBALS["arInnerSection"] = getCountrySection($GLOBALS["arMonth"]["id"], $_REQUEST["SECTION"]);
+	if(!empty($GLOBALS["arInnerSection"])){
+		$APPLICATION->SetTitle($GLOBALS["arInnerSection"]["title"]);
+		$APPLICATION->SetPageProperty("keywords", $GLOBALS["arInnerSection"]["seoKeywords"]);
+		$APPLICATION->SetPageProperty("description", $GLOBALS["arInnerSection"]["seoDesc"]);
+		if($GLOBALS["arInnerSection"]["seoTitle"]){
+			$APPLICATION->SetPageProperty("title", $GLOBALS["arInnerSection"]["seoTitle"]);
+		}
+		$headImg = $GLOBALS["arInnerSection"]["headImg"];
 	}else{
 		CHTTP::SetStatus('404 Not found');
 		defined('ERROR_404') or define('ERROR_404', 'Y');

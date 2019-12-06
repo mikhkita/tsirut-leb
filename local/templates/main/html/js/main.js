@@ -135,8 +135,8 @@ $(document).ready(function(){
                 });
             }
             $(".stick").trigger("sticky_kit:detach");
-            if($(".b-about-top-right .b-about-img").length){
-                $(".b-about-mobile-cont").append($(".b-about-top-right .b-about-img"));
+            if($(".b-about-top-right img").length){
+                $(".b-about-mobile-cont").append($(".b-about-top-right img"));
             }
         }else{
             step = 16;
@@ -149,8 +149,8 @@ $(document).ready(function(){
                     }
                 }
             });
-            if(!$(".b-about-top-right .b-about-img").length){
-                $(".b-about-top-right").append($(".b-about-mobile-cont .b-about-img"));
+            if(!$(".b-about-top-right img").length){
+                $(".b-about-top-right").append($(".b-about-mobile-cont img"));
             }
             // if( myWidth > 1090 ){
             //     rowCountry = 4;
@@ -1038,7 +1038,7 @@ $(document).ready(function(){
     if($(".b-tourvisor-with-filter").length){
         //ждать пока турвизор загрузится
         var waitTourvisorF = setInterval(function(){
-            if( $(".b-tourvisor-with-filter .TVSearchButton").length ){
+            if( $(".b-tourvisor-with-filter .TVSearchButton").length){
                 console.log($(".b-tourvisor-with-filter").offset().top);
                 setTimeout(function(){
                     $(".b-tourvisor-with-filter").addClass("show-tv");
@@ -1076,7 +1076,9 @@ $(document).ready(function(){
                 }
 
                 //нажать кнопку и ждать загрузки туров
-                $(".b-tourvisor-with-filter .TVSearchButton").click();
+                setTimeout(function(){
+                    $(".b-tourvisor-detail .TVSearchButton").click();
+                }, 600);
                 var defaultCont = "<div class='defaultTVFilterForm'></div>";
                 $(".b-tourvisor-with-filter .TVFilterForm").wrap(defaultCont);
                 $(".b-tourvisor-with-filter .defaultTVFilterForm .TVFilterForm").after($(".b-tourvisor-nav"));
@@ -1172,6 +1174,19 @@ $(document).ready(function(){
             }, 20)
         });
     }
+
+    // Календарь туров на странице поиска туров
+    $("body").on("click", ".b-calendar .TVCalendarRow", function(){
+        $("body").addClass("not-show-calendar");
+        var interval = setInterval(function(){
+            if( $(".TVOverLay").length ){
+                $("body").removeClass("not-show-calendar");
+                window.location.href = $(".TVCalButtonColor a").attr("href");
+                $(".TVOverLay, .TVModalContainer").remove();
+                clearInterval(interval);
+            }
+        },1);
+    });
 
     function bindValidateAjax(selector) {
         $(selector).parents("form").each(function(){
@@ -1330,15 +1345,14 @@ $(document).ready(function(){
                 //чекать открытие попапа
                 var waitCalendarPopup = setInterval(function(){
                     if($(".TVModalContainer .TVCalendarWindow").length){
-                        //закрыть попап
-                        $(".TVClosePopup").click();
                         //переместить календарь
                         $(".b-tourvisor-calendar-cont").append($(".TVCalendarWindowBody"));
-                        clearInterval(waitCalendarPopup);
+                        //закрыть попап
+                        $(".TVClosePopUp").click();
                         setTimeout(function() {
                             $("body").removeClass("TVHidePopup");
                         }, 400);
-                        
+                        clearInterval(waitCalendarPopup);
                     }
                 }, 10);
                 found = true;

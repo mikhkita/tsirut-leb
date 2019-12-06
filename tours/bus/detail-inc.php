@@ -1,7 +1,7 @@
 
 
 <div class="b-content-back b-contacts-top">
-	<div class="b-bus-tours">
+	<div class="b-bus-tours b-block">
 		<div class="b-bus-tours-main clearfix">
 			<?$APPLICATION->IncludeComponent(
 				"bitrix:news.detail",

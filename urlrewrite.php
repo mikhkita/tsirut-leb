@@ -8,12 +8,20 @@ $arUrlRewrite=array (
     'PATH' => '/tours/bus/detail.php',
     'SORT' => 100,
   ),
+  10 => 
+  array (
+    'CONDITION' => '#^/tours/(.+)/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'SECTION_CODE=$1&RESORT=$2&MONTH=$3&SECTION=$4&$5',
+    'ID' => '',
+    'PATH' => '/tours/detail.php',
+    'SORT' => 100,
+  ),
   6 => 
   array (
     'CONDITION' => '#^/tours/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1&RESORT=$2&MONTH=$3&$4',
     'ID' => '',
-    'PATH' => '/tours/detailResortMonth.php',
+    'PATH' => '/tours/detail.php',
     'SORT' => 100,
   ),
   4 => 
@@ -37,7 +45,7 @@ $arUrlRewrite=array (
     'CONDITION' => '#^/tours/(.+)/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1&RESORT=$2&$3',
     'ID' => '',
-    'PATH' => '/tours/detailResort.php',
+    'PATH' => '/tours/detail.php',
     'SORT' => 100,
   ),
   3 => 
