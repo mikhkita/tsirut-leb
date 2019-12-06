@@ -118,13 +118,13 @@ function replacePlaceholders(&$content){
 		$year11 = date("Y", strtotime("+11 month"));
 
 		$year = date("Y");
+		$content = str_replace("#YEAR12#", $year, $content);
 		
 		if ($year != $year4) {
 			$year = $year.'-'.$year4;
 		}
 
 		$content = str_replace("#YEAR#", $year, $content);
-		$content = str_replace("#YEAR12#", $year, $content);
 		$content = str_replace("#YEAR11#", $year1, $content);
 		$content = str_replace("#YEAR10#", $year2, $content);
 		$content = str_replace("#YEAR9#", $year3, $content);
