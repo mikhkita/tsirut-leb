@@ -140,6 +140,14 @@ function replacePlaceholders(&$content){
 		$content = str_replace("#YEAR3#", $year9, $content);
 		$content = str_replace("#YEAR2#", $year10, $content);
 		$content = str_replace("#YEAR1#", $year11, $content);
+
+		// vardump($GLOBALS['PLACEHOLDERS']);
+
+		if (isset($GLOBALS['PLACEHOLDERS']) && !empty($GLOBALS['PLACEHOLDERS'])) {
+			foreach ($GLOBALS['PLACEHOLDERS'] as $key => $value) {
+				$content = str_replace("#".$key."#", $value, $content);
+			}
+		}
 	}
 }
 
@@ -149,6 +157,12 @@ function writeLog($record, $filename){
 	}else{
 		file_put_contents($filename, date('d.m.Y-H:i:s').PHP_EOL.$record);
 	}
+}
+
+function vardump($text){
+	echo "<pre>";
+	var_dump($text);
+	echo "</pre>";
 }
 
 //Получить инфу о разделе в стране
@@ -173,7 +187,7 @@ function getCountrySection($parentSection, $curSection = false){
 		array('depth_level' => 'asc'),
 		$arFilter,
 		false,
-		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_COUNTRY_NAME','UF_HEADER_TEXT','UF_HEADER_VISA','UF_POPULAR_RESORT','UF_HEADER_TIME','UF_HEADER_TV','UF_COUNTRY_ID_TV','UF_RESORT_ID_TV','UF_CITY_ID_TV','UF_MONTH','UF_SEASON', "UF_COUNTY_NAME_V", "UF_COUNTY_NAME_R", "UF_EDITOR", "UF_FLYDATES_START", "UF_FLYDATES_END")
+		array('IBLOCK_ID','ID','NAME','CODE','LEFT_MARGIN','RIGHT_MARGIN','DEPTH_LEVEL','IBLOCK_SECTION_ID','DESCRIPTION','DETAIL_PICTURE','UF_*')
 	);
 	if($arSection = $rsSections->Fetch()){
 		//print_r($arSection);
@@ -232,6 +246,8 @@ function getCountrySection($parentSection, $curSection = false){
 		while ($arSectResort = $rsSectResort->GetNext()){
 			$resortList[] = $arSectResort;
 		}
+
+		$GLOBALS['PLACEHOLDERS'] = $arSection;
 
 		$arCountrySect = array(
 			'id' => $arSection['ID'],

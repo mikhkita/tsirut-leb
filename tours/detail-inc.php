@@ -255,7 +255,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="b-constructor b-text">
 	<?$APPLICATION->IncludeComponent(
 	    "sprint.editor:blocks", 
