@@ -37,7 +37,7 @@ if($ob = $res->GetNextElement()){
 	$GLOBALS['PLACEHOLDERS'] = $arFields;
 
 	foreach ($arProps as $key => $value) {
-		$GLOBALS['PLACEHOLDERS']['PROPERTY_'.$key] = $value['VALUE'];
+		$GLOBALS['PLACEHOLDERS'][$key] = $value['VALUE'];
 	}
 
 	// vardump($GLOBALS['PLACEHOLDERS']);
