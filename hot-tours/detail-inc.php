@@ -22,7 +22,7 @@
 </div>
 <?
 //Получить ID тура по симв.коду и городу вылета
-$arSelect = Array("ID", "NAME");
+// $arSelect = Array("ID", "NAME");
 $arFilter = Array(
 	"IBLOCK_ID"=>7, 
 	"ACTIVE"=>"Y", 
@@ -30,9 +30,18 @@ $arFilter = Array(
 	"SECTION_ID"=>$GLOBALS["hotCodes"][$_REQUEST["CITY"]]["ID"]
 );
 
-$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
+$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), array());
 if($ob = $res->GetNextElement()){
 	$arFields = $ob->GetFields();
+	$arProps = $ob->GetProperties();
+	$GLOBALS['PLACEHOLDERS'] = $arFields;
+
+	foreach ($arProps as $key => $value) {
+		$GLOBALS['PLACEHOLDERS']['PROPERTY_'.$key] = $value['VALUE'];
+	}
+
+	// vardump($GLOBALS['PLACEHOLDERS']);
+
 	$APPLICATION->IncludeComponent(
 		"bitrix:news.detail", 
 		"hot", 
