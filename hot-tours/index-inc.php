@@ -4,15 +4,28 @@ if( !isset($_REQUEST["CITY"]) ){
 	header("Location: /".$GLOBALS["hotDir"]."/belgorod/");
 }
 ?>
+
 <div class="b-block">
 	<?$APPLICATION->AddChainItem($hotCodes[$_REQUEST["CITY"]]["NAME"], "/".$GLOBALS["hotDir"]."/".$_REQUEST['CITY']."/");?>
 	<div class="b-city-tabs">
 		<? foreach ($hotCodes as $key => $city): ?>
-			<a href="/<?=$GLOBALS["hotDir"]?>/<?=$key?>/<?if($page == "hot-detail"):?><?=$_REQUEST['ELEMENT_CODE']?>/<?endif;?>" class="b-city-tab<?if($key == $_REQUEST["CITY"]):?> active<?endif;?>"><?=$city["NAME"]?></a>
+			<?
+			//Проверить есть ли активные туры в этом городе
+			$arFilter = Array(
+				"IBLOCK_ID"=>7, 
+				"ACTIVE"=>"Y",
+				"SECTION_ID"=>$city["ID"]
+			);
+			$count = CIBlockElement::GetList(Array(), $arFilter, Array(), false, Array());
+			?>
+			<?if($count > 0):?>
+				<a href="/<?=$GLOBALS["hotDir"]?>/<?=$key?>/<?if($page == "hot-detail"):?><?=$_REQUEST['ELEMENT_CODE']?>/<?endif;?>" class="b-city-tab<?if($key == $_REQUEST["CITY"]):?> active<?endif;?>"><?=$city["NAME"]?></a>
+			<?endif;?>
 		<? endforeach; ?>
 	</div>
+</div>
 	<?
-	$GLOBALS["arMainReviews"] = array("PROPERTY_CITY" => $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["ID"] );
+	//$GLOBALS["arMainReviews"] = array("PROPERTY_CITY" => $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["ID"] );
 
 	$APPLICATION->IncludeComponent("bitrix:news.list", "hot", Array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
@@ -41,7 +54,7 @@ if( !isset($_REQUEST["CITY"]) ){
 			3 => "",
 			4 => "",
 		),
-		"FILTER_NAME" => "arMainReviews",	// Фильтр
+		"FILTER_NAME" => "",	// Фильтр
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
 		"IBLOCK_ID" => "7",	// Код информационного блока
 		"IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
@@ -59,7 +72,7 @@ if( !isset($_REQUEST["CITY"]) ){
 		"PAGER_TEMPLATE" => "modern",	// Шаблон постраничной навигации
 		"PAGER_TITLE" => "Новости",	// Название категорий
 		"PARENT_SECTION" => "",	// ID раздела
-		"PARENT_SECTION_CODE" => "",	// Код раздела
+		"PARENT_SECTION_CODE" => $_REQUEST["CITY"],	// Код раздела
 		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
 		"PROPERTY_CODE" => array(	// Свойства
 			0 => "RESORT",
@@ -67,12 +80,12 @@ if( !isset($_REQUEST["CITY"]) ){
 			2 => "CITY",
 			3 => "PERCENT",
 		),
-		"SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
+		"SET_BROWSER_TITLE" => "Y",	// Устанавливать заголовок окна браузера
 		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
-		"SET_META_DESCRIPTION" => "N",	// Устанавливать описание страницы
-		"SET_META_KEYWORDS" => "N",	// Устанавливать ключевые слова страницы
+		"SET_META_DESCRIPTION" => "Y",	// Устанавливать описание страницы
+		"SET_META_KEYWORDS" => "Y",	// Устанавливать ключевые слова страницы
 		"SET_STATUS_404" => "N",	// Устанавливать статус 404
-		"SET_TITLE" => "N",	// Устанавливать заголовок страницы
+		"SET_TITLE" => "Y",	// Устанавливать заголовок страницы
 		"SHOW_404" => "N",	// Показ специальной страницы
 		"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
 		"SORT_BY2" => "PROPERTY_MIN_PRICE",	// Поле для второй сортировки новостей
@@ -81,7 +94,7 @@ if( !isset($_REQUEST["CITY"]) ){
 	),
 	false
 );?>
-</div>
+
 <div class="b b-tour-operators">
 	<div class="b-head-gradient">
 	</div>

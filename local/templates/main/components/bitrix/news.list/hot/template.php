@@ -12,8 +12,11 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<div class="b-block">
 <div class="b-hot-list clearfix">
 <?$i = 1; $formShow = false?>
+
+<?if(count($arResult["ITEMS"])):?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -77,6 +80,11 @@ $this->setFrameMode(true);
 	<?endif;?>
 	<?$i++;?>
 <?endforeach;?>
+<?else:?>
+	<div class="b-text b-hot-empty">
+		<h2 class="center">На данный момент туры отсутствуют</h2>
+	</div>
+<?endif;?>
 </div>
 <?if(!$formShow):?>
 	<div class="b-search-subscribe b-hot-search-subscribe">
@@ -105,3 +113,20 @@ $this->setFrameMode(true);
 		</div>
 	</div>
 <?endif;?>
+</div>
+
+<div class="b-constructor b-text">
+	<?$APPLICATION->IncludeComponent(
+	    "sprint.editor:blocks", 
+	    ".default", 
+	    Array(
+	        "IBLOCK_ID" => $arResult["ID"],
+	        "SECTION_ID" => $arResult["SECTION"]["PATH"][0]["ID"],
+	        "PROPERTY_CODE" => "UF_HOT_EDITOR",
+	    ),
+	    false,
+	    Array(
+	        "HIDE_ICONS" => "Y"
+	    )
+	);?>
+</div>

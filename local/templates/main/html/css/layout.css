@@ -3180,6 +3180,9 @@ ul.b-breadcrumbs {
 		    	line-height: 28px;
 			}
 
+.b-hot-empty{
+	margin-bottom: 80px;
+}
 /*====Горящие туры (детальная)====*/
 
 .b-city-tabs.b-hot-city-tabs {

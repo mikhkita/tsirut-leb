@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 
 global $APPLICATION;
+
 // if( $arResult["PROPERTIES"]["V_TITLE"]["VALUE"] ){
 	// $APPLICATION->SetTitle("Горящие туры ".$arResult["PROPERTIES"]["V_TITLE"]["VALUE"], false);
 // }
@@ -192,3 +193,17 @@ $departureId = $GLOBALS["hotCodes"][$_REQUEST["CITY"]]["TOURVISOR_ID"];
 <div class="b-seo b-block">
 	<?=htmlspecialcharsBack($arResult["PROPERTIES"]["SEO_TEXT"]["VALUE"]["TEXT"])?>
 </div>
+
+<?$APPLICATION->IncludeComponent(
+    "sprint.editor:blocks",
+    ".default",
+    Array(
+        "ELEMENT_ID" => $arResult["ID"],
+        "IBLOCK_ID" => $arResult["IBLOCK_ID"],
+        "PROPERTY_CODE" => "EDITOR",
+    ),
+    $component,
+    Array(
+        "HIDE_ICONS" => "Y"
+    )
+);?>

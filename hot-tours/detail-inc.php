@@ -4,7 +4,19 @@
 	<?$APPLICATION->AddChainItem($hotCodes[$_REQUEST["CITY"]]["NAME"], "/".$GLOBALS["hotDir"]."/".$_REQUEST['CITY']."/");?>
 	<div class="b-city-tabs b-hot-city-tabs">
 		<? foreach ($hotCodes as $key => $city): ?>
-			<a href="/<?=$GLOBALS["hotDir"]?>/<?=$key?>/<?if($page == "hot-detail"):?><?=$_REQUEST['ELEMENT_CODE']?>/<?endif;?>" class="b-city-tab<?if($key == $_REQUEST["CITY"]):?> active<?endif;?>"><?=$city["NAME"]?></a>
+			<?
+			//Проверить есть ли активные туры в этом городе
+			$arFilter = Array(
+				"IBLOCK_ID"=>7,
+				"CODE"=>$_REQUEST['ELEMENT_CODE'],
+				"ACTIVE"=>"Y",
+				"SECTION_ID"=>$city["ID"]
+			);
+			$count = CIBlockElement::GetList(Array(), $arFilter, Array(), false, Array());
+			?>
+			<?if($count > 0):?>
+				<a href="/<?=$GLOBALS["hotDir"]?>/<?=$key?>/<?if($page == "hot-detail"):?><?=$_REQUEST['ELEMENT_CODE']?>/<?endif;?>" class="b-city-tab<?if($key == $_REQUEST["CITY"]):?> active<?endif;?>"><?=$city["NAME"]?></a>
+			<?endif;?>
 		<? endforeach; ?>
 	</div>
 </div>
@@ -15,8 +27,9 @@ $arFilter = Array(
 	"IBLOCK_ID"=>7, 
 	"ACTIVE"=>"Y", 
 	"CODE"=>$_REQUEST["ELEMENT_CODE"], 
-	"PROPERTY_CITY"=>$GLOBALS["hotCodes"][$_REQUEST["CITY"]]["ID"]
+	"SECTION_ID"=>$GLOBALS["hotCodes"][$_REQUEST["CITY"]]["ID"]
 );
+
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
 if($ob = $res->GetNextElement()){
 	$arFields = $ob->GetFields();
@@ -78,7 +91,7 @@ if($ob = $res->GetNextElement()){
 			"SET_META_DESCRIPTION" => "Y",
 			"SET_META_KEYWORDS" => "Y",
 			"SET_STATUS_404" => "N",
-			"SET_TITLE" => "N",
+			"SET_TITLE" => "Y",
 			"SHOW_404" => "N",
 			"USE_PERMISSIONS" => "N",
 			"USE_SHARE" => "N",

@@ -24,6 +24,10 @@ define(UF_CATEGORIES, 3);//Польз. поле "Категории"
 define(CITY_MOSCOW, 8);
 define(CITY_BELGOROD, 9);
 define(CITY_VORONEZH, 10);
+//Резделы из инфоблока "Горячие туры"
+define(CITY_MOSCOW_SECTION, 4372);
+define(CITY_BELGOROD_SECTION, 4373);
+define(CITY_VORONEZH_SECTION, 4374);
 //Месяцы
 define(UF_MONTH_1, 10);
 define(UF_MONTH_2, 11);

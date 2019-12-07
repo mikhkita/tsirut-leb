@@ -173,19 +173,19 @@ if($isDetailInnerSection){
 
 $hotCodes = $GLOBALS["hotCodes"] =  array(
 	"moscow" => array(
-		"ID" => CITY_MOSCOW,
+		"ID" => CITY_MOSCOW_SECTION,
 		"NAME" => "из Москвы",
 		"TOURVISOR_ID" => 1,
-		"CODE" => "tomsk",
+		"CODE" => "moscow",
 	),
 	"belgorod" => array(
-		"ID" => CITY_BELGOROD,
+		"ID" => CITY_BELGOROD_SECTION,
 		"NAME" => "из Белгорода",
 		"TOURVISOR_ID" => 32,
 		"CODE" => "belgorod",
 	),
 	"voronezh" => array(
-		"ID" => CITY_VORONEZH,
+		"ID" => CITY_VORONEZH_SECTION,
 		"NAME" => "из Воронежа",
 		"TOURVISOR_ID" => 26,
 		"CODE" => "voronezh",

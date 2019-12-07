@@ -8,7 +8,7 @@ $GLOBALS['APPLICATION']->RestartBuffer();
 // die();
 
 // Получаем направление, которое дольше всех не обновлялось
-$arSelect = array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM","PROPERTY_*");
+$arSelect = array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM", "IBLOCK_SECTION_ID", "PROPERTY_*");
 $arFilter = array("IBLOCK_ID" => 7, "ACTIVE_DATE" => "Y");
 $res = CIBlockElement::GetList(array("DATE_ACTIVE_FROM" => "ASC"), $arFilter, false, array("nPageSize" => 1), $arSelect);
 
@@ -18,7 +18,21 @@ $arItem["PROPS"] = $ob->GetProperties();
 
 $parser = new Parser();
 $country = $arItem["PROPS"]["COUNTRY_ID"]["VALUE"];
-$departure = array_pop(explode("-", $arItem["PROPS"]["CITY"]["VALUE_XML_ID"]));
+// $departure = array_pop(explode("-", $arItem["PROPS"]["CITY"]["VALUE_XML_ID"]));
+
+$rsSect = CIBlockSection::GetList(
+	array('sort' => 'asc'),
+	array(
+	   'IBLOCK_ID' => 7,
+	   'ID' => $arItem["IBLOCK_SECTION_ID"]
+	),
+	false,
+	array('IBLOCK_ID','ID','NAME','CODE')
+);
+if ($arSect = $rsSect->GetNext()){
+	$departure = $GLOBALS["hotCodes"][$arSect["CODE"]]["TOURVISOR_ID"];
+}
+
 $resort = $arItem["PROPS"]["RESORT_ID"]["VALUE"];
 
 if( $arItem["PROPS"]["RESORT_ID"]["VALUE"] ){
