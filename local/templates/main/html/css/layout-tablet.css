@@ -916,6 +916,13 @@ div.TVFORow3 {
 		padding-top: 32px;
 	}
 
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data{
+		margin-left: 0;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-image{
+		margin-right: 20px;
+	}
+
 	div.TVTheme2 .TVOptionStars {
 	    padding-top: 11px;
 	}
@@ -967,6 +974,20 @@ div.TVFORow3 {
 	}
 	.b-sea-cruises #ces_container .cruise_map {
 	    float: none;
+	}
+
+}
+
+@media screen and (max-width: 950px){
+
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-image{
+		margin-right: 0;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data {
+	    width: calc(100% - 220px);
+	}
+	.b-block-ttv .ttv-catalog.mobile .ttv-tour-data .ttv-tour-actions{
+		text-align: left;
 	}
 
 }

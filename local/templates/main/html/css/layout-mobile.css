@@ -1593,6 +1593,15 @@ div.TVTabedListContainer {
     padding-left: 0;
 }
 
+.b-block-ttv .ttv-catalog.mobile .ttv-tour-data .ttv-tour-actions{
+	text-align: left;
+}
+.b-block-ttv .ttv-catalog .ttv-options{
+	position: static;
+}
+.b-block-ttv .ttv-catalog .ttv-options .ttv-results{
+	text-align: left;
+}
 
 @media screen and (max-width: 665px){
 
@@ -2152,6 +2161,17 @@ div.TVTabedListContainer {
 	}
 	.b-block-ttv .ttv-hottours .swiper-pagination {
 	    padding: 16px 0 8px 0;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-image{
+		width: auto;
+		float: none;
+	}
+	.b-block-ttv .ttv-catalog.mobile .ttv-tour-image img{
+		max-width: 200px;
+	}
+	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data {
+	    float: none;
+	    width: 100%;
 	}
 
 }
