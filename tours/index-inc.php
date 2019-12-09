@@ -4,10 +4,20 @@
 		<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
 	</div>
 	<div class="b b-tourvisor">
-		<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
-		<div class="b-tourvisor-header b-tourvisor-search b-tourvisor-with-filter">
-			<div class="tv-search-form tv-moduleid-192035"></div>
+
+		<div class="b-tourvisor-header">
+			<div class="tourvisor-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
+			<?if ($USER->IsAuthorized()):?>
+				<div class="b-tourvisor-for-manager">
+					<div class="tv-search-form" id="b-full-search-form" tv-type="2" tv-theme="theme2" tv-resultinwindow="0" tv-departure="-1"></div>
+				</div>
+			<?else:?>
+				<div class="b-tourvisor-search b-tourvisor-with-filter">
+					<div class="tv-search-form tv-moduleid-192035"></div>
+				</div>
+			<?endif;?>
 		</div>
+			
 	</div>
 	<div class="b-filter-cont hidden">
 		<div class="b-filter">

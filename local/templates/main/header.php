@@ -24,7 +24,7 @@ $GLOBALS["isDetailInnerSection"] = $isDetailInnerSection = ($urlArr[1] == "tours
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 23;
+$GLOBALS["version"] = 24;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -411,7 +411,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						<?endif;?>
 						<h1><?$APPLICATION->AddBufferContent('ShowCondBrowser');?></h1>
 						<?if($APPLICATION->GetProperty("header-text") != "-" && !isset($_REQUEST["TAG"]) && !$GLOBALS["is404"]):?>
-							<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
+							<p class="b-head-text"><?$APPLICATION->AddBufferContent('ShowCondBrowserHeaderText');?></p>
 						<?endif;?>
 					</div>
 				<?endif;?>

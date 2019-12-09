@@ -1603,6 +1603,80 @@ div.TVTabedListContainer {
 	text-align: left;
 }
 
+.b-tourvisor-for-manager{
+	margin-bottom: 30px;
+}
+
+.b-tourvisor-for-manager .TVTopForm,
+.b-tourvisor-for-manager .TVOptionForm{
+    padding: 15px 0;
+}
+.b-tourvisor-for-manager div.TVMainFilterButton{
+	box-sizing: border-box;
+	padding: 31px 23px 14px;
+	max-height: 100px;
+}
+.b-tourvisor-for-manager div.TVMainFilter{
+	white-space: normal;
+}
+.b-tourvisor-for-manager div.TVMainFilterButton{
+	box-sizing: border-box;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVCountry,
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVDates,
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVNights,
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVTourists{
+    width: 50%;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVDates:after,
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVTourists:after{
+	display: none;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVCountry:before,
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVDates:before{
+	content: " ";
+	position: absolute;
+	bottom: 0;
+	left: 23px;
+	width: calc(100% - 46px);
+	height: 1px;
+	background-color: #D8D8D8;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVStars{
+	width: 100%;
+	margin-right: 0;
+	margin-bottom: 16px;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVResortHotel{
+	width: calc(50% - 12px);
+	margin-bottom: 16px;
+	margin-right: 0;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVMeal{
+    width: calc(50% - 12px);
+    margin-right: 24px;
+    margin-bottom: 16px;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVRating{
+    width: calc(50% - 12px);
+    margin-right: 0;
+    margin-bottom: 16px;
+}
+.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVHoteltype{
+	width: calc(50% - 12px);
+    margin-right: 0;
+}
+
+.b-tourvisor-for-manager .TVFullForm.TVTheme2 .TVPrice,
+.b-tourvisor-for-manager .TVFullForm.TVTheme2 .TVButtonOrderBlock{
+    width: 100%;
+}
+.b-tourvisor-for-manager .TVFullForm.TVTheme2 .TVSearchButton {
+	display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -2172,6 +2246,18 @@ div.TVTabedListContainer {
 	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data {
 	    float: none;
 	    width: 100%;
+	}
+
+	.b-tourvisor-for-manager .TVFullForm.TVTheme2 .TVResort {
+	    width: 100%;
+	    margin-right: 0;
+	    margin-bottom: 16px;
+	}
+	.b-tourvisor-for-manager .TVFullForm.TVTheme2 .TVHotel {
+	    width: 100%;
+	}
+	.b-tourvisor-for-manager div.TVTourContainer .TVTourBlock .TVInfo{
+		margin-left: 236px;
 	}
 
 }
@@ -2880,6 +2966,14 @@ div.TVTabedListContainer {
 	    width: 100%;
 	}
 
+	.b-tourvisor-for-manager .TVTourContainer .TVTourBlock .TVImage{
+		float: none;
+		margin-bottom: 16px;
+	}
+	.b-tourvisor-for-manager div.TVTourContainer .TVTourBlock .TVInfo {
+	    margin-left: 0;
+	}
+
 }
 
 @media screen and (max-width: 430px){
@@ -3181,6 +3275,7 @@ div.TVTabedListContainer {
 	.b-tourvisor-with-filter .TVTourContainer .TVTourBlock .TVImage img {
 	    height: 78px;
 	}
+
 	div.TVTourContainer .TVTourBlock .TVInfo {
 	    margin-left: 126px;
 	}
@@ -3226,6 +3321,34 @@ div.TVTabedListContainer {
 	.b-block-ttv div.ttv-hottours ul a .ttv-date,
 	.b-block-ttv div.ttv-hottours ul a:hover .ttv-date{
 		padding: 23px 24px;
+	}
+
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVStars,
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVResortHotel,
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVMeal,
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVRating,
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVHoteltype{
+		width: 100%;
+		margin-bottom: 16px;
+		margin-right: 0;
+	}
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVCountry,
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVDates,
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVNights,
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVTourists{
+	    width: 100%;
+	}
+	.b-tourvisor-for-manager div.TVFullForm.TVTheme2 .TVNights:before{
+		content: " ";
+		position: absolute;
+		bottom: 0;
+		left: 23px;
+		width: calc(100% - 46px);
+		height: 1px;
+		background-color: #D8D8D8;
+	}
+	.b-tourvisor-for-manager div.TVMainFilterButton:after{
+		display: none;
 	}
 
 }
