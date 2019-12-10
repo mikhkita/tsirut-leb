@@ -84,7 +84,8 @@ div.TVOrderHotelStar:before,
 div.TVHotelTypeItem:before,
 .b-select-chosen:before,
 .b-block-ttv div.ttv-search .ttv-field > label:before,
-.ttv-add-city:before{
+.ttv-add-city:before,
+.b-menu-mobile-window .slide-cont h3:before{
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -973,6 +974,93 @@ b, strong{
 			font-size: 16px;
 			line-height: 16px;
 		}
+
+.b-menu-desktop .hide-item{
+	display: none !important;
+}
+/*====Мобильное меню====*/
+
+.b-menu-mobile-window .slide-cont-list{
+
+}
+.slide-cont-overlay{
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+    -webkit-transition: opacity 200ms, visibility 200ms;
+	   -moz-transition: opacity 200ms, visibility 200ms;
+	    -ms-transition: opacity 200ms, visibility 200ms;
+	   	 -o-transition: opacity 200ms, visibility 200ms;
+			transition: opacity 200ms, visibility 200ms;
+}
+.slide-cont-overlay.show{
+	opacity: 1;
+	visibility: visible;
+}
+.b-menu-mobile-window .slide-cont{
+	opacity: 0;
+	visibility: hidden;
+	-moz-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    -webkit-transform: translateX(40px);
+    -o-transform: translateX(40px);
+    transform: translateX(40px);
+	position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: calc(100% - 30px);
+    height: 100%;
+    padding: 27px 0;
+    background-color: #FFF;
+    box-shadow: -20px 0px 24px rgba(0, 0, 0, 0.05);
+    -webkit-transition: opacity 200ms, visibility 200ms, transform 200ms;
+	   -moz-transition: opacity 200ms, visibility 200ms, transform 200ms;
+	    -ms-transition: opacity 200ms, visibility 200ms, transform 200ms;
+	   	 -o-transition: opacity 200ms, visibility 200ms, transform 200ms;
+			transition: opacity 200ms, visibility 200ms, transform 200ms;
+	overflow: auto;
+}
+.b-menu-mobile-window .slide-cont.open{
+	opacity: 1;
+	visibility: visible;
+	-moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+}
+	.b-menu-mobile-window .slide-cont h3{
+		position: relative;
+		z-index: 20;
+		display: inline-block;
+		padding-left: 50px;
+		color: #095AC0;
+		margin-bottom: 20px;
+	}
+	.b-menu-mobile-window .slide-cont h3:before{
+		content: "\e916";
+		font-size: 12px;
+		position: absolute;
+		top: 6px;
+		left: 20px;
+		color: #095AC0;
+	}
+	.b-menu-mobile-window .slide-cont ul{
+		padding: 0 16px 0 50px;
+	}
+		.b-menu-mobile-window .slide-cont ul li{
+			padding: 0;
+		}
+	.sub-section-slide{
+		box-shadow: -20px 0px 24px rgba(0, 0, 0, 0.05);
+	}
 
 .b-statistics{
 	overflow: hidden;

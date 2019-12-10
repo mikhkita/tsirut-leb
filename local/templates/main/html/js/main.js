@@ -284,7 +284,12 @@ $(document).ready(function(){
         slideoutRight.disableTouch();
         $(".b-menu-overlay").hide();
     }).on('close', function() {
-        console.log("slideoutRight");
+        var $target = $(".slide-cont");
+        $target.removeClass("open");
+        $(".slide-cont-overlay").removeClass("show");
+        setTimeout(function () {
+            $target.remove();
+        }, 200);
         $(window).scroll();
     });
 
@@ -1014,6 +1019,66 @@ $(document).ready(function(){
             }
             console.log("listenDetail");
         }, 50);
+    }
+
+    // ======= Мобильное меню =======
+
+    //сгенерить id
+    var curID = 1;
+    $(".b-menu-desktop a").each(function () {
+        $(this).attr("data-id", "m-ref-"+curID);
+        if($(this).next("ul").length){
+            $(this).next("ul").attr("data-id", "m-ref-"+curID);
+        }
+        curID++;
+    });
+
+    //генерим первый уровень
+    $(".b-menu-desktop > li > a").each(function () {
+        var $link = $(this)[0].outerHTML;
+        $(".b-menu-mobile-list").append("<li>"+$link+"</li>");
+        $(".b-menu-mobile-list a[data-id="+$(this).attr("data-id")+"]").click(function(){
+            if(openMobileSubmenu($(this).attr("data-id"), $(this).text())){
+                return false;
+            }
+        });
+    });
+
+    function openMobileSubmenu(id, textItem) {
+        if($(".b-menu-desktop ul[data-id="+id+"]").length){
+            //генерим контейнер (будет последним)
+            $(".slide-cont-list").append("<div class='slide-cont'></div>");
+            var $cont = $(".slide-cont-list .slide-cont").last();
+            $cont.append("<h3 class='mobile-window-back'>"+textItem+"</h3>");
+            $cont.append("<ul></ul>");
+            var $ul = $cont.children("ul");
+            $(".b-menu-desktop ul[data-id="+id+"] > li > a").each(function() {
+                $ul.append("<li>"+$(this)[0].outerHTML+"</li>");
+                $ul.find("a[data-id="+$(this).attr("data-id")+"]").click(function(){
+                    if(openMobileSubmenu($(this).attr("data-id"), $(this).text())){
+                        return false;
+                    }
+                });
+            });
+            setTimeout(function () {
+                $cont.addClass("open");
+            }, 10);
+            $(".slide-cont-overlay").addClass("show");
+
+            $(".mobile-window-back").click(function(){
+                var $target = $(this).parent();
+                $target.removeClass("open");
+                if(!$(".slide-cont.open").length){
+                    $(".slide-cont-overlay").removeClass("show");
+                }
+                setTimeout(function () {
+                    $target.remove();
+                }, 200);
+            });
+            return true;
+        }else{
+            return false;
+        }
     }
 
     // =========Турвизор=========

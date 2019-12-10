@@ -1,7 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <? $prevLevel = 1; ?>
 <?if (!empty($arResult)):?>
-	<ul>
+	<ul class="b-menu-desktop">
 		<?
 		foreach($arResult as $i => $arItem):
 		$isNextSub = (isset($arResult[$i+1]) && $arResult[$i+1]["DEPTH_LEVEL"] > $arItem["DEPTH_LEVEL"])
@@ -19,10 +19,8 @@
 			<? elseif( $i != 0 ): ?>
 				</li>
 			<? endif; ?>
-			
-			<?if($arItem["LINK"] != "/"):?>
-				<li><a href="<?=$arItem["LINK"]?>" <?if($arItem["SELECTED"]):?> class="active"<?endif;?>><?=$arItem["TEXT"]?></a>
-			<?endif;?>
+
+			<li <?if($arItem["LINK"] == "/") echo "class='hide-item'"?>><a href="<?=$arItem["LINK"]?>" <?if($arItem["SELECTED"]):?> class="active"<?endif;?>><?=$arItem["TEXT"]?></a>
 			<? $prevLevel = $arItem["DEPTH_LEVEL"]; ?>
 		<?endforeach?>
 				</li>
