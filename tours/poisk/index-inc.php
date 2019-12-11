@@ -228,7 +228,7 @@
 			<div class="gradient-after">
 				<h2><?=includeArea("poisk-mail-head");?></h2>
 				<div class="mailing-text"><?=includeArea("poisk-mail-text");?></div>
-				<?=includeArea("poisk-subscribe-form");?>
+				<?=includeArea("subscribe-form");?>
 			</div>
 		</div>
 		 <!-- VK Widget -->

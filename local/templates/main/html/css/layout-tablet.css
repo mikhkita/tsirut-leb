@@ -77,13 +77,15 @@ body {
 .b-mailing-cont {
     width: calc(100% - 318px);
 }
+.b-mailing-form-inputs{
+	width: 100%;
+	margin-bottom: 24px;
+}
 .b-mailing-form .b-btn-submit {
-    width: auto;
+    width: calc(50% - 10px);
     min-width: 260px;
 }
-.b-mailing-form input[type=text] {
-    width: calc(100% - 306px);
-}
+
 .b-footer-item.column-1,
 .b-footer-item.column-2{
 	margin-right: 100px;
@@ -95,14 +97,14 @@ body {
 .b-hot-group .b-mailing-cont{
 	width: 100%;
 }
-.b-hot-group .b-search-subscribe .b-mailing-form input[type=text] {
+.b-hot-group .b-search-subscribe .b-mailing-form input {
 	width: calc(100% - 306px);
 }
-.b-search-subscribe .b-mailing-form input[type=text] {
+.b-search-subscribe .b-mailing-form input {
     width: calc(50% - 15px);
-    margin-bottom: 24px;
+    margin-bottom: 0;
 }
-.b-search-subscribe .b-mailing-form input[type=text]:nth-child(2n) {
+.b-search-subscribe .b-mailing-form input:nth-child(2n) {
     margin-right: 0;
 }
 .b-search-subscribe .b-subscribe-form .b-btn-submit {
@@ -784,8 +786,8 @@ div.TVFORow3 {
 	    padding-left: 0;
 	    max-width: 446px;
 	}
-	.b-search-subscribe .b-mailing-form input[type=text],
-	.b-mailing-form input[type=text] {
+	.b-search-subscribe .b-mailing-form input,
+	.b-mailing-form input {
 	    width: 100%;
 	    margin-bottom: 24px;
 	}
@@ -926,6 +928,10 @@ div.TVFORow3 {
 	}
 	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-image{
 		margin-right: 20px;
+	}
+
+	.b-mailing-form-inputs{
+		margin-bottom: 0;
 	}
 
 	div.TVTheme2 .TVOptionStars {

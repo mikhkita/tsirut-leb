@@ -1,5 +1,8 @@
 <form class="b-mailing-form" method="post" action="/subscribe.php">
-	<input type="text" name="email" placeholder="Ваш e-mail" required>
+	<div class="b-mailing-form-inputs">
+		<input type="text" name="name" placeholder="Ваше имя" required>
+		<input type="text" name="email" placeholder="Ваш e-mail" required>
+	</div>
 	<input type="text" name="MAIL" required="" placeholder="Ваш e-mail">
 	<a href="#b-subscribe-success" class="b-thanks-link fancy" style="display:none;"></a>
 	<a href="#" class="b-btn b-btn-orange one-line b-btn-submit ajax">

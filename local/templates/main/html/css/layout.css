@@ -360,7 +360,7 @@ b, strong{
 			.b-text.b-text-short .b-mailing .b-block{
 
 			}
-			.b-text.b-text-short .b-mailing-form input[type=text]{
+			.b-text.b-text-short .b-mailing-form input{
 				width: 100%;
 				margin-bottom: 24px;
 			}
@@ -1812,7 +1812,7 @@ b, strong{
 		overflow: hidden;
 		width: 100%;
 		width: calc(100% - 308px);
-		padding: 42px 56px 58px 56px;
+		padding: 32px 46px 48px 46px;
 		background-image: url(../i/head.jpg);
 	    background-position: 50% 50%;
 	    background-repeat: no-repeat;
@@ -1837,15 +1837,26 @@ b, strong{
 		.b-mailing-form{
 
 		}
-			.b-mailing-form input[type=text]{
+			.b-mailing-form-inputs{
+				display: inline-block;
 				vertical-align: top;
-				margin-right: 26px;
-				width: calc(100% - 356px);
+				margin-right: 16px;
+				width: calc(100% - 300px);
 			}
+				.b-mailing-form-inputs input{
+					vertical-align: top;
+					margin-right: 16px;
+					width: calc(50% - 12px);
+					padding: 19px 24px 21px 24px;
+				}
+				.b-mailing-form-inputs input:last-of-type{
+					margin-right: 0;
+				}
 			.b-mailing-form .b-btn-submit{
 				display: inline-block;
 				vertical-align: top;
-				width: 326px;
+				width: 280px;
+				min-width: 280px;
 			}
 			.b-mailing-form  .b-checkbox{
 				margin-top: 16px;

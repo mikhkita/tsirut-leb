@@ -374,9 +374,8 @@ ul.b-breadcrumbs{
 		    min-width: 236px;
 		    padding: 20px 22px 26px 22px;
 		}
-		.b-mailing-form input[type=text] {
-		    margin-right: 20px;
-	    	width: calc(100% - 262px);
+		.b-mailing-form input{
+
 		}
 			.b-mailing-form .b-checkbox p {
 			    font-size: 13px;
@@ -829,10 +828,8 @@ ul.b-breadcrumbs{
 .b-search-subscribe .b-subscribe-cont {
     padding: 34px 24px 38px 24px;
 }
-.b-search-subscribe .b-mailing-form input[type=text] {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 16px;
+.b-search-subscribe .b-mailing-form input {
+
 }
 .b-search-subscribe .b-subscribe-form .b-btn-submit {
 	min-width: 0;
@@ -1060,6 +1057,17 @@ ul.b-breadcrumbs{
 
 .b-text.b-text-short .b-article-item:nth-child(3n) {
     margin-right: 24px;
+}
+
+.b-mailing-form-inputs{
+	width: 100%;
+	margin-right: 0;
+	margin-bottom: 24px;
+}
+
+.b-mailing-form .b-btn-submit {
+    width: calc(50% - 10px);
+    min-width: 260px;
 }
 
 /*===========*/
@@ -1352,10 +1360,8 @@ div.TVTheme2 .TVSRNavButton,
 div.TVTem2PriceBlock {
     margin-top: 18px;
 }
-.TVSRBodyContainer .b-subscribe-form .b-mailing-form input[type=text] {
-    margin-right: 0;
-    margin-bottom: 24px;
-    width: 100%;
+.TVSRBodyContainer .b-subscribe-form .b-mailing-form input {
+
 }
 div.TVModalContainer{width: calc(100% - 16px) !important;}
 		div.TVOrderWindow{width: 100% !important;}
@@ -2035,9 +2041,9 @@ div.TVTabedListContainer {
     	margin-right: 12px;
 	}
 
-	.b-hot-search-subscribe .b-mailing-form input[type=text],
-	.b-bus-search-subscribe .b-mailing-form input[type=text],
-	.b-search-subscribe-2 .b-mailing-form input[type=text]{
+	.b-hot-search-subscribe .b-mailing-form input,
+	.b-bus-search-subscribe .b-mailing-form input,
+	.b-search-subscribe-2 .b-mailing-form input{
 		background-color: #f9fafc;
 	}
 
@@ -2078,6 +2084,14 @@ div.TVTabedListContainer {
 	.b-bus-tours-item .price {
 	    position: static;
 	    margin-top: 12px;
+	}
+	.b-mailing-form-inputs{
+		margin-bottom: 0;
+	}
+	.b-mailing-form-inputs input{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 16px;
 	}
 
 	.simplemodal-container {
@@ -2142,10 +2156,8 @@ div.TVTabedListContainer {
 	.TVSRBodyContainer .b-search-pay-wrap{
 	    padding: 24px;
 	}
-	.TVSRBodyContainer .b-mailing-form input[type=text] {
-	    margin-right: 0;
-	    margin-bottom: 24px;
-	    width: 100%;
+	.TVSRBodyContainer .b-mailing-form input {
+
 	}
 	.TVSRBodyContainer .b-mailing-form .b-btn-submit {
 	    width: 100%;
@@ -2362,10 +2374,8 @@ div.TVTabedListContainer {
 	.b-mailing-form .b-btn-submit {
 	    width: 100%;
 	}
-	.b-mailing-form input[type=text] {
-	    margin-right: 0;
-	    width: 100%;
-	    margin-bottom: 24px;
+	.b-mailing-form input {
+
 	}
 	.b-checkbox p {
 	    line-height: 15px;
