@@ -109,6 +109,15 @@ function replacePlaceholders(&$content){
 	$urlArr = explode("/", $curPage);
 
 	if (!in_array('admin', $urlArr)) {
+
+		if (isset($GLOBALS['PLACEHOLDERS']) && !empty($GLOBALS['PLACEHOLDERS'])) {
+			for ($i = 0; $i < count($GLOBALS['PLACEHOLDERS']); $i++) { 
+				foreach ($GLOBALS['PLACEHOLDERS'] as $key => $value) {
+					$content = str_replace("#".$key."#", $value, $content);
+				}
+			}
+		}
+
 		$year1 = date("Y", strtotime("+1 month"));
 		$year2 = date("Y", strtotime("+2 month"));
 		$year3 = date("Y", strtotime("+3 month"));
@@ -140,14 +149,6 @@ function replacePlaceholders(&$content){
 		$content = str_replace("#YEAR3#", $year9, $content);
 		$content = str_replace("#YEAR2#", $year10, $content);
 		$content = str_replace("#YEAR1#", $year11, $content);
-
-		// vardump($GLOBALS['PLACEHOLDERS']);
-
-		if (isset($GLOBALS['PLACEHOLDERS']) && !empty($GLOBALS['PLACEHOLDERS'])) {
-			foreach ($GLOBALS['PLACEHOLDERS'] as $key => $value) {
-				$content = str_replace("#".$key."#", $value, $content);
-			}
-		}
 	}
 }
 
