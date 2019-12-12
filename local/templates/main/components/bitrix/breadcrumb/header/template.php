@@ -30,7 +30,7 @@ if($GLOBALS["is404"]){
 	{
 		$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 
-		if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1){
+		if($arResult[$index]["LINK"] <> "" && ($index != $itemSize-1 || $GLOBALS["page"] == "hot-detail")){
 			$strReturn .= '
 				<li id="bx_breadcrumb_'.$index.'" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 					<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="url"><span itemprop="title">'.$title.'</span></a>

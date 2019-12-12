@@ -1049,9 +1049,11 @@ $(document).ready(function(){
             //генерим контейнер (будет последним)
             $(".slide-cont-list").append("<div class='slide-cont'></div>");
             var $cont = $(".slide-cont-list .slide-cont").last();
-            $cont.append("<h3 class='mobile-window-back'>"+textItem+"</h3>");
+            $cont.append("<h3 class='mobile-window-back'>Назад</h3>");
             $cont.append("<ul></ul>");
             var $ul = $cont.children("ul");
+            var parentItem = $(".b-menu-mobile-list a[data-id="+id+"]")[0].outerHTML;
+            $ul.append("<li>"+$(parentItem).removeClass("active")[0].outerHTML+"</li>");
             $(".b-menu-desktop ul[data-id="+id+"] > li > a").each(function() {
                 $ul.append("<li>"+$(this)[0].outerHTML+"</li>");
                 $ul.find("a[data-id="+$(this).attr("data-id")+"]").click(function(){

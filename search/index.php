@@ -208,7 +208,7 @@ $APPLICATION->SetTitle("Поиск туров");
 </div>
 <div class="b-calendar">
 	<div class="b-block">
-		<h2 class="b-title">Календарь выгодных туров</h2>
+		<h2 class="b-title"><h2><?=includeArea("calendar")?></h2></h2>
 		<!-- <div class="tv-calendar tv-moduleid-980631"></div> -->
 		<div class="tv-calendar tv-moduleid-982983"></div>
 	</div>

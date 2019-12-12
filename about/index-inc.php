@@ -2,7 +2,6 @@
 </div> <!-- close b-text -->
 <div class="b-about">
 
-
 	<div class="b b-about-top clearfix">
 		<div class="b-block">
 			<div class="b-about-top-left">
@@ -199,3 +198,5 @@
 	false
 );?>
 </div>
+
+<div class="b-constructor b-text">

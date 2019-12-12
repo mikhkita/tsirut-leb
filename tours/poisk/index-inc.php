@@ -215,7 +215,7 @@
 </div>
 <div class="b-calendar">
 	<div class="b-block">
-		<h2 class="b-title">Календарь недорогих туров - цена дня</h2>
+		<h2 class="b-title"><?=includeArea("poisk-calendar");?></h2>
 		<!-- <div class="tv-calendar tv-moduleid-980631"></div> -->
 		<div class="tv-calendar tv-moduleid-982983"></div>
 	</div>
