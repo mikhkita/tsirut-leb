@@ -111,11 +111,7 @@ function replacePlaceholders(&$content){
 	if (!in_array('admin', $urlArr)) {
 
 		if (isset($GLOBALS['PLACEHOLDERS']) && !empty($GLOBALS['PLACEHOLDERS'])) {
-			for ($i = 0; $i < count($GLOBALS['PLACEHOLDERS']); $i++) { 
-				foreach ($GLOBALS['PLACEHOLDERS'] as $key => $value) {
-					$content = str_replace("#".$key."#", $value, $content);
-				}
-			}
+			$content = checkPlaceholders($GLOBALS['PLACEHOLDERS'], $content);
 		}
 
 		$year1 = date("Y", strtotime("+1 month"));
@@ -150,6 +146,22 @@ function replacePlaceholders(&$content){
 		$content = str_replace("#YEAR2#", $year10, $content);
 		$content = str_replace("#YEAR1#", $year11, $content);
 	}
+}
+
+function checkPlaceholders($placeholders, $content){
+	$flag = false;
+	foreach ($placeholders as $key => $value) {
+		if (strripos($content, "#".$key."#")) {
+			$content = str_replace("#".$key."#", $value, $content);
+			$flag = true;
+		}
+	}
+
+	if ($flag) {
+		checkPlaceholders($placeholders, $content);
+	}
+
+	return $content;
 }
 
 function writeLog($record, $filename){
