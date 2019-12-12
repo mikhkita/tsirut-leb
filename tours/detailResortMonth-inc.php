@@ -3,7 +3,8 @@
 	<div class="b-tourvisor-calendar" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
 		<div class="b-block">
 			<div class="content">
-				<h2>Календарь туров</h2>
+				<h2><?=includeArea("calendar")?></h2>
+				<h3><?=includeArea("calendar-under")?></h3>
 				<div class="b-tourvisor-calendar-cont">
 					<div class="calendar-preloader"><img src="<?=SITE_TEMPLATE_PATH?>/html/i/preloader-dark.svg"></div>
 					<a href="#" class="b-btn b-btn-orange one-line hidden">
@@ -21,11 +22,15 @@
 <div class="b-online-search">
 	<div class="b-block">
 		<h2 class="b-title regular">
-			<b><?if($GLOBALS["arMonth"]["titleTV"]){
-					echo $GLOBALS["arMonth"]["titleTV"];
-				}else{
-					echo $GLOBALS["arCountry"]["titleTV"];
-				};?></b>
+			<b><?
+			if($arTarget["titleTV"]){
+				echo $arTarget["titleTV"];
+			}elseif($GLOBALS["arCountry"]["titleTV"]){
+				echo $GLOBALS["arCountry"]["titleTV"];
+			}else{
+				echo includeArea("tourvisor-header");
+			}
+			?></b>
 		</h2>
 		<div class="filter-mobile-cont hide">
 			<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>

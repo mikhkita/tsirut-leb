@@ -278,12 +278,12 @@ function getCountrySection($parentSection, $curSection = false){
 			'flydates_end' => $arSection['UF_FLYDATES_END'],
 		);
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arSection['IBLOCK_ID'],$arSection['ID']);
-		$IPROPERTY  = $ipropValues->getValues();
+		$IPROPERTY  = $ipropValues->queryValues();
 		if(!empty($IPROPERTY)){
-			$arCountrySect['seoTitle'] = $IPROPERTY['SECTION_META_TITLE'];
-			$arCountrySect['seoKeywords'] = $IPROPERTY['SECTION_META_KEYWORDS'];
-			$arCountrySect['seoDesc'] = $IPROPERTY['SECTION_META_DESCRIPTION'];
-			$arCountrySect['seoPageTitle'] = $IPROPERTY['SECTION_PAGE_TITLE'];
+			$arCountrySect['seoTitle'] = $IPROPERTY['SECTION_META_TITLE']['VALUE'];
+			$arCountrySect['seoKeywords'] = $IPROPERTY['SECTION_META_KEYWORDS']['VALUE'];
+			$arCountrySect['seoDesc'] = $IPROPERTY['SECTION_META_DESCRIPTION']['VALUE'];
+			$arCountrySect['seoPageTitle'] = $IPROPERTY['SECTION_PAGE_TITLE']['VALUE'];
 		}
 
 		foreach ($monthList as $value) {
@@ -311,6 +311,16 @@ function getCountrySection($parentSection, $curSection = false){
 function ShowCondBrowser(){
 	global $APPLICATION;
 	return $APPLICATION->GetTitle();
+}
+
+function ShowCondBrowserHeaderText(){
+	global $APPLICATION;
+	if(!empty($APPLICATION->GetProperty("header-text")) && $APPLICATION->GetProperty("header-text") != "-"){
+		$text = $APPLICATION->GetProperty("header-text");
+	}else{
+		$text = $APPLICATION->GetProperty("description");
+	}
+	return $text;
 }
 
 // function getValidPhone($file){

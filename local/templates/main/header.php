@@ -24,7 +24,7 @@ $GLOBALS["isDetailInnerSection"] = $isDetailInnerSection = ($urlArr[1] == "tours
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 23;
+$GLOBALS["version"] = 28;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -239,37 +239,20 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 </head>
 <body>
 	<?$APPLICATION->ShowPanel();?>
-	<div id="panel-menu" class="panel-menu slideout-menu">
-		<h2>Меню</h2>
-		<?$APPLICATION->IncludeComponent("bitrix:menu", "mobile-menu", Array(
-			"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-			"MENU_CACHE_TYPE" => "N",	// Тип кеширования
-			"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-			"MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
-			"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
-				0 => "",
-			),
-			"MAX_LEVEL" => "2",	// Уровень вложенности меню
-			"CHILD_MENU_TYPE" => "sub",	// Тип меню для остальных уровней
-			"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-			"DELAY" => "N",	// Откладывать выполнение шаблона меню
-			"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-		),false);?>
-		<div style="display: none;">
-			<?$APPLICATION->IncludeComponent("bitrix:menu", "hide-menu", Array(
-				"ROOT_MENU_TYPE" => "sub",	// Тип меню для первого уровня
-				"MENU_CACHE_TYPE" => "N",	// Тип кеширования
-				"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-				"MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
-				"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
-					0 => "",
-				),
-				"MAX_LEVEL" => "2",	// Уровень вложенности меню
-				"CHILD_MENU_TYPE" => "sub",	// Тип меню для остальных уровней
-				"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-				"DELAY" => "N",	// Откладывать выполнение шаблона меню
-				"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-			),false);?>
+	<div id="panel-menu" class="panel-menu slideout-menu"> 
+		<div class="b-menu-mobile-window">
+			<h2>Меню</h2>
+			<ul class="b-menu-mobile-list">
+				
+			</ul>
+			<div class="slideout-button">
+				<a href="/tours/poisk/" class="b-btn b-btn-blue one-line">
+					<p class="btn-bold">Поиск туров</p>
+				</a>
+			</div>
+			<div class="slide-cont-list">
+				<div class="slide-cont-overlay"></div>
+			</div>
 		</div>
 	</div>
 
@@ -411,7 +394,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 						<?endif;?>
 						<h1><?$APPLICATION->AddBufferContent('ShowCondBrowser');?></h1>
 						<?if($APPLICATION->GetProperty("header-text") != "-" && !isset($_REQUEST["TAG"]) && !$GLOBALS["is404"]):?>
-							<p class="b-head-text"><?=$APPLICATION->ShowProperty("header-text");?></p>
+							<p class="b-head-text"><?$APPLICATION->AddBufferContent('ShowCondBrowserHeaderText');?></p>
 						<?endif;?>
 					</div>
 				<?endif;?>

@@ -97,3 +97,5 @@
 	false
 );?>
 	</div>
+
+<div class="b-constructor b-text">

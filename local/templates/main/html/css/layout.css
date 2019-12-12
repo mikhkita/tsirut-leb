@@ -84,7 +84,8 @@ div.TVOrderHotelStar:before,
 div.TVHotelTypeItem:before,
 .b-select-chosen:before,
 .b-block-ttv div.ttv-search .ttv-field > label:before,
-.ttv-add-city:before{
+.ttv-add-city:before,
+.b-menu-mobile-window .slide-cont h3:before{
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -359,7 +360,7 @@ b, strong{
 			.b-text.b-text-short .b-mailing .b-block{
 
 			}
-			.b-text.b-text-short .b-mailing-form input[type=text]{
+			.b-text.b-text-short .b-mailing-form input{
 				width: 100%;
 				margin-bottom: 24px;
 			}
@@ -558,6 +559,7 @@ b, strong{
 /*====Кнопки турвизора====*/
 
 .b-tourvisor-with-filter .TVSRSearchMoreBtn,
+.b-tourvisor-for-manager .TVSRSearchMoreBtn,
 .b-calendar .TVCalShowAll{
 	position: relative !important;
 	color: #FFF !important;
@@ -578,7 +580,8 @@ b, strong{
 	box-sizing: border-box;
 }
 
-.b-tourvisor-with-filter .TVSRSearchMoreBtn{
+.b-tourvisor-with-filter .TVSRSearchMoreBtn,
+.b-tourvisor-for-manager .TVSRSearchMoreBtn{
 	width: 326px !important;
 	display: inline-block;
 }
@@ -588,6 +591,7 @@ b, strong{
 }
 
 .b-tourvisor-with-filter .TVSRSearchMoreBtn:after,
+.b-tourvisor-for-manager .TVSRSearchMoreBtn:after,
 .b-calendar .TVCalShowAll:before{
 	font-family: 'Gilroy-Heavy';
 	letter-spacing: 1px;
@@ -876,9 +880,18 @@ b, strong{
 		    font-size: 0px;
 		    position: absolute;
 		    left: 0px;
-		    top: -21px;
+		    top: -9px;
 		    width: 100%;
-		    height: 21px;
+		    height: 9px;
+		    -webkit-transition: top 300ms ease-out, height 300ms ease-out;
+		    -moz-transition: top 300ms ease-out, height 300ms ease-out;
+		    -ms-transition: top 300ms ease-out, height 300ms ease-out;
+		    -o-transition: top 300ms ease-out, height 300ms ease-out;
+		    transition: top 300ms ease-out, height 300ms ease-out;
+		}
+		.b-menu li:hover .b-submenu:after{
+		    top: -19px;
+		    height: 19px;
 		}
 			.b-submenu li{
 				margin-right: 0;
@@ -961,6 +974,93 @@ b, strong{
 			font-size: 16px;
 			line-height: 16px;
 		}
+
+.b-menu-desktop .hide-item{
+	display: none !important;
+}
+/*====Мобильное меню====*/
+
+.b-menu-mobile-window .slide-cont-list{
+
+}
+.slide-cont-overlay{
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+    -webkit-transition: opacity 200ms, visibility 200ms;
+	   -moz-transition: opacity 200ms, visibility 200ms;
+	    -ms-transition: opacity 200ms, visibility 200ms;
+	   	 -o-transition: opacity 200ms, visibility 200ms;
+			transition: opacity 200ms, visibility 200ms;
+}
+.slide-cont-overlay.show{
+	opacity: 1;
+	visibility: visible;
+}
+.b-menu-mobile-window .slide-cont{
+	opacity: 0;
+	visibility: hidden;
+	-moz-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    -webkit-transform: translateX(40px);
+    -o-transform: translateX(40px);
+    transform: translateX(40px);
+	position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: calc(100% - 30px);
+    height: 100%;
+    padding: 27px 0;
+    background-color: #FFF;
+    box-shadow: -20px 0px 24px rgba(0, 0, 0, 0.05);
+    -webkit-transition: opacity 200ms, visibility 200ms, transform 200ms;
+	   -moz-transition: opacity 200ms, visibility 200ms, transform 200ms;
+	    -ms-transition: opacity 200ms, visibility 200ms, transform 200ms;
+	   	 -o-transition: opacity 200ms, visibility 200ms, transform 200ms;
+			transition: opacity 200ms, visibility 200ms, transform 200ms;
+	overflow: auto;
+}
+.b-menu-mobile-window .slide-cont.open{
+	opacity: 1;
+	visibility: visible;
+	-moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+}
+	.b-menu-mobile-window .slide-cont h3{
+		position: relative;
+		z-index: 20;
+		display: inline-block;
+		padding-left: 50px;
+		color: #095AC0;
+		margin-bottom: 20px;
+	}
+	.b-menu-mobile-window .slide-cont h3:before{
+		content: "\e916";
+		font-size: 12px;
+		position: absolute;
+		top: 6px;
+		left: 20px;
+		color: #095AC0;
+	}
+	.b-menu-mobile-window .slide-cont ul{
+		padding: 0 16px 0 50px;
+	}
+		.b-menu-mobile-window .slide-cont ul li{
+			padding: 0;
+		}
+	.sub-section-slide{
+		box-shadow: -20px 0px 24px rgba(0, 0, 0, 0.05);
+	}
 
 .b-statistics{
 	overflow: hidden;
@@ -1712,7 +1812,7 @@ b, strong{
 		overflow: hidden;
 		width: 100%;
 		width: calc(100% - 308px);
-		padding: 42px 56px 58px 56px;
+		padding: 32px 46px 48px 46px;
 		background-image: url(../i/head.jpg);
 	    background-position: 50% 50%;
 	    background-repeat: no-repeat;
@@ -1737,15 +1837,26 @@ b, strong{
 		.b-mailing-form{
 
 		}
-			.b-mailing-form input[type=text]{
+			.b-mailing-form-inputs{
+				display: inline-block;
 				vertical-align: top;
-				margin-right: 26px;
-				width: calc(100% - 356px);
+				margin-right: 16px;
+				width: calc(100% - 300px);
 			}
+				.b-mailing-form-inputs input{
+					vertical-align: top;
+					margin-right: 16px;
+					width: calc(50% - 12px);
+					padding: 19px 24px 21px 24px;
+				}
+				.b-mailing-form-inputs input:last-of-type{
+					margin-right: 0;
+				}
 			.b-mailing-form .b-btn-submit{
 				display: inline-block;
 				vertical-align: top;
-				width: 326px;
+				width: 280px;
+				min-width: 280px;
 			}
 			.b-mailing-form  .b-checkbox{
 				margin-top: 16px;
@@ -2291,7 +2402,7 @@ b, strong{
 	}
 	.calendar-preloader{
 		position: absolute;
-		top: 90px;
+		top: 120px;
 		left: calc(50% - 77px);
 	}
 	.tourvisor-preloader img,
@@ -2638,6 +2749,9 @@ ul.b-breadcrumbs {
 }
 .b-online-search{
 	margin-bottom: 110px;
+}
+.b-online-search-russia{
+	padding-top: 100px;
 }
 	.b-tourvisor-list{
 		margin-top: 24px;
@@ -5832,11 +5946,13 @@ div.TVDetailPanel .TVOptionCheckBox {
 .b-tourvisor-with-filter div.TVWideForm.TVTheme2 .TVTourists{
     width: calc(17.75% - 36px);
 }
-.b-tourvisor-with-filter div.TVMainFilter{
+.b-tourvisor-with-filter div.TVMainFilter,
+.b-tourvisor-for-manager div.TVMainFilter{
 	border: 5px solid #EFF2F6;
 	background-color: #FFF;
 	box-sizing: border-box;
 }
+
 .b-tourvisor-with-filter div.TVWideForm.TVTheme2 .TVSearchButton,
 .b-tourvisor-with-filter .TVSideFilterForm.TVTheme2 .TVSearchButton{
     width: 199px;
@@ -5908,7 +6024,7 @@ div.TVSearchButton:after {
 #b-popup-filter-mobile div.TVOptionSelector,
 .b-tourvisor-with-filter div.TVOptionSelector{
     color: #000;
-    border: 2px solid #C1CEDF;
+    border: 2px solid #E7ECF1;
 }
 #b-popup-filter-mobile div.TVOptionSelector:after,
 .b-tourvisor-with-filter div.TVOptionSelector:after{
@@ -6487,6 +6603,14 @@ div.TVTem2TourContainer{
 	line-height: 50px;
 	color: #282828;
 	font-family: 'Gilroy-Bold';
+	text-align: center;
+	margin-bottom: 5px;
+}
+.b-tourvisor-calendar .calendar-subtitle{
+	font-size: 20px;
+	line-height: 28px;
+	color: #282828;
+	font-family: 'Gilroy-Regular';
 	text-align: center;
 }
 .b-tourvisor-calendar-cont{
@@ -8686,6 +8810,60 @@ div.TVSearchResults .TVSRHelpForm{
 		padding-right: 16px;
 	}
 
+/*=====Турвизор (широкая форма)=====*/
+
+.b-tourvisor-for-manager{
+	margin-bottom: 60px;
+}
+.b-tourvisor-for-manager .TVFullForm.TVTheme2 {
+    width: 100%;
+}
+.b-tourvisor-for-manager div.TVFilterForm .TVOptionLable{
+	color: #282828;
+}
+.b-tourvisor-for-manager div.TVTheme2 .TVHotelStar.TVImageActive:before{
+	color: #ffa300;
+}
+.b-tourvisor-for-manager div.TVTheme2 .TVHotelStar:before {
+    color: #acacac;
+}
+.b-tourvisor-for-manager div.TVOptionSelector{
+	color: #000;
+    border: 2px solid #E7ECF1;
+}
+.b-tourvisor-for-manager .TVFullForm.TVTheme2 .TVNights{
+	width: 21%;
+}
+.b-tourvisor-for-manager .TVOptionListWrap {
+    height: 237px;
+}
+.b-tourvisor-for-manager .TVListHotels.TVOptionListWrap {
+    height: 247px;
+}
+.b-tourvisor-for-manager .TVListHotels.TVOptionListWrap .TVTabedListBody {
+    height: 181px;
+}
+.b-tourvisor-for-manager .TVOptionForm .TVButtonOrder,
+.b-tourvisor-for-manager .TVOptionForm .TVSearchButton {
+    padding: 14px 0;
+    border-radius: 6px;
+}
+.b-tourvisor-for-manager .TVTopForm,
+.b-tourvisor-for-manager .TVOptionForm{
+    padding: 20px 0;
+}
+
+.b-tourvisor-for-manager .TVSearchResults{
+	width: 100% !important;
+}
+
+.b-tourvisor-for-manager .TVOptionListWrap,
+.b-tourvisor-for-manager .TVOptionSelector{
+	border: 2px solid #E7ECF1;
+    border-radius: 6px;
+}
+
+
 /*===========TourTrans==========*/
 
 .b-block-ttv div.ttv-search{
@@ -9194,19 +9372,5 @@ div.ttv-datepicker .ui-datepicker-header .ui-datepicker-next{
 	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-bottom > div > div {
 	    font-size: 16px;
 	}
-
-@media screen and (max-width: 950px){
-	.b-block-ttv .ttv-catalog.mobile .ttv-tour-image{
-	    width: 200px;
-	}
-	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data{
-		float: right;
-		width: calc(100% - 210px);
-	}
-	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-top, 
-	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-bottom{
-		padding: 16px !important;
-	}
-}
 
 

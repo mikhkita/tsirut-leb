@@ -26,6 +26,7 @@ if( (isset($_POST["MAIL"]) && $_POST["MAIL"] != "") || $spam ){
 	}
 }else{
 	$arEventFields = array(
+		"NAME"	=> $_POST["name"],
 		"EMAIL"	=> $_POST["email"],
 	);
 
