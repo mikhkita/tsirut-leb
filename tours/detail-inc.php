@@ -15,7 +15,7 @@
 ?>
 
 <?if($GLOBALS["arCountry"]["name"] && !$GLOBALS["arCountry"]["isRussia"]):?>
-	<div class="b-tourvisor-calendar" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
+	<div class="b-tourvisor-calendar" data-month="<?if($arTarget["month"]) echo $GLOBALS["monthsTV"][$arTarget["month"]]["name"]?>" data-country="<?=$GLOBALS["arCountry"]["name"]?>">
 		<div class="b-block">
 			<div class="content">
 				<h2><?=includeArea("calendar")?></h2>
@@ -36,8 +36,7 @@
 
 <div class="b-online-search <?if($GLOBALS["arCountry"]["isRussia"]) echo "b-online-search-russia"?>">
 	<div class="b-block">
-		<h2 class="b-title regular">
-			<b><?
+		<h2 class="b-title"><?
 			if($arTarget["titleTV"]){
 				echo $arTarget["titleTV"];
 			}elseif($GLOBALS["arCountry"]["titleTV"]){
@@ -45,7 +44,7 @@
 			}else{
 				echo includeArea("tourvisor-header");
 			}
-			?></b></h2>
+			?></h2>
 		<div class="filter-mobile-cont hide">
 			<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
 		</div>

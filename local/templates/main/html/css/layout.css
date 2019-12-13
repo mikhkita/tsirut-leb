@@ -3645,19 +3645,35 @@ ul.b-breadcrumbs {
 		.b-about-services-item:last-child{
 			margin-right: 0;
 		}
-			.b-about-services-item img{
+			.b-about-services-item img,
+			.b-about-services-item .sprint-img{
 				display: inline-block;
 				vertical-align: top;
 				width: 148px;
 				height: 143px;
 				margin-bottom: 32px;
 			}
-			.b-about-services-item p{
+			.b-about-services-item p,
+			.b-about-services-item .sprint-text{
 				max-width: 344px;
 				margin: 0 auto;
 				font-size: 20px;
 				line-height: 28px;
 			}
+
+.b-about-sprint{
+
+}
+	.b-about-sprint .b-title{
+		margin-top: 0;
+		font-size: 45px;
+    	line-height: 55px;
+	}
+		.b-about-sprint .b-about-services-item .sprint-img{
+			background-position: 50% 50%;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
 
 /*=======Статьи=======*/
 

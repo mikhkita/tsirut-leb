@@ -21,8 +21,7 @@
 
 <div class="b-online-search">
 	<div class="b-block">
-		<h2 class="b-title regular">
-			<b><?
+		<h2 class="b-title"><?
 			if($arTarget["titleTV"]){
 				echo $arTarget["titleTV"];
 			}elseif($GLOBALS["arCountry"]["titleTV"]){
@@ -30,8 +29,7 @@
 			}else{
 				echo includeArea("tourvisor-header");
 			}
-			?></b>
-		</h2>
+			?></h2>
 		<div class="filter-mobile-cont hide">
 			<a href="#b-popup-filter-mobile" class="fancy b-btn-filter-mobile">Открыть фильтр</a>
 		</div>

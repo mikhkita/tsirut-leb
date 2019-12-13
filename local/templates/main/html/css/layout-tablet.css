@@ -110,6 +110,9 @@ body {
 .b-search-subscribe .b-subscribe-form .b-btn-submit {
     width: 400px;
 }
+.b-search-subscribe.b-hot-search-subscribe .b-mailing-form input{
+	margin-bottom: 24px;
+}
 .b-feedback.b-feedback-shadow .b-5-manager{
 	right: 16px;
 }
@@ -467,7 +470,7 @@ div.TVFORow3 {
 	}
 		.b-menu li,
 		.b-menu.transform li{
-			margin-right: 12px;
+			margin-right: 24px;
 		}
 	.b-country-list{
 
@@ -791,6 +794,9 @@ div.TVFORow3 {
 	    width: 100%;
 	    margin-bottom: 24px;
 	}
+	.b-search-subscribe.b-hot-search-subscribe .b-mailing-form input{
+		width: calc(50% - 15px);
+	}
 	.b-hot-group .b-mailing-form .b-btn-submit{
 		width: auto;
 	}
@@ -832,6 +838,9 @@ div.TVFORow3 {
 	}
 	.b-search-subscribe .b-subscribe-form .b-btn-submit {
 	    width: 100%;
+	}
+	.b-search-subscribe.b-hot-search-subscribe .b-subscribe-form .b-btn-submit{
+		width: 400px;
 	}
 	.b-hot-nav{
 		display: none;
@@ -880,7 +889,8 @@ div.TVFORow3 {
 	    text-align: left;
 	    margin-bottom: 35px;
 	}
-	.b-about-services-item img {
+	.b-about-services-item img,
+	.b-about-services-item .sprint-img {
 	    width: 120px;
 	    height: 120px;
 	    margin-bottom: 24px;

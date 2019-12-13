@@ -828,8 +828,9 @@ ul.b-breadcrumbs{
 .b-search-subscribe .b-subscribe-cont {
     padding: 34px 24px 38px 24px;
 }
-.b-search-subscribe .b-mailing-form input {
-
+.b-search-subscribe .b-subscribe-form input{
+	width: 100%;
+	margin-bottom: 16px;
 }
 .b-search-subscribe .b-subscribe-form .b-btn-submit {
 	min-width: 0;
@@ -873,6 +874,12 @@ ul.b-breadcrumbs{
 .b-about-selection p br,
 .b-about-services-item p br{
 	display: none;
+}
+
+.b-about-sprint .b-title{
+	font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 16px;
 }
 
 .b-about{
@@ -954,12 +961,14 @@ ul.b-breadcrumbs{
 		margin-bottom: 0;
 	}
 
-.b-about-services-item img {
+.b-about-services-item img,
+.b-about-sprint .b-about-services-item .sprint-img {
     width: 70px;
     height: 70px;
     margin-bottom: 16px;
 }
-.b-about-services-item p {
+.b-about-services-item p,
+.b-about-services-item .sprint-text{
     font-size: 16px;
     line-height: 24px;
 }
@@ -2590,13 +2599,15 @@ div.TVTabedListContainer {
 	    margin-right: 0;
 	    margin-bottom: 24px;
 	}
-		.b-about-services-item img {
+		.b-about-services-item img,
+		.b-about-sprint .b-about-services-item .sprint-img {
 		    display: inline-block;
 			vertical-align: top;
 			margin-bottom: 0;
 			margin-right: 16px;
 		}
-		.b-about-services-item p {
+		.b-about-services-item p,
+		.b-about-services-item .sprint-text {
 			width: calc(100% - 90px);
 			text-align: left;
 		    display: inline-block;

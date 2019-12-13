@@ -1412,13 +1412,22 @@ $(document).ready(function(){
                 //чекать открытие попапа
                 var waitCalendarPopup = setInterval(function(){
                     if($(".TVModalContainer .TVCalendarWindow").length){
-                        //переместить календарь
-                        $(".b-tourvisor-calendar-cont").append($(".TVCalendarWindowBody"));
-                        //закрыть попап
-                        $(".TVClosePopUp").click();
-                        setTimeout(function() {
-                            $("body").removeClass("TVHidePopup");
-                        }, 400);
+                        //если это страница месяца, то листать до нужного месяца
+                        if($(".b-tourvisor-calendar").attr("data-month")){
+                            var counterMonth = 0;
+                            var waitMonthPopup = setInterval(function(){
+                                if($(".TVCalendarMonthValue").text().toLowerCase()
+                                    .indexOf($(".b-tourvisor-calendar").attr("data-month")) > -1 || counterMonth > 50){
+                                    calendarMove();
+                                    clearInterval(waitMonthPopup);
+                                }else{
+                                    counterMonth++;
+                                    $(".TVCalendarNext").click();
+                                }
+                            }, 200);
+                        }else{
+                            calendarMove();
+                        }
                         clearInterval(waitCalendarPopup);
                     }
                 }, 10);
@@ -1428,11 +1437,42 @@ $(document).ready(function(){
         return found;
     }
 
+    var queueClick = 0;
+    function calendarMove() {
+        $(".calendar-preloader").hide();
+        $(".b-tourvisor-calendar-cont").append($(".TVCalendarWindowBody"));
+        setTimeout(function() {
+            $(".TVClosePopUp").click();//закрыть попап
+        }, 100);
+        setTimeout(function() {
+            $("body").removeClass("TVHidePopup");
+        }, 400);
+
+        //переключение по месяцам
+        $("body").on("click", ".b-tourvisor-calendar-cont .TVCalendarPrev, .b-tourvisor-calendar-cont .TVCalendarNext", function(){
+            $("body").addClass("TVHidePopup");
+            queueClick++;
+            var waitPopup = setInterval(function(){
+                if($(".TVModalContainer .TVCalendarWindow").length){
+                    $(".TVClosePopUp").click();
+                    $(".TVOverLay, .TVModalContainer").remove();
+                    clearInterval(waitPopup);
+                }
+            }, 10);
+            setTimeout(function() {
+                queueClick--;
+                clearInterval(waitPopup);
+                if(queueClick == 0){
+                    $("body").removeClass("TVHidePopup");
+                }
+            }, 1000);
+        });
+    }
+
     if($(".b-tourvisor-hidden").length){
         $("body").addClass("TVHidePopup");
         var waitTourvisorHidden = setInterval(function(){
             if( $(".b-tourvisor-hidden .TVCalendar").length ){
-                $(".calendar-preloader").hide();
                 var firstSearch = false,
                     secondSearch = false;
                 //ищем страну в текущем городе
@@ -1462,27 +1502,6 @@ $(document).ready(function(){
     // $(".b-btn-filter-mobile").click(function() {
     //     $(".list").append("<li class='item'>Тест</li>");
     // })
-    
-    var queueClick = 0;
-    //переключение по месяцам
-    $("body").on("click", ".b-tourvisor-calendar-cont .TVCalendarPrev, .b-tourvisor-calendar-cont .TVCalendarNext", function(){
-        $("body").addClass("TVHidePopup");
-        queueClick++;
-        var waitPopup = setInterval(function(){
-            if($(".TVModalContainer .TVCalendarWindow").length){
-                $(".TVClosePopup").click();
-                $(".TVOverLay, .TVModalContainer").remove();
-                clearInterval(waitPopup);
-            }
-        }, 10);
-        setTimeout(function() {
-            queueClick--;
-            clearInterval(waitPopup);
-            if(queueClick == 0){
-                $("body").removeClass("TVHidePopup");
-            }
-        }, 1000);
-    });
 
     $("body").on("mousedown", ".b-tourvisor-detail .TVTem2ForthCol", function(){
         $("body").removeClass("TVHidePopup");
