@@ -110,7 +110,8 @@ body {
 .b-search-subscribe .b-subscribe-form .b-btn-submit {
     width: 400px;
 }
-.b-search-subscribe.b-hot-search-subscribe .b-mailing-form input{
+.b-search-subscribe.b-hot-search-subscribe .b-mailing-form input,
+.b-search-subscribe.b-bus-search-subscribe .b-mailing-form input{
 	margin-bottom: 24px;
 }
 .b-feedback.b-feedback-shadow .b-5-manager{
