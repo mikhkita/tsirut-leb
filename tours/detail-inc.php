@@ -39,10 +39,11 @@
 		<h2 class="b-title"><?
 			if($arTarget["titleTV"]){
 				echo $arTarget["titleTV"];
-			}elseif($GLOBALS["arCountry"]["titleTV"]){
-				echo $GLOBALS["arCountry"]["titleTV"];
+			// }else
+			// if($GLOBALS["arCountry"]["titleTV"]){
+				// echo $GLOBALS["arCountry"]["titleTV"];
 			}else{
-				echo includeArea("tourvisor-header");
+				?><?=includeArea("tourvisor-header")?><?
 			}
 			?></h2>
 		<div class="filter-mobile-cont hide">
