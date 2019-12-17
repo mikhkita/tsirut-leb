@@ -45,6 +45,13 @@
 		</div>
 	</div>
 </div>
+<div class="b-about-write-cont b-block">
+	<div class="b-seo-separator-wide"></div>
+	<div class="b-about-write">
+		<div class="b-img"></div>
+		<p><?=includeArea("about-write");?></p>
+	</div>
+</div>
 <div class="b b-about-selection b-about-wide">
 	<div class="b-block">
 		<div class="b-about-selection-content">

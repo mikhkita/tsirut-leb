@@ -883,10 +883,10 @@ ul.b-breadcrumbs{
 }
 
 .b-about{
-	margin-bottom: 50px;
+	margin-bottom: 60px;
 }
 	.b-about-top{
-		margin-bottom: 50px;
+
 	}
 		.b-about-top-left{
 			float: none;
@@ -924,6 +924,23 @@ ul.b-breadcrumbs{
 	}
 	.b-about-top-dir {
 	    width: calc(100% - 186px);
+	}
+
+.b-about-write{
+
+}
+	.b-about-write br{
+		display: none;
+	}
+	.b-about-write .b-img{
+		width: 50px;
+		height: 50px;
+	    margin-right: 12px;
+	}
+	.b-about-write p{
+		width: calc(100% - 68px);
+		font-size: 16px;
+    	line-height: 24px;
 	}
 
 .b-about-wide{

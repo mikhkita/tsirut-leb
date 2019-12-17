@@ -3509,7 +3509,7 @@ ul.b-breadcrumbs {
 /*======= О компании =======*/
 
 .b-about{
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 }
 	.b-about .b-content-back{
 		/*min-height: 0;
@@ -3517,7 +3517,7 @@ ul.b-breadcrumbs {
 		padding: 60px 40px 0 40px;*/
 	}
 	.b-about-top{
-		margin-bottom: 100px;
+
 	}
 		.b-about-top-left{
 			float: left;
@@ -3563,6 +3563,32 @@ ul.b-breadcrumbs {
 			.b-about-top-right img{
 				width: 100%;
 			}
+
+.b-about-write-cont .b-seo-separator-wide{
+	margin: 44px auto;
+}
+.b-about-write{
+	max-width: 860px;
+	margin: 0 auto 60px auto;
+}
+	.b-about-write .b-img{
+		display: inline-block;
+		vertical-align: middle;
+		width: 70px;
+		height: 70px;
+		background-position: 50% 50%;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-image: url(../i/icon-mail.svg);
+	    margin-right: 30px;
+	}
+	.b-about-write p{
+		width: calc(100% - 110px);
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 20px;
+    	line-height: 28px;
+	}
 
 .b-about-wide{
 	background-position: 50% 50%;

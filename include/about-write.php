@@ -1,0 +1,1 @@
+Вы всегда можете написать мне письмо, я его прочту, и по возможности, отвечу. Мой личный адрес e-mail: <a href="mailto:shemetovaz@mail.ru"><b>shemetovaz@mail.ru</b></a>
