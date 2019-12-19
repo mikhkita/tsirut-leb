@@ -330,7 +330,11 @@ b, strong{
 		.b-text ul.slick-dots li:before{
 			display: none;
 		}
-
+	.b-text iframe{
+		margin: 16px 0 24px 0;
+    	width: 100%;
+    	max-width: 560px;
+	}
 	.b-text.b-text-short{
 
 	}

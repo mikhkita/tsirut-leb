@@ -24,7 +24,7 @@ $GLOBALS["isDetailInnerSection"] = $isDetailInnerSection = ($urlArr[1] == "tours
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 30;
+$GLOBALS["version"] = 31;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -238,7 +238,8 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 
 </head>
 <body>
-    <?if( $USER->IsAuthorized() && !CSite::InGroup( array(7)) ){
+    <?global $USER;
+    if( $USER->IsAuthorized() && !CSite::InGroup( array(7)) ){
 		$APPLICATION->ShowPanel();
     }?>
 	<div id="panel-menu" class="panel-menu slideout-menu"> 
