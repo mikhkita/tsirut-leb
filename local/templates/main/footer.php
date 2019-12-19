@@ -329,7 +329,7 @@
 				<form action="/ajax/?action=ADDREVIEW" method="POST" id="b-review-form" data-file-action="/send/addPhoto.php">
 					<input type="text" name="name" placeholder="Вашe имя" required>
 					<input type="text" name="tour" placeholder="Место отдыха" required>
-					<textarea name="comment" rows="6" placeholder="Ваш отзыв"></textarea>
+					<textarea name="comment" rows="6" placeholder="Ваш отзыв" required></textarea>
 					<div class="b-plup-photo">
 						<div id="plup-actions">
 							<input id="plup-photo-file" type="hidden" name="FILE">

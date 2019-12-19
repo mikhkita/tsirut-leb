@@ -5705,6 +5705,10 @@ div.TVMainFilterButton{
     font-size: 20px;
     overflow: visible;
 }
+div.TVCalendarList:hover,
+div.TVMainFilterButton:hover{
+	background-color: #EFF2F6;
+}
 div.TVMainFilterButton:after{
 	content: " ";
 	position: absolute;
@@ -5971,6 +5975,11 @@ div.TVDetailPanel .TVOptionCheckBox {
 	top: auto;
 	left: auto;
 	height: auto;
+	-webkit-transition: top 0ms 100ms ease-out;
+	   -moz-transition: top 0ms 100ms ease-out;
+	    -ms-transition: top 0ms 100ms ease-out;
+	   	 -o-transition: top 0ms 100ms ease-out;
+			transition: top 0ms 100ms ease-out;
 }
 .b-tourvisor-with-filter div.TVFilterForm{
 	display: none;

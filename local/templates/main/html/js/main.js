@@ -1088,7 +1088,9 @@ $(document).ready(function(){
     if($(".b-tourvisor-header").length){
         var waitTourvisorH = setInterval(function(){
             if( $(".b-tourvisor-header .TVMainForm").length ){
-                $(".b-tourvisor-header .tourvisor-preloader").hide();
+                setTimeout(function(){
+                    $(".b-tourvisor-header .tourvisor-preloader").hide();
+                }, 1000);
                 var countryDefault = $(".b-tourvisor-header").attr("data-country");
                 if(countryDefault){
                     $(".TVCountry").click();
@@ -1215,6 +1217,13 @@ $(document).ready(function(){
                 clearInterval(waitTourvisorF);
             }
         }, 30);
+        
+        //проверять открытие попапа с ценой
+        var waitModalContainer = setInterval(function(){
+            if( $(".TVModalContainer.TVTourCardWindow").length ){
+                window.history.state.StateData = {PopUp: false};
+            }
+        }, 100);
 
         $("input[name='food']").on('change', function(){
             var i = $(this).parent().index();
