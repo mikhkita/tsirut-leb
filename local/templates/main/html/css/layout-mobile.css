@@ -2631,6 +2631,10 @@ div.TVTabedListContainer {
 		    vertical-align: top;
 		    margin-bottom: 0;
 		}
+			.b-about-services-item .sprint-text p{
+				display: block;
+				width: 100%;
+			}
 	.b-about-services {
 	    padding-bottom: 30px;
 	}
