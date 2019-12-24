@@ -330,6 +330,24 @@ b, strong{
 		.b-text ul.slick-dots li:before{
 			display: none;
 		}
+	.b-text ol{
+		counter-reset:item;
+		margin-left: 24px;
+		margin-top: 24px;
+	    margin-bottom: 24px;
+	}
+		.b-text ol li{
+			position: relative;
+			margin-bottom: 8px;
+		}
+		.b-text ol li:before{
+			content: counter(item) '.';
+			counter-increment: item;
+			position: absolute;
+			top: 0;
+			left: -24px;
+		    font-family: 'Gilroy-Regular';
+		}
 	.b-text iframe{
 		margin: 16px 0 24px 0;
     	width: 100%;
