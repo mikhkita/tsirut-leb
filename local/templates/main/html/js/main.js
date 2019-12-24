@@ -862,6 +862,15 @@ $(document).ready(function(){
         });
     }
 
+    if(!getCookie("firstСonsent")){
+        $(".b-cookies-block").addClass("show");
+    }
+    $(document).on("click", ".b-cookies-block .b-btn", function(){
+        setCookie("firstСonsent", "Y", {'max-age': 86400 * 30});
+        $(".b-cookies-block").removeClass("show");
+        return false;
+    });
+
     // =========ТурТранс=========
 
     if($(".b-block-ttv").length){
@@ -2092,4 +2101,48 @@ function bindHotelType() {
         $.fancybox.close();
         return false;
     });
+}
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value, options) {
+  options = options || {
+    path: "/"
+  };
+
+  var expires = options.expires;
+
+  if (typeof expires == "number" && expires) {
+    var d = new Date();
+    d.setTime(d.getTime() + 9999999 + expires * 1000);
+    expires = options.expires = d;
+  }
+  if (expires && expires.toUTCString) {
+    options.expires = expires.toUTCString();
+  }
+
+  value = encodeURIComponent(value);
+
+  var updatedCookie = name + "=" + value;
+
+  for (var propName in options) {
+    updatedCookie += "; " + propName;
+    var propValue = options[propName];
+    if (propValue !== true) {
+      updatedCookie += "=" + propValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+function deleteCookie(name) {
+  setCookie(name, "", {
+    expires: -1
+  })
 }

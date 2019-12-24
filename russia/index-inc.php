@@ -122,7 +122,7 @@
 					<input id="personal-1" type="checkbox" name="personal" checked required>
 					<label for="personal-1">
 						<div class="b-checked icon-checked"></div>
-						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
+						<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных.</a></p>
 					</label>
 				</div>
 				<input type="submit" value="Отправить" style="display:none;">

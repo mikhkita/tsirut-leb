@@ -4524,6 +4524,7 @@ ul.b-breadcrumbs {
 			margin-right: 0;
 		}
 			.b-resorts-top{
+				display: block;
 				position: relative;
 				width: 100%;
 				height: 260px;
@@ -4563,18 +4564,74 @@ ul.b-breadcrumbs {
 			.b-resorts-item p{
 				margin-bottom: 0;
 			}
-			.b-resorts-item a{
+			.b-resorts-item .b-resorts-item-link{
 				font-size: 20px;
 				line-height: 28px;
 				color: #ED7408;
 				border-bottom: 1px solid #F5973B;
 			}
-			.b-resorts-item a:hover{
+			.b-resorts-item .b-resorts-item-link:hover{
 				border-bottom: 1px solid transparent;
 			}
 			.b-resorts-p{
 				margin-bottom: 16px;
 			}
+
+/*========*/
+
+.b-cookies-block {
+	display: none;
+	position: fixed;
+	text-align: left;
+	padding: 30px 32px 30px 32px;
+	z-index: 9;
+	width: calc(100% - 48px);
+	max-width: 1280px;
+	background: #fff;
+	box-shadow: 0 6px 30px rgba(0, 0, 0, .25);
+	left: 50%;
+	bottom: 24px;
+	transform: translateX(-50%);
+	transition: bottom .2s ease-out;
+	border-radius: 6px;
+}
+.b-cookies-block.show{
+	display: block;
+}
+
+	.b-cookies-text {
+		display: inline-block;
+		vertical-align: middle;
+		width: calc(100% - 300px);
+		margin-right: 34px;
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+		.b-cookies-text a {
+			border-bottom: 1px solid #434343;
+		}
+
+		.b-cookies-text a:hover {
+			border-color: transparent;
+		}
+
+	.b-cookies-block .b-btn {
+		display: inline-block;
+		vertical-align: middle;
+		min-width: 260px;
+	}
+
+	/*.close-cookie.icon-cross {
+		position: absolute;
+		right: .8rem;
+		top: .8rem;
+		width: 2.4rem;
+		height: 2.4rem;
+		background-image: url(../i/sprite.svg#cross);
+		background-repeat: no-repeat;
+		background-position: 50%;
+	}*/
 
 /*========*/
 

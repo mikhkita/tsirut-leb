@@ -124,7 +124,7 @@ $APPLICATION->SetTitle("Поиск туров");
 					<div class="b-checked icon-checked">
 					</div>
 					<p>
-						 Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a>
+						 Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных.</a>
 					</p>
  </label>
 				</div>

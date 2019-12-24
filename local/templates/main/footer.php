@@ -74,7 +74,7 @@
 				<div class="b-footer-bottom">
 					<div class="b-footer-bottom-left">
 						<div class="b-copyright">© 2008-2019 Аквамарин. Все права защищены</div>
-						<a href="#" class="b-footer-politics">Политика обработки персональных данных</a>
+						<a href="/policy.pdf" target="_blank" class="b-footer-politics">Политика обработки персональных данных</a>
 					</div>
 					<div class="b-redder">
 						<div class="visa-master"></div>
@@ -82,6 +82,12 @@
 				</div>
 			</div>
 		</div>
+		<div class="b-cookies-block">
+	        <div class="b-cookies-text">Этот сайт использует файлы cookie. Подробная информация в <a href="/policy.pdf" target="_blank">правилах по обработке персональных данных</a>. Вы можете запретить сохранение cookie в настройках своего браузера.</div>
+	        <a href="#" class="b-btn b-btn-blue one-line">
+				<p class="btn-bold">Согласен</p>
+			</a>
+	    </div>
 		<div class="b-menu-overlay" id="b-menu-overlay" style="display: none;"></div>
 	</div>
 	
@@ -115,7 +121,7 @@
 								<input id="TVcheckbox-politics-2" type="checkbox" name="politics" checked required>
 								<label for="TVcheckbox-politics-2">
 									<div class="b-checked icon-checked"></div>
-									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
+									<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных.</a></p>
 								</label>
 							</div>
 							<input type="submit" value="Отправить" style="display:none;">
@@ -292,7 +298,7 @@
 						<input id="agree-1" type="checkbox" name="agree-1" checked required> 
 						<label for="agree-1">
 						<div class="b-checked icon-checked"></div>
-						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+						<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
 						</label>
 					</div>
 				</form>
@@ -316,7 +322,7 @@
 						<input id="agree-2" type="checkbox" name="agree-2" checked required> 
 						<label for="agree-2">
 						<div class="b-checked icon-checked"></div>
-						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+						<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
 						</label>
 					</div>
 				</form>
@@ -355,7 +361,7 @@
 						<input id="agree-3" type="checkbox" name="agree-3" checked required> 
 						<label for="agree-3">
 						<div class="b-checked icon-checked"></div>
-						<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+						<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
 						</label>
 					</div>
 				</form>
@@ -605,7 +611,7 @@
  								<input id="personal-quiz" type="checkbox" name="personal" checked required> 
  								<label for="personal-quiz">
 									<div class="b-checked icon-checked"></div>
-									<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
+									<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных</a> и получение информационных писем</p>
  								</label>
 							</div>
 							<input type="submit" value="Отправить" style="display:none;">

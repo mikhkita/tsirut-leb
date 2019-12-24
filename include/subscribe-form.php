@@ -12,7 +12,7 @@
 		<input id="TVcheckbox-politics-1" type="checkbox" name="politics" checked required>
 		<label for="TVcheckbox-politics-1">
 			<div class="b-checked icon-checked"></div>
-			<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
+			<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных.</a></p>
 		</label>
 	</div>
 	<input type="submit" value="Подписаться" style="display:none;">

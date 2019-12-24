@@ -69,7 +69,7 @@ $this->setFrameMode(true);
 							<input id="checkbox-search-2" type="checkbox" name="politics" checked="" required="">
 							<label for="checkbox-search-2">
 								<div class="b-checked icon-checked"></div>
-								<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
+								<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных.</a></p>
 							</label>
 						</div>
 						<input type="submit" value="Отправить" style="display:none;">
@@ -104,7 +104,7 @@ $this->setFrameMode(true);
 						<input id="checkbox-search-2" type="checkbox" name="politics" checked="" required="">
 						<label for="checkbox-search-2">
 							<div class="b-checked icon-checked"></div>
-							<p>Заполняя форму вы подтверждаете <a href="#" target="_blank">согласие на обработку персональных данных.</a></p>
+							<p>Заполняя форму вы подтверждаете <a href="/policy.pdf" target="_blank">согласие на обработку персональных данных.</a></p>
 						</label>
 					</div>
 					<input type="submit" value="Отправить" style="display:none;">
