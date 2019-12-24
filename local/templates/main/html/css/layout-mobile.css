@@ -1709,6 +1709,17 @@ div.TVTabedListContainer {
     margin: 0 auto;
 }
 
+.b-cookies-text {
+	width: 100%;
+	font-size: 14px;
+	line-height: 22px;
+}
+.b-cookies-btn-cont {
+	display: block;
+	text-align: center;
+	margin-top: 16px;
+}
+
 @media screen and (max-width: 665px){
 
 	.b-block{
@@ -2296,6 +2307,11 @@ div.TVTabedListContainer {
 	}
 	.b-tourvisor-for-manager div.TVTourContainer .TVTourBlock .TVInfo{
 		margin-left: 236px;
+	}
+
+	.b-cookies-block {
+		width: calc(100% - 32px);
+		padding: 16px;
 	}
 
 }

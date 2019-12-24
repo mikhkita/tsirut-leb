@@ -84,9 +84,11 @@
 		</div>
 		<div class="b-cookies-block">
 	        <div class="b-cookies-text">Этот сайт использует файлы cookie. Подробная информация в <a href="/policy.pdf" target="_blank">правилах по обработке персональных данных</a>. Вы можете запретить сохранение cookie в настройках своего браузера.</div>
-	        <a href="#" class="b-btn b-btn-blue one-line">
-				<p class="btn-bold">Согласен</p>
-			</a>
+	        <div class="b-cookies-btn-cont">
+		        <a href="#" class="b-btn b-btn-blue one-line">
+					<p class="btn-bold">Согласен</p>
+				</a>
+			</div>
 	    </div>
 		<div class="b-menu-overlay" id="b-menu-overlay" style="display: none;"></div>
 	</div>
