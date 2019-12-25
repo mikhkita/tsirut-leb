@@ -97,9 +97,6 @@ body {
 .b-hot-group .b-mailing-cont{
 	width: 100%;
 }
-.b-hot-group .b-search-subscribe .b-mailing-form input {
-	width: calc(100% - 306px);
-}
 .b-search-subscribe .b-mailing-form input {
     width: calc(50% - 15px);
     margin-bottom: 0;
@@ -137,6 +134,10 @@ body {
 }
 .b-text.b-text-short .b-feedback .b-5-manager {
     display: none;
+}
+
+.b-constructor-adv-item.adv-5 .b-constructor-adv-img {
+    height: calc((100vw - 48px - 96px) / 5);
 }
 
 /*.b-tourvisor-header div.TVMainFilterButton{
@@ -790,6 +791,9 @@ div.TVFORow3 {
 	    padding-left: 0;
 	    max-width: 446px;
 	}
+	.b-hot-group .b-search-subscribe .b-mailing-form input{
+		width: calc(50% - 15px);
+	}
 	.b-search-subscribe .b-mailing-form input,
 	.b-mailing-form input {
 	    width: 100%;
@@ -938,6 +942,20 @@ div.TVFORow3 {
 	.b-content-back{
 		padding-top: 32px;
 	}
+
+	.b-constructor-adv-item.adv-5{
+		width: calc(100%/3 - 16px);
+	}
+		.b-constructor-adv-item.adv-5 .b-constructor-adv-img{
+			height: calc((100vw - 48px - 96px) / 3);
+			background-size: contain;
+		}
+		.b-constructor-adv-item.adv-5:nth-child(3n){
+			margin-right: 0;
+		}
+		.b-constructor-adv-item.adv-5:nth-child(5n){
+			margin-right: 20px;
+		}
 
 	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data{
 		margin-left: 0;
