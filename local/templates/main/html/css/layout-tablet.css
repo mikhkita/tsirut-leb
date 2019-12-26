@@ -957,6 +957,18 @@ div.TVFORow3 {
 			margin-right: 20px;
 		}
 
+	.b-about-sprint-5 .b-about-services-list{
+		text-align: center;
+	}
+		.b-about-sprint-5 .b-about-services-item {
+		    width: calc(100%/3 - 20px);
+		    margin-right: 24px;
+		    margin-bottom: 24px;
+		}
+		.b-about-sprint-5 .b-about-services-item:nth-child(3n){
+			margin-right: 0;
+		}
+
 	.b-block-ttv .ttv-catalog .ttv-tour-item .ttv-tour-data{
 		margin-left: 0;
 	}

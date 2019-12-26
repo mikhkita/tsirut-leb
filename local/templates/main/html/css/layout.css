@@ -345,12 +345,19 @@ b, strong{
 			margin-bottom: 8px;
 		}
 		.b-text ol li:before{
-			content: counter(item) '.';
+			content: counter(item);
 			counter-increment: item;
 			position: absolute;
-			top: 0;
-			left: -24px;
+			top: 2px;
+		    left: -28px;
 		    font-family: 'Gilroy-Regular';
+		    background-color: #ED7408;
+		    width: 20px;
+		    height: 20px;
+		    line-height: 20px;
+		    border-radius: 100px;
+		    color: #FFF;
+		    text-align: center;
 		}
 	.b-text iframe{
 		margin: 16px 0 24px 0;
@@ -3701,7 +3708,8 @@ ul.b-breadcrumbs {
 			margin-right: 24px;
 			text-align: center;
 		}
-		.b-about-services-item:last-child{
+		.b-about-services-item:last-child,
+		.b-about-sprint-5 .b-about-services-item:last-child{
 			margin-right: 0;
 		}
 			.b-about-services-item img,
@@ -3711,6 +3719,10 @@ ul.b-breadcrumbs {
 				width: 148px;
 				height: 143px;
 				margin-bottom: 32px;
+			}
+			.b-about-services-item h3{
+				color: #FFF;
+				margin-top: 0;
 			}
 			.b-about-services-item p,
 			.b-about-services-item .sprint-text{
@@ -3723,10 +3735,27 @@ ul.b-breadcrumbs {
 .b-about-sprint{
 
 }
+.b-about-sprint-5 .b-about-services-item{
+	width: calc(100%/5 - 24px);
+	margin-right: 24px;
+}
+.b-about-sprint.b-about-sprint-no-back{
+	color: #282828;
+	background-image: none;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+	.b-about-sprint .b-block{
+		z-index: 5;
+	}
 	.b-about-sprint .b-title{
 		margin-top: 0;
 		font-size: 45px;
     	line-height: 55px;
+	}
+	.b-about-sprint.b-about-sprint-no-back .b-title.white,
+	.b-about-sprint.b-about-sprint-no-back .b-about-services-item h3{
+		color: #282828;
 	}
 		.b-about-sprint .b-about-services-item .sprint-img{
 			background-position: 50% 50%;

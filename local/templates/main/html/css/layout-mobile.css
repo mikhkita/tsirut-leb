@@ -712,6 +712,17 @@ ul.b-breadcrumbs{
     padding-top: 80px;
 }
 
+.b-about-sprint .b-about-services-item{
+	margin: 0 12px 24px 12px;
+}
+.b-about-sprint .b-about-services-item h3{
+	margin-bottom: 12px;
+}
+.b-about-sprint .b-about-services-item .sprint-img {
+    width: 140px;
+    height: 140px;
+}
+
 .b-hot-block{
 	margin-top: 0;
 }
@@ -896,7 +907,7 @@ ul.b-breadcrumbs{
 .b-about-sprint .b-title{
 	font-size: 28px;
     line-height: 36px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .b-about{
@@ -995,8 +1006,7 @@ ul.b-breadcrumbs{
 		margin-bottom: 0;
 	}
 
-.b-about-services-item img,
-.b-about-sprint .b-about-services-item .sprint-img {
+.b-about-services-item img {
     width: 70px;
     height: 70px;
     margin-bottom: 16px;
@@ -2656,8 +2666,7 @@ div.TVTabedListContainer {
 	    margin-right: 0;
 	    margin-bottom: 24px;
 	}
-		.b-about-services-item img,
-		.b-about-sprint .b-about-services-item .sprint-img {
+		.b-about-services-item img {
 		    display: inline-block;
 			vertical-align: top;
 			margin-bottom: 0;
@@ -2675,6 +2684,23 @@ div.TVTabedListContainer {
 				display: block;
 				width: 100%;
 			}
+		.b-about-sprint.b-about-services{
+			padding-bottom: 52px;
+			margin-bottom: 60px;
+		}
+		.b-about-sprint .b-about-services-item .sprint-text,
+		.b-about-sprint .b-about-services-item .sprint-text p {
+			text-align: center;
+		}
+		.b-about-sprint .b-about-services-item {
+			width: 100%;
+		    margin-right: 0;
+		}
+		.b-about-sprint .b-about-services-item .sprint-img{
+			margin-bottom: 16px;
+			margin-right: 0;
+		}
+
 	.b-about-services {
 	    padding-bottom: 30px;
 	}
