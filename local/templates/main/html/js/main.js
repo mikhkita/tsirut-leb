@@ -1100,14 +1100,23 @@ $(document).ready(function(){
         }
     }
 
+    $("form").each(function(){
+        $(this).append("<input type='hidden' name='title_for_mail' value='"+$(".b-head-content h1").text()+"'>");
+        $(this).append("<input type='hidden' name='page_for_mail' value='"+window.location.href+"'>");
+    });
+
     // =========Турвизор=========
 
     if($(".b-tourvisor-header").length){
         var waitTourvisorH = setInterval(function(){
             if( $(".b-tourvisor-header .TVMainForm").length ){
+                var delayPreloader = 1000;
+                if($(".b-tourvisor-header .tourvisor-preloader").hasClass("tourvisor-preloader-manager")){
+                    delayPreloader = 0;
+                }
                 setTimeout(function(){
                     $(".b-tourvisor-header .tourvisor-preloader").hide();
-                }, 1000);
+                }, delayPreloader);
                 var countryDefault = $(".b-tourvisor-header").attr("data-country");
                 if(countryDefault){
                     $(".TVCountry").click();

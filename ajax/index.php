@@ -43,9 +43,17 @@ switch ($action) {
 			
 			if ($id = $el->Add($arLoadProductArray)) {
 
-				$link = "http://bel.redder.pro/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=3&type=content&ID=".$id."&lang=ru&find_section_section=-1&WF=Y";
+				$link = "http://bel-turist.ru/admin/iblock_element_edit.php?IBLOCK_ID=3&type=content&ID=".$id."&lang=ru&find_section_section=-1&WF=Y";
 
-				if(CEvent::Send("NEW_REVIEW", "s1", array("LINK" => $link, "NAME" => $_POST["name"], "TOUR" => $_POST["tour"], "COMMENT" => $_POST["comment"]))){
+				if(CEvent::Send("NEW_REVIEW", "s1", 
+					array(
+						"LINK" => $link, 
+						"NAME" => $_POST["name"], 
+						"TOUR" => $_POST["tour"], 
+						"COMMENT" => $_POST["comment"],
+						"TITLE" => $_POST["title_for_mail"],
+						"PAGE" => $_POST["page_for_mail"],
+					))){
 					echo "1";
 				} else {
 					echo "01";

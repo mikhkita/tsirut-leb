@@ -28,6 +28,8 @@ if( (isset($_POST["MAIL"]) && $_POST["MAIL"] != "") || $spam ){
 	$arEventFields = array(
 		"NAME"	=> $_POST["name"],
 		"EMAIL"	=> $_POST["email"],
+		"TITLE" => $_POST["title_for_mail"],
+		"PAGE" => $_POST["page_for_mail"],
 	);
 
 	if(CEvent::Send("SUBSCRIBE", "s1", $arEventFields)){

@@ -35,6 +35,8 @@ if( (isset($_POST["MAIL"]) && $_POST["MAIL"] != "") || $spam ){
 		"NAME" => $_POST["name"],
 		"PHONE" => $_POST["phone"],
 		"EMAIL" => $_POST["email"],
+		"TITLE" => $_POST["title_for_mail"],
+		"PAGE" => $_POST["page_for_mail"],
 	);
 
 	if(CEvent::Send("NEW_QUIZ", "s1", $arEventFields)){

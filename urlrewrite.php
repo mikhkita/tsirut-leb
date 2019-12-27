@@ -16,9 +16,25 @@ $arUrlRewrite=array (
     'PATH' => '/tours/detail.php',
     'SORT' => 100,
   ),
+    11 => 
+  array (
+    'CONDITION' => '#^/russia/(.+)/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'SECTION_CODE=$1&RESORT=$2&MONTH=$3&SECTION=$4&$5',
+    'ID' => '',
+    'PATH' => '/tours/detail.php',
+    'SORT' => 100,
+  ),
   6 => 
   array (
     'CONDITION' => '#^/tours/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'SECTION_CODE=$1&RESORT=$2&MONTH=$3&$4',
+    'ID' => '',
+    'PATH' => '/tours/detail.php',
+    'SORT' => 100,
+  ),
+  12 => 
+  array (
+    'CONDITION' => '#^/russia/(.+)/(.+)/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1&RESORT=$2&MONTH=$3&$4',
     'ID' => '',
     'PATH' => '/tours/detail.php',
@@ -48,6 +64,14 @@ $arUrlRewrite=array (
     'PATH' => '/tours/detail.php',
     'SORT' => 100,
   ),
+  13 => 
+  array (
+    'CONDITION' => '#^/russia/(.+)/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'SECTION_CODE=$1&RESORT=$2&$3',
+    'ID' => '',
+    'PATH' => '/tours/detail.php',
+    'SORT' => 100,
+  ),
   3 => 
   array (
     'CONDITION' => '#^/hot-tours/(.+)/(\\\\?(.*))?#',
@@ -67,6 +91,14 @@ $arUrlRewrite=array (
   9 => 
   array (
     'CONDITION' => '#^/tours/(.+)/(\\\\?(.*))?#',
+    'RULE' => 'SECTION_CODE=$1',
+    'ID' => '',
+    'PATH' => '/tours/detail.php',
+    'SORT' => 100,
+  ),
+  14 => 
+  array (
+    'CONDITION' => '#^/russia/(.+)/(\\\\?(.*))?#',
     'RULE' => 'SECTION_CODE=$1',
     'ID' => '',
     'PATH' => '/tours/detail.php',

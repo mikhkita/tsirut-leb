@@ -30,7 +30,7 @@ $month = date('n');
 	<?
 	$img = CFile::ResizeImageGet($arSection["PICTURE"]["ID"], array('width'=>302*2, 'height'=>383*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 	?>
-	<a href="<?=$arSection['SECTION_PAGE_URL'];?>" id="<? echo $this->GetEditAreaId($arSection['ID']);?>" class="b-country-item" style="background-image: url('<?=$img['src'];?>')">
+	<a href="<?echo '/russia/'.$arSection['CODE'].'/'?>" id="<? echo $this->GetEditAreaId($arSection['ID']);?>" class="b-country-item" style="background-image: url('<?=$img['src'];?>')">
 		<div class="blackout"></div>
 		<div class="blackout-full"></div>
 		<div class="content">

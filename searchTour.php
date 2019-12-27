@@ -29,6 +29,8 @@ if( (isset($_POST["MAIL"]) && $_POST["MAIL"] != "") || $spam ){
 	$arEventFields = array(
 		"NAME"	=> $_POST["name"],
 		"PHONE" => $_POST["phone"],
+		"TITLE" => $_POST["title_for_mail"],
+		"PAGE" => $_POST["page_for_mail"],
 	);
 
 	if(CEvent::Send("NEW_SEARCH_TOUR", "s1", $arEventFields)){

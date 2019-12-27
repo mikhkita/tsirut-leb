@@ -4018,8 +4018,12 @@ ul.b-breadcrumbs {
 		.b-bus-tours-right .b-bus-tours-item:first-child .price{
 			top: 0;
 		}
+		.b-bus-tours-right .b-search-subscribe.b-bus-search-subscribe{
+			border-bottom: 0;
+		}
 		.b-bus-tours-item{
 			position: relative;
+			display: block;
 			padding: 19px 0 24px 0;
 		}
 		.b-bus-tours-item:after {
@@ -4450,6 +4454,12 @@ ul.b-breadcrumbs {
 		}
 		.b-constructor-desc h2 b{
 			font-family: 'Gilroy-Bold';
+		}
+		.b-constructor-desc h3{
+	    	font-family: 'Gilroy-Bold';
+	    	font-size: 28px;
+			line-height: 36px;
+			color: #FFF;
 		}
 		.b-constructor-desc .preview-text{
 			max-width: 628px;

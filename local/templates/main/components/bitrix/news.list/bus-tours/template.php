@@ -95,10 +95,10 @@ $this->setFrameMode(true);
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 		$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>220*2, 'height'=>154*2), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 70);
 		?>
-			<div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="b-bus-tours-item">
-				<a class="b-img" href="<?=$arItem['DETAIL_PAGE_URL']?>" style="background-image: url(<?=$img['src']?>)"></a>
+			<a id="<?=$this->GetEditAreaId($arItem['ID']);?>" href="<?=$arItem['DETAIL_PAGE_URL']?>" class="b-bus-tours-item">
+				<div class="b-img" style="background-image: url(<?=$img['src']?>)"></div>
 				<div class="b-right">
-					<a href="<?=$arItem['DETAIL_PAGE_URL']?>"><h3><?=$arItem['NAME']?></h3></a>
+					<h3><?=$arItem['NAME']?></h3>
 					<div class="city"><?=$arItem['PROPERTIES']['LOCATION']['VALUE']?></div>
 					<p><?=$arItem["PREVIEW_TEXT"]?></p>
 					<div class="price">
@@ -106,7 +106,7 @@ $this->setFrameMode(true);
 						<span class="icon-next"></span>
 					</div>
 				</div>
-			</div>
+			</a>
 			<?if($i == 3):?>
 				<?$formShow = true?>
 				<div class="b-search-subscribe b-bus-search-subscribe">

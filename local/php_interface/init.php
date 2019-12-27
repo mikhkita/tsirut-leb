@@ -289,6 +289,15 @@ function getCountrySection($parentSection, $curSection = false){
 			'flydates_start' => $arSection['UF_FLYDATES_START'],
 			'flydates_end' => $arSection['UF_FLYDATES_END'],
 		);
+
+		global $APPLICATION;
+		$curPageLocal = $APPLICATION->GetCurPage();
+		$urlArrLocal = explode("/", $curPageLocal);
+		if(($urlArrLocal[1] == "tours" && $arCountrySect["isRussia"]) || ($urlArrLocal[1] == "russia" && !$arCountrySect["isRussia"])){
+			CHTTP::SetStatus('404 Not found');
+			defined('ERROR_404') or define('ERROR_404', 'Y');
+		}
+
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arSection['IBLOCK_ID'],$arSection['ID']);
 		$IPROPERTY  = $ipropValues->queryValues();
 		if(!empty($IPROPERTY)){

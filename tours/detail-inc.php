@@ -72,7 +72,7 @@
 				?>
 				<div class="tv-search-form tv-moduleid-192034" 
 					tv-country="<?=$GLOBALS["arCountry"]["countryIDTV"]?>" 
-					tv-resorts="<?//=$GLOBALS["arCountry"]["resortIDTV"]?>" 
+					tv-resorts="<?=$arTarget["resortIDTV"]?>" 
 					tv-departure="<?=$GLOBALS["arCountry"]["cityIDTV"]?>"
 					tv-flydates="<?if($dates) echo $dates;?>"
 				></div>

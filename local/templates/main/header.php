@@ -14,17 +14,17 @@ $GLOBALS["is404"] = $is404 = ($urlArr[1] == "404.php") || (ERROR_404 == "Y");
 $otherToursPages = array("excursions", "bus", "sea-cruises", "poisk");
 
 //Детальная страны
-$GLOBALS["isDetail"] = $isDetail = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages));
+$GLOBALS["isDetail"] = $isDetail = (($urlArr[1] == "tours" || $urlArr[1] == "russia") && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages));
 //Детальная курорта/месяца/сезона в стране
-$GLOBALS["isDetailResort"] = $isDetailResort = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]));
+$GLOBALS["isDetailResort"] = $isDetailResort = (($urlArr[1] == "tours" || $urlArr[1] == "russia") && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]));
 //Детальная месяца/сезона в курорте
-$GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]) && !empty($urlArr[4]));
+$GLOBALS["isDetailResortMonth"] = $isDetailResortMonth = (($urlArr[1] == "tours" || $urlArr[1] == "russia") && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]) && !empty($urlArr[4]));
 //4 уровень вложенности
-$GLOBALS["isDetailInnerSection"] = $isDetailInnerSection = ($urlArr[1] == "tours" && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]) && !empty($urlArr[4]) && !empty($urlArr[5]));
+$GLOBALS["isDetailInnerSection"] = $isDetailInnerSection = (($urlArr[1] == "tours" || $urlArr[1] == "russia") && !empty($urlArr[2]) && !in_array($urlArr[2], $otherToursPages) && !empty($urlArr[3]) && !empty($urlArr[4]) && !empty($urlArr[5]));
 
 $GLOBALS["page"] = $page = ( $urlArr[2] == null || $urlArr[2] == "" )?$urlArr[1]:$urlArr[2];
 $subPage = $urlArr[2];
-$GLOBALS["version"] = 37;
+$GLOBALS["version"] = 38;
 
 $GLOBALS["hotDir"] = "hot-tours";
 if( $urlArr[1] == $GLOBALS["hotDir"] && isset($urlArr[3]) )
@@ -235,6 +235,7 @@ $hotCodes = $GLOBALS["hotCodes"] =  array(
 	<meta name="msapplication-TileImage" content="<?=SITE_TEMPLATE_PATH?>/html/favicon/mstile-144x144.png" />
 
 	<script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
+
 
 </head>
 <body>
